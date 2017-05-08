@@ -13,8 +13,12 @@ class TestCrmClaimDeadline(common.TransactionCase):
         self.partner = self.env.ref('base.res_partner_2')
         self.company = self.env.ref('base.main_company')
         self.company.write({'claim_closing_days': 5})
-        self.company2 = self.env.ref('stock.res_company_1')
-        self.company2.write({'claim_closing_days': 25})
+        company2_vals = self.company.copy_data(default={
+            'name': 'New Company',
+            'claim_closing_days': 25,
+            'partner_id': False,
+        })
+        self.company2 = self.env['res.company'].create(company2_vals[0])
 
     def test_crm_claim_deadline(self):
         vals = {'name': 'Testing module',
