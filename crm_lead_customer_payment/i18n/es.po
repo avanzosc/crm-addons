@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_lead_customer_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-19 09:46+0000\n"
+"PO-Revision-Date: 2017-06-19 09:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_lead_customer_payment
+#: field:crm.lead,customer_payment_mode:0
+msgid "Customer Payment Mode"
+msgstr "Modo de pago de cliente"
+
+#. module: crm_lead_customer_payment
+#: field:crm.lead,property_payment_term:0
+msgid "Customer Payment Term"
+msgstr "Plazo de pago de cliente"
+
+#. module: crm_lead_customer_payment
+#: model:ir.model,name:crm_lead_customer_payment.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: crm_lead_customer_payment
+#: help:crm.lead,customer_payment_mode:0
+msgid "Select the default payment mode for this customer."
+msgstr "Seleccione el modo de pago por defecto cuando esta empresa actúa como cliente."
+
+#. module: crm_lead_customer_payment
+#: help:crm.lead,property_payment_term:0
+msgid "This payment term will be used instead of the default one for sale orders and customer invoices"
+msgstr "Se usará este plazo de pago en lugar del predeterminado para los pedidos de venta y las facturas de cliente"
+
