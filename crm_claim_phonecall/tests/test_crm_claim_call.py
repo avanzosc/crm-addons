@@ -48,8 +48,10 @@ class TestCrmClaimCall(common.TransactionCase):
             'name': 'Test done'})
         self.assertEqual(phonecall.state, 'open')
         phonecall.make_call()
-        now = fields.Datetime.now()
-        self.assertEqual(phonecall.date_open, now)
+        now = fields.Datetime.from_string(fields.Datetime.now())
+        self.assertFalse(
+            (fields.Datetime.from_string(phonecall.date_open) -
+             now).total_seconds() >= 1.0)
         # update date_open to compute duration
         phonecall.date_open = \
             fields.Datetime.from_string(phonecall.date_open) - \
@@ -58,7 +60,7 @@ class TestCrmClaimCall(common.TransactionCase):
         self.assertEqual(phonecall.duration, 0.0)
         phonecall.hang_up_call()
         self.assertEqual(phonecall.state, 'done')
-        self.assertEqual(phonecall.duration, 0.5)
+        self.assertEqual(round(phonecall.duration, 1), 0.5)
 
     def test_change_state_to_cancel(self):
         phonecall = self.phonecall_obj.create({
