@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <template id="crm_contactus_form"
+              inherit_id="website_crm.contactus_form">
+        <div name="email_from_container" position="after">
+            <div name="customer_vat"
+                 t-attf-class="form-group #{error and 'vat' in error and 'has-error' or ''}">
+                <label class="col-md-3 col-sm-4 control-label" for="vat">VAT</label>
+                <div class="col-md-7 col-sm-8">
+                    <input type="text" class="form-control"
+                           name="vat" t-attf-value="#{vat or ''}"/>
+                </div>
+            </div>
+            <div name="customer_payment_term"
+                 t-attf-class="form-group #{error and 'property_payment_term' in error and 'has-error' or ''}">
+                <label class="col-md-3 col-sm-4 control-label" for="property_payment_term">Customer Payment Term</label>
+                <div class="col-md-7 col-sm-8">
+                    <select name="property_payment_term" class="form-control">
+                        <option value="">
+                        </option>
+                        <t
+                                t-foreach="request.env['account.payment.term'].sudo().search([])" t-as="term">
+                            <option t-att-value="term.id">
+                                <t t-esc="term.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+            <div name="customer_payment_mode"
+                 t-attf-class="form-group #{error and 'customer_payment_mode' in error and 'has-error' or ''}">
+                <label class="col-md-3 col-sm-4 control-label" for="customer_payment_mode">Customer Payment Mode</label>
+                <div class="col-md-7 col-sm-8">
+                    <select name="customer_payment_mode" class="form-control">
+                        <option value="">
+                        </option>
+                        <t
+                                t-foreach="request.env['payment.mode'].sudo().search([('sale_ok', '=', True)])" t-as="mode">
+                            <option t-att-value="mode.id">
+                                <t t-esc="mode.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </template>
+</data>
+</openerp>
