@@ -11,11 +11,10 @@ class CrmLead(models.Model):
     property_payment_term = fields.Many2one(
         comodel_name='account.payment.term', string='Customer Payment Term',
         help="This payment term will be used instead of the default one for"
-             " sale orders and customer invoices",
-        company_dependent=True)
+             " sale orders and customer invoices")
     customer_payment_mode = fields.Many2one(
         comodel_name='payment.mode', string='Customer Payment Mode',
-        company_dependent=True, domain="[('sale_ok', '=', True)]",
+        domain="[('sale_ok', '=', True)]",
         help="Select the default payment mode for this customer.")
 
     @api.model
