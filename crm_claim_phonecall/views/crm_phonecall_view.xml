@@ -18,7 +18,7 @@
                 </field>
             </field>
         </record>
-        
+
         <record id="crm_phonecall_view_tree" model="ir.ui.view" >
             <field name="name">crm.phonecall.tree</field>
             <field name="model">crm.phonecall</field>
