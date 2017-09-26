@@ -9,6 +9,7 @@
     "author": "AvanzOSC",
     "website": "http://www.avanzosc.es",
     "contributors": [
+        "Daniel Campos <danielcampos@avanzosc.es>",
         "Esther Martín <esthermartin@avanzosc.es>",
         "Ana Juaristi <anajuaristi@avanzosc.es>",
     ],

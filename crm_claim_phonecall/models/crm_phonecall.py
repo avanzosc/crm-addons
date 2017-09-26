@@ -10,7 +10,8 @@ class CrmPhonecall(models.Model):
 
     @api.onchange('claim_id')
     def onchange_claim_id(self):
-        self.partner_id = self.claim_id.partner_id
+        if self.claim_id:
+            self.partner_id = self.claim_id.partner_id
 
     @api.multi
     def make_call(self):
@@ -42,5 +43,4 @@ class CrmPhonecall(models.Model):
                 self.write(values)
         return True
 
-    claim_id = fields.Many2one(comodel_name='crm.claim',
-                               string='Claim')
+    claim_id = fields.Many2one(comodel_name='crm.claim', string='Claim')
