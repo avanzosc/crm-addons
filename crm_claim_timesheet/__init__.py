@@ -23,11 +23,11 @@ def assign_claims_to_project(cr, registry):
             cond.append(('task_id', '=', claim_id.task_id))
         try:
             timesheet_ids = timesheet_obj.search(cr, SUPERUSER_ID, cond)
-        except:
+        except Exception:
             timesheet_ids = timesheet_obj.search(cr, SUPERUSER_ID, cond1)
         for timesheet in timesheet_ids:
             try:
                 timesheet_obj.write(cr, SUPERUSER_ID, timesheet,
                                     {'claim_id': claim_id.id})
-            except:
+            except Exception:
                 continue

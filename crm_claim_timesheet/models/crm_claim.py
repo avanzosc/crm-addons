@@ -30,7 +30,7 @@ class CrmClaim(models.Model):
                     line.timesheet_ids = \
                         line.analytic_id.timesheet_ids.filtered(
                             lambda x: x.task_id == line.task_id)
-                except:
+                except Exception:
                     continue
             else:
                 line.timesheet_ids = line.analytic_id.timesheet_ids
