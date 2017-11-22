@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="report_crm_claim"
+            string="Claim"
+            model="crm.claim" 
+            report_type="qweb-pdf"
+            file="crm_claim_report.report_crmclaim" 
+            name="crm_claim_report.report_crmclaim" 
+        />
+    </data>
+</openerp>

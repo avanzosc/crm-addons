@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <template id="report_crmclaim_document">
+        <t t-call="report.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <div class="row">
+                    <br/>
+                    <div class="col-xs-12">
+                        <h2><strong>CLAIM:</strong> <span t-field="o.code"/></h2>
+                        <h2><span t-field="o.name"/></h2>
+                        <strong>Type: </strong><span t-field="o.claim_type"/><br/>
+                        <strong>Date: </strong><span t-field="o.date"/><br/>
+                        <strong>Responsible: </strong><span t-field="o.user_id"/><br/>
+                        <strong>Deadline: </strong><span t-field="o.date_deadline"/>
+                    </div>
+                    <div class="col-xs-6">
+                        <h2><strong>Claim Reporter</strong></h2>
+                        <strong>Partner: </strong><span t-field="o.partner_id"/><br/>
+                        <strong>Phone: </strong><span t-field="o.partner_phone"/><br/>
+                        <strong>Email: </strong><span t-field="o.email_from"/>
+                    </div>
+                    <div class="col-xs-6 pull-right">
+                        <h2><strong>Responsibilities</strong></h2>
+                        <strong>Trouble Responsible: </strong><span t-field="o.user_fault"/><br/>
+                        <strong>Category: </strong><span t-field="o.categ_id"/><br/>
+                    </div>
+                    <div class="col-xs-12">
+                        <h2><strong>Claim/Action Description</strong></h2>
+                        <span t-field="o.description"/>
+                    </div>
+                    <div class="col-xs-6">
+                        <h2><strong>Actions</strong></h2>
+                        <strong>Next Action Date: </strong><span t-field="o.date_action_next"/>
+                        <strong>Next Action: </strong><span t-field="o.action_next"/>
+                    </div>
+                    <div class="col-xs-6 pull-right">
+                        <h2><strong>Dates</strong></h2>
+                        <strong>Creation Date: </strong><span t-field="o.create_date"/><br/>
+                        <strong>Update Date: </strong><span t-field="o.write_date"/>
+                    </div>
+                    <div class="col-xs-12">
+                        <h2><strong>Root Causes</strong></h2>
+                        <span t-field="o.cause"/>
+                    </div>
+                    <div class="col-xs-12">
+                        <h2><strong>Claim/Action Description</strong></h2>
+                        <strong>Action Type: </strong><span t-field="o.type_action"/><br/>
+                        <span t-field="o.resolution"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_crmclaim">
+        <t t-call="report.html_container">
+            <t t-foreach="doc_ids" t-as="doc_id">
+                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'crm_claim_report.report_crmclaim_document')"/>
+            </t>
+        </t>
+    </template>
+</data>
+</openerp>
