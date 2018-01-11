@@ -8,46 +8,67 @@
                 <div class="row">
                     <br/>
                     <div class="col-xs-12">
-                        <h2><strong>CLAIM:</strong> <span t-field="o.code"/></h2>
-                        <h2><span t-field="o.name"/></h2>
-                        <strong>Type: </strong><span t-field="o.claim_type"/><br/>
-                        <strong>Date: </strong><span t-field="o.date"/><br/>
-                        <strong>Responsible: </strong><span t-field="o.user_id"/><br/>
-                        <strong>Deadline: </strong><span t-field="o.date_deadline"/>
-                    </div>
-                    <div class="col-xs-6">
-                        <h2><strong>Claim Reporter</strong></h2>
-                        <strong>Partner: </strong><span t-field="o.partner_id"/><br/>
-                        <strong>Phone: </strong><span t-field="o.partner_phone"/><br/>
-                        <strong>Email: </strong><span t-field="o.email_from"/>
-                    </div>
-                    <div class="col-xs-6 pull-right">
-                        <h2><strong>Responsibilities</strong></h2>
+                        <h2><strong><t t-if="o.claim_type.name != 'Acción Correctiva'">Non conformity report</t><t t-if="o.claim_type.name == 'Acción Correctiva'">Corrective action report</t></strong></h2>
+                        <strong>Claim number: </strong><span t-field="o.code"/><br/>
+                        <strong>Object of claim: </strong><span t-field="o.name"/><br/>
+                        <strong>Claim Date: </strong><span t-field="o.date" t-field-options='{"format": "dd/MM/yyyy"}'/><br/>
+                        <strong>Claim Type: </strong><span t-field="o.claim_type"/><br/>
+                        <strong>Partner: </strong><span t-field="o.partner_id"/>
+                        <hr style="border-top: 2px dotted black"/>
+                        <div style="font-size:18px"><strong>Responsibilities</strong></div>
                         <strong>Trouble Responsible: </strong><span t-field="o.user_fault"/><br/>
                         <strong>Category: </strong><span t-field="o.categ_id"/><br/>
-                    </div>
-                    <div class="col-xs-12">
-                        <h2><strong>Claim/Action Description</strong></h2>
-                        <span t-field="o.description"/>
-                    </div>
-                    <div class="col-xs-6">
-                        <h2><strong>Actions</strong></h2>
-                        <strong>Next Action Date: </strong><span t-field="o.date_action_next"/>
-                        <strong>Next Action: </strong><span t-field="o.action_next"/>
-                    </div>
-                    <div class="col-xs-6 pull-right">
-                        <h2><strong>Dates</strong></h2>
-                        <strong>Creation Date: </strong><span t-field="o.create_date"/><br/>
-                        <strong>Update Date: </strong><span t-field="o.write_date"/>
-                    </div>
-                    <div class="col-xs-12">
-                        <h2><strong>Root Causes</strong></h2>
-                        <span t-field="o.cause"/>
-                    </div>
-                    <div class="col-xs-12">
-                        <h2><strong>Claim/Action Description</strong></h2>
-                        <strong>Action Type: </strong><span t-field="o.type_action"/><br/>
-                        <span t-field="o.resolution"/>
+                        <strong>Reference:</strong><span t-esc="o.env['res.request.link'].search([('object', '=', str(o.ref._model))]).name"/>: <span t-esc="o.ref.display_name"/>
+                        <hr style="border-top: 2px dotted black"/><br/>
+                        <strong>Claim Description:</strong>
+                        <div class="col-xs-12" style="border: 1px solid black">
+                            <span t-field="o.description"/>
+                        </div>
+                        <br/><br/>
+                        <strong>Causes:</strong><br/>
+                        <div class="col-xs-12" style="border: 1px solid black">
+                            <span t-field="o.cause"/>
+                        </div>
+                        <br/><br/>
+                        <strong>Resolution actions:</strong><br/>
+                        <div class="col-xs-12" style="border: 1px solid black">
+                            <span t-field="o.resolution"/>
+                        </div>
+                        <br/><br/>
+                        Create corrective action?<br/>
+                        -[] Yes<br/>
+                        -[] No<br/>
+                        <br/>
+                        <t >
+                            <table class="table table-condensed">
+                                <tr t-foreach="o.to_related_claims" t-as="to_claim">
+                                    <td><strong><span t-field="to_claim.code"/></strong></td>
+                                    <td><span t-field="to_claim.date" t-field-options='{"format": "dd/MM/yyyy"}'/></td>
+                                    <td><span t-field="to_claim.name"/></td>
+                                </tr>
+                            </table>
+                        </t>
+                        <br/>
+                        <t t-if="o.claim_type == 'Supplier'">
+                        <hr style="border-top: 2px dotted black"/>
+                        Decision:
+                        <table class="table table-condensed">
+                            <tr>
+                                <td>- [] Product return</td>
+                                <td>- [] Replacement</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>- [] Refund</td>
+                            </tr>
+                        </table>
+                        <div class="col-xs-12" style="border: 1px solid black">
+	                        Supplier sign (specify name and position of the person who signs):
+	                        <div class="col-xs-12" height="200px"/>
+	                        Date:
+                        </div>
+                        <hr style="border-top: 2px dotted black"/>
+                        </t>
                     </div>
                 </div>
             </div>
