@@ -2,7 +2,7 @@
 # (Copyright) 2017 Esther Martín - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class HrAnalyticTimesheet(models.Model):
@@ -10,12 +10,13 @@ class HrAnalyticTimesheet(models.Model):
 
     claim_id = fields.Many2one(comodel_name='crm.claim', string='Claim')
 
-    def on_change_account_id(self, cr, uid, ids, account_id, context=False):
+    @api.multi
+    def on_change_account_id(self, account_id, user_id=False):
         """Signature cannot be new API because of the arguments are badly
         named between hr_timesheet and hr_timesheet_invoice.
         """
         res = super(HrAnalyticTimesheet, self).on_change_account_id(
-            cr, uid, ids, account_id, context)
+            account_id, user_id=user_id)
         if account_id:
             if 'domain' not in res:
                 res['domain'] = {}
