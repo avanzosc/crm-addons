@@ -26,11 +26,8 @@ class CrmClaim(models.Model):
     def onchange_task_id(self):
         for line in self:
             if line.task_id:
-                try:
-                    line.timesheet_ids = \
-                        line.analytic_id.timesheet_ids.filtered(
-                            lambda x: x.task_id == line.task_id)
-                except Exception:
-                    continue
+                line.timesheet_ids = \
+                    line.analytic_id.timesheet_ids.filtered(
+                        lambda x: x.task_id == line.task_id)
             else:
                 line.timesheet_ids = line.analytic_id.timesheet_ids
