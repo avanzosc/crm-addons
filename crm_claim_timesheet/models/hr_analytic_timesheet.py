@@ -12,9 +12,6 @@ class HrAnalyticTimesheet(models.Model):
 
     @api.multi
     def on_change_account_id(self, account_id, user_id=False):
-        """Signature cannot be new API because of the arguments are badly
-        named between hr_timesheet and hr_timesheet_invoice.
-        """
         res = super(HrAnalyticTimesheet, self).on_change_account_id(
             account_id, user_id=user_id)
         if account_id:
