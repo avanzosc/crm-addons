@@ -14,7 +14,7 @@
     ],
     "depends": [
         "project_claims",
-        "hr_timesheet",
+        "timesheet_task",
     ],
     "data": [
         "views/crm_claim_view.xml",
