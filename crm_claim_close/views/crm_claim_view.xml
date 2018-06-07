@@ -48,5 +48,22 @@
                 </filter>
             </field>
         </record>
+
+        <record id="action_close_claim" model="ir.actions.server">
+            <field name="name">Close Claim</field>
+            <field name="model_id" ref="model_crm_claim"/>
+            <field name="state">code</field>
+            <field name="code">
+                if context.get('active_model') == 'crm.claim' and context.get('active_ids'):
+                    self.claim_close(cr, uid, context['active_ids'], context=context)
+            </field>
+        </record>
+
+        <record id="ir_close_claim" model="ir.values">
+            <field eval="'client_action_multi'" name="key2"/>
+            <field eval="'crm.claim'" name="model"/>
+            <field name="name">Close Claim</field>
+            <field eval="'ir.actions.server,%d'%action_close_claim" name="value"/>
+        </record>
     </data>
 </openerp>
