@@ -2,17 +2,17 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
    
-====================
-Crm Lead Show Action
-====================
+======================
+CRM Lead Show Activity
+======================
 
-* This module shows next action and next action date fields on leads.
+With this module you are able to see next activity in lead's tree view
 
 
 Credits
 =======
 
-
 Contributors
 ------------
 * Esther Martín <esthermartin@avanzosc.es>
+* Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>
