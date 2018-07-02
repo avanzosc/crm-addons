@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="crm_lead_activity_summary_tree" model="ir.ui.view">
+        <field name="name">crm.lead.title.action.tree</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <tree position="inside">
+                <field name="activity_date_deadline"/>
+                <field name="activity_summary"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
