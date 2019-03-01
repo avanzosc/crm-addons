@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+<data>
+    <record id="crm_lead_view_search" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter" />
+        <field name="arch" type="xml">
+            <filter name="group_message_last_post" position="after">
+                <filter string="Next Action Date (per day)"
+                        name="group_date_action_daily"
+                        domain="[]"
+                        context="{'group_by':'date_action:day'}"/>
+                <filter string="Next Action Date (per week)"
+                        name="group_date_action_weekly"
+                        domain="[]"
+                        context="{'group_by':'date_action:week'}"/>
+                <filter string="Next Action Date (per month)"
+                        name="group_date_action_monthly"
+                        domain="[]"
+                        context="{'group_by':'date_action'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="crm_lead_view_search" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter" />
+        <field name="arch" type="xml">
+            <filter name="month" position="before">
+                <filter string="Next Action Date (per day)"
+                        name="group_date_action_daily"
+                        domain="[]"
+                        context="{'group_by':'date_action:day'}"/>
+                <filter string="Next Action Date (per week)"
+                        name="group_date_action_weekly"
+                        domain="[]"
+                        context="{'group_by':'date_action:week'}"/>
+                <filter string="Next Action Date (per month)"
+                        name="group_date_action_monthly"
+                        domain="[]"
+                        context="{'group_by':'date_action'}"/>
+                <separator orientation="vertical" />
+            </filter>
+        </field>
+    </record>
+
+    <record id="crm.crm_case_category_act_leads_all"
+            model="ir.actions.act_window">
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+</data>
+</openerp>

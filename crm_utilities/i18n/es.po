@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_utilities
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-01 13:13+0000\n"
+"PO-Revision-Date: 2019-03-01 13:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_utilities
+#: help:sale.config.settings,module_crm_lead_show_action:0
+msgid "Allows you to see which actions are going to take and when.\n"
+"-This installs the module crm_lead_show_action."
+msgstr "Permite ver que acción se va a tomar y cuando.\n"
+"-Instala el módulo crm_lead_show_action."
+
+#. module: crm_utilities
+#: view:crm.lead:crm_utilities.crm_lead_view_search
+msgid "Next Action Date (per day)"
+msgstr "Fecha  de la próxima acción (por día)"
+
+#. module: crm_utilities
+#: view:crm.lead:crm_utilities.crm_lead_view_search
+msgid "Next Action Date (per month)"
+msgstr "Fecha  de la próxima acción (por mes)"
+
+#. module: crm_utilities
+#: view:crm.lead:crm_utilities.crm_lead_view_search
+msgid "Next Action Date (per week)"
+msgstr "Fecha  de la próxima acción (por semana)"
+
+#. module: crm_utilities
+#: field:sale.config.settings,module_crm_lead_show_action:0
+msgid "Show Lead Actions"
+msgstr "Mostrar acciones en la iniciativa"
+
