@@ -34,12 +34,17 @@ class CrmLead(models.Model):
                     raise Warning(_('Survey not answered.'))
                 super(CrmLead, record).write(vals)
                 if stage.survey_id:
-                    user_input_obj.create({
-                        'survey_id': stage.survey_id.id,
-                        'lead_id': record.id,
-                        'partner_id': record.partner_id.id,
-                        'type': 'manually',
-                    })
+                    response = user_input_obj.search([
+                        ('lead_id', '=', record.id),
+                        ('survey_id', '=', stage.survey_id.id),
+                    ])
+                    if not response:
+                        user_input_obj.create({
+                            'survey_id': stage.survey_id.id,
+                            'lead_id': record.id,
+                            'partner_id': record.partner_id.id,
+                            'type': 'manually',
+                        })
         return True
 
     @api.multi
@@ -51,7 +56,7 @@ class CrmLead(models.Model):
         response = response_obj.search([
             ('lead_id', '=', self.id),
             ('survey_id', '=', self.stage_id.survey_id.id),
-        ])
+        ], limit=1, order='date_create DESC')
         # create a response and link it to this applicant
         if not response:
             response = self.env['survey.user_input'].create({
