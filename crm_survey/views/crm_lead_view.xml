@@ -4,8 +4,12 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
+            <field name="stage_id" position="before">
+                <button name="action_start_survey" type="object"
+                        string="Start Survey" />
+            </field>
             <div name="button_box" position="inside">
-                <button class="oe_stat_button" type="object" context="{'partner_id': partner_id}" name="action_schedule_meeting" icon="fa-calendar">
+                <button class="oe_stat_button" type="object" name="action_open_response" icon="fa-pencil-square-o">
                     <div class="o_stat_info">
                         <field name="user_input_count" class="o_stat_value"/>
                         <span class="o_stat_text"> Answers</span>

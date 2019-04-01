@@ -29,8 +29,9 @@ class CrmLead(models.Model):
                 if (record.stage_id.survey_id and
                         not record.user_input_ids.filtered(
                             lambda u: u.state == 'done' and
-                                      u.survey_id == record.stage_id.survey_id)):
-                    raise Warning(_('Survey not answered'))
+                                      u.survey_id ==
+                                      record.stage_id.survey_id)):
+                    raise Warning(_('Survey not answered.'))
                 super(CrmLead, record).write(vals)
                 if stage.survey_id:
                     user_input_obj.create({
@@ -40,6 +41,37 @@ class CrmLead(models.Model):
                         'type': 'manually',
                     })
         return True
+
+    @api.multi
+    def action_start_survey(self):
+        self.ensure_one()
+        if not self.stage_id.survey_id:
+            raise Warning(_('Stage has no survey.'))
+        response_obj = self.env['survey.user_input']
+        response = response_obj.search([
+            ('lead_id', '=', self.id),
+            ('survey_id', '=', self.stage_id.survey_id.id),
+        ])
+        # create a response and link it to this applicant
+        if not response:
+            response = self.env['survey.user_input'].create({
+                'survey_id': self.stage_id.survey_id.id,
+                'lead_id': self.id,
+                'partner_id': self.partner_id.id,
+            })
+        # grab the token of the response and start surveying
+        return self.stage_id.survey_id.with_context(
+            survey_token=response.token).action_start_survey()
+
+    @api.multi
+    def action_open_response(self):
+        self.ensure_one()
+        action = self.env.ref('survey.action_survey_user_input')
+        action_dict = action.read()[0]
+        action_dict.update({
+            'domain': [('lead_id', '=', self.id)],
+        })
+        return action_dict
 
 
 class CrmStage(models.Model):
