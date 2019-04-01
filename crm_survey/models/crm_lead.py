@@ -58,6 +58,7 @@ class CrmLead(models.Model):
                 'survey_id': self.stage_id.survey_id.id,
                 'lead_id': self.id,
                 'partner_id': self.partner_id.id,
+                'type': 'manually',
             })
         # grab the token of the response and start surveying
         return self.stage_id.survey_id.with_context(
