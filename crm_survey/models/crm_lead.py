@@ -24,11 +24,10 @@ class CrmLead(models.Model):
         stage_obj = self.env['crm.stage']
         user_input_obj = self.env['survey.user_input']
         for record in self:
-            if (record.stage_id.survey_id and
-                    not record.user_input_ids.filtered(
-                        lambda u: u.state == 'done' and
-                                  u.survey_id ==
-                                  record.stage_id.survey_id)):
+            if ('stage_id' in vals and (record.stage_id.survey_id and
+                not record.user_input_ids.filtered(
+                    lambda u: u.state == 'done' and
+                              u.survey_id == record.stage_id.survey_id))):
                 raise Warning(_('Survey not answered.'))
             super(CrmLead, record).write(vals)
             if 'stage_id' in vals:
