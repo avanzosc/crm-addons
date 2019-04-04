@@ -23,16 +23,16 @@ class CrmLead(models.Model):
     def write(self, vals):
         stage_obj = self.env['crm.stage']
         user_input_obj = self.env['survey.user_input']
-        if 'stage_id' in vals:
-            stage = stage_obj.browse(vals.get('stage_id'))
-            for record in self:
-                if (record.stage_id.survey_id and
-                        not record.user_input_ids.filtered(
-                            lambda u: u.state == 'done' and
-                                      u.survey_id ==
-                                      record.stage_id.survey_id)):
-                    raise Warning(_('Survey not answered.'))
-                super(CrmLead, record).write(vals)
+        for record in self:
+            if (record.stage_id.survey_id and
+                    not record.user_input_ids.filtered(
+                        lambda u: u.state == 'done' and
+                                  u.survey_id ==
+                                  record.stage_id.survey_id)):
+                raise Warning(_('Survey not answered.'))
+            super(CrmLead, record).write(vals)
+            if 'stage_id' in vals:
+                stage = stage_obj.browse(vals.get('stage_id'))
                 if stage.survey_id:
                     response = user_input_obj.search([
                         ('lead_id', '=', record.id),
