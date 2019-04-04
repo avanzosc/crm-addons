@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="survey_user_input_view_tree" model="ir.ui.view">
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_tree" />
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <field name="lead_id" />
+            </field>
+        </field>
+    </record>
+    <record id="survey_user_input_view_form" model="ir.ui.view">
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_form" />
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <field name="lead_id" />
+            </field>
+        </field>
+    </record>
+    <record id="survey_user_input_view_search" model="ir.ui.view">
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_search" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="lead_id" />
+            </field>
+            <filter name="group_by_partner" position="after">
+                <filter string="Lead" name="group_by_lead" domain="[]"
+                        context="{'group_by': 'lead_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

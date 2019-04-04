@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_lead_view_form" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+        <field name="arch" type="xml">
+            <field name="stage_id" position="before">
+                <button name="action_start_survey" type="object"
+                        string="Start Survey" />
+            </field>
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" name="action_open_response" icon="fa-pencil-square-o">
+                    <div class="o_stat_info">
+                        <field name="user_input_count" class="o_stat_value"/>
+                        <span class="o_stat_text"> Answers</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <record id="crm_stage_view_form" model="ir.ui.view">
+        <field name="model">crm.stage</field>
+        <field name="inherit_id" ref="crm.crm_stage_form" />
+        <field name="arch" type="xml">
+            <field name="probability" position="after">
+                <field name="survey_id" />
+            </field>
+        </field>
+    </record>
+</odoo>
