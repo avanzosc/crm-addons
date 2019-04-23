@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_personal_information_birthdate_inh_crm_school" model="ir.ui.view">
+        <field name="name">view.personal.information.birthdate.inh.crm.school</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_birthdate.view_personal_information_birthdate_date" />
+        <field name="arch" type="xml">
+            <field name="birthdate_date" position="after">
+                <field name="year_birth" />
+            </field>
+        </field>
+    </record>
+    <record id="view_personal_information_gender_inh_crm_school" model="ir.ui.view">
+        <field name="name">view.personal.information.gender.inh.crm.school</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_gender.view_personal_information_gender" />
+        <field name="arch" type="xml">
+            <field name="gender" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('educational_category', '=', False),('educational_category', 'not in', ('student','progenitor','guardian','other'))]}</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

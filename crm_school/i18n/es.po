@@ -1,0 +1,164 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_school
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-12 10:47+0000\n"
+"PO-Revision-Date: 2019-03-12 10:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__birth_date
+#: model:ir.model.fields,field_description:crm_school.field_res_partner__birth_date
+#: model:ir.model.fields,field_description:crm_school.field_res_users__birth_date
+msgid "Birth date"
+msgstr "Fecha nacimiento"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__name
+msgid "Child name"
+msgstr "Nombre niño"
+
+#. module: crm_school
+#: model:ir.model,name:crm_school.model_crm_lead2opportunity_partner
+msgid "Convert Lead to Opportunity (not in mass)"
+msgstr "Convertir Iniciativa en Oportunidad (sin ser en masa)"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: crm_school
+#: selection:crm.lead.future.student,gender:0
+msgid "Female"
+msgstr "Femenino"
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_form_view
+msgid "Future student"
+msgstr "Futuro estudiante"
+
+#. module: crm_school
+#: model:ir.model,name:crm_school.model_crm_lead_future_student
+#: model:ir.model,name:crm_school.model_res_partner
+msgid "Future student from leads"
+msgstr "Futuro estudiante desde iniciativa"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead__future_student_ids
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_leads_inh_crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_tree_view
+msgid "Future students"
+msgstr "Futuros estudiantes"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__gender
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+msgid "Gender"
+msgstr "Género"
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__id
+msgid "ID"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__crm_lead_id
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+msgid "Lead"
+msgstr "Iniciativa"
+
+#. module: crm_school
+#: model:ir.model,name:crm_school.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: crm_school
+#: selection:crm.lead.future.student,gender:0
+msgid "Male"
+msgstr "Masculino"
+
+#. module: crm_school
+#: model:ir.model,name:crm_school.model_crm_team
+msgid "Sales Channels"
+msgstr "Canales de Ventas"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__school_id
+#: model:ir.model.fields,field_description:crm_school.field_crm_team__school_id
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_team_salesteams_search_inh_crm_school
+msgid "School"
+msgstr "Colegio"
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+msgid "Search future students"
+msgstr "Buscar futuros estudiantes"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__child_id
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+msgid "Child"
+msgstr "Hijo"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__year_birth
+#: model:ir.model.fields,field_description:crm_school.field_res_partner__year_birth
+#: model:ir.model.fields,field_description:crm_school.field_res_users__year_birth
+msgid "Year of birth"
+msgstr "Año nacimiento"
+
+#. module: crm_school
+#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:17
+#, python-format
+msgid "You must define a future student in the initiative: {}."
+msgstr "Debe definir un futuro estudiante en la inciativa: {}."
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__course_id
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+msgid "Initial school course"
+msgstr "Curso escolar inicial"
+
