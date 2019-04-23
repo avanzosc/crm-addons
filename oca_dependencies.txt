@@ -4,3 +4,5 @@ partner-contact
 avanzosc-addons https://github.com/avanzosc/odoo-addons.git 
 education-addons https://github.com/avanzosc/education.git
 
+partner-birthdate https://github.com/avanzosc/partner-contact.git 12.0-mig-partner_contact_birthdate
+
