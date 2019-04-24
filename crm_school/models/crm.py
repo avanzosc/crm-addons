@@ -19,50 +19,44 @@ class CrmLead(models.Model):
         string='Future students')
 
     @api.multi
-    def _create_lead_partner(self):
-        partner = super(CrmLead, self)._create_lead_partner()
-        partner.educational_category = 'family'
-        return partner
+    def _create_lead_partner_data(self, name, is_company, parent_id=False):
+        partner_dict = super(CrmLead, self)._create_lead_partner_data(
+            name, is_company, parent_id=parent_id)
+        partner_dict.update({
+            'educational_category': 'family' if is_company else 'progenitor',
+        })
+        return partner_dict
 
     @api.multi
     def convert_opportunity(self, partner_id, user_ids=False, team_id=False):
+        partner_model = self.env['res.partner']
+        family_model = self.env['res.partner.family']
         res = super(CrmLead, self).convert_opportunity(
             partner_id, user_ids=user_ids, team_id=team_id)
         for lead in self:
             for future_student in lead.future_student_ids.filtered(
                     lambda c: not c.child_id):
-                new_student = self.env['res.partner'].create(
+                new_student = partner_model.create(
                     self.catch_new_student_vals(future_student))
-                future_student.child_id = new_student.id
+                future_student.child_id = new_student
+                family_model.create({
+                    'child2_id': new_student.id,
+                    'responsible_id': lead.partner_id.id,
+                    'family_id': lead.partner_id.commercial_partner_id.id,
+                    'relation': 'progenitor',
+                })
         return res
 
     def catch_new_student_vals(self, future_student):
-        vals = {
-            'name': future_student.name,
+        partner_dict = self._create_lead_partner_data(
+            future_student.name, False,
+            parent_id=self.partner_id.commercial_partner_id.id)
+        partner_dict.update({
             'birthdate_date': future_student.birth_date,
             'gender': future_student.gender,
             'educational_category': 'other',
-            # 'year_birth': future_student.year_birth
-        }
-        if self.partner_id.street:
-            vals['street'] = self.partner_id.street
-        if self.partner_id.street2:
-            vals['street2'] = self.partner_id.street2
-        if self.partner_id.city:
-            vals['city'] = self.partner_id.city
-        if self.partner_id.state_id:
-            vals['state_id'] = self.partner_id.state_id.id
-        if self.partner_id.zip:
-            vals['zip'] = self.partner_id.zip
-        if self.partner_id.country_id:
-            vals['country_id'] = self.partner_id.country_id.id
-        if self.partner_id.phone:
-            vals['phone'] = self.partner_id.phone
-        if self.partner_id.mobile:
-            vals['mobile'] = self.partner_id.mobile
-        if self.partner_id.email:
-            vals['email'] = self.partner_id.email
-        return vals
+        })
+        return partner_dict
 
 
 class CrmLeadFutureStudent(models.Model):
@@ -75,11 +69,12 @@ class CrmLeadFutureStudent(models.Model):
             allfields=['gender'])['gender']['selection']
 
     crm_lead_id = fields.Many2one(
-        comodel_name="crm.lead", string='Lead', required=True)
+        comodel_name="crm.lead", string='Lead', required=True,
+        ondelete='cascade')
     child_id = fields.Many2one(
         comodel_name='res.partner', string='Child',
         domain=[('educational_category', 'in', ('student', 'other'))])
-    name = fields.Char(string='Child name')
+    name = fields.Char(string='Child name', required=True)
     birth_date = fields.Date(string='Birth date')
     year_birth = fields.Integer(
         string='Year of birth', compute='_compute_year_birth')
@@ -91,7 +86,10 @@ class CrmLeadFutureStudent(models.Model):
         comodel_name='res.partner', string='School',
         domain=[('educational_category', '=', 'school')])
     academic_year_id = fields.Many2one(
-        comodel_name='education.academic_year', string='Academic year')
+        comodel_name='education.academic_year', string='Academic year',
+        domain=lambda s: ['|',
+                          ('date_end', '>', fields.Date.context_today(s)),
+                          ('date_end', '=', False)])
 
     @api.onchange('child_id')
     def onchange_child_id(self):
