@@ -1,6 +1,7 @@
 # Copyright 2019 Alfredo de la fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class CrmTeam(models.Model):
@@ -17,6 +18,14 @@ class CrmLead(models.Model):
     future_student_ids = fields.One2many(
         comodel_name='crm.lead.future.student', inverse_name='crm_lead_id',
         string='Future students')
+
+    @api.model
+    def create(self, values):
+        if values.get('type') == 'opportunity':
+            raise ValidationError(
+                _('You aren\'t allowed to create opportunities, you must '
+                  'start from lead'))
+        return super(CrmLead, self).create(values)
 
     @api.multi
     def _create_lead_partner_data(self, name, is_company, parent_id=False):
@@ -87,9 +96,7 @@ class CrmLeadFutureStudent(models.Model):
         domain=[('educational_category', '=', 'school')])
     academic_year_id = fields.Many2one(
         comodel_name='education.academic_year', string='Academic year',
-        domain=lambda s: ['|',
-                          ('date_end', '>', fields.Date.context_today(s)),
-                          ('date_end', '=', False)])
+        domain=lambda s: [('date_end', '>', fields.Date.context_today(s))])
 
     @api.onchange('child_id')
     def onchange_child_id(self):
