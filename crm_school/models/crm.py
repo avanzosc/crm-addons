@@ -21,7 +21,9 @@ class CrmLead(models.Model):
 
     @api.model
     def create(self, values):
-        if values.get('type') == 'opportunity':
+        if (values.get('type') == 'opportunity' or
+                ('type' not in values and self.env.context.get(
+                    'default_type') == 'opportunity')):
             raise ValidationError(
                 _('You aren\'t allowed to create opportunities, you must '
                   'start from lead'))
