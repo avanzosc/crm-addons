@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="crm_team_view_form_inh_crm_school" model="ir.ui.view">
-        <field name="name">crm.team.view.form.inh.crm.school</field>
         <field name="model">crm.team</field>
         <field name="inherit_id" ref="sales_team.crm_team_view_form" />
         <field name="arch" type="xml">
             <field name="user_id" position="after">
-                <field name="school_id"
-                       domain="[('school_id.educational_category','=','school')]"/>
+                <field name="school_id" options="{'no_create': True}" />
             </field>
         </field>
     </record>
     <record id="crm_team_view_tree_inh_crm_school" model="ir.ui.view">
-        <field name="name">crm.team.view.tree.inh.crm.school</field>
         <field name="model">crm.team</field>
         <field name="inherit_id" ref="sales_team.crm_team_view_tree" />
         <field name="arch" type="xml">
@@ -22,7 +19,6 @@
         </field>
     </record>
     <record id="crm_team_salesteams_search_inh_crm_school" model="ir.ui.view">
-        <field name="name">crm.team.salesteams.search.inh.crm.school</field>
         <field name="model">crm.team</field>
         <field name="inherit_id" ref="sales_team.crm_team_salesteams_search" />
         <field name="arch" type="xml">
@@ -30,7 +26,8 @@
                 <field name="school_id" />
             </field>
             <filter name="team_leader" position="after">
-                <filter string="School" name="group_school" domain="[]" context="{'group_by':'school_id'}"/>
+                <filter string="School" name="group_school"
+                        domain="[]" context="{'group_by':'school_id'}"/>
             </filter>
         </field>
     </record>

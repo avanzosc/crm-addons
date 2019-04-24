@@ -5,7 +5,6 @@ from odoo.exceptions import ValidationError
 
 
 class CrmLead2OpportunityPartner(models.TransientModel):
-
     _inherit = 'crm.lead2opportunity.partner'
 
     @api.multi
@@ -22,4 +21,4 @@ class CrmLead2OpportunityPartner(models.TransientModel):
     @api.onchange('team_id')
     def _onchange_team_id(self):
         if self.team_id and self.team_id.user_id:
-            self.user_id = self.team_id.user_id.id
+            self.user_id = self.team_id.user_id
