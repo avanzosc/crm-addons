@@ -36,8 +36,12 @@ class TestCrmSchool(TransactionCase):
 
     def test_crm_school(self):
         self.lead = self.lead_model.create(self.lead_vals)
+        field_list = ['name', 'user_id', 'team_id', 'action']
         convert_vals = {
             'name': 'convert'}
+        with self.assertRaises(ValidationError):
+            self.wiz_model.with_context(
+                active_id=self.lead.id).default_get(field_list)
         convert = self.wiz_model.create(convert_vals)
         with self.assertRaises(ValidationError):
             convert.with_context(active_ids=[self.lead.id]).action_apply()
