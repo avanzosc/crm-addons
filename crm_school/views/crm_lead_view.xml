@@ -1,53 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="crm_case_form_view_oppor_inh_crm_school" model="ir.ui.view">
-        <field name="name">crm.case.form.view.oppor.inh.crm.school</field>
-        <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
-        <field name="arch" type="xml">
-            <page name="lead" position="after">
-                <page name="future_students" string="Future students">
-                    <group cospan="4">
-                        <field name="future_student_ids" colspan="4" nolabel="1" >
-                            <tree string="Future students" editable="top">
-                                <field name="child_id"
-                                       domain="[('educational_category','in',('student',))]"/>
-                                <field name="name" required="1" />
-                                <field name="birth_date" required="1" />
-                                <field name="gender" required="1" />
-                                <field name="school_id" domain="[('educational_category','=',('school'))]" required="1"/>
-                                <field name="course_id" required="1" />
-                                <field name="academic_year_id" />
-                            </tree>
-                        </field>
-                    </group>
-                </page>
-            </page>
-        </field>
-    </record>
     <record id="crm_case_form_view_leads_inh_crm_school" model="ir.ui.view">
-        <field name="name">crm.case.form_view.leads.inh.crm.school</field>
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
         <field name="arch" type="xml">
-            <page name="extra" position="after">
+            <field name="partner_name" position="attributes">
+                <attribute name="string">Family Name</attribute>
+            </field>
+            <xpath expr="//field[@name='description']/.." position="before">
                 <page name="future_students" string="Future students">
                     <group cospan="4">
                         <field name="future_student_ids" colspan="4" nolabel="1" >
                             <tree string="Future students" editable="top">
-                                <field name="child_id"
-                                       domain="[('educational_category','in',('student',))]"/>
+                                <field name="child_id" />
                                 <field name="name" required="1" />
                                 <field name="birth_date" required="1" />
                                 <field name="gender" required="1" />
-                                <field name="school_id" domain="[('educational_category','=',('school'))]" required="1"/>
-                                <field name="course_id" required="1" />
-                                <field name="academic_year_id" />
+                                <field name="school_id" required="1"
+                                       options="{'no_create': True, 'no_open': True}"/>
+                                <field name="course_id" required="1"
+                                       options="{'no_create': True, 'no_open': True}" />
+                                <field name="academic_year_id"
+                                       options="{'no_create': True, 'no_open': True}" />
                             </tree>
                         </field>
                     </group>
                 </page>
-            </page>
+            </xpath>
         </field>
     </record>
     <record id="crm_case_form_view_oppor_inh_crm_school" model="ir.ui.view">
@@ -55,13 +34,12 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
-            <page name="lead" position="after">
+            <xpath expr="//field[@name='description']/.." position="before">
                 <page name="future_students" string="Future students">
                     <group cospan="4">
                         <field name="future_student_ids" colspan="4" nolabel="1">
                             <tree string="Future students" editable="top">
-                                <field name="child_id"
-                                       domain="[('educational_category','in',('student',))]"/>
+                                <field name="child_id" />
                                 <field name="name" required="1" />
                                 <field name="birth_date" required="1" />
                                 <field name="gender" required="1" />
@@ -73,12 +51,11 @@
                                 <sheet>
                                     <group name="head" colspan="4">
                                         <group>
-                                            <field name="child_id"
-                                                   domain="[('educational_category','in',('student',))]"/>
+                                            <field name="child_id" />
                                             <field name="name" required="1" />
                                             <field name="course_id" required="1" />
                                             <field name="gender" required="1" />
-                                            <field name="school_id" domain="[('educational_category','=',('school'))]" required="1"/>
+                                            <field name="school_id" required="1"/>
                                             <field name="academic_year_id" />
                                         </group>
                                         <group>
@@ -91,7 +68,7 @@
                         </field>
                     </group>
                 </page>
-            </page>
+            </xpath>
         </field>
     </record>
 </odoo>

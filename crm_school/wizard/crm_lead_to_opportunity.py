@@ -5,8 +5,17 @@ from odoo.exceptions import ValidationError
 
 
 class CrmLead2OpportunityPartner(models.TransientModel):
-
     _inherit = 'crm.lead2opportunity.partner'
+
+    @api.model
+    def default_get(self, fields):
+        result = super(CrmLead2OpportunityPartner, self).default_get(fields)
+        if self._context.get('active_id'):
+            lead = self.env['crm.lead'].browse(self._context['active_id'])
+            if not lead.future_student_ids:
+                raise ValidationError(
+                    _('There must be at least one future student.'))
+        return result
 
     @api.multi
     def action_apply(self):
@@ -22,4 +31,4 @@ class CrmLead2OpportunityPartner(models.TransientModel):
     @api.onchange('team_id')
     def _onchange_team_id(self):
         if self.team_id and self.team_id.user_id:
-            self.user_id = self.team_id.user_id.id
+            self.user_id = self.team_id.user_id

@@ -10,9 +10,9 @@
                 <field name="name" />
                 <field name="birth_date" />
                 <field name="gender" />
-                <field name="school_id" />
-                <field name="course_id" />
-                <field name="academic_year_id" />
+                <field name="school_id" options="{'no_create': True}" />
+                <field name="course_id" options="{'no_create': True}" />
+                <field name="academic_year_id" options="{'no_create': True}" />
             </tree>
         </field>
     </record>
@@ -57,10 +57,12 @@
                            <field name="child_id"
                                   domain="[('educational_category','in',('student','other'))]"/>
                            <field name="name" required="1" />
-                           <field name="course_id" required="1" />
+                           <field name="course_id" required="1"
+                                  options="{'no_create': True}" />
                            <field name="gender" required="1" />
-                           <field name="school_id" domain="[('educational_category','=',('school'))]" required="1" />
-                           <field name="academic_year_id" />
+                           <field name="school_id" required="1"
+                                  options="{'no_create': True}" />
+                           <field name="academic_year_id" options="{'no_create': True}" />
                        </group>
                        <group>
                            <field name="birth_date" required="1" />

@@ -18,9 +18,11 @@ class TestCrmSchool(TransactionCase):
             [('code', 'like', 'US')], limit=1)
         state = self.env['res.country.state'].search(
             [('country_id', '=', country_us.id)], limit=1)
-        lead_vals = {
+        self.lead_model = self.env['crm.lead']
+        self.lead_vals = {
             'name': 'Lead for test crm_school',
             'partner_name': 'Partner for test crm_school',
+            'contact_name': 'Contact for test',
             'street': 'aaaaa',
             'street2': 'bbbbb',
             'city': 'Azkotitia',
@@ -29,12 +31,17 @@ class TestCrmSchool(TransactionCase):
             'country_id': country_us.id,
             'phone': '943943943',
             'mobile': '636636636',
-            'email_from': 'test@avanzosc.es'}
-        self.lead = self.env['crm.lead'].create(lead_vals)
+            'email_from': 'test@avanzosc.es',
+        }
 
-    def test_crm_scholl(self):
+    def test_crm_school(self):
+        self.lead = self.lead_model.create(self.lead_vals)
+        field_list = ['name', 'user_id', 'team_id', 'action']
         convert_vals = {
             'name': 'convert'}
+        with self.assertRaises(ValidationError):
+            self.wiz_model.with_context(
+                active_id=self.lead.id).default_get(field_list)
         convert = self.wiz_model.create(convert_vals)
         with self.assertRaises(ValidationError):
             convert.with_context(active_ids=[self.lead.id]).action_apply()
@@ -42,14 +49,25 @@ class TestCrmSchool(TransactionCase):
             'name': 'Student for test crm_school',
             'birth_date': '2015-06-30',
             'gender': 'male',
-            'school_id': self.school.id}
-        self.lead.future_student_ids = [(0, 0, student_vals)]
-        self.assertEqual(self.lead.future_student_ids[0].year_birth,
-                         2015)
+            'school_id': self.school.id,
+        }
+        self.lead.write({
+            'future_student_ids': [(0, 0, student_vals)],
+        })
+        self.assertEqual(
+            self.lead.future_student_ids[:1].year_birth, 2015)
         convert.with_context(active_ids=[self.lead.id]).action_apply()
-        self.assertEqual(self.lead.partner_id.educational_category,
-                         'family')
-        cond = [('name', '=', 'Student for test crm_school')]
-        student = self.partner_model.search(cond, limit=1)
+        student = self.lead.future_student_ids[:1].child_id
+        self.assertTrue(student)
+        self.assertEqual(
+            self.lead.partner_id.educational_category, 'progenitor')
+        self.assertEqual(
+            self.lead.partner_id.commercial_partner_id.educational_category,
+            'family')
         self.assertEqual(student.educational_category, 'other')
         self.assertEqual(student.year_birth, 2015)
+
+    def test_crm_opportunity_blocked(self):
+        with self.assertRaises(ValidationError):
+            self.lead_model.with_context(default_type='opportunity').create(
+                self.lead_vals)

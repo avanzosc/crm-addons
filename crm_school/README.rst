@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ==========
-Crm school
+CRM school
 ==========
 
 * In leads new object "Future student from leads". 
