@@ -18,6 +18,12 @@ class CrmLead(models.Model):
     future_student_ids = fields.One2many(
         comodel_name='crm.lead.future.student', inverse_name='crm_lead_id',
         string='Future students')
+    educational_category = fields.Selection(
+        string='Educational category',
+        related='partner_id.educational_category')
+    family_ids = fields.One2many(
+        comodel_name='res.partner.family', inverse_name='family_id',
+        string='Families', related='partner_id.family_ids')
 
     @api.model
     def create(self, values):

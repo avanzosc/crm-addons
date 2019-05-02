@@ -4,6 +4,9 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
         <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="educational_category" />
+            </field>
             <field name="partner_name" position="attributes">
                 <attribute name="string">Family Name</attribute>
             </field>
@@ -26,6 +29,20 @@
                         </field>
                     </group>
                 </page>
+                <page name="family" string='Families' attrs="{'invisible': [('educational_category', '!=', 'family')]}">
+                    <field name="family_ids" nolabel="1"
+                            context="{'default_family_id': partner_id}" >
+                        <tree editable="top">
+                            <field name="child2_id" />
+                            <field name="child2_educational_category" />
+                            <field name="responsible_id"  />
+                            <field name="responsible_educational_category" />
+                            <field name="responsible_old_student" />
+                            <field name="family_id" invisible="1" />
+                            <field name="relation" />
+                        </tree>
+                    </field>
+                </page>
             </xpath>
         </field>
     </record>
@@ -34,6 +51,9 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="educational_category" />
+            </field>
             <xpath expr="//field[@name='description']/.." position="before">
                 <page name="future_students" string="Future students">
                     <group cospan="4">
@@ -68,6 +88,23 @@
                         </field>
                     </group>
                 </page>
+                <page name="family" string='Families' attrs="{'invisible': [('educational_category', '!=', 'family')]}" >
+                    <field name="family_ids" nolabel="1"
+                            context="{'default_family_id': partner_id}">
+                        <tree editable="top">
+                            <field name="child2_id" />
+                            <field name="child2_educational_category" />
+                            <field name="responsible_id"  />
+                            <field name="responsible_educational_category" />
+                            <field name="responsible_old_student" />
+                            <field name="family_id" invisible="1" />
+                            <field name="relation" />
+                        </tree>
+                    </field>
+                </page>
+                
+                
+                
             </xpath>
         </field>
     </record>
