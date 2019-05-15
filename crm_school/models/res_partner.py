@@ -16,3 +16,10 @@ class ResPartner(models.Model):
     def _compute_year_birth(self):
         for res in self.filtered(lambda c: c.birthdate_date):
             res.year_birth = str2date(res.birthdate_date).year
+
+
+class ResPartnerFamily(models.Model):
+    _inherit = 'res.partner.family'
+
+    crm_lead_id = fields.Many2one(
+        string='Lead', comodel_name='crm.lead')

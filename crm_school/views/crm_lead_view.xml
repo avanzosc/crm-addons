@@ -4,11 +4,15 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
         <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
             <field name="partner_id" position="after">
                 <field name="educational_category" />
             </field>
             <field name="partner_name" position="attributes">
                 <attribute name="string">Family Name</attribute>
+                <attribute name="required">1</attribute>
             </field>
             <xpath expr="//field[@name='description']/.." position="before">
                 <page name="future_students" string="Future students">
@@ -33,7 +37,7 @@
                     <field name="family_ids" nolabel="1"
                             context="{'default_family_id': partner_id}" >
                         <tree editable="top">
-                            <field name="child2_id" />
+                            <field name="child2_id" invisible="1"/>
                             <field name="child2_educational_category" />
                             <field name="responsible_id"  />
                             <field name="responsible_educational_category" />
@@ -51,6 +55,9 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
             <field name="partner_id" position="after">
                 <field name="educational_category" />
             </field>
@@ -92,7 +99,7 @@
                     <field name="family_ids" nolabel="1"
                             context="{'default_family_id': partner_id}">
                         <tree editable="top">
-                            <field name="child2_id" />
+                            <field name="child2_id" invisible="1"/>
                             <field name="child2_educational_category" />
                             <field name="responsible_id"  />
                             <field name="responsible_educational_category" />
@@ -101,10 +108,26 @@
                             <field name="relation" />
                         </tree>
                     </field>
+                    <field name="allowed_student_ids" />
+                    <field name="payer_ids" >
+                        <tree editable="top"
+                              decoration-danger="payer and not is_company">
+                            <field name="child2_id" domain="[('id','in',parent.allowed_student_ids)]" />
+                            <field name="child2_educational_category" invisible="1"/>
+                            <field name="responsible_id" />
+                            <field name="responsible_educational_category" />
+                            <field name="responsible_old_student" />
+                            <field name="is_company" invisible="True"/>
+                            <field name="family_id" />
+                            <field name="relation" />
+                            <field name="payer" />
+                            <field name="payment_percentage"
+                                   sum="Total Payment Percentage"/>
+                            <field name="payment_mode_id" />
+                            <field name="bank_id" />
+                        </tree>
+                    </field>
                 </page>
-                
-                
-                
             </xpath>
         </field>
     </record>
