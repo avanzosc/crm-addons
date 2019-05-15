@@ -24,9 +24,11 @@ class CrmLead(models.Model):
     family_ids = fields.One2many(
         comodel_name='res.partner.family', inverse_name='family_id',
         string='Families', related='partner_id.family_ids')
+    name = fields.Char(required=False)
 
     @api.model
     def create(self, values):
+        values['name'] = values.get('partner_name')
         if (values.get('type') == 'opportunity' or
                 ('type' not in values and self.env.context.get(
                     'default_type') == 'opportunity')):
@@ -34,6 +36,19 @@ class CrmLead(models.Model):
                 _('You aren\'t allowed to create opportunities, you must '
                   'start from lead'))
         return super(CrmLead, self).create(values)
+
+    @api.multi
+    def write(self, vals):
+        if (vals.get('partner_id', False) and vals.get('type', False) and
+                vals.get('type') == 'opportunity'):
+            cond = [('name', '=', vals.get('name'))]
+            partner = self.env['res.partner'].search(cond)
+            if len(partner) > 2:
+                raise ValidationError(
+                    _('That family name already exists'))
+            if len(partner) == 1 and vals.get('partner_id') != partner.id:
+                vals['partner_id'] = partner.id
+        return super(CrmLead, self).write(vals)
 
     @api.multi
     def _create_lead_partner_data(self, name, is_company, parent_id=False):
