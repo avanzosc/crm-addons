@@ -15,6 +15,13 @@ class CrmTeam(models.Model):
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
+    @api.multi
+    def _compute_allowed_student_ids(self):
+        for lead in self.filtered(lambda c: c.future_student_ids):
+            students = lead.future_student_ids.mapped('child_id')
+            if students:
+                lead.allowed_student_ids = [(6, 0, students.ids)]
+
     future_student_ids = fields.One2many(
         comodel_name='crm.lead.future.student', inverse_name='crm_lead_id',
         string='Future students')
@@ -24,6 +31,13 @@ class CrmLead(models.Model):
     family_ids = fields.One2many(
         comodel_name='res.partner.family', inverse_name='family_id',
         string='Families', related='partner_id.family_ids')
+    name = fields.Char(
+        required=False, related='partner_id.name', store=True)
+    allowed_student_ids = fields.Many2many(
+        comodel_name='res.partner', compute='_compute_allowed_student_ids')
+    payer_ids = fields.One2many(
+        comodel_name='res.partner.family', inverse_name='crm_lead_id',
+        string='Payers')
 
     @api.model
     def create(self, values):
@@ -57,9 +71,10 @@ class CrmLead(models.Model):
                     self.catch_new_student_vals(future_student))
                 future_student.child_id = new_student
                 family_model.create({
+                    'crm_lead_id': lead.id,
                     'child2_id': new_student.id,
-                    'responsible_id': lead.partner_id.id,
-                    'family_id': lead.partner_id.commercial_partner_id.id,
+                    'responsible_id': lead.partner_id.commercial_partner_id.id,
+                    'family_id': lead.partner_id.id,
                     'relation': 'progenitor',
                 })
         return res
@@ -74,6 +89,15 @@ class CrmLead(models.Model):
             'educational_category': 'other',
         })
         return partner_dict
+
+    @api.multi
+    def _convert_opportunity_data(self, customer, team_id=False):
+        res = super(CrmLead, self)._convert_opportunity_data(
+            customer, team_id=team_id)
+        if customer.parent_id:
+            res['partner_id'] = customer.parent_id.id
+            customer.parent_id.commercial_partner_id = customer.id
+        return res
 
 
 class CrmLeadFutureStudent(models.Model):

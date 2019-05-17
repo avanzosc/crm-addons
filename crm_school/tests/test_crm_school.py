@@ -60,12 +60,13 @@ class TestCrmSchool(TransactionCase):
         student = self.lead.future_student_ids[:1].child_id
         self.assertTrue(student)
         self.assertEqual(
-            self.lead.partner_id.educational_category, 'progenitor')
+            self.lead.partner_id.educational_category, 'family')
         self.assertEqual(
             self.lead.partner_id.commercial_partner_id.educational_category,
-            'family')
+            'progenitor')
         self.assertEqual(student.educational_category, 'other')
         self.assertEqual(student.year_birth, 2015)
+        self.assertIn(student.id, self.lead.allowed_student_ids.ids)
 
     def test_crm_opportunity_blocked(self):
         with self.assertRaises(ValidationError):
