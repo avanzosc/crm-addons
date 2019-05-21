@@ -61,9 +61,6 @@ class TestCrmSchool(TransactionCase):
         self.assertTrue(student)
         self.assertEqual(
             self.lead.partner_id.educational_category, 'family')
-        self.assertEqual(
-            self.lead.partner_id.commercial_partner_id.educational_category,
-            'progenitor')
         self.assertEqual(student.educational_category, 'other')
         self.assertEqual(student.year_birth, 2015)
         self.assertIn(student.id, self.lead.allowed_student_ids.ids)
