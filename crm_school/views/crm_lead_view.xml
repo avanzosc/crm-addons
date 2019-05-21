@@ -66,13 +66,13 @@
                     <group cospan="4">
                         <field name="future_student_ids" colspan="4" nolabel="1">
                             <tree string="Future students" editable="top">
-                                <field name="child_id" />
                                 <field name="name" required="1" />
                                 <field name="birth_date" required="1" />
                                 <field name="gender" required="1" />
                                 <field name="school_id" required="1"/>
                                 <field name="course_id" required="1" />
                                 <field name="academic_year_id" />
+                                <field name="child_id" />
                             </tree>
                             <form string="Future student">
                                 <sheet>
