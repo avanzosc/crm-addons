@@ -15,13 +15,6 @@ class CrmTeam(models.Model):
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
-    @api.multi
-    def _compute_allowed_student_ids(self):
-        for lead in self.filtered(lambda c: c.future_student_ids):
-            students = lead.future_student_ids.mapped('child_id')
-            if students:
-                lead.allowed_student_ids = [(6, 0, students.ids)]
-
     future_student_ids = fields.One2many(
         comodel_name='crm.lead.future.student', inverse_name='crm_lead_id',
         string='Future students')
@@ -38,6 +31,13 @@ class CrmLead(models.Model):
     payer_ids = fields.One2many(
         comodel_name='res.partner.family', inverse_name='crm_lead_id',
         string='Payers')
+
+    @api.depends('future_student_ids', 'future_student_ids.child_id')
+    def _compute_allowed_student_ids(self):
+        for lead in self.filtered(lambda c: c.future_student_ids):
+            students = lead.mapped('future_student_ids.child_id')
+            if students:
+                lead.allowed_student_ids = [(6, 0, students.ids)]
 
     @api.model
     def create(self, values):
@@ -73,7 +73,7 @@ class CrmLead(models.Model):
                 family_model.create({
                     'crm_lead_id': lead.id,
                     'child2_id': new_student.id,
-                    'responsible_id': lead.partner_id.commercial_partner_id.id,
+                    'responsible_id': partner_id,
                     'family_id': lead.partner_id.id,
                     'relation': 'progenitor',
                 })
@@ -82,7 +82,7 @@ class CrmLead(models.Model):
     def catch_new_student_vals(self, future_student):
         partner_dict = self._create_lead_partner_data(
             future_student.name, False,
-            parent_id=self.partner_id.commercial_partner_id.id)
+            parent_id=self.partner_id.id)
         partner_dict.update({
             'birthdate_date': future_student.birth_date,
             'gender': future_student.gender,
@@ -96,7 +96,6 @@ class CrmLead(models.Model):
             customer, team_id=team_id)
         if customer.parent_id:
             res['partner_id'] = customer.parent_id.id
-            customer.parent_id.commercial_partner_id = customer.id
         return res
 
 

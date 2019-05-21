@@ -34,10 +34,10 @@
                     </group>
                 </page>
                 <page name="family" string='Families' attrs="{'invisible': [('educational_category', '!=', 'family')]}">
-                    <field name="family_ids" nolabel="1"
+                    <field name="family_ids" nolabel="1" readonly="True"
                             context="{'default_family_id': partner_id}" >
-                        <tree editable="top">
-                            <field name="child2_id" invisible="1"/>
+                        <tree>
+                            <field name="child2_id" />
                             <field name="child2_educational_category" />
                             <field name="responsible_id"  />
                             <field name="responsible_educational_category" />
@@ -66,13 +66,13 @@
                     <group cospan="4">
                         <field name="future_student_ids" colspan="4" nolabel="1">
                             <tree string="Future students" editable="top">
-                                <field name="child_id" />
                                 <field name="name" required="1" />
                                 <field name="birth_date" required="1" />
                                 <field name="gender" required="1" />
                                 <field name="school_id" required="1"/>
                                 <field name="course_id" required="1" />
                                 <field name="academic_year_id" />
+                                <field name="child_id" />
                             </tree>
                             <form string="Future student">
                                 <sheet>
@@ -96,29 +96,38 @@
                     </group>
                 </page>
                 <page name="family" string='Families' attrs="{'invisible': [('educational_category', '!=', 'family')]}" >
+                    <field name="allowed_student_ids" invisible="True" />
+                    <field name="payer_ids" 
+                           context="{'default_family_id': partner_id}">
+                        <tree editable="top"
+                              decoration-danger="payer and not is_company">
+                            <field name="child2_id" domain="[('id','in',parent.allowed_student_ids)]"
+                                   options="{'no_create': True, 'no_open': True}"/>
+                            <field name="child2_educational_category" />
+                            <field name="responsible_id"
+                                   options="{'no_create': True, 'no_open': True}" />
+                            <field name="responsible_educational_category" />
+                            <field name="responsible_old_student" />
+                            <field name="is_company" invisible="True" />
+                            <field name="family_id" invisible="True" />
+                            <field name="relation" />
+                            <field name="payer" />
+                            <field name="payment_percentage"
+                                   sum="Total Payment Percentage"/>
+                            <field name="payment_mode_id" />
+                            <field name="bank_id" />
+                        </tree>
+                    </field>
                     <field name="family_ids" nolabel="1"
                             context="{'default_family_id': partner_id}">
                         <tree editable="top">
-                            <field name="child2_id" invisible="1"/>
+                            <field name="child2_id" />
                             <field name="child2_educational_category" />
-                            <field name="responsible_id"  />
-                            <field name="responsible_educational_category" />
-                            <field name="responsible_old_student" />
-                            <field name="family_id" invisible="1" />
-                            <field name="relation" />
-                        </tree>
-                    </field>
-                    <field name="allowed_student_ids" />
-                    <field name="payer_ids" >
-                        <tree editable="top"
-                              decoration-danger="payer and not is_company">
-                            <field name="child2_id" domain="[('id','in',parent.allowed_student_ids)]" />
-                            <field name="child2_educational_category" invisible="1"/>
                             <field name="responsible_id" />
                             <field name="responsible_educational_category" />
                             <field name="responsible_old_student" />
-                            <field name="is_company" invisible="True"/>
-                            <field name="family_id" />
+                            <field name="is_company" invisible="True" />
+                            <field name="family_id" invisible="1" />
                             <field name="relation" />
                             <field name="payer" />
                             <field name="payment_percentage"
