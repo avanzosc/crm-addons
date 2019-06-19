@@ -23,9 +23,9 @@ class CrmLead2OpportunityPartner(models.TransientModel):
         if self.name != 'merge':
             for lead in lead_obj.browse(self._context.get('active_ids', [])):
                 if not lead.future_student_ids:
-                    message = _(u"You must define a future student in the "
-                                "initiative: {}.").format(lead.name)
-                    raise ValidationError(message)
+                    raise ValidationError(
+                        _('You must define a future student in the lead: {}.'
+                          ).format(lead.name))
         return super(CrmLead2OpportunityPartner, self).action_apply()
 
     @api.onchange('team_id')

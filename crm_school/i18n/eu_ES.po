@@ -19,63 +19,63 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__academic_year_id
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Academic year"
-msgstr "Año académico"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__allowed_student_ids
 msgid "Allowed Student"
-msgstr "Alumno permitido"
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_tree_view
 msgid "Associations and federations"
-msgstr "Asociaciones y federaciones"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__birth_date
 msgid "Birth date"
-msgstr "Fecha nacimiento"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__child_id
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Child"
-msgstr "Hijo"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__name
 msgid "Child name"
-msgstr "Nombre niño"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_res_partner
 msgid "Contact"
-msgstr "Contacto"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_crm_lead2opportunity_partner
 msgid "Convert Lead to Opportunity (not in mass)"
-msgstr "Convertir Iniciativa en Oportunidad (sin ser en masa)"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Nork sortua"
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Izena erakutsi"
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__educational_category
 msgid "Educational category"
-msgstr "Categoría educativa"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__family_ids
@@ -83,46 +83,46 @@ msgstr "Categoría educativa"
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead2opportunity_partner_view_form
 msgid "Families"
-msgstr "Familias"
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead2opportunity_partner_view_form
 msgid "Family"
-msgstr "Familia"
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_leads_inh_crm_school
 msgid "Family Name"
-msgstr "Nombre familia"
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_form_view
 msgid "Future student"
-msgstr "Futuro estudiante"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_crm_lead_future_student
 msgid "Future student from leads"
-msgstr "Futuro estudiante desde iniciativa"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__future_student_ids
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_leads_inh_crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
 msgid "Future students"
-msgstr "Futuros estudiantes"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__gender
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Gender"
-msgstr "Género"
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__id
@@ -133,59 +133,59 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__course_id
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Initial school course"
-msgstr "Curso escolar inicial"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student____last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__crm_lead_id
 #: model:ir.model.fields,field_description:crm_school.field_res_partner_family__crm_lead_id
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Lead"
-msgstr "Iniciativa"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr "Iniciativa/Oportunidad"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__name
 msgid "Opportunity"
-msgstr "Oportunidad"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_res_partner_family
 msgid "Partner family."
-msgstr "Empresa familia."
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__payer_ids
 msgid "Payers"
-msgstr "Pagadores"
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_leads_inh_crm_school
 msgid "Previous Family"
-msgstr "Familia existente"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_crm_team
 msgid "Sales Channels"
-msgstr "Canales de Ventas"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__school_id
@@ -193,18 +193,18 @@ msgstr "Canales de Ventas"
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_team_salesteams_search_inh_crm_school
 msgid "School"
-msgstr "Colegio"
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Search future students"
-msgstr "Buscar futuros estudiantes"
+msgstr ""
 
 #. module: crm_school
 #: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:17
 #, python-format
 msgid "There must be at least one future student."
-msgstr "Debe haber al menos un futuro estudiante."
+msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
@@ -216,17 +216,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_school.field_res_partner__year_birth
 #: model:ir.model.fields,field_description:crm_school.field_res_users__year_birth
 msgid "Year of birth"
-msgstr "Año nacimiento"
+msgstr ""
 
 #. module: crm_school
 #: code:addons/crm_school/models/crm.py:48
 #, python-format
 msgid "You aren't allowed to create opportunities, you must start from lead"
-msgstr "No puedes crear oportunidades, debes comenzar desde iniciativas"
+msgstr ""
 
 #. module: crm_school
 #: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:27
 #, python-format
 msgid "You must define a future student in the lead: {}."
-msgstr "Debe definir un futuro estudiante en la inciativa: {}"
+msgstr ""
 

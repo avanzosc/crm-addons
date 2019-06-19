@@ -10,6 +10,10 @@
             <field name="partner_id" position="after">
                 <field name="educational_category" />
             </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="string">Previous Family</attribute>
+                <attribute name="domain">[('educational_category', '=', 'family')]</attribute>
+            </field>
             <field name="partner_name" position="attributes">
                 <attribute name="string">Family Name</attribute>
                 <attribute name="required">1</attribute>
@@ -51,7 +55,6 @@
         </field>
     </record>
     <record id="crm_case_form_view_oppor_inh_crm_school" model="ir.ui.view">
-        <field name="name">crm.case.form.view.oppor.inh.crm.school</field>
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
@@ -104,8 +107,8 @@
                             <field name="child2_id" domain="[('id','in',parent.allowed_student_ids)]"
                                    options="{'no_create': True, 'no_open': True}"/>
                             <field name="child2_educational_category" />
-                            <field name="responsible_id"
-                                   options="{'no_create': True, 'no_open': True}" />
+                            <field name="responsible_id" options="{'no_open': True}"
+                                   context="{'default_educational_category': 'progenitor', 'default_parent_id': parent.partner_id}"/>
                             <field name="responsible_educational_category" />
                             <field name="responsible_old_student" />
                             <field name="is_company" invisible="True" />
