@@ -105,9 +105,9 @@
                         <tree editable="top"
                               decoration-danger="payer and not is_company">
                             <field name="child2_id" domain="[('id','in',parent.allowed_student_ids)]"
-                                   options="{'no_create': True, 'no_open': True}"/>
+                                   options="{'no_create': True}"/>
                             <field name="child2_educational_category" />
-                            <field name="responsible_id" options="{'no_open': True}"
+                            <field name="responsible_id"
                                    context="{'default_educational_category': 'progenitor', 'default_parent_id': parent.partner_id}"/>
                             <field name="responsible_educational_category" />
                             <field name="responsible_old_student" />
