@@ -4,6 +4,7 @@
 from odoo import api, fields, models
 from odoo.models import expression
 from odoo.tools.safe_eval import safe_eval
+import datetime
 
 
 class CrmClaim(models.Model):
@@ -11,9 +12,10 @@ class CrmClaim(models.Model):
 
     analytic_account_id = fields.Many2one(
         comodel_name='account.analytic.account', string='Analytic Account')
-    analytic_amount = fields.Monetary(compute='_compute_analytic_amount')
+    analytic_amount = fields.Monetary(
+        string='Amount', compute='_compute_analytic_amount')
     currency_id = fields.Many2one(
-        related="company_id.currency_id", string="Currency", readonly=True,
+        related='company_id.currency_id', string='Currency', readonly=True,
         store=True, compute_sudo=True)
 
     @api.multi
@@ -28,13 +30,8 @@ class CrmClaim(models.Model):
         self.ensure_one()
         action = self.env.ref('analytic.account_analytic_line_action_entries')
         action_dict = action.read()[0] if action else {}
-        try:
-            action_dict['context'] = safe_eval(
-                action_dict.get('context', '{}'))
-        except Exception:
-            # When analytic_enterprise is installed safe_eval crashes,
-            # this avoids problems.
-            action_dict['context'] = eval(action_dict.get('context', '{}'))
+        action_dict['context'] = safe_eval(
+            action_dict.get('context', '{}'), {'datetime': datetime})
         action_dict['context'].update({
             'search_default_claim_id': self.id,
             'default_claim_id': self.id,

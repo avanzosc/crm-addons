@@ -13,4 +13,5 @@ class AccountAnalyticAccount(models.Model):
             domain = [('analytic_account_id', '=', analytic_account.id)]
             analytic_account.claim_count = claim_obj.search_count(domain)
 
-    claim_count = fields.Integer(compute="_compute_claim_count")
+    claim_count = fields.Integer(
+        string="# Claims", compute="_compute_claim_count")
