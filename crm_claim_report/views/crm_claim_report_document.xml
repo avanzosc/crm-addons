@@ -63,9 +63,9 @@
                             </tr>
                         </table>
                         <div class="col-xs-12" style="border: 1px solid black">
-	                        Supplier sign (specify name and position of the person who signs):
-	                        <div class="col-xs-12" height="200px"/>
-	                        Date:
+                            Supplier sign (specify name and position of the person who signs):
+                            <div class="col-xs-12" height="200px"/>
+                            Date:
                         </div>
                         <hr style="border-top: 2px dotted black"/>
                         </t>
