@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <record id="email_server_tree_view_inh_school" model="ir.ui.view">
+            <field name="inherit_id" ref="fetchmail.view_email_server_tree" />
+            <field name="model">fetchmail.server</field>
+            <field name="arch" type="xml">
+                <field name="date" position="after">
+                    <field name="school_id" />
+                </field>
+            </field>
+        </record>
+        <record id="email_server_search_view_inh_school" model="ir.ui.view">
+            <field name="inherit_id" ref="fetchmail.view_email_server_search" />
+            <field name="model">fetchmail.server</field>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="school_id" />
+                </field>
+                <filter name="ssl" position="after">
+                    <group expand="1" string="Group By">
+                        <filter string="School" name="school_group"
+                                domain="[]" context="{'group_by':'school_id'}"/>
+                    </group>
+                </filter>
+            </field>
+        </record>
+        <record id="email_server_form_view_inh_school" model="ir.ui.view">
+            <field name="inherit_id" ref="fetchmail.view_email_server_form" />
+            <field name="model">fetchmail.server</field>
+            <field name="arch" type="xml">
+                <field name="date" position="after">
+                    <field name="school_id" />
+                </field>
+                <notebook position="inside">
+                    <page string="Claims categories" >
+                        <group name="claims_categories_group" col="4">
+                            <field name="claim_category_ids" nolabel="1" colspan="4"
+                                    context="{'default_mail_server_id':active_id}">
+                                <tree string="Claim Categories">
+                                    <field name="name"/>
+                                    <field name="team_id"/>
+                                    <field name="mail_server_id" invisible="1" />
+                                </tree>
+                                <form string="Claim Categories">
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="team_id"/>
+                                        <field name="mail_server_id" invisible="1" />
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <record id="action_incoming_email_server" model="ir.actions.act_window">
+            <field name="name">Incoming Mail Servers</field>
+            <field name="res_model">fetchmail.server</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fetchmail.view_email_server_tree"/>
+            <field name="search_view_id" ref="fetchmail.view_email_server_search"/>
+        </record>
+        <menuitem id="fetchmail_server_option_view" name="Incoming Mail Servers"
+                action="action_incoming_email_server"
+                parent="school_support_group_view"
+                groups="sales_team.group_sale_manager"/>
+</odoo>
