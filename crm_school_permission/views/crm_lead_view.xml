@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="crm_lead_view_form" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm_school.crm_case_form_view_oppor_inh_crm_school" />
+        <field name="arch" type="xml">
+            <page name="future_students" position="after">
+                <page name="students_permission" string="Permissions">
+                    <field name="permission_ids" readonly="False" />
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
