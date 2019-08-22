@@ -20,6 +20,4 @@ class CrmLead(models.Model):
             partner_dict.update({
                 'lastname': future_student.lastname,
             })
-            if 'name' in partner_dict:
-                del partner_dict['name']
         return partner_dict

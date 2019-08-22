@@ -13,7 +13,7 @@
     <record id="crm_lead_view_form_oppor" model="ir.ui.view">
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm_school.crm_case_form_view_oppor_inh_crm_school" />
-        <field name="priority">50</field>
+        <field name="priority">100</field>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='future_student_ids']/form//field[@name='name']"
                    position="replace">
