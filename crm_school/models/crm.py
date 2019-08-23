@@ -94,7 +94,7 @@ class CrmLead(models.Model):
     def _convert_opportunity_data(self, customer, team_id=False):
         res = super(CrmLead, self)._convert_opportunity_data(
             customer, team_id=team_id)
-        if customer.parent_id:
+        if customer and customer.parent_id:
             res['partner_id'] = customer.parent_id.id
         return res
 

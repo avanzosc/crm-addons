@@ -23,6 +23,7 @@ class TestCrmSchool(TransactionCase):
             'name': 'Lead for test crm_school',
             'partner_name': 'Partner for test crm_school',
             'contact_name': 'Contact for test',
+            'vat': 'X7413642Y',
             'street': 'aaaaa',
             'street2': 'bbbbb',
             'city': 'Azkotitia',
@@ -54,6 +55,9 @@ class TestCrmSchool(TransactionCase):
         self.lead.write({
             'future_student_ids': [(0, 0, student_vals)],
         })
+        convert_vals = self.wiz_model.with_context(
+            active_id=self.lead.id).default_get(field_list)
+        convert = self.wiz_model.create(convert_vals)
         self.assertEqual(
             self.lead.future_student_ids[:1].year_birth, 2015)
         convert.with_context(active_ids=[self.lead.id]).action_apply()
