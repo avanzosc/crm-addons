@@ -34,6 +34,10 @@ class TestCrmSchool(TransactionCase):
             'mobile': '636636636',
             'email_from': 'test@avanzosc.es',
         }
+        self.team = self.env['crm.team'].create({
+            'name': 'Test Team',
+            'user_id': self.env.ref('base.user_admin').id,
+        })
 
     def test_crm_school(self):
         self.lead = self.lead_model.create(self.lead_vals)
@@ -54,10 +58,15 @@ class TestCrmSchool(TransactionCase):
         }
         self.lead.write({
             'future_student_ids': [(0, 0, student_vals)],
+            'team_id': self.team.id,
         })
         convert_vals = self.wiz_model.with_context(
             active_id=self.lead.id).default_get(field_list)
         convert = self.wiz_model.create(convert_vals)
+        self.assertEqual(convert.user_id.id, self.uid)
+        convert._onchange_team_id()
+        self.assertNotEqual(self.team.user_id.id, self.uid)
+        self.assertEqual(convert.user_id, self.team.user_id)
         self.assertEqual(
             self.lead.future_student_ids[:1].year_birth, 2015)
         convert.with_context(active_ids=[self.lead.id]).action_apply()
