@@ -16,6 +16,7 @@
     "depends": [
         "base",
         "crm_claim",
+        "crm_claim_code"
     ],
     "data": [
         "views/crm_claim_view.xml",
