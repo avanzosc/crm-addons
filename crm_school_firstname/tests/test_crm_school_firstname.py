@@ -12,16 +12,27 @@ class TestCrmSchoolFirstname(common.SavepointCase):
     def setUpClass(cls):
         super(TestCrmSchoolFirstname, cls).setUpClass()
         cls.lead_model = cls.env['crm.lead']
+        cls.wiz_model = cls.env['crm.lead2opportunity.partner']
         cls.lastname = 'Family Name'
+        cls.student_name = 'Student Name'
         cls.lead = cls.lead_model.create({
             'name': cls.lastname,
             'partner_name': cls.lastname,
             'contact_name': 'Contact Name',
             'contact_lastname': cls.lastname,
             'future_student_ids': [(0, 0, {
-                'name': 'Student Name',
+                'name': cls.student_name,
                 'lastname': cls.lastname,
             })],
+        })
+        cls.partner = cls.env['res.partner'].create({
+            'name': cls.lastname,
+            'educational_category': 'family',
+        })
+        cls.student = cls.env['res.partner'].create({
+            'firstname': cls.student_name,
+            'lastname': cls.lastname,
+            'parent_id': cls.partner.id,
         })
 
     def test_crm_school_first_name(self):
@@ -53,3 +64,10 @@ class TestCrmSchoolFirstname(common.SavepointCase):
         new_student.onchange_child_id()
         self.assertEqual(new_student.name, new_student.child_id.firstname)
         self.assertEqual(new_student.lastname, new_student.child_id.lastname)
+
+    def test_crm_school_wizard(self):
+        field_list = self.wiz_model.fields_get_keys()
+        convert_vals = self.wiz_model.with_context(
+            active_id=self.lead.id).default_get(field_list)
+        self.assertIn(self.partner.id, convert_vals.get(
+            'possible_partner_ids')[0][2])
