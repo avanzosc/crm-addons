@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_lead2opportunity_partner_view_form" model="ir.ui.view">
+        <field name="model">crm.lead2opportunity.partner</field>
+        <field name="inherit_id" ref="crm.view_crm_lead2opportunity_partner" />
+        <field name="arch" type="xml">
+            <group name="action" position="attributes">
+                <attribute name="string">Families</attribute>
+            </group>
+            <field name="partner_id" position="before">
+                <field name="possible_partner_ids">
+                    <tree>
+                        <field name="display_name" />
+                        <field name="educational_category" />
+                    </tree>
+                </field>
+            </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="string">Family</attribute>
+                <attribute name="domain">[('educational_category', '=',
+                    'family'), ('id', 'in', possible_partner_ids)]</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
