@@ -21,23 +21,15 @@ class CrmLead2OpportunityPartner(models.TransientModel):
             partners = self.env['res.partner']
             if lead.partner_id:  # a partner is set already
                 partners |= lead.partner_id.id
-            # search through the existing partners based on the lead's email
-            if lead.email_from:
-                partners |= partners.search(
-                    [('email', '=', lead.email_from)])
             # search through the existing partners based on the lead's partner
-            # or contact name
             if lead.partner_name:
                 partners |= partners.search([
                     ('name', 'ilike', '%' + lead.partner_name + '%')])
-            if lead.contact_name:
-                contacts = partners.search([
-                    ('name', 'ilike', '%' + lead.contact_name + '%')])
-                partners |= contacts.mapped('commercial_partner_id')
             if lead.vat:
                 contacts = partners.search([
                     ('vat', 'ilike', '%' + lead.vat + '%')])
-                partners |= contacts.mapped('commercial_partner_id')
+                partners |= (contacts.mapped('commercial_partner_id') |
+                             contacts.mapped('parent_id'))
             result.update({
                 'possible_partner_ids': [
                     (6, 0, partners.filtered(
