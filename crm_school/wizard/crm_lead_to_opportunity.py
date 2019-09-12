@@ -20,11 +20,12 @@ class CrmLead2OpportunityPartner(models.TransientModel):
                     _('There must be at least one future student.'))
             partners = self.env['res.partner']
             if lead.partner_id:  # a partner is set already
-                partners |= lead.partner_id.id
+                partners |= lead.partner_id
             # search through the existing partners based on the lead's partner
             if lead.partner_name:
                 partners |= partners.search([
                     ('name', 'ilike', '%' + lead.partner_name + '%')])
+            # search through the existing partners based on the lead's vat
             if lead.vat:
                 contacts = partners.search([
                     ('vat', 'ilike', '%' + lead.vat + '%')])
