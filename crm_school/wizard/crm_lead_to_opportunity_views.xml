@@ -14,6 +14,7 @@
                 <attribute name="string">Family</attribute>
                 <attribute name="domain">[('educational_category', '=', 'family'), ('id', 'in', possible_partner_ids)]</attribute>
                 <attribute name="options">{'no_open': True, 'no_edit': True}</attribute>
+                <attribute name="context">{'search_default_customer': 1, 'show_vat': True, 'hide_progenitors': False}</attribute>
             </field>
         </field>
     </record>
