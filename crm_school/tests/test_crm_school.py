@@ -39,7 +39,7 @@ class TestCrmSchool(common.SavepointCase):
             'email_from': 'test@avanzosc.es',
         }
         cls.family = cls.partner_model.create({
-            'name': cls.lead_vals.get('name'),
+            'name': cls.lead_vals.get('partner_name'),
             'educational_category': 'family',
             'is_company': True,
         })
@@ -94,6 +94,12 @@ class TestCrmSchool(common.SavepointCase):
         self.assertEquals(new_student.child_id.name, new_student.name)
 
     def test_crm_school_partner(self):
+        partner = self.family.copy()
+        partner.write({
+            'educational_category': 'progenitor',
+            'is_company': False,
+            'email': self.lead_vals.get('email_from'),
+        })
         student_vals = {
             'name': 'Student for test crm_school',
             'birth_date': '2015-06-30',
@@ -101,14 +107,22 @@ class TestCrmSchool(common.SavepointCase):
             'school_id': self.school.id,
         }
         self.lead_vals.update({
-            'partner_id': self.family.id,
+            'partner_name': self.family.name,
             'future_student_ids': [(0, 0, student_vals)],
             'team_id': self.team.id,
         })
         self.lead = self.lead_model.create(self.lead_vals)
         field_list = self.wiz_model.fields_get_keys()
         convert_vals = self.wiz_model.with_context(
-            active_id=self.lead.id).default_get(field_list)
+            active_id=self.lead.id, active_model=self.lead._name).default_get(
+            field_list)
+        self.assertEquals(self.family.id, convert_vals.get('partner_id'))
+        self.family.write({
+            'email': self.lead_vals.get('email_from'),
+        })
+        convert_vals = self.wiz_model.with_context(
+            active_id=self.lead.id, active_model=self.lead._name).default_get(
+            field_list)
         self.assertIn(self.family.id,
                       convert_vals.get('possible_partner_ids')[0][2])
 
