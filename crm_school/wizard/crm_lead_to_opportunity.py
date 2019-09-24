@@ -18,25 +18,49 @@ class CrmLead2OpportunityPartner(models.TransientModel):
             if not lead.future_student_ids:
                 raise ValidationError(
                     _('There must be at least one future student.'))
-            partners = self.env['res.partner']
-            if lead.partner_id:  # a partner is set already
-                partners |= lead.partner_id
-            # search through the existing partners based on the lead's partner
-            if lead.partner_name:
-                partners |= partners.search([
-                    ('name', 'ilike', '%' + lead.partner_name + '%')])
-            # search through the existing partners based on the lead's vat
-            if lead.vat:
-                contacts = partners.search([
-                    ('vat', 'ilike', '%' + lead.vat + '%')])
-                partners |= (contacts.mapped('commercial_partner_id') |
-                             contacts.mapped('parent_id'))
+            partners = self._get_possible_partners(lead)
             result.update({
                 'possible_partner_ids': [
-                    (6, 0, partners.filtered(
-                        lambda p: p.educational_category == 'family').ids)],
+                    (6, 0, partners.ids)],
             })
         return result
+
+    @api.model
+    def _find_matching_partner(self):
+        """ Try to find a matching partner regarding the active model data, like
+            the customer's name, email, phone number, etc.
+            :return int partner_id if any, False otherwise
+        """
+        # active model has to be a lead
+        if (self._context.get('active_model') != 'crm.lead' or not
+                self._context.get('active_id')):
+            return False
+        partner_id = super(CrmLead2OpportunityPartner,
+                           self)._find_matching_partner()
+        partner = self.env['res.partner'].browse(partner_id)
+        if partner and not partner.educational_category == 'family':
+            lead = self.env['crm.lead'].browse(self._context['active_id'])
+            possible_partners = self._get_possible_partners(lead)
+            return possible_partners[:1].id
+        return partner_id
+
+    @api.multi
+    def _get_possible_partners(self, lead):
+        partners = self.env['res.partner']
+        if lead.partner_id:  # a partner is set already
+            partners |= lead.partner_id
+        # search through the existing partners based on the lead's partner
+        if lead.partner_name:
+            partners |= partners.search([
+                ('name', 'ilike', '%' + lead.partner_name + '%')])
+        # search through the existing partners based on the lead's vat
+        if lead.vat:
+            contacts = partners.search([
+                ('vat', 'ilike', '%' + lead.vat + '%')])
+            partners |= (contacts.mapped('commercial_partner_id') |
+                         contacts.mapped('parent_id'))
+        return partners.filtered(
+            lambda p: p.educational_category == 'family')
 
     @api.multi
     def action_apply(self):
