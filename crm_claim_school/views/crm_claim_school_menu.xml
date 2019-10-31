@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="school_support_menu" name="Support"
+              web_icon="crm_claim_school,static/description/icon.png"
+              groups="sales_team.group_sale_salesman"/>
+
+    <menuitem id="school_support_group_view" name="Support"
+              parent="school_support_menu" sequence="1" />
+
+    <menuitem name="Claims" id="menu_crm_case_claims"
+              parent="school_support_group_view"
+              action="crm_claim.crm_claim_category_claim0" sequence="1"/>
+
+    <menuitem id="school_support_configuration" name="Configuration"
+              parent="school_support_menu" sequence="50" />
+
+    <menuitem id="crm_claim_category_menu"
+              action="crm_claim.crm_claim_categ_action"
+              parent="school_support_configuration"
+              sequence="1" />
+    <menuitem id="crm_claim_stage_menu"
+              action="crm_claim.crm_claim_stage_act"
+              parent="school_support_configuration"
+              sequence="2" />
+    <menuitem id="fetchmail_server_menu"
+              action="fetchmail.action_email_server_tree"
+              parent="school_support_configuration"
+              sequence="10" />
+
+</odoo>

@@ -8,7 +8,7 @@
         "fetchmail",
         "crm_claim",
         "contacts_school",
-        "crm_school"
+        "crm_school",
     ],
     "author": "AvanzOSC",
     "website": "http://www.avanzosc.es",
@@ -17,6 +17,7 @@
         "security/ir.model.access.csv",
         "views/crm_claim_category_view.xml",
         "views/fetchmail_server_view.xml",
+        "views/crm_claim_school_menu.xml",
     ],
     "installable": True,
 }
