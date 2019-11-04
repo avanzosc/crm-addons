@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_claim_category_view_tree" model="ir.ui.view">
+        <field name="model">crm.claim.category</field>
+        <field name="inherit_id" ref="crm_claim.crm_claim_category_tree" />
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="mail_server_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_claim_category_view_search" model="ir.ui.view">
+        <field name="model">crm.claim.category</field>
+        <field name="arch" type="xml">
+            <search string="Search claim category">
+                <field name="name" />
+                <field name="team_id"/>
+                <field name="mail_server_id" />
+                <group expand="1" string="Group By">
+                    <filter string="Team" name="team_group"
+                            domain="[]" context="{'group_by':'team_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="crm_claim_category_view_form" model="ir.ui.view">
+        <field name="model">crm.claim.category</field>
+        <field name="inherit_id" ref="crm_claim.crm_claim_category_form" />
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="mail_server_id" />
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="fetchmail_server_view_tree" model="ir.ui.view">
+        <field name="model">fetchmail.server</field>
+        <field name="inherit_id" ref="fetchmail.view_email_server_tree" />
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="school_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="fetchmail_server_view_search" model="ir.ui.view">
+        <field name="model">fetchmail.server</field>
+        <field name="inherit_id" ref="fetchmail.view_email_server_search" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="school_id" />
+            </field>
+            <filter name="ssl" position="after">
+                <group expand="1" string="Group By">
+                    <filter string="School" name="school_group"
+                            domain="[]" context="{'group_by':'school_id'}"/>
+                </group>
+            </filter>
+        </field>
+    </record>
+
+    <record id="fetchmail_server_view_form" model="ir.ui.view">
+        <field name="model">fetchmail.server</field>
+        <field name="inherit_id" ref="fetchmail.view_email_server_form" />
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="school_id" />
+            </field>
+            <notebook position="inside">
+                <page string="Claims categories" >
+                    <group name="claims_categories_group" col="4">
+                        <field name="claim_category_ids" nolabel="1" colspan="4"
+                                context="{'default_mail_server_id':active_id}">
+                            <tree string="Claim Categories">
+                                <field name="name"/>
+                                <field name="team_id"/>
+                                <field name="mail_server_id" invisible="1" />
+                            </tree>
+                            <form string="Claim Categories">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="team_id"/>
+                                    <field name="mail_server_id" invisible="1" />
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
