@@ -83,7 +83,7 @@ class TestCrmSchool(common.SavepointCase):
         self.assertTrue(student)
         self.assertEqual(
             self.lead.partner_id.educational_category, 'family')
-        self.assertEqual(student.educational_category, 'other')
+        self.assertEqual(student.educational_category, 'otherchild')
         self.assertEqual(student.year_birth, 2015)
         self.assertIn(student.id, self.lead.allowed_student_ids.ids)
         new_student = self.lead.future_student_ids.new({
