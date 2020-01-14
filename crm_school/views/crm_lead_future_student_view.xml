@@ -55,7 +55,7 @@
                        <group>
                            <field name="crm_lead_id" required="1" />
                            <field name="child_id"
-                                  domain="[('educational_category','in',('student','other'))]"/>
+                                  domain="[('educational_category','in',('student','otherchild'))]"/>
                            <field name="name" required="1" />
                            <field name="course_id" required="1"
                                   options="{'no_create': True}" />

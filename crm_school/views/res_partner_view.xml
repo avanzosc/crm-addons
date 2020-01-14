@@ -16,7 +16,7 @@
         <field name="inherit_id" ref="partner_contact_gender.view_personal_information_gender" />
         <field name="arch" type="xml">
             <field name="gender" position="attributes">
-                <attribute name="attrs">{'invisible': ['|',('educational_category', '=', False),('educational_category', 'not in', ('student','progenitor','guardian','other'))]}</attribute>
+                <attribute name="attrs">{'invisible': ['|',('educational_category', '=', False),('educational_category', 'not in', ('student','progenitor','guardian','otherchild'))]}</attribute>
             </field>
         </field>
     </record>

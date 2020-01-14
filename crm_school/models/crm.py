@@ -86,7 +86,7 @@ class CrmLead(models.Model):
         partner_dict.update({
             'birthdate_date': future_student.birth_date,
             'gender': future_student.gender,
-            'educational_category': 'other',
+            'educational_category': 'otherchild',
         })
         return partner_dict
 
@@ -113,7 +113,7 @@ class CrmLeadFutureStudent(models.Model):
         ondelete='cascade')
     child_id = fields.Many2one(
         comodel_name='res.partner', string='Child',
-        domain=[('educational_category', 'in', ('student', 'other'))])
+        domain=[('educational_category', 'in', ('student', 'otherchild'))])
     name = fields.Char(string='Child name', required=True)
     birth_date = fields.Date(string='Birth date')
     year_birth = fields.Integer(
