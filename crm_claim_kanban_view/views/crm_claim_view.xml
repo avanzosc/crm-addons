@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_claim_kanban_view" model="ir.ui.view">
+        <field name="name">CRM - Claims kanban</field>
+        <field name="model">crm.claim</field>
+        <field name="arch" type="xml">
+            <kanban class="o_res_partner_kanban" default_group_by="stage_id">
+                <field name="name" />
+                <field name="date" />
+                <field name="partner_id" />
+                <field name="user_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <div class="oe_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <ul>
+                                    <li t-if="record.date">
+                                        <strong>Date:  </strong><field name="date" />
+                                    </li>
+                                    <li t-if="record.partner_id.raw_value">
+                                        <strong>Partner:  </strong><field name="partner_id" />
+                                    </li>
+                                    <li t-if="record.team_id.raw_value">
+                                        <strong>Sales team:  </strong><field name="team_id" />
+                                    </li>
+                                    <li t-if="record.user_id.raw_value">
+                                        <strong>Responsible:  </strong><field name="user_id" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="crm_claim.crm_claim_category_claim0" model="ir.actions.act_window" >
+        <field name="view_mode">tree,calendar,kanban,form</field>
+    </record>
+</odoo>
