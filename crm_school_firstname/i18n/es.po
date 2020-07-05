@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-21 14:26+0000\n"
-"PO-Revision-Date: 2019-08-21 14:26+0000\n"
+"POT-Creation-Date: 2020-07-05 16:47+0000\n"
+"PO-Revision-Date: 2020-07-05 16:47+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: crm_school_firstname
+#: model:ir.model,name:crm_school_firstname.model_crm_lead2opportunity_partner
+msgid "Convert Lead to Opportunity (not in mass)"
+msgstr "Convertir Iniciativa en Oportunidad (sin ser en masa)"
 
 #. module: crm_school_firstname
 #: model:ir.model.fields,field_description:crm_school_firstname.field_crm_lead_future_student__name
@@ -45,5 +50,5 @@ msgstr "Apellido"
 #. module: crm_school_firstname
 #: model:ir.model,name:crm_school_firstname.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr "Iniciativa/Oportunidad"
+msgstr "Iniciativa / Oportunidad"
 
