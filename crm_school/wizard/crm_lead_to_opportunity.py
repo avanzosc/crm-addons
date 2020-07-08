@@ -9,6 +9,9 @@ class CrmLead2OpportunityPartner(models.TransientModel):
 
     possible_partner_ids = fields.Many2many(
         comodel_name='res.partner', string='Possible Families', readonly=True)
+    family_progenitor_ids = fields.Many2many(
+        comodel_name="res.partner", string="Relatives",
+        related="partner_id.family_progenitor_ids")
 
     @api.model
     def default_get(self, fields):

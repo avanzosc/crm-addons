@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-05 17:11+0000\n"
-"PO-Revision-Date: 2020-07-05 17:11+0000\n"
+"POT-Creation-Date: 2020-07-08 15:18+0000\n"
+"PO-Revision-Date: 2020-07-08 15:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -89,7 +89,7 @@ msgstr "Nombre familia"
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__name
 msgid "First name"
-msgstr "Nombre"
+msgstr "Nombre de pila"
 
 #. module: crm_school
 #: model:ir.actions.act_window,name:crm_school.crm_lead_future_student_action
@@ -191,6 +191,12 @@ msgid "Previous Family"
 msgstr "Familia existente"
 
 #. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner__family_progenitor_ids
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner_mass__family_progenitor_ids
+msgid "Relatives"
+msgstr "Familiares"
+
+#. module: crm_school
 #: model:ir.model,name:crm_school.model_crm_team
 msgid "Sales Channels"
 msgstr "Canales de Ventas"
@@ -215,6 +221,7 @@ msgstr "Alumno"
 
 #. module: crm_school
 #: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:20
+#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:23
 #, python-format
 msgid "There must be at least one future student."
 msgstr "Debe haber al menos un futuro estudiante."
@@ -239,6 +246,7 @@ msgstr "No puedes crear oportunidades, debes comenzar desde iniciativas"
 
 #. module: crm_school
 #: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:72
+#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:75
 #, python-format
 msgid "You must define a future student in the lead: {}."
 msgstr "Debe definir un futuro estudiante en la inciativa: {}"

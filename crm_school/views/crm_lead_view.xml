@@ -13,6 +13,7 @@
             <field name="partner_id" position="attributes">
                 <attribute name="string">Previous Family</attribute>
                 <attribute name="domain">[('educational_category', '=', 'family')]</attribute>
+                <attribute name="groups" />
             </field>
             <field name="partner_name" position="attributes">
                 <attribute name="string">Family Name</attribute>
