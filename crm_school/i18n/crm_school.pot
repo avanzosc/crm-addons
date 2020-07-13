@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-19 15:41+0000\n"
-"PO-Revision-Date: 2019-06-19 15:41+0000\n"
+"POT-Creation-Date: 2020-07-08 15:17+0000\n"
+"PO-Revision-Date: 2020-07-08 15:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,11 +27,6 @@ msgid "Allowed Student"
 msgstr ""
 
 #. module: crm_school
-#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_tree_view
-msgid "Associations and federations"
-msgstr ""
-
-#. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__birth_date
 msgid "Birth date"
 msgstr ""
@@ -40,11 +35,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__child_id
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
 msgid "Child"
-msgstr ""
-
-#. module: crm_school
-#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__name
-msgid "Child name"
 msgstr ""
 
 #. module: crm_school
@@ -87,12 +77,24 @@ msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead2opportunity_partner_view_form
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_tree_view
 msgid "Family"
 msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_leads_inh_crm_school
 msgid "Family Name"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__name
+msgid "First name"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.actions.act_window,name:crm_school.crm_lead_future_student_action
+#: model:ir.ui.menu,name:crm_school.crm_lead_future_student_menuitem
+msgid "Future Students"
 msgstr ""
 
 #. module: crm_school
@@ -178,8 +180,20 @@ msgid "Payers"
 msgstr ""
 
 #. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner__possible_partner_ids
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner_mass__possible_partner_ids
+msgid "Possible Families"
+msgstr ""
+
+#. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_leads_inh_crm_school
 msgid "Previous Family"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner__family_progenitor_ids
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner_mass__family_progenitor_ids
+msgid "Relatives"
 msgstr ""
 
 #. module: crm_school
@@ -201,7 +215,13 @@ msgid "Search future students"
 msgstr ""
 
 #. module: crm_school
-#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:17
+#: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_tree_view
+msgid "Student"
+msgstr ""
+
+#. module: crm_school
+#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:20
+#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:23
 #, python-format
 msgid "There must be at least one future student."
 msgstr ""
@@ -225,7 +245,8 @@ msgid "You aren't allowed to create opportunities, you must start from lead"
 msgstr ""
 
 #. module: crm_school
-#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:27
+#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:72
+#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:75
 #, python-format
 msgid "You must define a future student in the lead: {}."
 msgstr ""

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="crm_lead_future_student_tree_view" model="ir.ui.view">
-        <field name="name">crm.lead.future.student.tree.view</field>
         <field name="model">crm.lead.future.student</field>
         <field name="arch" type="xml">
-            <tree string="Associations and federations">
-                <field name="crm_lead_id" />
-                <field name="child_id" />
-                <field name="name" />
-                <field name="birth_date" />
-                <field name="gender" />
+            <tree>
+                <field name="academic_year_id" options="{'no_create': True}" />
                 <field name="school_id" options="{'no_create': True}" />
                 <field name="course_id" options="{'no_create': True}" />
-                <field name="academic_year_id" options="{'no_create': True}" />
+                <field name="crm_lead_id" string="Family" />
+                <field name="name" />
+                <field name="birth_date" />
+                <field name="year_birth" />
+                <field name="gender" />
+                <field name="child_id" string="Student" />
             </tree>
         </field>
     </record>
+
     <record id="crm_lead_future_student_search_view" model="ir.ui.view">
         <field name="name">crm.lead.future.student.search.view</field>
         <field name="model">crm.lead.future.student</field>
@@ -73,4 +74,16 @@
             </form>
         </field>
     </record>
+
+    <record id="crm_lead_future_student_action" model="ir.actions.act_window">
+        <field name="name">Future Students</field>
+        <field name="res_model">crm.lead.future.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="crm_lead_future_student_tree_view" />
+    </record>
+
+    <menuitem id="crm_lead_future_student_menuitem"
+              action="crm_lead_future_student_action"
+              parent="crm.crm_menu_root" />
 </odoo>

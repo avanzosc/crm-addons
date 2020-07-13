@@ -10,6 +10,9 @@
             <field name="partner_id" position="before">
                 <field name="possible_partner_ids" invisible="True" />
             </field>
+            <field name="partner_id" position="after">
+                <field name="family_progenitor_ids" widget="many2many_tags" />
+            </field>
             <field name="partner_id" position="attributes">
                 <attribute name="string">Family</attribute>
                 <attribute name="domain">[('educational_category', '=', 'family'), ('id', 'in', possible_partner_ids)]</attribute>
