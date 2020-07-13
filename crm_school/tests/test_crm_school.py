@@ -93,6 +93,49 @@ class TestCrmSchool(common.SavepointCase):
         new_student.onchange_child_id()
         self.assertEquals(new_student.child_id.name, new_student.name)
 
+    def test_crm_school_merge(self):
+        self.lead = self.lead_model.create(self.lead_vals)
+        field_list = self.wiz_model.fields_get_keys()
+        # convert_vals = {
+        #     'name': 'convert'}
+        # convert = self.wiz_model.create(convert_vals)
+        # with self.assertRaises(ValidationError):
+        #     convert.with_context(active_ids=[self.lead.id]).action_apply()
+        student_vals = {
+            'name': 'Student for test crm_school',
+            'birth_date': '2015-06-30',
+            'gender': 'male',
+            'school_id': self.school.id,
+        }
+        self.lead.write({
+            'future_student_ids': [(0, 0, student_vals)],
+        })
+        convert_vals = self.wiz_model.with_context(
+            active_id=self.lead.id).default_get(field_list)
+        convert = self.wiz_model.create(convert_vals)
+        convert.with_context(active_ids=[self.lead.id]).action_apply()
+        self.assertEquals(len(self.lead.future_student_ids), 1)
+        self.lead2 = self.lead_model.create(self.lead_vals)
+        student_vals = {
+            'name': 'Student2 for test crm_school',
+            'birth_date': '2015-06-30',
+            'gender': 'female',
+            'school_id': self.school.id,
+        }
+        self.lead2.write({
+            'future_student_ids': [(0, 0, student_vals)],
+        })
+        merge_vals = self.wiz_model.with_context(
+            active_id=self.lead.id).default_get(field_list)
+        merge_leads = self.lead | self.lead2
+        merge_vals.update({
+            "name": "merge",
+            "opportunity_ids": [(6, 0, merge_leads.ids)],
+        })
+        merge = self.wiz_model.create(merge_vals)
+        merge.with_context(active_ids=[self.lead.id]).action_apply()
+        self.assertEquals(len(self.lead.future_student_ids), 2)
+
     def test_crm_school_partner(self):
         partner = self.family.copy()
         partner.write({

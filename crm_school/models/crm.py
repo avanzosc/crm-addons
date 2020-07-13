@@ -24,8 +24,7 @@ class CrmLead(models.Model):
     family_ids = fields.One2many(
         comodel_name='res.partner.family', inverse_name='family_id',
         string='Families', related='partner_id.family_ids')
-    name = fields.Char(
-        required=False, related='partner_id.name', store=True)
+    name = fields.Char(required=False)
     allowed_student_ids = fields.Many2many(
         comodel_name='res.partner', compute='_compute_allowed_student_ids')
     payer_ids = fields.One2many(
@@ -47,6 +46,10 @@ class CrmLead(models.Model):
             raise ValidationError(
                 _('You aren\'t allowed to create opportunities, you must '
                   'start from lead'))
+        if not values.get("name"):
+            values.update({
+                "name": values.get("partner_name"),
+            })
         return super(CrmLead, self).create(values)
 
     @api.multi
@@ -70,14 +73,46 @@ class CrmLead(models.Model):
                 new_student = partner_model.create(
                     self.catch_new_student_vals(future_student))
                 future_student.child_id = new_student
+                if partner_id != lead.partner_id.id:
+                    family_model.create({
+                        'crm_lead_id': lead.id,
+                        'child2_id': new_student.id,
+                        'responsible_id': partner_id,
+                        'family_id': lead.partner_id.id,
+                        'relation': 'progenitor',
+                    })
+                progenitors = lead.partner_id.family_progenitor_ids.filtered(
+                    lambda p: p.id != partner_id)
+                for progenitor in progenitors:
+                    family_model.create({
+                        'crm_lead_id': lead.id,
+                        'child2_id': new_student.id,
+                        'responsible_id': progenitor.id,
+                        'family_id': lead.partner_id.id,
+                        'relation': 'progenitor',
+                    })
+        return res
+
+    @api.multi
+    def merge_opportunity(self, user_id=False, team_id=False):
+        partner_model = self.env['res.partner']
+        family_model = self.env['res.partner.family']
+        lead = super(CrmLead, self).merge_opportunity(
+            user_id=user_id, team_id=team_id)
+        for future_student in lead.future_student_ids.filtered(
+                lambda c: not c.child_id):
+            new_student = partner_model.create(
+                lead.catch_new_student_vals(future_student))
+            future_student.child_id = new_student
+            for progenitor in lead.partner_id.family_progenitor_ids:
                 family_model.create({
                     'crm_lead_id': lead.id,
                     'child2_id': new_student.id,
-                    'responsible_id': partner_id,
+                    'responsible_id': progenitor.id,
                     'family_id': lead.partner_id.id,
                     'relation': 'progenitor',
                 })
-        return res
+        return lead
 
     def catch_new_student_vals(self, future_student):
         partner_dict = self._create_lead_partner_data(
@@ -97,6 +132,20 @@ class CrmLead(models.Model):
         if customer and customer.parent_id:
             res['partner_id'] = customer.parent_id.id
         return res
+
+    @api.multi
+    def _merge_future_students(self, opportunities):
+        self.ensure_one()
+        opportunities.future_student_ids.write({
+            "crm_lead_id": self.id,
+        })
+        return True
+
+    @api.multi
+    def merge_dependences(self, opportunities):
+        self.ensure_one()
+        super(CrmLead, self).merge_dependences(opportunities)
+        self._merge_future_students(opportunities)
 
 
 class CrmLeadFutureStudent(models.Model):
