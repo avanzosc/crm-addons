@@ -24,7 +24,8 @@ class CrmLead(models.Model):
         stage_obj = self.env['crm.stage']
         user_input_obj = self.env['survey.user_input']
         for record in self:
-            if ('stage_id' in vals and (record.stage_id.survey_id and
+            if ('stage_id' in vals and record.stage_id.id != vals.get(
+                    "stage_id") and (record.stage_id.survey_id and
                 not record.user_input_ids.filtered(
                     lambda u: u.state == 'done' and
                               u.survey_id == record.stage_id.survey_id))):
