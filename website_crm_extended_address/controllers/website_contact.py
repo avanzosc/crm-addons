@@ -5,7 +5,7 @@ from odoo.http import request
 from odoo.exceptions import AccessError, MissingError
 
 
-class websiteContact(http.Controller):
+class WebsiteContact(http.Controller):
 
     @http.route('/contactus', type='http', auth="user", website=True)
     def websiteContactUs(self):
@@ -62,12 +62,12 @@ class websiteContact(http.Controller):
                 'msg_text': msg_text,
                 'crm_lead': crm_lead}
             return http.request.render(
-                'website_crm_extended_address.Crm_extended_send_contactus_form',
+                'website_crm_extended_address.extended_send_contactus_form',
                 values)
         except (AccessError, MissingError):
             values = {
-                'msg_text': 'ERROR. Something Wrong Occured!',
-                'mail_text': 'ERROR. Something Wrong Occured!'}
+                'msg_text': 'ERROR. Something Wrong Occurred!',
+                'mail_text': 'ERROR. Something Wrong Occurred!'}
             return http.request.render(
-                'website_crm_extended_address.Crm_extended_send_contactus_form',
+                'website_crm_extended_address.extended_send_contactus_form',
                 values)
