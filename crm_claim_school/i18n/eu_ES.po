@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-27 12:18+0000\n"
-"PO-Revision-Date: 2020-08-27 12:18+0000\n"
+"POT-Creation-Date: 2020-08-27 12:17+0000\n"
+"PO-Revision-Date: 2020-08-27 12:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,79 +18,79 @@ msgstr ""
 #. module: crm_claim_school
 #: model:ir.model,name:crm_claim_school.model_crm_claim_category
 msgid "Category of claim"
-msgstr "Categoría de la reclamación"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.model,name:crm_claim_school.model_crm_claim
 msgid "Claim"
-msgstr "Reclamación"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.ui.menu,name:crm_claim_school.crm_claim_category_menu
 #: model_terms:ir.ui.view,arch_db:crm_claim_school.fetchmail_server_view_form
 msgid "Claim Categories"
-msgstr "Categorías de reclamaciones"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.ui.menu,name:crm_claim_school.crm_claim_stage_menu
 msgid "Claim Stages"
-msgstr "Etapas reclamaciones"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.model.fields,field_description:crm_claim_school.field_fetchmail_server__claim_category_ids
 #: model_terms:ir.ui.view,arch_db:crm_claim_school.fetchmail_server_view_form
 msgid "Claims categories"
-msgstr "Categorías de reclamaciones"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.ui.menu,name:crm_claim_school.school_support_configuration
 msgid "Configuration"
-msgstr "Configuración"
+msgstr "Konfigurazioa"
 
 #. module: crm_claim_school
 #: model_terms:ir.ui.view,arch_db:crm_claim_school.crm_claim_category_view_search
 #: model_terms:ir.ui.view,arch_db:crm_claim_school.fetchmail_server_view_search
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr "Taldekatu"
 
 #. module: crm_claim_school
 #: model:ir.model,name:crm_claim_school.model_fetchmail_server
 msgid "Incoming Mail Server"
-msgstr "Servidor de correo entrante"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.ui.menu,name:crm_claim_school.fetchmail_server_menu
 msgid "Incoming Mail Servers"
-msgstr "Servidores de correo entrante"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.model.fields,field_description:crm_claim_school.field_crm_claim_category__mail_server_id
 msgid "Mail server"
-msgstr "Servidor de correo"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.model.fields,field_description:crm_claim_school.field_fetchmail_server__school_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_school.fetchmail_server_view_search
 msgid "School"
-msgstr "Colegio"
+msgstr "Ikastetxea"
 
 #. module: crm_claim_school
 #: model_terms:ir.ui.view,arch_db:crm_claim_school.crm_claim_category_view_search
 msgid "Search claim category"
-msgstr "Buscar categoría de reclamación"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.ui.menu,name:crm_claim_school.school_support_menu
 msgid "Support"
-msgstr "Soporte"
+msgstr ""
 
 #. module: crm_claim_school
 #: model_terms:ir.ui.view,arch_db:crm_claim_school.crm_claim_category_view_search
 msgid "Team"
-msgstr "Equipo"
+msgstr ""
 
 #. module: crm_claim_school
 #: model:ir.model.fields,field_description:crm_claim_school.field_crm_claim__team_users_ids
 msgid "Team users"
-msgstr "Miembros del equipo"
+msgstr ""
 
