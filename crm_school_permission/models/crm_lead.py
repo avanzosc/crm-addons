@@ -11,7 +11,7 @@ class CrmLead(models.Model):
         comodel_name='res.partner.permission', string='Permissions',
         compute='_compute_permission_ids', store=True,
         column1='lead_id', column2='permission_id',
-        relation='rel_lead_permission')
+        relation='rel_lead_permission', compute_sudo=True)
 
     @api.depends('future_student_ids', 'future_student_ids.child_id',
                  'future_student_ids.child_id.permission_ids')
