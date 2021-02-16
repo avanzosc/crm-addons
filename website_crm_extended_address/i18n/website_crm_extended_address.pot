@@ -19,12 +19,12 @@ msgstr ""
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Billing email"
-msgstr "Email de facturación"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Billing phone"
-msgstr "Teléfono de facturación"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
@@ -34,62 +34,61 @@ msgstr ""
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Comercial name"
-msgstr "Nombre comercial"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Country"
-msgstr "País"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Invoicing address"
-msgstr "Dirección de facturación"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Mobile\n"
 "                    Number"
-msgstr "Número de\n"
-"                    teléfono"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Sending address"
-msgstr "Dirección de envío"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Sending email"
-msgstr "Email de envío"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Sending phone"
-msgstr "Teléfono de envío"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "State"
-msgstr "Provincia"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Street"
-msgstr "Calle"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "Website"
-msgstr "Sitio web"
+msgstr ""
 
 #. module: website_crm_extended_address
 #: model_terms:ir.ui.view,arch_db:website_crm_extended_address.extended_contactus_form
 msgid "ZIP"
-msgstr "C.P."
+msgstr ""
 
