@@ -95,9 +95,15 @@
                     State
                 </label>
                 <div class="col-lg-7 col-md-8">
-                    <select class="form-control o_website_form_select"
+                    <select class="form-control o_website_form_select selectpicker"
+                            data-live-search="true"
                             id="state_id" name="state_id"
-                            t-att-value="request.params.get('state_id', '')"/>
+                            t-att-value="request.params.get('state_id', '')" >
+                        <t t-foreach="state_ids" t-as="state">
+                            <option t-att-value="state.id" >
+                                <t t-esc="state.name" /></option>
+                        </t>
+                    </select>
                 </div>
             </div>
             <div class="form-group row form-field">
@@ -115,9 +121,15 @@
                        for="country_id">Country
                 </label>
                 <div class="col-lg-7 col-md-8">
-                    <select class="form-control o_website_form_select"
+                    <select class="form-control o_website_form_select selectpicker"
+                            data-live-search="true"
                             id="country_id" name="country_id"
-                            t-att-value="request.params.get('country_id', '')"/>
+                            t-att-value="request.params.get('country_id', '')" >
+                        <t t-foreach="country_ids" t-as="country">
+                            <option t-att-value="country.id" >
+                                <t t-esc="country.name" /></option>
+                        </t>
+                    </select>
                 </div>
             </div>
             <div class="form-group row form-field">
@@ -170,10 +182,16 @@
                        for="shipping_sending_state_id">State
                 </label>
                 <div class="col-lg-7 col-md-8">
-                    <select class="form-control o_website_form_select"
+                    <select class="form-control o_website_form_select selectpicker"
+                            data-live-search="true"
                             id="shipping_sending_state_id"
                             name="shipping_sending_state_id"
-                            t-att-value="request.params.get('shipping_sending_state_id', '')"/>
+                            t-att-value="request.params.get('shipping_sending_state_id', '')">
+                        <t t-foreach="state_ids" t-as="state">
+                            <option t-att-value="state.id" >
+                                <t t-esc="state.name" /></option>
+                        </t>
+                    </select>
                 </div>
             </div>
             <div class="form-group row form-field">
@@ -192,10 +210,16 @@
                        for="shipping_sending_country_id">Country
                 </label>
                 <div class="col-lg-7 col-md-8">
-                    <select class="form-control o_website_form_select"
+                    <select class="form-control o_website_form_select selectpicker"
+                            data-live-search="true"
                             id="shipping_sending_country_id"
                             name="shipping_sending_country_id"
-                            t-att-value="request.params.get('shipping_sending_country_id', '')"/>
+                            t-att-value="request.params.get('shipping_sending_country_id', '')" >
+                        <t t-foreach="country_ids" t-as="country" >
+                            <option t-att-value="country.id" >
+                                <t t-esc="country.name" /></option>
+                        </t>
+                    </select>
                 </div>
             </div>
             <div class="form-group row form-field">
@@ -219,37 +243,6 @@
                            name="shipping_sending_email"
                            t-att-value="request.params.get('shipping_sending_email', '')"/>
                 </div>
-            </div>
-        </xpath>
-        <xpath expr="//div[@id='wrap']/div[2]/div[1]/div[1]/div[2]"
-               position="after">
-            <div id="country_ids_data" style="display: none;">
-                <ul>
-                    <t t-foreach="country_ids" t-as="country">
-                        <li>
-                            <p>
-                                <t t-esc="country.id"/>
-                            </p>
-                            <p>
-                                <t t-esc="country.name"/>
-                            </p>
-                        </li>
-                    </t>
-                </ul>
-            </div>
-            <div id="state_ids_data" style="display: none;">
-                <ul>
-                    <t t-foreach="state_ids" t-as="state">
-                        <li>
-                            <p>
-                                <t t-esc="state.id"/>
-                            </p>
-                            <p>
-                                <t t-esc="state.display_name"/>
-                            </p>
-                        </li>
-                    </t>
-                </ul>
             </div>
         </xpath>
     </template>

@@ -7,7 +7,7 @@ from odoo.exceptions import AccessError, MissingError
 
 class WebsiteContact(http.Controller):
 
-    @http.route('/contactus', type='http', auth="user", website=True)
+    @http.route('/contactus', type='http', auth="public", website=True)
     def websiteContactUs(self):
         state_ids = request.env['res.country.state'].search([])
         country_ids = request.env['res.country'].search([])
@@ -15,7 +15,7 @@ class WebsiteContact(http.Controller):
                   'country_ids': country_ids}
         return http.request.render('website.contactus', values)
 
-    @http.route('/contactus_getdata', type='http', auth="user", website=True)
+    @http.route('/contactus_getdata', type='http', auth="public", website=True)
     def websiteContactData(self):
         state_ids = request.env['res.country.state'].search([])
         country_ids = request.env['res.country'].search([])
@@ -24,7 +24,7 @@ class WebsiteContact(http.Controller):
         return http.request.render('website.contactus', values)
 
     @http.route('/contactus_send',
-                type='http', auth="user", website=True)
+                type='http', auth="public", website=True)
     def websiteContact(self, **kwargs):
         crm_lead_values = {
             'contact_name': kwargs['contact_name'],
