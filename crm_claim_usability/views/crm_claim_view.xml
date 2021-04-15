@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_claim_usability_view_tree" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="commercial_partner_id" invisible="True" />
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_claim_usability_view_form" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="commercial_partner_id" invisible="True" />
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_claim_usability_view_search" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="arch" type="xml">
+            <filter name="Unassigned Claims" position="attributes">
+                <attribute name="domain">['|',('user_id','=', False),('user_id','=',1)]</attribute>
+            </filter>
+            <filter name="partner" position="after">
+                <filter context="{'group_by':'commercial_partner_id'}"
+                        domain="[]"
+                        help="Commercial Entity"
+                        name="commercial_partner"
+                        string="Commercial Entity" />
+            </filter>
+        </field>
+    </record>
+</odoo>
