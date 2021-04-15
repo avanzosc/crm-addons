@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_analytic_line_view_tree" model="ir.ui.view">
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
+        <field name="arch" type="xml">
+            <field name="task_id" position="after">
+                <field name="claim_id" optional="show"
+                       domain="[('task_id','=',task_id)]"
+                       options="{'no_create_edit': True, 'no_open': True}" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
