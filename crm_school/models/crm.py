@@ -177,6 +177,9 @@ class CrmLeadFutureStudent(models.Model):
     academic_year_id = fields.Many2one(
         comodel_name='education.academic_year', string='Academic year',
         domain=lambda s: [('date_end', '>', fields.Date.context_today(s))])
+    lead_stage_id = fields.Many2one(
+        comodel_name="crm.stage", string="Stage",
+        related="crm_lead_id.stage_id", store=True)
 
     @api.onchange('child_id')
     def onchange_child_id(self):
