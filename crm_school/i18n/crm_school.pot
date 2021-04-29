@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 15:17+0000\n"
-"PO-Revision-Date: 2020-07-08 15:17+0000\n"
+"POT-Creation-Date: 2021-04-28 15:48+0000\n"
+"PO-Revision-Date: 2021-04-28 15:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -98,6 +98,12 @@ msgid "Future Students"
 msgstr ""
 
 #. module: crm_school
+#: model:ir.actions.act_window,name:crm_school.crm_lead_future_student_lost_action
+#: model:ir.ui.menu,name:crm_school.crm_lead_future_student_lost_menuitem
+msgid "Future Students [Lost]"
+msgstr ""
+
+#. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_form_view
 msgid "Future student"
@@ -171,7 +177,7 @@ msgstr ""
 
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_res_partner_family
-msgid "Partner family."
+msgid "Partner Family"
 msgstr ""
 
 #. module: crm_school
@@ -215,12 +221,16 @@ msgid "Search future students"
 msgstr ""
 
 #. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__lead_stage_id
+msgid "Stage"
+msgstr ""
+
+#. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_tree_view
 msgid "Student"
 msgstr ""
 
 #. module: crm_school
-#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:20
 #: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:23
 #, python-format
 msgid "There must be at least one future student."
@@ -239,13 +249,12 @@ msgid "Year of birth"
 msgstr ""
 
 #. module: crm_school
-#: code:addons/crm_school/models/crm.py:48
+#: code:addons/crm_school/models/crm.py:47
 #, python-format
 msgid "You aren't allowed to create opportunities, you must start from lead"
 msgstr ""
 
 #. module: crm_school
-#: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:72
 #: code:addons/crm_school/wizard/crm_lead_to_opportunity.py:75
 #, python-format
 msgid "You must define a future student in the lead: {}."

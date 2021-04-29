@@ -13,6 +13,7 @@
                 <field name="year_birth" />
                 <field name="gender" />
                 <field name="child_id" string="Student" />
+                <field name="lead_stage_id" />
             </tree>
         </field>
     </record>
@@ -81,9 +82,22 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="crm_lead_future_student_tree_view" />
+        <field name="domain">[("crm_lead_id.active","=",True)]</field>
+    </record>
+
+    <record id="crm_lead_future_student_lost_action" model="ir.actions.act_window">
+        <field name="name">Future Students [Lost]</field>
+        <field name="res_model">crm.lead.future.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="crm_lead_future_student_tree_view" />
+        <field name="domain">[("crm_lead_id.active","!=",True)]</field>
     </record>
 
     <menuitem id="crm_lead_future_student_menuitem"
               action="crm_lead_future_student_action"
+              parent="crm.crm_menu_root" />
+    <menuitem id="crm_lead_future_student_lost_menuitem"
+              action="crm_lead_future_student_lost_action"
               parent="crm.crm_menu_root" />
 </odoo>
