@@ -7,6 +7,10 @@
             <field name="partner_id" position="after">
                 <field name="commercial_partner_id" invisible="True" />
             </field>
+            <field name="date" position="attributes">
+                <attribute name="widget">date</attribute>
+                <attribute name="string">Date</attribute>
+            </field>
         </field>
     </record>
 
