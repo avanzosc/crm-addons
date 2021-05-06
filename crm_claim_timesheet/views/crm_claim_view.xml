@@ -7,19 +7,28 @@
             <field name="model_ref_id" position="before">
                 <field name="project_id"
                        domain="['|',('partner_id','child_of',commercial_partner_id),('partner_id','=',False)]"
-                       options="{'no_create_edit': True, 'no_open': True}" />
-                <field name="task_id"
-                       domain="[('project_id','=',project_id)]"
                        options="{'no_create_edit': True, 'no_open': True}"
-                       attrs="{'invisible': [('project_id','=',False)]}" />
+                       invisible="context.get('default_partner_id',False)" />
+                <label for="task_id" attrs="{'invisible': [('project_id','=',False)]}"
+                       invisible="context.get('default_partner_id',False)"/>
+                <div class="o_row" name="task"
+                     attrs="{'invisible': [('project_id','=',False)]}"
+                     invisible="context.get('default_partner_id',False)">
+                    <field name="task_id"
+                           domain="[('project_id','=',project_id)]"
+                           options="{'no_create_edit': True, 'no_open': True}"
+                           invisible="context.get('default_partner_id',False)" />
+                    [<field name="task_remaining_hours"  widget="timesheet_uom_no_toggle" />]
+                </div>
             </field>
             <field name="description" position="after">
-                <div name="timesheet" attrs="{'invisible': [('task_id','=',False)]}">
+                <div name="timesheet" attrs="{'invisible': [('task_id','=',False)]}"
+                     invisible="context.get('default_partner_id',False)">
                 <separator string="Timesheet" />
                 <group>
-                    <field name="planned_hours" />
-                    <field name="effective_hours" />
-                    <field name="remaining_hours" />
+                    <field name="planned_hours" widget="timesheet_uom_no_toggle" />
+                    <field name="effective_hours" widget="timesheet_uom_no_toggle" />
+                    <field name="remaining_hours" widget="timesheet_uom_no_toggle" />
                 </group>
                 <field name="timesheet_ids" mode="tree,kanban"
                        context="{'default_claim_id': active_id, 'default_project_id': project_id, 'default_task_id': task_id}">
@@ -94,11 +103,9 @@
         <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
         <field name="arch" type="xml">
             <field name="date_closed" position="after">
-                <field name="project_id" />
-                <field name="task_id" />
-                <field name="planned_hours" />
-                <field name="effective_hours" />
-                <field name="remaining_hours" />
+                <field name="planned_hours" widget="timesheet_uom_no_toggle" invisible="context.get('default_partner_id',False)" />
+                <field name="effective_hours" widget="timesheet_uom_no_toggle" invisible="context.get('default_partner_id',False)" />
+                <field name="remaining_hours" widget="timesheet_uom_no_toggle" invisible="context.get('default_partner_id',False)" />
             </field>
         </field>
     </record>
@@ -117,4 +124,5 @@
             </filter>
         </field>
     </record>
+
 </odoo>
