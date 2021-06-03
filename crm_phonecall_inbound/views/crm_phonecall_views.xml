@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="crm_case_phone_form_view" model="ir.ui.view">
+        <field name="model">crm.phonecall</field>
+        <field name="inherit_id" ref="crm_phonecall.crm_case_phone_form_view"/>
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="show_init_call" invisible="1" />
+            </field>
+            <button name="action_make_meeting" position="after">
+                <button
+                    icon="fa-phone"
+                    name="action_button_initiate_call"
+                    type="object"
+                    style="background-color:#8dd39f"
+                    attrs="{'invisible':[('show_init_call', '=', False)]}">
+                    <span>
+                        Initiate call
+                    </span>
+                </button>
+                <button
+                    icon="fa-arrow-right"
+                    name="%(action_crm_phonecall_transfer)d"
+                    type="action"
+                    style="background-color:#81cdf2"
+                    attrs="{'invisible':[('show_init_call', '=', True)]}">
+                    <span>
+                        Transfer call
+                    </span>
+                </button>
+                <button
+                    icon="fa-times"
+                    name="action_button_end_call"
+                    type="object"
+                    style="background-color:#f96767"
+                    attrs="{'invisible':[('show_init_call', '=', True)]}">
+                    <span>
+                        End call
+                    </span>
+                 </button>
+            </button>
+            <xpath expr="//field[@name='duration']/.." position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//sheet/group/group/label[1]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="partner_id" position="after">
+                <field name="commercial_partner_id"/>
+            </field>
+            <field name="direction"/>
+            <field name="description" position="after">
+                 <notebook>
+                     <page name="phonecall" string="Phone calls" >
+                         <field name="phonecall_time_ids">
+                             <tree editable="bottom" string="Phone call">
+                                 <field name="date_open"/>
+                                 <field name="date_closed"/>
+                                 <field name="duration"/>
+                                 <field name="user_id"/>
+                                 <field name="team_id"/>
+                             </tree>
+                         </field>
+                     </page>
+                 </notebook>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_crm_phonecall_inbound" model="ir.actions.act_window">
+         <field name="name">Inbound phonecall</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="view_mode">tree,form</field>
+         <field name="res_model">crm.phonecall</field>
+         <field name="view_id" ref="crm_phonecall.crm_case_phone_tree_view"/>
+         <field name="domain">[]</field>
+         <field name="context">{}</field>
+    </record>
+
+       <menuitem id="menu_crm_phonecall_inbound"
+            name="Inbound phone calls"
+            parent="crm.crm_menu_root"
+            action="action_crm_phonecall_inbound"
+            sequence="10"/>
+</odoo>
