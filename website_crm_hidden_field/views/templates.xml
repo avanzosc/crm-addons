@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="contactus_form_hidden_field" inherit_id="website_crm.contactus_form">
+        <xpath expr="//div[hasclass('form-group', 'row')][last()]" position="before">
+            <div class="form-group row form-field" style="display:none;">
+                <label class="col-lg-3 col-md-4 col-form-label" for="description">Refferred By</label>
+                <div class="col-lg-7 col-md-8">
+                    <textarea class="form-control o_website_form_input" name="referred"><t t-esc="request.params.get('referred', '')"/></textarea>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
