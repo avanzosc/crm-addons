@@ -18,6 +18,7 @@
     "data": [
         "views/account_analytic_line_view.xml",
         "views/crm_claim_view.xml",
+        "views/project_task_view.xml",
     ],
     "installable": True,
 }
