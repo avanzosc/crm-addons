@@ -14,7 +14,9 @@
         "portal",
     ],
     "data": [
-        "views/crm_claim_template.xml"
+        "security/ir.model.access.csv",
+        "security/crm_claim_security.xml",
+        "views/crm_claim_template.xml",
     ],
     "installable": True,
 }
