@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="crm_claim_portal_rule" model="ir.rule">
+        <field name="name">Claim Portal</field>
+        <field name="model_id" ref="crm_claim.model_crm_claim" />
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+        <field
+            name="domain_force"
+        >[('commercial_partner_id', 'child_of', [user.partner_id.commercial_partner_id.id])]</field>
+    </record>
+</odoo>

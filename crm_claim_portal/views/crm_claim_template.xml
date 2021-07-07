@@ -35,34 +35,54 @@
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">Claims</t>
             </t>
-            <t t-if="not claims">
+            <t t-if="not grouped_claims">
                 <div class="alert alert-warning mt8" role="alert">
                     There are no claims.
                 </div>
             </t>
-            <t t-if="claims" t-call="portal.portal_table">
-                <tbody>
-                    <tr t-foreach="claims" t-as="claim">
-                        <td class="text-left">
-                            #<span t-esc="claim.id"/>
-                        </td>
-                        <td>
-                            <a t-attf-href="/my/claim/#{claim.id}?{{ keep_query() }}"><span t-field="claim.name"/></a>
-                        </td>
-                        <td class="text-center">
-                            <span class="badge badge-pill badge-info" title="Current stage of the claim" t-esc="claim.stage_id.name" />
-                        </td>
-                    </tr>
-                </tbody>
+            <t t-if="grouped_claims" t-call="portal.portal_table">
+                <t t-foreach="grouped_claims" t-as="claims">
+                        <thead>
+                            <tr t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                                <th class="text-left">Ref</th>
+                                <th t-if="groupby in ('none','stage')">Claim Subject</th>
+                                <th t-if="groupby == 'partner'">
+                                    <em class="font-weight-normal text-muted">Claims reported by:</em>
+                                    <span class="text-truncate" t-field="claims[0].sudo().partner_id.display_name"/></th>
+                                <th t-if="groupby == 'user'">
+                                    <em class="font-weight-normal text-muted">Claims assigned to:</em>
+                                    <span class="text-truncate" t-field="claims[0].sudo().user_id.display_name"/></th>
+                                <th t-if="groupby == 'stage'">
+                                    <em class="font-weight-normal text-muted">Claims in stage:</em>
+                                    <span class="text-truncate" t-field="claims[0].sudo().stage_id.name"/></th>
+                                <th t-if="groupby != 'stage'" class="text-center">Stage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="claims" t-as="claim">
+                                <tr>
+                                    <td class="text-left">
+                                        #<span t-esc="claim.id"/>
+                                    </td>
+                                    <td>
+                                        <a t-attf-href="/my/claim/#{claim.id}?{{ keep_query() }}"><span t-field="claim.name"/></a>
+                                    </td>
+                                    <td t-if="groupby != 'stage'" class="text-center">
+                                        <span class="badge badge-pill badge-info" title="Current stage of the claim" t-esc="claim.stage_id.name" />
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </t>
             </t>
         </t>
     </template>
 
     <template id="portal_my_claim" name="My Claim">
         <t t-call="portal.portal_layout">
-            <t t-set="o_portal_fullwidth_alert" groups="project.group_project_user">
+            <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_manager">
                 <t t-call="portal.portal_back_in_edit_mode">
-                    <t t-set="backend_url" t-value="'/web#model=project.task&amp;id=%s&amp;view_type=form' % (task.id)"/>
+                    <t t-set="backend_url" t-value="'/web#model=crm.claim&amp;id=%s&amp;view_type=form' % (claim.id)"/>
                 </t>
             </t>
 
@@ -75,7 +95,7 @@
                                 <small class="text-muted d-none d-md-inline"> (#<span t-field="claim.id"/>)</small>
                                 <div class="col-3 col-md-2 text-right">
                                     <small class="text-right">Status:</small>
-                                    <span t-field="claim.stage_id.name" class=" badge badge-pill badge-info" title="Current stage of this task"/>
+                                    <span t-field="claim.stage_id.name" class=" badge badge-pill badge-info" title="Current stage of this claim"/>
                                 </div>
                             </h5>
                         </div>
@@ -140,135 +160,4 @@
             </div>
         </t>
     </template>
-
-<!--    <template id="website_crm_claim_filters_searchbar_layout" name="Website crm claim filters searchbar layout"-->
-<!--        inherit_id="portal.portal_layout" customize_show="True">-->
-<!--        <xpath expr="//div[@class='o_portal container mt-3']/div[1]/div[1]" position="after">-->
-<!--            <t t-call="website_crm_claim.website_crm_claim_filters_filters" />-->
-<!--        </xpath>-->
-<!--    </template>-->
-
-<!--    <template id="website_crm_claim_filters_filters" name="Website crm claim filters filters"-->
-<!--        inherit_id="portal.portal_searchbar" customize_show="True">-->
-<!--        <xpath expr="//div[@id='o_portal_navbar_content']/div[1]" position="inside">-->
-<!--            <div t-if="crm_claim_ids" class="form-inline" id="claim_filters">-->
-<!--                &lt;!&ndash; Customer search box &ndash;&gt;-->
-<!--                <div class="btn-group">-->
-<!--                    <input type="text" id="search_customer_input" class="form-control ml-1"-->
-<!--                        placeholder="Search..." />-->
-<!--                    <a id="search_customer_button" class="btn btn-primary">-->
-<!--                        <i class="fa fa-search"></i>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <span class="small mr-1 navbar-text ml-1">Filter by:</span>-->
-<!--                &lt;!&ndash; Customers &ndash;&gt;-->
-<!--                <div class="btn-group">-->
-<!--                    <button id="portal_claim_filter_customer" data-toggle="dropdown"-->
-<!--                        class="btn btn-secondary btn-sm dropdown-toggle mr-1">-->
-<!--                        <span>Customers</span>-->
-<!--                    </button>-->
-<!--                    <div class="dropdown-menu" aria-labelledby="portal_claim_filter_customer">-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', customer='All customers')"-->
-<!--                            t-attf-class="dropdown-item#{customer == 'All customers' and ' active' or ''}">-->
-<!--                            <span>All customers</span>-->
-<!--                        </a>-->
-<!--                        <t t-foreach="crm_claim_partner_ids" t-as="partner">-->
-<!--                            <a t-att-href="request.httprequest.path + '?' + keep_query('*', customer=partner.id)"-->
-<!--                                t-attf-class="dropdown-item#{customer == partner.id and ' active' or ''}">-->
-<!--                                <span t-esc="partner.name" />-->
-<!--                            </a>-->
-<!--                        </t>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; States &ndash;&gt;-->
-<!--                <div class="btn-group">-->
-<!--                    <button id="portal_claim_filter_state" data-toggle="dropdown"-->
-<!--                        class="btn btn-secondary btn-sm dropdown-toggle mr-1">-->
-<!--                        <span>State</span>-->
-<!--                    </button>-->
-<!--                    <div class="dropdown-menu" aria-labelledby="portal_claim_filter_state">-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', state='All states')"-->
-<!--                            t-attf-class="dropdown-item#{state == 'All states' and ' active' or ''}">-->
-<!--                            <span>All states</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', state='new')"-->
-<!--                            t-attf-class="dropdown-item#{state == 'new' and ' active' or ''}">-->
-<!--                            <span>New</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', state='in_progress')"-->
-<!--                            t-attf-class="dropdown-item#{state == 'in_progress' and ' active' or ''}">-->
-<!--                            <span>In progress</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', state='settled')"-->
-<!--                            t-attf-class="dropdown-item#{state == 'settled' and ' active' or ''}">-->
-<!--                            <span>Settled</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', state='rejected')"-->
-<!--                            t-attf-class="dropdown-item#{state == 'rejected' and ' active' or ''}">-->
-<!--                            <span>Rejected</span>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; Date type &ndash;&gt;-->
-<!--                <div class="btn-group">-->
-<!--                    <button id="portal_claim_filter_date_type" data-toggle="dropdown"-->
-<!--                        class="btn btn-secondary btn-sm dropdown-toggle mr-1">-->
-<!--                        <span>Date type</span>-->
-<!--                    </button>-->
-<!--                    <div class="dropdown-menu" aria-labelledby="portal_claim_filter_date_type">-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', date_type='Claim date')"-->
-<!--                            t-attf-class="dropdown-item#{date_type == 'Claim date' and ' active' or ''}">-->
-<!--                            <span>Claim date</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', date_type='Date deadline')"-->
-<!--                            t-attf-class="dropdown-item#{date_type == 'Date deadline' and ' active' or ''}">-->
-<!--                            <span>Date deadline</span>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; Dates &ndash;&gt;-->
-<!--                <div class="btn-group">-->
-<!--                    <button id="portal_claim_filter_dates" data-toggle="dropdown"-->
-<!--                        class="btn btn-secondary btn-sm dropdown-toggle mr-1">-->
-<!--                        <span>Dates</span>-->
-<!--                    </button>-->
-<!--                    <div class="dropdown-menu" aria-labelledby="portal_claim_filter_dates">-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', date='All dates')"-->
-<!--                            t-attf-class="dropdown-item#{date == 'All dates' and ' active' or ''}">-->
-<!--                            <span>All dates</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', date='Today')"-->
-<!--                            t-attf-class="dropdown-item#{date == 'Today' and ' active' or ''}">-->
-<!--                            <span>Today</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', date='Last week')"-->
-<!--                            t-attf-class="dropdown-item#{date == 'Last week' and ' active' or ''}">-->
-<!--                            <span>Last week</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', date='This month')"-->
-<!--                            t-attf-class="dropdown-item#{date == 'This month' and ' active' or ''}">-->
-<!--                            <span>This month</span>-->
-<!--                        </a>-->
-<!--                        <a t-att-href="request.httprequest.path + '?' + keep_query('*', date='This year')"-->
-<!--                            t-attf-class="dropdown-item#{date == 'This year' and ' active' or ''}">-->
-<!--                            <span>This year</span>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; Date from/to &ndash;&gt;-->
-<!--                <div class="btn-group">-->
-<!--                    <span class="small mr-1 navbar-text ml-1">Date from:</span>-->
-<!--                    <input id="portal_claim_filter_date_from" type="date" data-toggle="input"-->
-<!--                        class="form-control ml-1">-->
-<!--                    </input>-->
-<!--                </div>-->
-<!--                <div class="btn-group">-->
-<!--                    <span class="small mr-1 navbar-text ml-1">Date to:</span>-->
-<!--                    <input id="portal_claim_filter_date_to" type="date" data-toggle="input"-->
-<!--                        class="form-control ml-1">-->
-<!--                    </input>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </xpath>-->
-<!--    </template>-->
 </odoo>
