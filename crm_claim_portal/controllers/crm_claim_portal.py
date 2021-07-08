@@ -26,6 +26,7 @@ class CustomerPortal(CustomerPortal):
         values = {
             "page_name": "claim",
             "claim": claim,
+            "user": request.env.user,
         }
         return self._get_page_view_values(
             claim, access_token, values, "my_claims_history", False, **kwargs)
