@@ -48,7 +48,9 @@ class CrmClaim(models.Model):
         non-superuser mode, unless `user` is the superuser (by convention, the
         superuser is always in superuser mode.)
         """
-        if not user.has_group("base.group_user"):
+        if isinstance(user, int):
+            user = self.env["res.users"].browse(user)
+        if user and not user.has_group("base.group_user"):
             user = (self.env.user if self.env.user.has_group("base.group_user")
                     else self.env.ref("base.user_root"))
         return super(CrmClaim, self).with_user(user)
