@@ -14,6 +14,7 @@
     ],
     "excludes": [],
     "data": [
+        "data/crm_claim_usability_data.xml",
         "views/crm_claim_view.xml",
     ],
     "installable": True,
