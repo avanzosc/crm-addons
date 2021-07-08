@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-<!--    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Adding files">-->
-<!--        <xpath expr="." position="inside">-->
-<!--            <script type="text/javascript" src="/website_crm_claim/static/src/js/website.js"></script>-->
-<!--        </xpath>-->
-<!--    </template>-->
 
     <template id="portal_my_home_sale" name="Show Claims" customize_show="True" inherit_id="portal.portal_my_home" priority="50">
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
