@@ -34,6 +34,11 @@
                                        options="{'no_create': True, 'no_open': True}" />
                                 <field name="academic_year_id"
                                        options="{'no_create': True, 'no_open': True}" />
+                                <button name="create_new_student"
+                                        string="Create Student"
+                                        type="object"
+                                        attrs="{'invisible': [('child_id','!=',False)]}"
+                                        icon="fa-user-plus" />
                             </tree>
                         </field>
                     </group>
