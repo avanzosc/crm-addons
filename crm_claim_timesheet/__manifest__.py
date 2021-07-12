@@ -3,7 +3,7 @@
 
 {
     "name": "Claim Timesheets",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "AvanzOSC",
@@ -19,6 +19,8 @@
         "views/account_analytic_line_view.xml",
         "views/crm_claim_view.xml",
         "views/project_task_view.xml",
+        "views/project_portal_templates.xml",
+        "reports/report_timesheet_templates.xml",
     ],
     "installable": True,
 }
