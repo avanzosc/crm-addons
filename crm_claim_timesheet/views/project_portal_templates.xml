@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_timesheet_table" inherit_id="hr_timesheet.portal_timesheet_table" name="Portal Timesheet Table">
+        <xpath expr="//thead//th[@t-if='is_uom_day']" position="before">
+            <th>Claim</th>
+        </xpath>
+        <xpath expr="//tr[@t-as='timesheet']/td[hasclass('text-right')]" position="before">
+            <td><t t-esc="timesheet.claim_id.display_name"/></td>
+        </xpath>
+        <xpath expr="//tfoot//th[@colspan='3']" position="attributes">
+            <attribute name="colspan">4</attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_subtask_timesheet_tables" inherit_id="hr_timesheet.portal_subtask_timesheet_tables" name="Portal Subtask Timesheet Tables">
+        <xpath expr="//thead//th[hasclass('text-right')]" position="before">
+            <th>Claim</th>
+        </xpath>
+        <xpath expr="//tr[@t-as='timesheet']/td[hasclass('text-right')]" position="before">
+            <td><t t-esc="timesheet.claim_id.display_name"/></td>
+        </xpath>
+        <xpath expr="//tfoot//th[@colspan='3']" position="attributes">
+            <attribute name="colspan">4</attribute>
+        </xpath>
+    </template>
+
+</odoo>
