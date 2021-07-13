@@ -156,9 +156,14 @@ class CrmLeadFutureStudent(models.Model):
             self.name, False,
             parent_id=self.crm_lead_id.partner_id.id)
         partner_dict.update({
+            'firstname': self.name,
+            'lastname': self.lastname,
             'birthdate_date': self.birth_date,
             'gender': self.gender,
             'educational_category': 'otherchild',
+            'email': False,
+            'phone': False,
+            'mobile': False,
         })
         return partner_dict
 
@@ -190,3 +195,8 @@ class CrmLeadFutureStudent(models.Model):
                     'family_id': lead.partner_id.id,
                     'relation': 'progenitor',
                 })
+
+    @api.multi
+    def button_create_new_student(self):
+        for record in self:
+            record.create_new_student()
