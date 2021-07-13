@@ -14,7 +14,7 @@
                 <field name="gender" />
                 <field name="child_id" string="Student" />
                 <field name="lead_stage_id" />
-                <button name="create_new_student"
+                <button name="button_create_new_student"
                         string="Create Student"
                         type="object"
                         attrs="{'invisible': [('child_id','!=',False)]}"
@@ -111,6 +111,7 @@
         <field name="type">ir.actions.server</field>
         <field name="state">code</field>
         <field name="model_id" ref="crm_school.model_crm_lead_future_student" />
+        <field name="binding_model_id" ref="crm_school.model_crm_lead_future_student" />
         <field name="code">
             for record in records:
                 record.create_new_student()
