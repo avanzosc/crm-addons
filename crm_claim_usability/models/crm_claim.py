@@ -6,6 +6,7 @@ from odoo import fields, models
 
 class CrmClaim(models.Model):
     _inherit = "crm.claim"
+    _order = "priority desc, date_deadline, date desc"
 
     commercial_partner_id = fields.Many2one(
         comodel_name="res.partner",
