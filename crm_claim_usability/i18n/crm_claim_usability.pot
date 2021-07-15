@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-01 14:31+0000\n"
-"PO-Revision-Date: 2021-07-01 14:31+0000\n"
+"POT-Creation-Date: 2021-07-14 15:43+0000\n"
+"PO-Revision-Date: 2021-07-14 15:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,6 +44,20 @@ msgstr ""
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim____last_update
 msgid "Last Modified on"
+msgstr ""
+
+#. module: crm_claim_usability
+#: model:ir.actions.act_window,name:crm_claim_usability.crm_claim_by_partner
+msgid "Partner's Claims"
+msgstr ""
+
+#. module: crm_claim_usability
+#: model_terms:ir.actions.act_window,help:crm_claim_usability.crm_claim_by_partner
+msgid ""
+"Record and track your customers' claims.\n"
+"                Claims may be linked to a sales order or a lot.\n"
+"                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).\n"
+"                Claims may automatically be linked to an email address using the mail gateway module."
 msgstr ""
 
 #. module: crm_claim_usability
