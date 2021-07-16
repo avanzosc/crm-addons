@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<odoo noupdate="1">
+    <record model="crm.claim.stage" id="crm_claim.stage_claim2">
+        <field name="closed" eval="True" />
+    </record>
+    <record model="crm.claim.stage" id="crm_claim.stage_claim3">
+        <field name="closed" eval="True" />
+    </record>
+</odoo>
