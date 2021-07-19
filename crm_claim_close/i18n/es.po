@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_claim_close
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-16 20:16+0000\n"
+"PO-Revision-Date: 2021-07-16 20:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_claim_close
+#: model:ir.model,name:crm_claim_close.model_crm_claim
+msgid "Claim"
+msgstr "Reclamación"
+
+#. module: crm_claim_close
+#: model:ir.model,name:crm_claim_close.model_crm_claim_stage
+msgid "Claim stages"
+msgstr "Etapas de la reclamación"
+
+#. module: crm_claim_close
+#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__closed
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: crm_claim_close
+#: model:ir.actions.act_window,name:crm_claim_close.crm_claim_closed_action
+#: model:ir.ui.menu,name:crm_claim_close.menu_crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
+msgid "Closed Claims"
+msgstr "Reclamaciones cerradas"
+
+#. module: crm_claim_close
+#: model:ir.model,name:crm_claim_close.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: crm_claim_close
+#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim__display_name
+#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__display_name
+#: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.res_config_settings_view_form
+msgid "Enable menus for closed and open claims"
+msgstr "Habilitar menus para reclamaciones cerradas y abiertas"
+
+#. module: crm_claim_close
+#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim__id
+#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__id
+#: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: crm_claim_close
+#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim____last_update
+#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage____last_update
+#: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: crm_claim_close
+#: model:ir.actions.act_window,name:crm_claim_close.crm_claim_open_action
+#: model:ir.ui.menu,name:crm_claim_close.menu_crm_claim_open
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
+msgid "Open Claims"
+msgstr "Reclamaciones abiertas"
+
+#. module: crm_claim_close
+#: model_terms:ir.actions.act_window,help:crm_claim_close.crm_claim_closed_action
+#: model_terms:ir.actions.act_window,help:crm_claim_close.crm_claim_open_action
+msgid ""
+"Record and track your customers' claims.\n"
+"                Claims may be linked to a sales order or a lot.\n"
+"                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).\n"
+"                Claims may automatically be linked to an email address using the mail gateway module."
+msgstr ""
+"Registre y rastree las reclamaciones de sus clientes. Las reclamaciones "
+"pueden estar ligadas a una orden de ventas o a un lote. Puede enviar correos"
+" electrónicos con archivos adjuntos y mantener el historial completo de una "
+"reclamación (correos enviados, tipo de intervención, etc.) Las reclamaciones"
+" pueden enlazarse automáticamente a una dirección de correo electrónico "
+"usando el módulo de puerta de enlace de correo electrónico."
+
+#. module: crm_claim_close
+#: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__group_crm_claim_close
+#: model:res.groups,name:crm_claim_close.group_crm_claim_close
+msgid "Separated Claim Menus"
+msgstr "Menus separados de reclamaciones"
