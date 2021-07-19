@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_claim_view_search" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <separator />
+                <filter string="Open Claims" name="open_claims"
+                        domain="[('date_closed','=', False)]" />
+                <filter string="Closed Claims" name="closed_claims"
+                        domain="[('date_closed','!=', False)]" />
+            </field>
+            <filter name="closure" position="attributes">
+                <attribute name="invisible" />
+            </filter>
+        </field>
+    </record>
+
+    <record id="crm_claim.crm_claim_category_claim0" model="ir.actions.act_window">
+        <field name="context">{
+            'search_default_user_id':uid,
+            'stage_type': 'claim',
+            'search_open_claims': True,
+        }</field>
+    </record>
+
+    <record id="crm_claim_open_action" model="ir.actions.act_window">
+        <field name="name">Open Claims</field>
+        <field name="res_model">crm.claim</field>
+        <field name="view_mode">tree,calendar,form</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="domain">[('date_closed','=',False)]</field>
+        <field name="context">{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
+        <field name="search_view_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Record and track your customers' claims.
+                Claims may be linked to a sales order or a lot.
+                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).
+                Claims may automatically be linked to an email address using the mail gateway module.
+            </p>
+        </field>
+    </record>
+    <record id="crm_claim_open_action_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="act_window_id" ref="crm_claim_open_action" />
+    </record>
+    <record id="crm_claim_open_action_calendar" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_calendar_view" />
+        <field name="act_window_id" ref="crm_claim_open_action" />
+    </record>
+    <record id="crm_claim_open_action_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="act_window_id" ref="crm_claim_open_action" />
+    </record>
+
+    <record id="crm_claim_closed_action" model="ir.actions.act_window">
+        <field name="name">Closed Claims</field>
+        <field name="res_model">crm.claim</field>
+        <field name="view_mode">tree,calendar,form</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="domain">[('date_closed','!=',False)]</field>
+        <field name="context">{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
+        <field name="search_view_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Record and track your customers' claims.
+                Claims may be linked to a sales order or a lot.
+                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).
+                Claims may automatically be linked to an email address using the mail gateway module.
+            </p>
+        </field>
+    </record>
+    <record id="crm_claim_closed_action_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="act_window_id" ref="crm_claim_closed_action" />
+    </record>
+    <record id="crm_claim_closed_action_calendar" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_calendar_view" />
+        <field name="act_window_id" ref="crm_claim_closed_action" />
+    </record>
+    <record id="crm_claim_closed_action_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="act_window_id" ref="crm_claim_closed_action" />
+    </record>
+</odoo>
