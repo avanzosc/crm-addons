@@ -14,6 +14,11 @@
                 <field name="gender" />
                 <field name="child_id" string="Student" />
                 <field name="lead_stage_id" />
+                <button name="button_create_new_student"
+                        string="Create Student"
+                        type="object"
+                        attrs="{'invisible': [('child_id','!=',False)]}"
+                        icon="fa-user-plus" />
             </tree>
         </field>
     </record>
@@ -100,4 +105,16 @@
     <menuitem id="crm_lead_future_student_lost_menuitem"
               action="crm_lead_future_student_lost_action"
               parent="crm.crm_menu_root" />
+
+    <record id="action_create_new_student" model="ir.actions.server">
+        <field name="name">Create new students</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="crm_school.model_crm_lead_future_student" />
+        <field name="binding_model_id" ref="crm_school.model_crm_lead_future_student" />
+        <field name="code">
+            for record in records:
+                record.create_new_student()
+        </field>
+    </record>
 </odoo>

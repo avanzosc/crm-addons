@@ -63,67 +63,22 @@ class CrmLead(models.Model):
 
     @api.multi
     def convert_opportunity(self, partner_id, user_ids=False, team_id=False):
-        partner_model = self.env['res.partner']
-        family_model = self.env['res.partner.family']
         res = super(CrmLead, self).convert_opportunity(
             partner_id, user_ids=user_ids, team_id=team_id)
         for lead in self:
             for future_student in lead.future_student_ids.filtered(
                     lambda c: not c.child_id):
-                new_student = partner_model.create(
-                    self.catch_new_student_vals(future_student))
-                future_student.child_id = new_student
-                if partner_id != lead.partner_id.id:
-                    family_model.create({
-                        'crm_lead_id': lead.id,
-                        'child2_id': new_student.id,
-                        'responsible_id': partner_id,
-                        'family_id': lead.partner_id.id,
-                        'relation': 'progenitor',
-                    })
-                progenitors = lead.partner_id.family_progenitor_ids.filtered(
-                    lambda p: p.id != partner_id)
-                for progenitor in progenitors:
-                    family_model.create({
-                        'crm_lead_id': lead.id,
-                        'child2_id': new_student.id,
-                        'responsible_id': progenitor.id,
-                        'family_id': lead.partner_id.id,
-                        'relation': 'progenitor',
-                    })
+                future_student.create_new_student(partner_id)
         return res
 
     @api.multi
     def merge_opportunity(self, user_id=False, team_id=False):
-        partner_model = self.env['res.partner']
-        family_model = self.env['res.partner.family']
         lead = super(CrmLead, self).merge_opportunity(
             user_id=user_id, team_id=team_id)
         for future_student in lead.future_student_ids.filtered(
                 lambda c: not c.child_id):
-            new_student = partner_model.create(
-                lead.catch_new_student_vals(future_student))
-            future_student.child_id = new_student
-            for progenitor in lead.partner_id.family_progenitor_ids:
-                family_model.create({
-                    'crm_lead_id': lead.id,
-                    'child2_id': new_student.id,
-                    'responsible_id': progenitor.id,
-                    'family_id': lead.partner_id.id,
-                    'relation': 'progenitor',
-                })
+            future_student.create_new_student()
         return lead
-
-    def catch_new_student_vals(self, future_student):
-        partner_dict = self._create_lead_partner_data(
-            future_student.name, False,
-            parent_id=self.partner_id.id)
-        partner_dict.update({
-            'birthdate_date': future_student.birth_date,
-            'gender': future_student.gender,
-            'educational_category': 'otherchild',
-        })
-        return partner_dict
 
     @api.multi
     def _convert_opportunity_data(self, customer, team_id=False):
@@ -193,3 +148,55 @@ class CrmLeadFutureStudent(models.Model):
         for student in self.filtered(lambda c: c.birth_date):
             birth_date = fields.Date.from_string(student.birth_date)
             student.year_birth = birth_date.year
+
+    @api.multi
+    def catch_new_student_vals(self):
+        self.ensure_one()
+        partner_dict = self.crm_lead_id._create_lead_partner_data(
+            self.name, False,
+            parent_id=self.crm_lead_id.partner_id.id)
+        partner_dict.update({
+            'firstname': self.name,
+            'lastname': self.lastname,
+            'birthdate_date': self.birth_date,
+            'gender': self.gender,
+            'educational_category': 'otherchild',
+            'email': False,
+            'phone': False,
+            'mobile': False,
+        })
+        return partner_dict
+
+    @api.multi
+    def create_new_student(self, partner_id=False):
+        self.ensure_one()
+        partner_model = self.env['res.partner']
+        family_model = self.env['res.partner.family']
+        if not self.child_id and self.crm_lead_id.type == "opportunity":
+            lead = self.crm_lead_id
+            new_student = partner_model.create(
+                self.catch_new_student_vals())
+            self.child_id = new_student
+            if partner_id and partner_id != lead.partner_id.id:
+                family_model.create({
+                    'crm_lead_id': lead.id,
+                    'child2_id': new_student.id,
+                    'responsible_id': partner_id,
+                    'family_id': lead.partner_id.id,
+                    'relation': 'progenitor',
+                })
+            progenitors = lead.partner_id.family_progenitor_ids.filtered(
+                lambda p: p.id != partner_id)
+            for progenitor in progenitors:
+                family_model.create({
+                    'crm_lead_id': lead.id,
+                    'child2_id': new_student.id,
+                    'responsible_id': progenitor.id,
+                    'family_id': lead.partner_id.id,
+                    'relation': 'progenitor',
+                })
+
+    @api.multi
+    def button_create_new_student(self):
+        for record in self:
+            record.create_new_student()
