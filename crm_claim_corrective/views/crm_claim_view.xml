@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="crm_claims_form_view">
+        <field name="name">CRM - Claims Form</field>
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="arch" type="xml">
+            <field name="description" position="before">
+            <group name="description">
+                <field name="claim_description_id" context="{'default_type_description':'claim'}"/>
+            </group>
+            </field>
+            <field name="cause" position="before">
+            <group name="cause_description">
+                <field name="cause_description_id" context="{'default_type_description':'cause'}"/>
+            </group>
+            </field>
+            <field name="type_action" position="after">
+                <group name="corrective" colspan="4">
+                    <field name="corrective_id" attrs="{'readonly': [('cause', '=', False)]}"/>
+                </group>
+            </field>
+            <field name="resolution" position="before">
+            <group name="resolution_description">
+                <field name="resolution_description_id" context="{'default_type_description':'resolution'}"/>
+            </group>
+            </field>
+            <xpath expr="//form/sheet/group/notebook/page[2]" position="after">
+                <page string="Images" groups="base.group_user">
+                    <separator string="Photos" colspan="4"/>
+                    <group colspan="2">
+                        <field name="photo1" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
+                        <field name="photo2" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
+                    </group>
+                    <group colspan="2">
+                        <field name="photo3" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
+                        <field name="photo4" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
+                    </group>
+                </page>
+             </xpath>
+        </field>
+        </record>
+        
+    <record model="ir.ui.view" id="crm_claim_description_tree_view">
+        <field name="name">crm.claim.description.tree.view</field>
+        <field name="model">crm.claim.description</field>
+        <field name="arch" type="xml">
+            <tree string="Claim Description">
+                <field name="name" />
+                <field name="description" />
+                <field name="type_description" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="crm_claim_description_form_view">
+        <field name="name">crm.claim.description.form.view</field>
+        <field name="model">crm.claim.description</field>
+        <field name="arch" type="xml">
+            <form string="Claim Description">
+                <group name="name">
+                    <field name="name" />
+                    <field name="description"/>
+                    <field name="type_description" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="crm_claim_description_claim0">
+        <field name="name">Claim Description</field>
+        <field name="res_model">crm.claim.description</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="crm_claim_description_tree_view" />
+        <field name="context"></field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Generate you own claim descriptions.
+                You can make a quick assignment of the description in recurring claims 
+            </p>
+        </field>
+    </record>
+</odoo>
