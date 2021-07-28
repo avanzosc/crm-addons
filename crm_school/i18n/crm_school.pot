@@ -6,14 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 12:55+0000\n"
-"PO-Revision-Date: 2021-07-08 12:55+0000\n"
+"POT-Creation-Date: 2021-07-28 09:21+0000\n"
+"PO-Revision-Date: 2021-07-28 09:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__academic_year_id
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Academic Year"
+msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__academic_year_id
@@ -69,13 +75,36 @@ msgid "Created on"
 msgstr ""
 
 #. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Current Academic Year"
+msgstr ""
+
+#. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__display_name
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__center_id
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Education Center"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__course_id
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Education Course"
 msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__educational_category
 msgid "Educational category"
+msgstr ""
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_tree
+msgid "Email"
 msgstr ""
 
 #. module: crm_school
@@ -100,6 +129,18 @@ msgstr ""
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__name
 msgid "First name"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__student_id
+msgid "Future Student"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.actions.act_window,name:crm_school.action_future_student_progenitor_report
+#: model:ir.model,name:crm_school.model_future_student_progenitor_report
+#: model:ir.ui.menu,name:crm_school.future_student_progenitor_report_menuitem
+msgid "Future Student Progenitor List"
 msgstr ""
 
 #. module: crm_school
@@ -140,11 +181,13 @@ msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_search_view
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
 msgid "Group By"
 msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student__id
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__id
 msgid "ID"
 msgstr ""
 
@@ -156,6 +199,7 @@ msgstr ""
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead_future_student____last_update
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -182,6 +226,11 @@ msgid "Lead/Opportunity"
 msgstr ""
 
 #. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_tree
+msgid "Mobile"
+msgstr ""
+
+#. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__name
 msgid "Opportunity"
 msgstr ""
@@ -197,6 +246,11 @@ msgid "Payers"
 msgstr ""
 
 #. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_tree
+msgid "Phone"
+msgstr ""
+
+#. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner__possible_partner_ids
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead2opportunity_partner_mass__possible_partner_ids
 msgid "Possible Families"
@@ -205,6 +259,27 @@ msgstr ""
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_leads_inh_crm_school
 msgid "Previous Family"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__progenitor_id
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Progenitor"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__progenitor_email
+msgid "Progenitor Email"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__progenitor_mobile
+msgid "Progenitor Mobile"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__progenitor_phone
+msgid "Progenitor Phone"
 msgstr ""
 
 #. module: crm_school
@@ -238,7 +313,23 @@ msgstr ""
 
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_lead_future_student_tree_view
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
 msgid "Student"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__student_email
+msgid "Student Email"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__student_mobile
+msgid "Student Mobile"
+msgstr ""
+
+#. module: crm_school
+#: model:ir.model.fields,field_description:crm_school.field_future_student_progenitor_report__student_phone
+msgid "Student Phone"
 msgstr ""
 
 #. module: crm_school
@@ -250,6 +341,36 @@ msgstr ""
 #. module: crm_school
 #: model_terms:ir.ui.view,arch_db:crm_school.crm_case_form_view_oppor_inh_crm_school
 msgid "Total Payment Percentage"
+msgstr ""
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Unknown Academic Year"
+msgstr ""
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Unknown Education Center"
+msgstr ""
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Unknown Education Course"
+msgstr ""
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Unknown Email"
+msgstr ""
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Unknown Phone"
+msgstr ""
+
+#. module: crm_school
+#: model_terms:ir.ui.view,arch_db:crm_school.future_student_progenitor_report_view_search
+msgid "Without Contact Data"
 msgstr ""
 
 #. module: crm_school
