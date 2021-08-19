@@ -24,18 +24,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__commercial_partner_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 msgid "Commercial Entity"
-msgstr ""
+msgstr "Erakunde komertziala"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_tree
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Izena erakutsi"
 
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__id
@@ -45,22 +45,22 @@ msgstr ""
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Azken aldaketa"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 msgid "Last Month"
-msgstr ""
+msgstr "Aurreko hilabetea"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 msgid "Last Week"
-msgstr ""
+msgstr "Iragan astea"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 msgid "Last Year"
-msgstr ""
+msgstr "Iragan urtea"
 
 #. module: crm_claim_usability
 #: model:ir.actions.act_window,name:crm_claim_usability.crm_claim_by_partner
@@ -79,9 +79,9 @@ msgstr ""
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Arduraduna"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 msgid "Today"
-msgstr ""
+msgstr "Gaur"
