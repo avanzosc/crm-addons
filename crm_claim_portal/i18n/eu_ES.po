@@ -126,7 +126,7 @@ msgstr ""
 #. module: crm_claim_portal
 #: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Izena erakutsi"
 
 #. module: crm_claim_portal
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claim
@@ -141,7 +141,7 @@ msgstr ""
 #. module: crm_claim_portal
 #: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Azken aldaketa"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
