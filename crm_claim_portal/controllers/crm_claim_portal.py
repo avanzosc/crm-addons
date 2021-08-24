@@ -26,7 +26,6 @@ class CustomerPortal(CustomerPortal):
         values = {
             "page_name": "claim",
             "claim": claim,
-            "user": request.env.user,
         }
         return self._get_page_view_values(
             claim, access_token, values, "my_claims_history", False, **kwargs)
@@ -274,7 +273,7 @@ class CustomerPortal(CustomerPortal):
 
     @http.route(["/my/claim/<int:claim_id>"],
                 type="http", auth="public", website=True)
-    def portal_my_claim(self, claim_id=None, access_token=None, **kw):
+    def portal_my_claim(self, claim_id, access_token=None, **kw):
         try:
             claim_sudo = self._document_check_access(
                 "crm.claim", claim_id, access_token)
