@@ -60,7 +60,7 @@
                                         #<span t-esc="claim.id"/>
                                     </td>
                                     <td>
-                                        <a t-attf-href="/my/claim/#{claim.id}?{{ keep_query() }}"><span t-field="claim.name"/></a>
+                                        <a t-att-href="claim.get_portal_url()" t-att-title="claim.name"><span t-field="claim.name"/></a>
                                     </td>
                                     <td t-if="groupby != 'stage'" class="text-center">
                                         <span class="badge badge-pill badge-info" title="Current stage of the claim" t-esc="claim.stage_id.name" />
@@ -144,13 +144,10 @@
                 </t>
             </t>
 
-            <div class="mt32">
-                <h4><strong>Message and communication history</strong></h4>
+            <div id="claim_communication" class="mt32">
+                <h2>History</h2>
                 <t t-call="portal.message_thread">
                     <t t-set="object" t-value="claim"/>
-                    <t t-set="token" t-value="claim.access_token"/>
-                    <t t-set="pid" t-value="pid"/>
-                    <t t-set="hash" t-value="hash"/>
                 </t>
             </div>
         </t>
