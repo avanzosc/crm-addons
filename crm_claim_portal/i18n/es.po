@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-07 10:12+0000\n"
-"PO-Revision-Date: 2021-07-07 10:12+0000\n"
+"POT-Creation-Date: 2021-08-23 15:49+0000\n"
+"PO-Revision-Date: 2021-08-23 15:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,11 +60,6 @@ msgstr "<strong>Descripción</strong>"
 
 #. module: crm_claim_portal
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claim
-msgid "<strong>Message and communication history</strong>"
-msgstr "<strong>Histórico de mensajes y comunicaciones</strong>"
-
-#. module: crm_claim_portal
-#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claim
 msgid "<strong>Reported by</strong>"
 msgstr "<strong>Notificado por</strong>"
 
@@ -75,11 +70,13 @@ msgstr "Alerta de acceso"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "All"
 msgstr "Todos"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Assigned to"
@@ -124,6 +121,7 @@ msgstr "URL del portal de cliente"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Deadline"
 msgstr "Fecha tope"
@@ -132,6 +130,11 @@ msgstr "Fecha tope"
 #: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
+
+#. module: crm_claim_portal
+#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claim
+msgid "History"
+msgstr "Historial"
 
 #. module: crm_claim_portal
 #: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__id
@@ -145,17 +148,20 @@ msgstr "Última modificación el"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Last month"
 msgstr "Mes anterior"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Last week"
 msgstr "Semana anterior"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Last year"
@@ -176,6 +182,7 @@ msgid "Newest"
 msgstr "Más reciente"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "None"
@@ -228,11 +235,13 @@ msgstr ""
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Reported by"
 msgstr "Notificado por"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Search <span class='nolabel'> (in Content)</span>"
@@ -240,17 +249,20 @@ msgstr "Buscar <span class='nolabel'> (en Contenido)</span>"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Search in All"
 msgstr "Buscar en todos"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Search in Messages"
 msgstr "Buscar en mensajes"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Search in Stages"
@@ -262,6 +274,7 @@ msgid "Security Token"
 msgstr "Token de seguridad"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claims
 #, python-format
@@ -275,11 +288,13 @@ msgstr "No hay reclamaciones."
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "This Quarter"
 msgstr "Este Trimestre"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "This month"
@@ -287,17 +302,20 @@ msgstr "Este mes"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "This week"
 msgstr "Esta semana"
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "This year"
 msgstr "Este año"
 
 #. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Today"
