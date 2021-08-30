@@ -2,6 +2,8 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from odoo.models import expression
+from odoo.tools.safe_eval import safe_eval
 
 
 class CrmTeam(models.Model):
@@ -101,6 +103,16 @@ class CrmLead(models.Model):
         self.ensure_one()
         super(CrmLead, self).merge_dependences(opportunities)
         self._merge_future_students(opportunities)
+
+    @api.multi
+    def action_schedule_meeting(self):
+        self.ensure_one()
+        action_dict = super(CrmLead, self).action_schedule_meeting()
+        domain = expression.AND([
+            [('opportunity_id', '=', self.id)],
+            safe_eval(action_dict['domain'] or '[]')])
+        action_dict.update({'domain': domain})
+        return action_dict
 
 
 class CrmLeadFutureStudent(models.Model):
