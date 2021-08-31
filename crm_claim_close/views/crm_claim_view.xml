@@ -17,6 +17,16 @@
         </field>
     </record>
 
+    <record id="crm_claim_view_tree" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="decoration-muted">date_closed != False</attribute>
+            </tree>
+        </field>
+    </record>
+
     <record id="crm_claim.crm_claim_category_claim0" model="ir.actions.act_window">
         <field name="context">{
             'search_default_user_id':uid,
