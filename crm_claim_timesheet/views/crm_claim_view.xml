@@ -104,11 +104,17 @@
         <field name="arch" type="xml">
             <field name="date_closed" position="after">
                 <field name="planned_hours" string="Planned"
-                       widget="timesheet_uom_no_toggle" invisible="context.get('default_partner_id',False)" />
+                       widget="timesheet_uom_no_toggle"
+                       invisible="context.get('default_partner_id',False)"
+                       optional="hide" />
                 <field name="effective_hours" string="Spent"
-                       widget="timesheet_uom_no_toggle" invisible="context.get('default_partner_id',False)" />
+                       widget="timesheet_uom_no_toggle"
+                       invisible="context.get('default_partner_id',False)"
+                       optional="hide" />
                 <field name="remaining_hours" string="Remaining"
-                       widget="timesheet_uom_no_toggle" invisible="context.get('default_partner_id',False)" />
+                       widget="timesheet_uom_no_toggle"
+                       invisible="context.get('default_partner_id',False)"
+                       optional="hide" />
             </field>
         </field>
     </record>
