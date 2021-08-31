@@ -30,11 +30,13 @@
     <record id="crm_claim_usability_view_search" model="ir.ui.view">
         <field name="model">crm.claim</field>
         <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="priority" eval="10" />
         <field name="arch" type="xml">
             <filter name="Unassigned Claims" position="attributes">
                 <attribute name="domain">['|',('user_id','=', False),('user_id','=',1)]</attribute>
             </filter>
             <field name="user_id" position="after">
+                <filter string="My Claims" name="myclaims" domain="[('user_id.id', '=', uid)]"/>
                 <separator />
                 <filter string="Today" name="today"
                         domain="[('date','&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d'))]"/>
