@@ -18,7 +18,7 @@
         <field name="arch" type="xml">
             <form string="Corrective Actions">
             <header>
-                <field name="state" widget="statusbar" clickable="True"/>
+                <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
             </header>
             <group name="name">
                 <field name="name" />
