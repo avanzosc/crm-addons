@@ -33,7 +33,7 @@ class CrmClaim(models.Model):
         if self.cause_description_id:
             self.cause = self.cause_description_id.description
 
-    @api.onchange("resolution_description")
+    @api.onchange("resolution_description_id")
     def onchange_resolution_description(self):
         if self.resolution_description_id:
             self.resolution = self.resolution_description_id.description
