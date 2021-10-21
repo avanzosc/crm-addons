@@ -23,6 +23,7 @@
         "views/crm_team_view.xml",
         "views/res_partner_view.xml",
         "wizard/crm_lead_to_opportunity_views.xml",
+        "reports/future_student_progenitor_report_view.xml",
     ],
     "installable": True,
 }
