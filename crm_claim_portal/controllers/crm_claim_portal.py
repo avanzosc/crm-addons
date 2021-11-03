@@ -58,6 +58,14 @@ class CustomerPortal(CustomerPortal):
                 "label": _("All"),
                 "domain": [],
             },
+            "open": {
+                "label": _("Open"),
+                "domain": [("date_closed", "=", False)],
+            },
+            "close": {
+                "label": _("Closed"),
+                "domain": [("date_closed", "!=", False)],
+            },
             "today": {
                 "label": _("Today"),
                 "domain": [("create_date", "=", today)],
@@ -265,8 +273,7 @@ class CustomerPortal(CustomerPortal):
             "search": search,
             "sortby": sortby,
             "groupby": groupby,
-            "searchbar_filters": OrderedDict(
-                sorted(searchbar_filters.items())),
+            "searchbar_filters": searchbar_filters,
             "filterby": filterby,
         })
         return request.render("crm_claim_portal.portal_my_claims", values)
