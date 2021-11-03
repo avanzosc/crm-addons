@@ -57,7 +57,7 @@
                             <t t-foreach="claims" t-as="claim">
                                 <tr>
                                     <td class="text-left">
-                                        #<span t-esc="claim.id"/>
+                                        <span t-esc="claim.code" />
                                     </td>
                                     <td>
                                         <a t-att-href="claim.get_portal_url()" t-att-title="claim.name"><span t-field="claim.name"/></a>
@@ -86,7 +86,8 @@
                     <div class="row no-gutters">
                         <div class="col-12">
                             <h5 class="d-flex mb-1 mb-md-0 row">
-                                <span t-field="claim.name" class="col-9 text-truncate"/>
+                                <span t-field="claim.display_name"
+                                      class="col-9 text-truncate"/>
                                 <small class="text-muted d-none d-md-inline"> (#<span t-field="claim.id"/>)</small>
                                 <div class="col-3 col-md-2 text-right">
                                     <small class="text-right">Status:</small>
