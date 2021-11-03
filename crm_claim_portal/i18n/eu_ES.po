@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 08:23+0000\n"
-"PO-Revision-Date: 2021-08-27 08:23+0000\n"
+"POT-Creation-Date: 2021-11-03 15:01+0000\n"
+"PO-Revision-Date: 2021-11-03 15:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgstr ""
 #. module: crm_claim_portal
 #: model:ir.model,name:crm_claim_portal.model_crm_claim
 msgid "Claim"
-msgstr ""
+msgstr "Erreklamazioa"
 
 #. module: crm_claim_portal
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claims
@@ -94,7 +94,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claims
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_home_sale
 msgid "Claims"
-msgstr ""
+msgstr "Erreklamazioak"
+
+#. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#, python-format
+msgid "Closed"
+msgstr "Itxita"
 
 #. module: crm_claim_portal
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claim
@@ -184,6 +190,12 @@ msgstr ""
 #, python-format
 msgid "None"
 msgstr ""
+
+#. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#, python-format
+msgid "Open"
+msgstr "Irekia"
 
 #. module: crm_claim_portal
 #: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__access_url
