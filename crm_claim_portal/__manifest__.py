@@ -10,6 +10,7 @@
     "website": "http://www.avanzosc.es",
     "depends": [
         "crm_claim",
+        "crm_claim_code",
         "crm_claim_usability",
         "portal",
     ],
