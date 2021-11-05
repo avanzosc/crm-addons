@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_phonecall_time_manager,crm.phonecall.time.manager,model_crm_phonecall_time,sales_team.group_sale_manager,1,1,1,1
+access_crm_phonecall_time,crm.phonecall.time,model_crm_phonecall_time,sales_team.group_sale_salesman,1,1,1,0
+access_crm_phonecall_transfer,access.crm.phonecall.transfer,model_crm_phonecall_transfer,sales_team.group_sale_salesman,1,1,1,1

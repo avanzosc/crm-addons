@@ -1,0 +1,203 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_phonecall_inbound
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-21 09:03+0000\n"
+"PO-Revision-Date: 2021-09-21 09:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_phonecall_inbound
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_case_phone_form_view
+msgid ""
+"<span>\n"
+"                        End call\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                        Colgar\n"
+"                    </span>"
+
+#. module: crm_phonecall_inbound
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_case_phone_form_view
+msgid ""
+"<span>\n"
+"                        Initiate call\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                        Llamar\n"
+"                    </span>"
+
+#. module: crm_phonecall_inbound
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_case_phone_form_view
+msgid ""
+"<span>\n"
+"                        Transfer call\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                        Transferir llamada\n"
+"                    </span>"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__date_closed
+msgid "Call end date"
+msgstr "Fecha fin de la llamada"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__date_open
+msgid "Call initiate date"
+msgstr "Fecha inicio de la llamada"
+
+#. module: crm_phonecall_inbound
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_phonecall_transfer_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__user_id
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__user_id
+msgid "Commercial"
+msgstr "Comercial"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall__commercial_partner_id
+msgid "Commercial partner"
+msgstr "Entidad comercial"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__create_uid
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__create_date
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall__direction
+msgid "Direction"
+msgstr "Dirección"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall__display_name
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__display_name
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__duration
+msgid "Duration"
+msgstr "Duración"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,help:crm_phonecall_inbound.field_crm_phonecall_time__duration
+msgid "Duration in minutes and seconds."
+msgstr "Duración en minutos y segundos"
+
+#. module: crm_phonecall_inbound
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_phonecall_transfer_view_form
+msgid "Generate Transfer"
+msgstr "Generar transferencia"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall__id
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__id
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__id
+msgid "ID"
+msgstr ""
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__phonecall_id
+msgid "Inbound phone call"
+msgstr "Llamada entrante"
+
+#. module: crm_phonecall_inbound
+#: model:ir.ui.menu,name:crm_phonecall_inbound.menu_crm_phonecall_inbound
+msgid "Inbound phone calls"
+msgstr "Llamadas entrantes"
+
+#. module: crm_phonecall_inbound
+#: model:ir.actions.act_window,name:crm_phonecall_inbound.action_crm_phonecall_inbound
+msgid "Inbound phonecall"
+msgstr "Llamada entrante"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall____last_update
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time____last_update
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__write_uid
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__write_date
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__write_date
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__phonecall_id
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_case_phone_form_view
+msgid "Phone call"
+msgstr "Llamada"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model,name:crm_phonecall_inbound.model_crm_phonecall_time
+msgid "Phone call times"
+msgstr "Tiempo de las llamadas"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall__phonecall_time_ids
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_case_phone_form_view
+msgid "Phone calls"
+msgstr "Llamadas"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model,name:crm_phonecall_inbound.model_crm_phonecall
+msgid "Phonecall"
+msgstr "Llamada"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_time__team_id
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall_transfer__team_id
+msgid "Sales team"
+msgstr "Equipo de ventas"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model.fields,field_description:crm_phonecall_inbound.field_crm_phonecall__show_init_call
+msgid "Show init call button"
+msgstr "Enseñar el botón de inicio de llamada"
+
+#. module: crm_phonecall_inbound
+#: model:ir.actions.act_window,name:crm_phonecall_inbound.action_crm_phonecall_transfer
+msgid "Transfer Phone Call"
+msgstr "Transferir llamada"
+
+#. module: crm_phonecall_inbound
+#: model:ir.model,name:crm_phonecall_inbound.model_crm_phonecall_transfer
+msgid "Wizard to transfer phone call"
+msgstr "Wizard para transferir llamada"
+
+#. module: crm_phonecall_inbound
+#: model_terms:ir.ui.view,arch_db:crm_phonecall_inbound.crm_phonecall_transfer_view_form
+msgid "or"
+msgstr "o"

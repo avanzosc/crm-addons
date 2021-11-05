@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_phonecall_transfer_view_form" model="ir.ui.view">
+        <field name="model">crm.phonecall.transfer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="phonecall_id" invisible="True" />
+                        <field name="user_id"/>
+                        <field name="team_id"/>
+                    </group>
+                    <footer>
+                        <button name="button_generate_transfer" string="Generate Transfer"
+                                    type="object" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" class="oe_link" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_crm_phonecall_transfer" model="ir.actions.act_window">
+        <field name="name">Transfer Phone Call</field>
+        <field name="res_model">crm.phonecall.transfer</field>
+        <field name="view_mode">form</field>
+        <field name="binding_model_id" ref="model_crm_phonecall"/>
+        <field name="binding_view_types">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
