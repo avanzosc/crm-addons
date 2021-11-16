@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="crm_case_claims_form_view" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view"/>
+        <field name="arch" type="xml">
+            <field name="priority" position="before">
+                <field name="production_id"/>
+                <field name="workorder_id"/>
+                <field name="loss_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_crm_case_claims_filter" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="production_id"/>
+                <field name="workorder_id"/>
+                <field name="loss_id"/>
+            </field>
+            <filter name="type" position="after">
+                <filter context="{'group_by':'production_id'}" domain="[]" name="production" string="Production"/>
+                <filter context="{'group_by':'workorder_id'}" domain="[]" name="workorder" string="Work Order"/>
+                <filter context="{'group_by':'loss_id'}" domain="[]" name="loss" string="Problem Description"/>
+            </filter>
+        </field>
+    </record>
+</odoo>
