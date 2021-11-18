@@ -16,9 +16,9 @@ class MrpWorkorderPendingWizard(models.TransientModel):
         result = []
         workorder = self.env['mrp.workorder'].browse(
                 self.env.context.get('active_id'))
-        name = u'{} {} {}'.format(
-            workorder.name, workorder.product_id.name, (
-                workorder.production_id.name))
+        name = u'{} {} {} {}'.format(
+            workorder.production_id.name, workorder.name,
+            workorder.product_id.name, self.loss_id.name)
         result.append((workorder.id, name))
         return result
 
