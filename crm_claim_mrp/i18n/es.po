@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_claim_mrp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-16 12:43+0000\n"
+"PO-Revision-Date: 2021-11-16 12:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_production__count_claim
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder__count_claim
+msgid "# Claims"
+msgstr "# Reclamaciones"
+
+#. module: crm_claim_mrp
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.mrp_workorder_pending_view_form
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: crm_claim_mrp
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.mrp_workorder_pending_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: crm_claim_mrp
+#: model:ir.model,name:crm_claim_mrp.model_crm_claim
+msgid "Claim"
+msgstr "Reclamación"
+
+#. module: crm_claim_mrp
+#: code:addons/crm_claim_mrp/models/mrp_production.py:0
+#: code:addons/crm_claim_mrp/models/mrp_workorder.py:0
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_production__claim_ids
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder__claim_ids
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.mrp_production_form_view
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.mrp_production_workorder_form_view_inherit
+#, python-format
+msgid "Claims"
+msgstr "Reclamaciones"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__create_claim
+msgid "Create Claim"
+msgstr "Crear Incidencia"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_crm_claim__display_name
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_production__display_name
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder__display_name
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_crm_claim__id
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_production__id
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder__id
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_crm_claim____last_update
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_production____last_update
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder____last_update
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__write_date
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: crm_claim_mrp
+#: code:addons/crm_claim_mrp/models/mrp_workorder.py:0
+#, python-format
+msgid "Pending Work Order"
+msgstr "Orden de Trabajo Pendiente"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_crm_claim__loss_id
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_mrp_workorder_pending_wizard__loss_id
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.view_crm_case_claims_filter
+msgid "Problem Description"
+msgstr "Descripción del Problema"
+
+#. module: crm_claim_mrp
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_crm_claim__production_id
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.view_crm_case_claims_filter
+msgid "Production"
+msgstr "Producción"
+
+#. module: crm_claim_mrp
+#: model:ir.model,name:crm_claim_mrp.model_mrp_production
+msgid "Production Order"
+msgstr "Orden de producción"
+
+#. module: crm_claim_mrp
+#: model:ir.model,name:crm_claim_mrp.model_mrp_workorder_pending_wizard
+msgid "Wizard to create a claim"
+msgstr "Wizard para crear reclamación"
+
+#. module: crm_claim_mrp
+#: model:ir.model,name:crm_claim_mrp.model_mrp_workorder
+#: model:ir.model.fields,field_description:crm_claim_mrp.field_crm_claim__workorder_id
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.view_crm_case_claims_filter
+msgid "Work Order"
+msgstr "Orden de trabajo"
+
+#. module: crm_claim_mrp
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp.mrp_workorder_pending_view_form
+msgid "or"
+msgstr ""
