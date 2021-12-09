@@ -16,9 +16,10 @@ class MrpWorkorderPendingWizard(models.TransientModel):
         result = []
         workorder = self.env['mrp.workorder'].browse(
                 self.env.context.get('active_id'))
-        name = u'{} {} {} {}'.format(
-            workorder.production_id.name, workorder.name,
-            workorder.product_id.name, self.loss_id.name)
+        today = fields.Date.today()
+        name = u'{} {} {} {} {}'.format(
+            today, workorder.workcenter_id.name, workorder.product_id.name,
+            workorder.production_id.name, workorder.name)
         result.append((workorder.id, name))
         return result
 
@@ -30,7 +31,9 @@ class MrpWorkorderPendingWizard(models.TransientModel):
                           'production_id': workorder.production_id.id,
                           'user_id': self.env.user.id,
                           'name': self.name_get()[0][1],
-                          'loss_id': self.loss_id.id}
+                          'loss_id': self.loss_id.id,
+                          'model_ref_id': '%s,%s' % (
+                              'product.product', workorder.product_id.id)}
             self.env['crm.claim'].create(claim_vals)
         else:
             return False

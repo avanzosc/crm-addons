@@ -27,3 +27,14 @@ class CrmClaim(models.Model):
             domain = ['|', ('production_id', '=', self.production_id.id), (
                 'production_id', '=', False)]
         return {'domain': {'workorder_id': domain}}
+
+    @api.onchange('workorder_id', 'production_id', 'date',
+                  'model_ref_id', 'workorder_id.workcenter_id', )
+    def onchange_name(self):
+        if self.model_ref_id and self.workorder_id and (
+            self.workorder_id.workcenter_id) and (
+                self.production_id):
+            self.name = u'{} {} {} {} {}'.format(
+                self.date.date(), self.workorder_id.workcenter_id.name,
+                self.model_ref_id.name, self.production_id.name,
+                self.workorder_id.name)

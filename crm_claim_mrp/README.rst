@@ -6,7 +6,7 @@
 CRM Claim MRP
 =============
 
-* One to many to claims in Work Orders and Productions.
+* Many to many from claims to Work Orders and Productions.
 * When pressing the pause button, wizard to create a claim.
 
 Bug Tracker
