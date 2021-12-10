@@ -29,12 +29,12 @@
                 <page string="Images" groups="base.group_user">
                     <separator string="Photos" colspan="4"/>
                     <group colspan="2">
-                        <field name="photo1" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
-                        <field name="photo2" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
+                        <field name="photo1" widget="image" nolabel="1"/>
+                        <field name="photo2" widget="image" nolabel="1"/>
                     </group>
                     <group colspan="2">
-                        <field name="photo3" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
-                        <field name="photo4" img_width="180" img_height="180" width="180" height="180" widget="image" nolabel="1"/>
+                        <field name="photo3" widget="image" nolabel="1"/>
+                        <field name="photo4" widget="image" nolabel="1"/>
                     </group>
                 </page>
              </xpath>
