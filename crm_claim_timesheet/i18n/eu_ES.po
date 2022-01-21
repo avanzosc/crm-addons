@@ -18,71 +18,67 @@ msgstr ""
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_project_task__claim_count
 msgid "# Claims"
-msgstr "Nº reclamaciones"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Time Spent in Claim (Days)</span>"
 msgstr ""
-"<span style=\"margin-right: 15px;\">Tiempo dedicado a la reclamación "
-"(Días)</span>"
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Time Spent in Claim (Hours)</span>"
 msgstr ""
-"<span style=\"margin-right: 15px;\">Tiempo dedicado a la reclamación "
-"(Horas)</span>"
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Total (Days)</span>"
-msgstr "<span style=\"margin-right: 15px;\">Total (Días)</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Total (Hours)</span>"
-msgstr "<span style=\"margin-right: 15px;\">Total (Horas)</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_timesheet
 msgid "<span>Claim</span>"
-msgstr "<span>Reclamación</span"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span>Date</span>"
-msgstr "<span>Fecha</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span>Description</span>"
-msgstr "<span>Descripción</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span>Responsible</span>"
-msgstr "<span>Responsable</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<strong>Description</strong>"
-msgstr "<strong>Descripción</strong>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<strong>Hours Spent</strong>"
-msgstr "<strong>Horas dedicadas</strong>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<strong>Progress</strong>"
-msgstr "<strong>Progreso</strong>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model,name:crm_claim_timesheet.model_account_analytic_line
 msgid "Analytic Line"
-msgstr "Línea Analítica"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model,name:crm_claim_timesheet.model_crm_claim
@@ -90,123 +86,123 @@ msgstr "Línea Analítica"
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.portal_subtask_timesheet_tables
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.portal_timesheet_table
 msgid "Claim"
-msgstr "Reclamación"
+msgstr "Erreklamazioa"
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_project_task__claim_ids
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.project_task_view_form
 msgid "Claims"
-msgstr "Reclamaciones"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_account_analytic_line__display_name
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__display_name
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_project_task__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Izena erakutsi"
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_form
 msgid "Duration"
-msgstr "Duración"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__effective_hours
 msgid "Hours Spent"
-msgstr "Horas dedicadas"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_account_analytic_line__id
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__id
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_project_task__id
 msgid "ID"
-msgstr "Identificador"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__planned_hours
 msgid "Initially Planned Hours"
-msgstr "Horas iniciales planificadas"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_account_analytic_line____last_update
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim____last_update
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_project_task____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Azken aldaketa"
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_tree
 msgid "Planned"
-msgstr "Planificadas"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__project_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_search
 msgid "Project"
-msgstr "Proyecto"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.actions.report,name:crm_claim_timesheet.action_report_project_task
 msgid "Project Task Timesheet"
-msgstr "Partes de hora de la tarea"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_tree
 msgid "Remaining"
-msgstr "Dedicadas"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__remaining_hours
 msgid "Remaining Hours"
-msgstr "Horas restantes"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_tree
 msgid "Spent"
-msgstr "Invertidas"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model,name:crm_claim_timesheet.model_project_task
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__task_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_search
 msgid "Task"
-msgstr "Tarea"
+msgstr "Ataza"
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__task_remaining_hours
 msgid "Task Remaining Hours"
-msgstr "Horas restantes de la tarea"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "Time Spent (Days)"
-msgstr "Tiempo dedicado (Días)"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "Time Spent (Hours)"
-msgstr "Tiempo dedicado (Horas)"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__planned_hours
 msgid "Time planned to achieve this claim."
-msgstr "Tiempo previsto para realizar esta reclamación."
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__effective_hours
 msgid "Time spent on this claim."
-msgstr "Tiempo invertido en esta reclamación."
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__timesheet_ids
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_form
 msgid "Timesheet"
-msgstr "Parte de horas"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_form
 msgid "Timesheet Activities"
-msgstr "Actividades del parte de horas"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__remaining_hours
@@ -214,8 +210,6 @@ msgid ""
 "Total remaining time, can be re-estimated periodically by the assignee of "
 "the claim."
 msgstr ""
-"Total de tiempo restante, puede ser reestimado periódicamente por quien se "
-"le haya asignado la reclamación."
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__task_remaining_hours
@@ -223,5 +217,3 @@ msgid ""
 "Total remaining time, can be re-estimated periodically by the assignee of "
 "the task."
 msgstr ""
-"Total de tiempo restante, puede ser reestimado periódicamente por quien se "
-"le haya asignado la tarea."
