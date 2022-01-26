@@ -99,12 +99,18 @@
         <field name="domain">[("crm_lead_id.active","!=",True)]</field>
     </record>
 
+    <menuitem id="crm_lead_future_student_parent_menuitem"
+              parent="crm.crm_menu_root"
+              name="Future Students"
+              sequence="6" />
     <menuitem id="crm_lead_future_student_menuitem"
               action="crm_lead_future_student_action"
-              parent="crm.crm_menu_root" />
+              parent="crm_lead_future_student_parent_menuitem"
+              sequence="1" />
     <menuitem id="crm_lead_future_student_lost_menuitem"
               action="crm_lead_future_student_lost_action"
-              parent="crm.crm_menu_root" />
+              parent="crm_lead_future_student_parent_menuitem"
+              sequence="10" />
 
     <record id="action_create_new_student" model="ir.actions.server">
         <field name="name">Create new students</field>
