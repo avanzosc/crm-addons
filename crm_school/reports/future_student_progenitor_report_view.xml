@@ -76,7 +76,7 @@
     </record>
 
     <menuitem id="future_student_progenitor_report_menuitem"
-              parent="crm.crm_menu_root"
+              parent="crm_school.crm_lead_future_student_parent_menuitem"
               action="action_future_student_progenitor_report"
-              sequence="5" />
+              sequence="15" />
 </odoo>

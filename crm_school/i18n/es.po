@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 09:21+0000\n"
-"PO-Revision-Date: 2021-07-28 09:21+0000\n"
+"POT-Creation-Date: 2022-01-26 14:56+0000\n"
+"PO-Revision-Date: 2022-01-26 14:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -146,6 +146,7 @@ msgstr "Listado de progenitores de alumnos futuros"
 #. module: crm_school
 #: model:ir.actions.act_window,name:crm_school.crm_lead_future_student_action
 #: model:ir.ui.menu,name:crm_school.crm_lead_future_student_menuitem
+#: model:ir.ui.menu,name:crm_school.crm_lead_future_student_parent_menuitem
 msgid "Future Students"
 msgstr "Futuros Alumnos"
 
@@ -164,7 +165,7 @@ msgstr "Futuro alumno"
 #. module: crm_school
 #: model:ir.model,name:crm_school.model_crm_lead_future_student
 msgid "Future student from leads"
-msgstr "Futuro alumno desde iniciativa"
+msgstr "Futuro estudiante desde iniciativa"
 
 #. module: crm_school
 #: model:ir.model.fields,field_description:crm_school.field_crm_lead__future_student_ids
@@ -381,7 +382,7 @@ msgid "Year of birth"
 msgstr "Año nacimiento"
 
 #. module: crm_school
-#: code:addons/crm_school/models/crm.py:47
+#: code:addons/crm_school/models/crm.py:49
 #, python-format
 msgid "You aren't allowed to create opportunities, you must start from lead"
 msgstr "No puedes crear oportunidades, debes comenzar desde iniciativas"
