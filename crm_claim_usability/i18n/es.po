@@ -96,3 +96,10 @@ msgstr "Responsable"
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 msgid "Today"
 msgstr "Hoy"
+
+#. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_tree
+msgid "Write Date"
+msgstr "Fecha modificación"
+
