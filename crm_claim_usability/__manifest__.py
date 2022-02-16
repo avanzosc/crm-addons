@@ -14,8 +14,10 @@
     ],
     "excludes": [],
     "data": [
+        "security/crm_claim_usability_groups.xml",
         "data/crm_claim_usability_data.xml",
         "views/crm_claim_view.xml",
+        "views/res_config_settings_view.xml",
         "views/res_partner_view.xml",
     ],
     "installable": True,

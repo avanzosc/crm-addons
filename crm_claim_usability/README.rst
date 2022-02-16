@@ -1,19 +1,29 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
-   :alt: License: AGPL-3
-
 ================
 Claims Usability
 ================
+
+.. |badge1| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+    :alt: License: AGPL-3
+
+
+|badge1|
 
 Module that improves usability in claims.
 
 * Added commercial entity in order to group by company.
 * Only internal users can be responsible of a claim.
+* Show write date and user configurable by group.
 
-If crm_claim_code module is installed then display name will show the code.
+If **crm_claim_code** module is installed then display name will show the code.
 How is it shown is configurable by parameters, and avoidable with a context
 parameter.
+
+**Table of contents**
+
+.. contents::
+   :local:
+
 
 Bug Tracker
 ===========
@@ -26,9 +36,16 @@ help us smash it by providing detailed and welcomed feedback.
 Credits
 =======
 
+Authors
+~~~~~~~
+
+* AvanzOSC
+
 Contributors
-------------
-* Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>
-* Ana Juaristi <ajuaristio@gmail.com>
+~~~~~~~~~~~~
+* `AvanzOsc <http://www.avanzosc.es>`_:
+
+  * Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>
+  * Ana Juaristi <anajuaristi@avanzosc.es>
 
 Do not contact contributors directly about support or help with technical issues.
