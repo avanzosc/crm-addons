@@ -2,7 +2,6 @@
 <odoo>
     <record id="group_crm_claim_close" model="res.groups">
         <field name="name">Separated Claim Menus</field>
-        <field name="comment"></field>
         <field name="category_id" ref="base.module_category_hidden"/>
     </record>
 </odoo>
