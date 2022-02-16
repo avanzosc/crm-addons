@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-16 09:07+0000\n"
-"PO-Revision-Date: 2022-02-16 09:07+0000\n"
+"POT-Creation-Date: 2022-02-16 09:06+0000\n"
+"PO-Revision-Date: 2022-02-16 09:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,87 +18,87 @@ msgstr ""
 #. module: crm_claim_close
 #: model:ir.model,name:crm_claim_close.model_crm_claim
 msgid "Claim"
-msgstr "Reclamación"
+msgstr "Erreklamazioa"
 
 #. module: crm_claim_close
 #: model:ir.model,name:crm_claim_close.model_crm_claim_stage
 msgid "Claim stages"
-msgstr "Etapas de la reclamación"
+msgstr "Erreklamazio etapak"
 
 #. module: crm_claim_close
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__closed
 msgid "Closed"
-msgstr "Cerrado"
+msgstr "Itxita"
 
 #. module: crm_claim_close
 #: model:ir.actions.act_window,name:crm_claim_close.crm_claim_closed_action
 #: model:ir.ui.menu,name:crm_claim_close.menu_crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
 msgid "Closed Claims"
-msgstr "Reclamaciones cerradas"
+msgstr "Itxitako erreklamazioak"
 
 #. module: crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
 msgid "Closed Last Month"
-msgstr "Cerrado el último mes"
+msgstr "Azken hilean itxita"
 
 #. module: crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
 msgid "Closed Last Week"
-msgstr "Cerrado la última semana"
+msgstr "Azken astean itxita"
 
 #. module: crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
 msgid "Closed Last Year"
-msgstr "Cerrado el último año"
+msgstr "Azken urtean itxita"
 
 #. module: crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
 msgid "Closed Today"
-msgstr "Cerrado hoy"
+msgstr "Gaur itxita"
 
 #. module: crm_claim_close
 #: model:ir.model,name:crm_claim_close.model_res_config_settings
 msgid "Config Settings"
-msgstr "Opciones de configuración"
+msgstr "Konfigurazio ezarpenak"
 
 #. module: crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
 msgid "Date Closed"
-msgstr "Fecha de cierre"
+msgstr "Itxitako data"
 
 #. module: crm_claim_close
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim__display_name
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__display_name
 #: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Izena erakutsi"
 
 #. module: crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.res_config_settings_view_form
 msgid "Enable menus for closed and open claims"
-msgstr "Habilitar menus para reclamaciones cerradas y abiertas"
+msgstr "Ikeritako eta itxitako erreklamazioentzat banandutako menuak gaitu"
 
 #. module: crm_claim_close
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim__id
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__id
 #: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__id
 msgid "ID"
-msgstr "Identificador"
+msgstr ""
 
 #. module: crm_claim_close
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim____last_update
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage____last_update
 #: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Azken aldaketa"
 
 #. module: crm_claim_close
 #: model:ir.actions.act_window,name:crm_claim_close.crm_claim_open_action
 #: model:ir.ui.menu,name:crm_claim_close.menu_crm_claim_open
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
 msgid "Open Claims"
-msgstr "Reclamaciones abiertas"
+msgstr "Irekitako erreklamazioak"
 
 #. module: crm_claim_close
 #: model_terms:ir.actions.act_window,help:crm_claim_close.crm_claim_closed_action
@@ -109,15 +109,9 @@ msgid ""
 "                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).\n"
 "                Claims may automatically be linked to an email address using the mail gateway module."
 msgstr ""
-"Registre y rastree las reclamaciones de sus clientes. Las reclamaciones "
-"pueden estar ligadas a una orden de ventas o a un lote. Puede enviar correos"
-" electrónicos con archivos adjuntos y mantener el historial completo de una "
-"reclamación (correos enviados, tipo de intervención, etc.) Las reclamaciones"
-" pueden enlazarse automáticamente a una dirección de correo electrónico "
-"usando el módulo de puerta de enlace de correo electrónico."
 
 #. module: crm_claim_close
 #: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__group_crm_claim_close
 #: model:res.groups,name:crm_claim_close.group_crm_claim_close
 msgid "Separated Claim Menus"
-msgstr "Menus separados de reclamaciones"
+msgstr "Erreklamazioentzat banandutako menuak"
