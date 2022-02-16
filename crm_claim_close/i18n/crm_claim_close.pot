@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 20:16+0000\n"
-"PO-Revision-Date: 2021-07-16 20:16+0000\n"
+"POT-Creation-Date: 2022-02-16 09:06+0000\n"
+"PO-Revision-Date: 2022-02-16 09:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,8 +38,33 @@ msgid "Closed Claims"
 msgstr ""
 
 #. module: crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
+msgid "Closed Last Month"
+msgstr ""
+
+#. module: crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
+msgid "Closed Last Week"
+msgstr ""
+
+#. module: crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
+msgid "Closed Last Year"
+msgstr ""
+
+#. module: crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
+msgid "Closed Today"
+msgstr ""
+
+#. module: crm_claim_close
 #: model:ir.model,name:crm_claim_close.model_res_config_settings
 msgid "Config Settings"
+msgstr ""
+
+#. module: crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.crm_claim_view_search
+msgid "Date Closed"
 msgstr ""
 
 #. module: crm_claim_close
