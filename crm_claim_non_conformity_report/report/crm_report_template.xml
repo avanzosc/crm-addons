@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<template id="report_crmclaim_document">
+    <t t-call="crm_claim_non_conformity_report.external_layout_crmclaim">
+        <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+        <div class="page">
+            <div class="oe_structure"/>
+
+            <h4 class="mt12">
+                <strong>INFORME DE NO CONFORMIDAD / NON CONFORMITY REPORT: </strong>
+                <span t-field="doc.code" style="max-height:1cm; max-width:4cm;" align="right"/>
+            </h4>
+
+            <div class="col-14">
+                <hr class="mb-2"/>
+            </div>
+
+            <div class="row mt32 mb32" id="name">
+                <div class="col-8" t-if="doc.name">
+                    <strong>Claim Subject: </strong>
+                    <span t-field="doc.name"/>
+                </div>
+                <div class="col-4" t-if="doc.stage_id" align="right">
+                    <strong>Stage: </strong>
+                    <span t-field="doc.stage_id" align="right"/>
+                </div>
+            </div>
+
+            <div class="col-14">
+                <hr class="mb-2" style="border-bottom: 1px solid black;"/>
+            </div>
+
+            <div class="row mt32 mb32" id="product_informations">
+                <div class="col-12" t-if="doc.model_ref_id">
+                    <strong>Product: </strong>
+                    <span t-field="doc.model_ref_id.display_name"/>
+                </div>
+            </div>
+            <div class="row mt32 mb32" id="product_lot_informations">
+                <div class="col-12" t-if="doc.lot_id">
+                    <strong>Lot/Serial Number: </strong>
+                    <span t-field="doc.lot_id"/>
+                </div>
+            </div>
+
+            <div class="col-14">
+                <hr class="mb-2" style="border-bottom: 1px solid black;"/>
+            </div>
+
+            <div class="row mt32 mb32" id="date_informations">
+                <div class="col-12" t-if="doc.lot_id">
+                    <strong>Claim Date: </strong>
+                    <span t-esc="doc.date.strftime('%A, %d de %B del %Y, a las  %H:%M:%S')"/>
+                </div>
+            </div>
+            <div class="row mt32 mb32" id="type_informations">
+                <div class="col-12" t-if="doc.type">
+                    <strong>Type: </strong>
+                    <span t-field="doc.type"/>
+                </div>
+            </div>
+            <div class="row mt32 mb32" id="partner_informations">
+                <div class="col-12" t-if="doc.partner_id">
+                    <strong>Company: </strong>
+                    <span t-field="doc.partner_id"/>
+                </div>
+            </div>
+            <div class="row mt32 mb32" id="contact_informations">
+                <div class="col-12" t-if="doc.contact_id">
+                    <strong>Responsible:</strong>
+                    <span t-field="doc.contact_id"/>
+                </div>
+            </div>
+
+            <div class="col-14">
+                <hr class="mb-2" style="border-bottom: 1px solid black;"/>
+            </div>
+
+                <div class="row" t-if="doc.description">
+                    <div t-if="doc.description" t-attf-class="col-12 col-lg-7 mb-1 mb-md-0 col-lg-12">
+                        <div class="d-flex my-2">
+                            <strong>DESCRIPTION:</strong>
+                        </div>
+                        <div class="py-1 px-2 bg-100 small" t-field="doc.description"/>
+                    </div>
+                </div>
+
+            <div class="col-14">
+                <hr class="mb-2" style="border-bottom: 1px solid black;"/>
+            </div>
+
+                <div class="row" t-if="doc.cause">
+                    <div t-if="doc.cause" t-attf-class="col-12 col-lg-7 mb-1 mb-md-0 col-lg-12">
+                        <div class="d-flex my-2">
+                            <strong>CAUSE:</strong>
+                        </div>
+                        <div class="py-1 px-2 bg-100 small" t-field="doc.cause"/>
+                    </div>
+                </div>
+
+            <div class="col-14">
+                <hr class="mb-2" style="border-bottom: 1px solid black;"/>
+            </div>
+
+                <div class="row" t-if="doc.immediate_action">
+                    <div t-if="doc.immediate_action" t-attf-class="col-12 col-lg-7 mb-2 mb-md-2 col-lg-12">
+                        <div class="d-flex my-2">
+                            <strong>IMMEDIATE ACTION:</strong>
+                        </div>
+                        <div class="py-1 px-2 bg-100 small" t-field="doc.immediate_action"/>
+                    </div>
+                </div>
+
+                <div class="row" t-if="doc.resolution">
+                    <div t-if="doc.resolution" t-attf-class="col-12 col-lg-7 mb-2 mb-md-2 col-lg-12">
+                        <div class="d-flex my-2">
+                            <strong>CORRECTIVE ACTION:</strong>
+                        </div>
+                        <div class="py-1 px-2 bg-100 small" t-field="doc.resolution"/>
+                    </div>
+                </div>
+
+            <div class="col-14">
+                <hr class="mb-3" style="border-bottom: 1px solid black;"/>
+            </div>
+
+                <div class="row mb8">
+                    <div class="col-auto col-3 mw-100 mb-0" t-if="doc.date">
+                        <strong>Quality Manager: </strong>
+                        <p class="m-0" t-field="doc.user_id"/>
+                        <p class="m-0" t-field="doc.user_id.email"/>
+                    </div>
+                    <div class="col-8" style="width: 100%; margin: 0 auto;">
+                        <img t-if="doc.user_id.sign" align="right" t-att-src="image_data_uri(doc.user_id.sign)" style="width:40%;border: 1px solid black;" alt="Signature" t-options='{"widget": "image"}'/>
+                    </div>
+                </div>
+
+        </div>
+    </t>
+</template>
+
+<template id="report_crmclaim">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="crm_claim_non_conformity_report.report_crmclaim_document" t-lang="doc.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+</odoo>
