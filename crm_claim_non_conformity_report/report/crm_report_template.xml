@@ -7,10 +7,10 @@
         <div class="page">
             <div class="oe_structure"/>
 
-            <h4 class="mt12">
+            <h5 class="mt12">
                 <strong>INFORME DE NO CONFORMIDAD / NON CONFORMITY REPORT: </strong>
                 <span t-field="doc.code" style="max-height:1cm; max-width:4cm;" align="right"/>
-            </h4>
+            </h5>
 
             <div class="col-14">
                 <hr class="mb-2"/>
