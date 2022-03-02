@@ -17,15 +17,17 @@
         <field name="model">crm.claim.corrective</field>
         <field name="arch" type="xml">
             <form string="Corrective Actions">
-            <header>
-                <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
-            </header>
-            <group name="name">
-                <field name="name" />
-                <field name="claim_id"/>
-                <field name="partner_id" />
-             </group>
-             <field name="corrective_action_ids"/>
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <group name="main">
+                        <field name="name" />
+                        <field name="claim_id" />
+                        <field name="partner_id" />
+                    </group>
+                    <field name="corrective_action_ids"/>
+                </sheet>
             </form>
         </field>
     </record>
