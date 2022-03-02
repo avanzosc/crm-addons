@@ -25,6 +25,12 @@ class TestACrmClaimCorrective(CrmClaimCorrectiveCommon):
         self.assertEqual(self.claim.resolution,
                          self.resolution_descrp.description)
 
+    def test_crm_claim_create_corrective(self):
+        self.assertFalse(self.claim.corrective_id)
+        self.claim.button_create_corrective()
+        self.assertTrue(self.claim.corrective_id)
+        self.assertEqual(self.claim, self.claim.corrective_id.claim_id)
+
     def _get_next_name(self):
         return self.corrective_sequence.get_next_char(
             self.corrective_sequence.number_next_actual)
