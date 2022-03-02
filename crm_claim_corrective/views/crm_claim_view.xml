@@ -6,24 +6,30 @@
         <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
         <field name="arch" type="xml">
             <field name="description" position="before">
-            <group name="description">
-                <field name="claim_description_id" context="{'default_type_description':'claim'}"/>
-            </group>
+                <group name="description">
+                    <field name="claim_description_id" context="{'default_type_description':'claim'}"/>
+                </group>
             </field>
             <field name="cause" position="before">
-            <group name="cause_description">
-                <field name="cause_description_id" context="{'default_type_description':'cause'}"/>
-            </group>
+                <group name="cause_description">
+                    <field name="cause_description_id" context="{'default_type_description':'cause'}"/>
+                </group>
+            </field>
+            <field name="cause" position="after">
+                <button name="button_create_corrective"
+                        type="object"
+                        string="Create Corrective Action"
+                        attrs="{'invisible': ['|',('cause','=',False),('corrective_id','!=',False)]}"/>
             </field>
             <field name="type_action" position="after">
                 <group name="corrective" colspan="4">
-                    <field name="corrective_id" attrs="{'readonly': [('cause', '=', False)]}"/>
+                    <field name="corrective_id" readonly="True" />
                 </group>
             </field>
             <field name="resolution" position="before">
-            <group name="resolution_description">
-                <field name="resolution_description_id" context="{'default_type_description':'resolution'}"/>
-            </group>
+                <group name="resolution_description">
+                    <field name="resolution_description_id" context="{'default_type_description':'resolution'}"/>
+                </group>
             </field>
             <xpath expr="//form/sheet/group/notebook/page[2]" position="after">
                 <page string="Images" groups="base.group_user">
@@ -70,7 +76,6 @@
         <field name="res_model">crm.claim.description</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="crm_claim_description_tree_view" />
-        <field name="context"></field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Generate you own claim descriptions.
