@@ -27,6 +27,7 @@ class CrmClaim(models.Model):
     second_model_ref_id = fields.Reference(
         selection="_selection_model", string="Second Model Reference"
     )
+    rejected_qty = fields.Integer(string='Rejected Quantity')
 
     @api.model
     def _selection_model(self):
