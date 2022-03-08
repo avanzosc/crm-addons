@@ -10,6 +10,7 @@ Module that improves usability in claims.
 
 * Added commercial entity in order to group by company.
 * Only internal users can be responsible of a claim.
+* Button box in claims form.
 
 If crm_claim_code module is installed then display name will show the code.
 How is it shown is configurable by parameters, and avoidable with a context
