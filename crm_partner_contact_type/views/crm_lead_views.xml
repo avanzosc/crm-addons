@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_view_form" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='lead_partner']/field[@name='partner_id']" position="after">
+                <field name="contact_type_id" />
+            </xpath>
+            <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="after">
+                <field name="contact_type_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_case_tree_view_leads" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <field name="partner_name" position="after">
+                <field name="contact_type_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_case_tree_view_oppor" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="contact_type_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_crm_case_leads_filter" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="contact_type_id" />
+            </field>
+            <filter name="source" domain="[]" position="after">
+                <separator orientation="vertical"/>
+                <filter string="Contact type" name="contact-type" domain="[]" context="{'group_by':'contact_type_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_crm_case_opportunities_filter" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="contact_type_id" />
+            </field>
+            <filter name="source" domain="[]" position="after">
+                <separator orientation="vertical"/>
+                <filter string="Contact type" name="contact-type" domain="[]" context="{'group_by':'contact_type_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>
