@@ -32,6 +32,7 @@ class CrmLead(models.Model):
             'permission_ids': [
                 (0, 0, {
                     'type_id': x.id,
+                    'type_description': x.description,
                     'center_id': future_student.school_id.id,
                 }) for x in types],
         })
