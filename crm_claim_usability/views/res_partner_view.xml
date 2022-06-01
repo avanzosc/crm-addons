@@ -4,8 +4,13 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="crm_claim.view_claim_res_partner_info_form" />
         <field name="arch" type="xml">
-            <button name="%(crm_claim.crm_claim_category_claim0)d" position="attributes">
-                <attribute name="name">%(crm_claim_usability.crm_claim_by_partner)d</attribute>
+            <button
+        name="%(crm_claim.crm_claim_category_claim0)d"
+        position="attributes"
+      >
+                <attribute
+          name="name"
+        >%(crm_claim_usability.crm_claim_by_partner)d</attribute>
             </button>
         </field>
     </record>

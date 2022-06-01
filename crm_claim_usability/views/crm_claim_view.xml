@@ -5,7 +5,9 @@
         <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
         <field name="arch" type="xml">
             <tree position="attributes">
-                <attribute name="decoration-bf">not date_closed and date_deadline</attribute>
+                <attribute
+          name="decoration-bf"
+        >not date_closed and date_deadline</attribute>
             </tree>
             <field name="partner_id" position="after">
                 <field name="commercial_partner_id" invisible="True" />
@@ -19,8 +21,12 @@
                 <attribute name="widget">remaining_days</attribute>
             </field>
             <field name="date" position="after">
-                <field name="write_date" string="Write Date"
-                       widget="date" optional="hide"/>
+                <field
+          name="write_date"
+          string="Write Date"
+          widget="date"
+          optional="hide"
+        />
             </field>
             <field name="activity_date_deadline" position="attributes">
               <attribute name="optional">show</attribute>
@@ -54,32 +60,61 @@
         <field name="priority" eval="10" />
         <field name="arch" type="xml">
             <filter name="Unassigned Claims" position="attributes">
-                <attribute name="domain">['|',('user_id','=', False),('user_id','=',1)]</attribute>
+                <attribute
+          name="domain"
+        >['|',('user_id','=', False),('user_id','=',1)]</attribute>
             </filter>
             <field name="user_id" position="after">
-                <filter string="My Claims" name="myclaims" domain="[('user_id.id', '=', uid)]"/>
+                <filter
+          string="My Claims"
+          name="myclaims"
+          domain="[('user_id.id', '=', uid)]"
+        />
                 <separator />
-                <filter string="Today" name="today"
-                        domain="[('date','&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d'))]"/>
-                <filter string="Last Week" name="week"
-                        domain="[('date','&gt;', (context_today() - datetime.timedelta(days=7)).strftime('%%Y-%%m-%%d'))]"/>
-                <filter string="Last Month" name="month"
-                        domain="[('date','&gt;', (context_today() - datetime.timedelta(days=30)).strftime('%%Y-%%m-%%d'))]"/>
-                <filter string="Last Year" name="year"
-                        domain="[('date','&gt;', (context_today() - datetime.timedelta(days=365)).strftime('%%Y-%%m-%%d'))]"/>
+                <filter
+          string="Today"
+          name="today"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d'))]"
+        />
+                <filter
+          string="Last Week"
+          name="week"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=7)).strftime('%%Y-%%m-%%d'))]"
+        />
+                <filter
+          string="Last Month"
+          name="month"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=30)).strftime('%%Y-%%m-%%d'))]"
+        />
+                <filter
+          string="Last Year"
+          name="year"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=365)).strftime('%%Y-%%m-%%d'))]"
+        />
                 <separator />
-                <filter string="Date" name="date_filter" date="date" default_period="last_month"/>
+                <filter
+          string="Date"
+          name="date_filter"
+          date="date"
+          default_period="last_month"
+        />
             </field>
             <filter name="partner" position="after">
-                <filter context="{'group_by':'commercial_partner_id'}"
-                        domain="[]"
-                        help="Commercial Entity"
-                        name="commercial_partner"
-                        string="Commercial Entity" />
+                <filter
+          context="{'group_by':'commercial_partner_id'}"
+          domain="[]"
+          help="Commercial Entity"
+          name="commercial_partner"
+          string="Commercial Entity"
+        />
             </filter>
             <filter name="claim_month" position="after">
-                <filter string="Write Date" name="write_date_filter"
-                    domain="[]" context="{'group_by': 'write_date'}"/>
+                <filter
+          string="Write Date"
+          name="write_date_filter"
+          domain="[]"
+          context="{'group_by': 'write_date'}"
+        />
             </filter>
         </field>
     </record>
@@ -89,8 +124,12 @@
         <field name="res_model">crm.claim</field>
         <field name="view_mode">tree,calendar,form</field>
         <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
-        <field name="domain">['|',('partner_id','child_of',active_id),('commercial_partner_id','child_of',active_id)]</field>
-        <field name="context">{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
+        <field
+      name="domain"
+    >['|',('partner_id','child_of',active_id),('commercial_partner_id','child_of',active_id)]</field>
+        <field
+      name="context"
+    >{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
         <field name="search_view_id" ref="crm_claim.view_crm_case_claims_filter" />
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
