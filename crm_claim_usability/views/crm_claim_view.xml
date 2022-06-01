@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_claim_usability_view_tree" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute
+          name="decoration-bf"
+        >not date_closed and date_deadline</attribute>
+            </tree>
+            <field name="partner_id" position="after">
+                <field name="commercial_partner_id" invisible="True" />
+            </field>
+            <field name="date" position="attributes">
+                <attribute name="widget">date</attribute>
+                <attribute name="string">Date</attribute>
+            </field>
+            <field name="date_deadline" position="attributes">
+                <attribute name="invisible" />
+                <attribute name="widget">remaining_days</attribute>
+            </field>
+            <field name="date" position="after">
+                <field
+          name="write_date"
+          string="Write Date"
+          widget="date"
+          optional="hide"
+        />
+            </field>
+            <field name="activity_date_deadline" position="attributes">
+              <attribute name="optional">show</attribute>
+            </field>
+            <field name="activity_summary" position="attributes">
+              <attribute name="optional">show</attribute>
+            </field>
+            <field name="categ_id" position="attributes">
+              <attribute name="optional">hide</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_claim_usability_view_form" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group" position="before">
+                <div class="oe_button_box" name="button_box">
+                </div>
+            </xpath>
+            <field name="partner_id" position="after">
+                <field name="commercial_partner_id" invisible="True" />
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_claim_usability_view_search" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="priority" eval="10" />
+        <field name="arch" type="xml">
+            <filter name="Unassigned Claims" position="attributes">
+                <attribute
+          name="domain"
+        >['|',('user_id','=', False),('user_id','=',1)]</attribute>
+            </filter>
+            <field name="user_id" position="after">
+                <filter
+          string="My Claims"
+          name="myclaims"
+          domain="[('user_id.id', '=', uid)]"
+        />
+                <separator />
+                <filter
+          string="Today"
+          name="today"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d'))]"
+        />
+                <filter
+          string="Last Week"
+          name="week"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=7)).strftime('%%Y-%%m-%%d'))]"
+        />
+                <filter
+          string="Last Month"
+          name="month"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=30)).strftime('%%Y-%%m-%%d'))]"
+        />
+                <filter
+          string="Last Year"
+          name="year"
+          domain="[('date','&gt;', (context_today() - datetime.timedelta(days=365)).strftime('%%Y-%%m-%%d'))]"
+        />
+                <separator />
+                <filter
+          string="Date"
+          name="date_filter"
+          date="date"
+          default_period="last_month"
+        />
+            </field>
+            <filter name="partner" position="after">
+                <filter
+          context="{'group_by':'commercial_partner_id'}"
+          domain="[]"
+          help="Commercial Entity"
+          name="commercial_partner"
+          string="Commercial Entity"
+        />
+            </filter>
+            <filter name="claim_month" position="after">
+                <filter
+          string="Write Date"
+          name="write_date_filter"
+          domain="[]"
+          context="{'group_by': 'write_date'}"
+        />
+            </filter>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="crm_claim_by_partner">
+        <field name="name">Partner's Claims</field>
+        <field name="res_model">crm.claim</field>
+        <field name="view_mode">tree,calendar,form</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field
+      name="domain"
+    >['|',('partner_id','child_of',active_id),('commercial_partner_id','child_of',active_id)]</field>
+        <field
+      name="context"
+    >{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
+        <field name="search_view_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Record and track your customers' claims.
+                Claims may be linked to a sales order or a lot.
+                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).
+                Claims may automatically be linked to an email address using the mail gateway module.
+            </p>
+        </field>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_crm_tag_tree_claim0">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="act_window_id" ref="crm_claim_by_partner" />
+    </record>
+    <record model="ir.actions.act_window.view" id="action_crm_tag_calendar_claim0">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_calendar_view" />
+        <field name="act_window_id" ref="crm_claim_by_partner" />
+    </record>
+    <record model="ir.actions.act_window.view" id="action_crm_tag_form_claim0">
+        <field name="sequence" eval="3" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="act_window_id" ref="crm_claim_by_partner" />
+    </record>
+</odoo>
