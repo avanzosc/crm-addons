@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hr_timesheet_sheet_view_form" model="ir.ui.view">
+        <field name="model">hr_timesheet.sheet</field>
+        <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='timesheet_ids']/tree//field[@name='task_id']"
+                position="after"
+            >
+                <field
+                    name="claim_id"
+                    optional="show"
+                    domain="[('task_id','=',task_id)]"
+                    options="{'no_create_edit': True, 'no_open': True}"
+                />
+            </xpath>
+            <xpath
+                expr="//field[@name='timesheet_ids']/form//field[@name='task_id']"
+                position="after"
+            >
+                <field
+                    name="claim_id"
+                    optional="show"
+                    domain="[('task_id','=',task_id)]"
+                    options="{'no_create_edit': True, 'no_open': True}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
