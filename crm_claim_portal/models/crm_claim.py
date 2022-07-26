@@ -11,12 +11,12 @@ class CrmClaim(models.Model):
     def _compute_access_url(self):
         super(CrmClaim, self)._compute_access_url()
         for task in self:
-            task.access_url = '/my/claim/%s' % task.id
+            task.access_url = "/my/claim/%s" % task.id
 
     def preview_crm_claim(self):
         self.ensure_one()
         return {
-            'type': 'ir.actions.act_url',
-            'target': 'self',
-            'url': self.get_portal_url(),
+            "type": "ir.actions.act_url",
+            "target": "self",
+            "url": self.get_portal_url(),
         }
