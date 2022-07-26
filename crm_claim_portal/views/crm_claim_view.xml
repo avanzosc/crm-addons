@@ -5,9 +5,7 @@
         <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
         <field name="arch" type="xml">
             <header position="inside">
-                <button name="preview_crm_claim"
-                        type="object"
-                        string="Preview Claim" />
+                <button name="preview_crm_claim" type="object" string="Preview Claim" />
             </header>
         </field>
     </record>
