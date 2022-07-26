@@ -1,31 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <template id="portal_my_home_sale" name="Show Claims" customize_show="True" inherit_id="portal.portal_my_home" priority="50">
+    <template
+        id="portal_my_home_sale"
+        name="Show Claims"
+        customize_show="True"
+        inherit_id="portal.portal_my_home"
+        priority="50"
+    >
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
             <t t-call="portal.portal_docs_entry">
                 <t t-set="title">Claims</t>
-                <t t-set="url" t-value="'/my/claims'"/>
-                <t t-set="placeholder_count" t-value="'claim_count'"/>
+                <t t-set="url" t-value="'/my/claims'" />
+                <t t-set="placeholder_count" t-value="'claim_count'" />
             </t>
         </xpath>
     </template>
 
-    <template id="portal_layout" name="Portal layout: claim menu entry" inherit_id="portal.portal_breadcrumbs" priority="50">
+    <template
+        id="portal_layout"
+        name="Portal layout: claim menu entry"
+        inherit_id="portal.portal_breadcrumbs"
+        priority="50"
+    >
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
-            <li t-if="page_name == 'claim' or claim" class="col-lg-2" t-attf-class="breadcrumb-item #{'active ' if not claim else ''}">
+            <li
+                t-if="page_name == 'claim' or claim"
+                class="col-lg-2"
+                t-attf-class="breadcrumb-item #{'active ' if not claim else ''}"
+            >
                 <a t-if="claim" t-attf-href="/my/claims?{{ keep_query() }}">Claims</a>
                 <t t-else="">Claims</t>
             </li>
-            <li t-if="claim" class="breadcrumb-item active text-truncate col-8 col-lg-10">
-                <t t-esc="claim.name"/>
+            <li
+                t-if="claim"
+                class="breadcrumb-item active text-truncate col-8 col-lg-10"
+            >
+                <t t-esc="claim.name" />
             </li>
         </xpath>
     </template>
 
     <template id="portal_my_claims" name="My Claims">
         <t t-call="portal.portal_layout">
-            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-set="breadcrumbs_searchbar" t-value="True" />
 
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">Claims</t>
@@ -38,19 +56,41 @@
             <t t-if="grouped_claims" t-call="portal.portal_table">
                 <t t-foreach="grouped_claims" t-as="claims">
                         <thead>
-                            <tr t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                            <tr
+                            t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}"
+                        >
                                 <th class="text-left">Ref</th>
-                                <th t-if="groupby in ('none','stage')">Claim Subject</th>
+                                <th
+                                t-if="groupby in ('none','stage')"
+                            >Claim Subject</th>
                                 <th t-if="groupby == 'partner'">
-                                    <em class="font-weight-normal text-muted">Claims reported by:</em>
-                                    <span class="text-truncate" t-field="claims[0].sudo().partner_id.display_name"/></th>
+                                    <em
+                                    class="font-weight-normal text-muted"
+                                >Claims reported by:</em>
+                                    <span
+                                    class="text-truncate"
+                                    t-field="claims[0].sudo().partner_id.display_name"
+                                /></th>
                                 <th t-if="groupby == 'user'">
-                                    <em class="font-weight-normal text-muted">Claims assigned to:</em>
-                                    <span class="text-truncate" t-field="claims[0].sudo().user_id.display_name"/></th>
+                                    <em
+                                    class="font-weight-normal text-muted"
+                                >Claims assigned to:</em>
+                                    <span
+                                    class="text-truncate"
+                                    t-field="claims[0].sudo().user_id.display_name"
+                                /></th>
                                 <th t-if="groupby == 'stage'">
-                                    <em class="font-weight-normal text-muted">Claims in stage:</em>
-                                    <span class="text-truncate" t-field="claims[0].sudo().stage_id.name"/></th>
-                                <th t-if="groupby != 'stage'" class="text-center">Stage</th>
+                                    <em
+                                    class="font-weight-normal text-muted"
+                                >Claims in stage:</em>
+                                    <span
+                                    class="text-truncate"
+                                    t-field="claims[0].sudo().stage_id.name"
+                                /></th>
+                                <th
+                                t-if="groupby != 'stage'"
+                                class="text-center"
+                            >Stage</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,10 +100,17 @@
                                         <span t-esc="claim.code" />
                                     </td>
                                     <td>
-                                        <a t-att-href="claim.get_portal_url()" t-att-title="claim.name"><span t-field="claim.name"/></a>
+                                        <a
+                                        t-att-href="claim.get_portal_url()"
+                                        t-att-title="claim.name"
+                                    ><span t-field="claim.name" /></a>
                                     </td>
                                     <td t-if="groupby != 'stage'" class="text-center">
-                                        <span class="badge badge-pill badge-info" title="Current stage of the claim" t-esc="claim.stage_id.name" />
+                                        <span
+                                        class="badge badge-pill badge-info"
+                                        title="Current stage of the claim"
+                                        t-esc="claim.stage_id.name"
+                                    />
                                     </td>
                                 </tr>
                             </t>
@@ -77,7 +124,10 @@
         <t t-call="portal.portal_layout">
             <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_manager">
                 <t t-call="portal.portal_back_in_edit_mode">
-                    <t t-set="backend_url" t-value="'/web#model=crm.claim&amp;id=%s&amp;view_type=form' % (claim.id)"/>
+                    <t
+                        t-set="backend_url"
+                        t-value="'/web#model=crm.claim&amp;id=%s&amp;view_type=form' % (claim.id)"
+                    />
                 </t>
             </t>
 
@@ -86,12 +136,20 @@
                     <div class="row no-gutters">
                         <div class="col-12">
                             <h5 class="d-flex mb-1 mb-md-0 row">
-                                <span t-field="claim.display_name"
-                                      class="col-9 text-truncate"/>
-                                <small class="text-muted d-none d-md-inline"> (#<span t-field="claim.id"/>)</small>
+                                <span
+                                    t-field="claim.display_name"
+                                    class="col-9 text-truncate"
+                                />
+                                <small class="text-muted d-none d-md-inline"> (#<span
+                                        t-field="claim.id"
+                                    />)</small>
                                 <div class="col-3 col-md-2 text-right">
                                     <small class="text-right">Status:</small>
-                                    <span t-field="claim.stage_id.name" class=" badge badge-pill badge-info" title="Current stage of this claim"/>
+                                    <span
+                                        t-field="claim.stage_id.name"
+                                        class=" badge badge-pill badge-info"
+                                        title="Current stage of this claim"
+                                    />
                                 </div>
                             </h5>
                         </div>
@@ -100,10 +158,16 @@
                 <t t-set="card_body">
                     <div class="row mb-4">
                         <div class="col-12 col-md-6 mb-1">
-                            <strong>Date:</strong> <span t-field="claim.create_date" t-options='{"widget": "date"}'/>
+                            <strong>Date:</strong> <span
+                                t-field="claim.create_date"
+                                t-options='{"widget": "date"}'
+                            />
                         </div>
                         <div class="col-12 col-md-6" t-if="claim.date_deadline">
-                            <strong>Deadline:</strong> <span t-field="claim.date_deadline" t-options='{"widget": "date"}'/>
+                            <strong>Deadline:</strong> <span
+                                t-field="claim.date_deadline"
+                                t-options='{"widget": "date"}'
+                            />
                         </div>
                     </div>
 
@@ -112,11 +176,24 @@
                             <strong>Assigned to</strong>
                             <div class="row">
                                 <div class="col flex-grow-0 pr-3">
-                                    <img t-if="claim.user_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(claim.user_id.image_1024)" alt="Contact"/>
-                                    <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    <img
+                                        t-if="claim.user_id.image_1024"
+                                        class="rounded-circle mt-1 o_portal_contact_img"
+                                        t-att-src="image_data_uri(claim.user_id.image_1024)"
+                                        alt="Contact"
+                                    />
+                                    <img
+                                        t-else=""
+                                        class="rounded-circle mt-1 o_portal_contact_img"
+                                        src="/web/static/src/img/user_menu_avatar.png"
+                                        alt="Contact"
+                                    />
                                 </div>
                                 <div class="col pl-md-0">
-                                    <div t-field="claim.user_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    <div
+                                        t-field="claim.user_id"
+                                        t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -124,22 +201,38 @@
                             <strong>Reported by</strong>
                             <div class="row">
                                 <div class="col flex-grow-0 pr-3">
-                                    <img t-if="claim.partner_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(claim.partner_id.image_1024)" alt="Contact"/>
-                                    <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    <img
+                                        t-if="claim.partner_id.image_1024"
+                                        class="rounded-circle mt-1 o_portal_contact_img"
+                                        t-att-src="image_data_uri(claim.partner_id.image_1024)"
+                                        alt="Contact"
+                                    />
+                                    <img
+                                        t-else=""
+                                        class="rounded-circle mt-1 o_portal_contact_img"
+                                        src="/web/static/src/img/user_menu_avatar.png"
+                                        alt="Contact"
+                                    />
                                 </div>
                                 <div class="col pl-md-0">
-                                    <div t-field="claim.partner_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    <div
+                                        t-field="claim.partner_id"
+                                        t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
+                                    />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row" t-if="claim.description">
-                        <div t-if="claim.description" t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 col-lg-12">
-                            <hr class="mb-1"/>
+                        <div
+                            t-if="claim.description"
+                            t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 col-lg-12"
+                        >
+                            <hr class="mb-1" />
                             <div class="d-flex my-2">
                                 <strong>Description</strong>
                             </div>
-                             <span t-field="claim.description" itemprop="description"/>
+                             <span t-field="claim.description" itemprop="description" />
                         </div>
                     </div>
                 </t>
@@ -148,7 +241,7 @@
             <div id="claim_communication" class="mt32">
                 <h2>History</h2>
                 <t t-call="portal.message_thread">
-                    <t t-set="object" t-value="claim"/>
+                    <t t-set="object" t-value="claim" />
                 </t>
             </div>
         </t>
