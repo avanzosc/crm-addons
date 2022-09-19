@@ -16,8 +16,7 @@ class CrmClaim(models.Model):
         index=True,
     )
     user_id = fields.Many2one(
-        domain=lambda self: [
-            ("groups_id", "in", self.env.ref("base.group_user").id)],
+        domain=lambda self: [("groups_id", "in", self.env.ref("base.group_user").id)],
     )
 
     def name_get(self):
@@ -43,7 +42,7 @@ class CrmClaim(models.Model):
         return result
 
     def with_user(self, user):
-        """ with_user(user)
+        """with_user(user)
 
         Return a new version of this recordset attached to the given user, in
         non-superuser mode, unless `user` is the superuser (by convention, the
@@ -52,6 +51,9 @@ class CrmClaim(models.Model):
         if isinstance(user, int):
             user = self.env["res.users"].browse(user)
         if user and not user.has_group("base.group_user"):
-            user = (self.env.user if self.env.user.has_group("base.group_user")
-                    else self.env.ref("base.user_root"))
+            user = (
+                self.env.user
+                if self.env.user.has_group("base.group_user")
+                else self.env.ref("base.user_root")
+            )
         return super(CrmClaim, self).with_user(user)

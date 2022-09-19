@@ -2,6 +2,6 @@
 <odoo>
     <record id="group_crm_claim_technical" model="res.groups">
         <field name="name">Metadata Info on Claims</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="category_id" ref="base.module_category_hidden" />
     </record>
 </odoo>
