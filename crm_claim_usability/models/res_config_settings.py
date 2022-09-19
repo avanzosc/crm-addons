@@ -9,4 +9,5 @@ class ResConfigSettings(models.TransientModel):
 
     group_crm_claim_technical = fields.Boolean(
         string="Show Metadata Info in Claims",
-        implied_group="crm_claim_usability.group_crm_claim_technical")
+        implied_group="crm_claim_usability.group_crm_claim_technical",
+    )
