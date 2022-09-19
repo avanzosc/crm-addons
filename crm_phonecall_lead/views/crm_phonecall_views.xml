@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="crm_case_phone_form_view" model="ir.ui.view">
+        <field name="model">crm.phonecall</field>
+        <field name="inherit_id" ref="crm_phonecall.crm_case_phone_form_view"/>
+        <field name="arch" type="xml">
+            <button name="action_button_convert2opportunity" position="replace">
+                <button
+                    attrs="{'invisible':[ '|', ('opportunity_id','!=',False), ('state', 'not in', ('open', 'done'))]}"
+                    class="oe_stat_button"
+                    help="Convert To Opportunity"
+                    icon="fa-star"
+                    name="create_lead_opportunity"
+                    type="object"
+                >
+                    <span>
+                        Convert To
+                        <br />
+                        Lead/Opportunity
+                    </span>
+                </button>
+            </button>
+        </field>
+    </record>
+
+    <record id="crm_case_inbound_phone_tree_view" model="ir.ui.view">
+        <field name="model">crm.phonecall</field>
+        <field name="inherit_id" ref="crm_phonecall.crm_case_inbound_phone_tree_view"/>
+        <field name="arch" type="xml">
+            <button name="action_button_convert2opportunity" position="replace">
+                <button
+                    attrs="{'invisible':[ '|', ('opportunity_id','!=',False), ('state', 'not in', ('open', 'done'))]}"
+                    icon="fa-hand-pointer-o"
+                    name="create_lead_opportunity"
+                    type="object"
+                    string="Convert To Lead/Opportunity"
+                >
+                </button>
+            </button>
+        </field>
+    </record>
+</odoo>
