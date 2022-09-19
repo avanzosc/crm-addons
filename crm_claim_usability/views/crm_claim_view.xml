@@ -22,12 +22,6 @@
                 <field name="write_date" string="Write Date"
                        widget="date" optional="hide"/>
             </field>
-            <field name="activity_date_deadline" position="attributes">
-              <attribute name="optional">show</attribute>
-            </field>
-            <field name="activity_summary" position="attributes">
-              <attribute name="optional">show</attribute>
-            </field>
             <field name="categ_id" position="attributes">
               <attribute name="optional">hide</attribute>
             </field>
