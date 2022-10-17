@@ -76,22 +76,22 @@
                 <filter
                     string="Today"
                     name="today"
-                    domain="[('date','&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d'))]"
+                    domain="[('date','&gt;', (datetime.datetime.combine(context_today(), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S'))]"
                 />
                 <filter
                     string="Last Week"
                     name="week"
-                    domain="[('date','&gt;', (context_today() - datetime.timedelta(days=7)).strftime('%%Y-%%m-%%d'))]"
+                    domain="[('date','&gt;', (datetime.datetime.combine(context_today() - datetime.timedelta(days=7), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S'))]"
                 />
                 <filter
                     string="Last Month"
                     name="month"
-                    domain="[('date','&gt;', (context_today() - datetime.timedelta(days=30)).strftime('%%Y-%%m-%%d'))]"
+                    domain="[('date','&gt;', (datetime.datetime.combine(context_today() - datetime.timedelta(days=30), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S'))]"
                 />
                 <filter
                     string="Last Year"
                     name="year"
-                    domain="[('date','&gt;', (context_today() - datetime.timedelta(days=365)).strftime('%%Y-%%m-%%d'))]"
+                    domain="[('date','&gt;', (datetime.datetime.combine(context_today() - datetime.timedelta(days=365), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S'))]"
                 />
                 <separator />
                 <filter
