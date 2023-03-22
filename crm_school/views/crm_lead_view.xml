@@ -106,7 +106,7 @@
                 </page>
                 <page name="family" string='Families' attrs="{'invisible': [('educational_category', '!=', 'family')]}" >
                     <field name="allowed_student_ids" invisible="True" />
-                    <field name="payer_ids" 
+                    <field name="payer_ids"
                            context="{'default_family_id': partner_id}">
                         <tree editable="top"
                               decoration-danger="payer and not is_company">
@@ -114,7 +114,7 @@
                                    options="{'no_create': True}"/>
                             <field name="child2_educational_category" />
                             <field name="responsible_id"
-                                   context="{'default_educational_category': 'progenitor', 'default_parent_id': parent.partner_id}"/>
+                                   context="{'default_educational_category': 'progenitor', 'default_parent_id': parent.partner_id, 'mail_create_nolog': True}"/>
                             <field name="responsible_educational_category" />
                             <field name="responsible_old_student" />
                             <field name="is_company" invisible="True" />
