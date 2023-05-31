@@ -6,14 +6,14 @@
             <field name="inherit_id" ref="crm.res_config_settings_view_form" />
             <field name="arch" type="xml">
                 <xpath
-                    expr="//div[@name='qualification_setting_container']"
-                    position="inside"
-                >
+          expr="//div[@name='qualification_setting_container']"
+          position="inside"
+        >
                     <div
-                        class="col-12 col-lg-6 o_setting_box"
-                        id="crm_claim_usability"
-                        title=""
-                    >
+            class="col-12 col-lg-6 o_setting_box"
+            id="crm_claim_usability"
+            title=""
+          >
                         <div class="o_setting_left_pane">
                             <field name="group_crm_claim_technical" />
                         </div>
