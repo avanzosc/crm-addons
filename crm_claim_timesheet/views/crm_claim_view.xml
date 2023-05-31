@@ -5,71 +5,114 @@
         <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
         <field name="arch" type="xml">
             <field name="model_ref_id" position="before">
-                <field name="project_id"
-                       domain="['|',('partner_id','child_of',commercial_partner_id),('partner_id','=',False)]"
-                       options="{'no_create_edit': True, 'no_open': True}"
-                       invisible="context.get('default_partner_id',False)" />
-                <label for="task_id" attrs="{'invisible': [('project_id','=',False)]}"
-                       invisible="context.get('default_partner_id',False)"/>
-                <div class="o_row" name="task"
-                     attrs="{'invisible': [('project_id','=',False)]}"
-                     invisible="context.get('default_partner_id',False)">
-                    <field name="task_id"
-                           domain="[('project_id','=',project_id)]"
-                           options="{'no_create_edit': True, 'no_open': True}"
-                           invisible="context.get('default_partner_id',False)" />
-                    [<field name="task_remaining_hours"  widget="timesheet_uom_no_toggle" />]
+                <field
+          name="project_id"
+          domain="['|',('partner_id','child_of',commercial_partner_id),('partner_id','=',False)]"
+          options="{'no_create_edit': True, 'no_open': True}"
+          invisible="context.get('default_partner_id',False)"
+        />
+                <label
+          for="task_id"
+          attrs="{'invisible': [('project_id','=',False)]}"
+          invisible="context.get('default_partner_id',False)"
+        />
+                <div
+          class="o_row"
+          name="task"
+          attrs="{'invisible': [('project_id','=',False)]}"
+          invisible="context.get('default_partner_id',False)"
+        >
+                    <field
+            name="task_id"
+            domain="[('project_id','=',project_id)]"
+            options="{'no_create_edit': True, 'no_open': True}"
+            invisible="context.get('default_partner_id',False)"
+          />
+                    [<field
+            name="task_remaining_hours"
+            widget="timesheet_uom_no_toggle"
+          />]
                 </div>
             </field>
             <field name="description" position="after">
-                <div name="timesheet" attrs="{'invisible': [('task_id','=',False)]}"
-                     invisible="context.get('default_partner_id',False)">
+                <div
+          name="timesheet"
+          attrs="{'invisible': [('task_id','=',False)]}"
+          invisible="context.get('default_partner_id',False)"
+        >
                 <separator string="Timesheet" />
                 <group>
                     <field name="planned_hours" widget="timesheet_uom_no_toggle" />
                     <field name="effective_hours" widget="timesheet_uom_no_toggle" />
                     <field name="remaining_hours" widget="timesheet_uom_no_toggle" />
                 </group>
-                <field name="timesheet_ids" mode="tree,kanban"
-                       context="{'default_claim_id': active_id, 'default_project_id': project_id, 'default_task_id': task_id}">
-                    <tree editable="bottom" string="Timesheet Activities" default_order="date">
-                        <field name="date"/>
-                        <field name="user_id" invisible="1"/>
-                        <field name="employee_id" required="1" widget="many2one_avatar_employee"/>
-                        <field name="name" required="0"/>
-                        <field name="unit_amount" widget="timesheet_uom" decoration-danger="unit_amount &gt; 24"/>
-                        <field name="project_id" invisible="1"/>
-                        <field name="task_id" invisible="1"/>
+                <field
+            name="timesheet_ids"
+            mode="tree,kanban"
+            context="{'default_claim_id': active_id, 'default_project_id': project_id, 'default_task_id': task_id}"
+          >
+                    <tree
+              editable="bottom"
+              string="Timesheet Activities"
+              default_order="date"
+            >
+                        <field name="date" />
+                        <field name="user_id" invisible="1" />
+                        <field
+                name="employee_id"
+                required="1"
+                widget="many2one_avatar_employee"
+              />
+                        <field name="name" required="0" />
+                        <field
+                name="unit_amount"
+                widget="timesheet_uom"
+                decoration-danger="unit_amount &gt; 24"
+              />
+                        <field name="project_id" invisible="1" />
+                        <field name="task_id" invisible="1" />
                         <field name="claim_id" invisible="1" />
-                        <field name="company_id" invisible="1"/>
+                        <field name="company_id" invisible="1" />
                     </tree>
                     <kanban class="o_kanban_mobile">
-                        <field name="date"/>
-                        <field name="user_id"/>
-                        <field name="employee_id" widget="many2one_avatar_employee"/>
-                        <field name="name"/>
-                        <field name="unit_amount" decoration-danger="unit_amount &gt; 24"/>
-                        <field name="project_id"/>
-                        <field name="task_id" invisible="1"/>
+                        <field name="date" />
+                        <field name="user_id" />
+                        <field name="employee_id" widget="many2one_avatar_employee" />
+                        <field name="name" />
+                        <field
+                name="unit_amount"
+                decoration-danger="unit_amount &gt; 24"
+              />
+                        <field name="project_id" />
+                        <field name="task_id" invisible="1" />
                         <field name="claim_id" invisible="1" />
                         <templates>
                             <t t-name="kanban-box">
-                                <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div
+                    t-attf-class="oe_kanban_card oe_kanban_global_click"
+                  >
                                     <div class="row">
                                         <div class="col-6">
-                                            <strong><span><t t-esc="record.employee_id.value"/></span></strong>
+                                            <strong><span><t
+                              t-esc="record.employee_id.value"
+                            /></span></strong>
                                         </div>
                                         <div class="col-6 pull-right text-right">
-                                            <strong><t t-esc="record.date.value"/></strong>
+                                            <strong><t
+                            t-esc="record.date.value"
+                          /></strong>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6 text-muted">
-                                            <span><t t-esc="record.name.value"/></span>
+                                            <span><t t-esc="record.name.value" /></span>
                                         </div>
                                         <div class="col-6">
                                             <span class="pull-right text-right">
-                                                <field name="unit_amount" widget="float_time"/>
+                                                <field
+                            name="unit_amount"
+                            widget="float_time"
+                          />
                                             </span>
                                         </div>
                                     </div>
@@ -80,15 +123,24 @@
                     <form string="Timesheet Activities">
                         <sheet>
                              <group>
-                                <field name="date"/>
-                                <field name="user_id" invisible="1"/>
-                                <field name="employee_id" required="1" widget="many2one_avatar_employee"/>
-                                <field name="name"/>
-                                <field name="unit_amount" string="Duration" widget="float_time" decoration-danger="unit_amount &gt; 24"/>
-                                <field name="project_id" invisible="1"/>
-                                <field name="task_id" invisible="1"/>
+                                <field name="date" />
+                                <field name="user_id" invisible="1" />
+                                <field
+                    name="employee_id"
+                    required="1"
+                    widget="many2one_avatar_employee"
+                  />
+                                <field name="name" />
+                                <field
+                    name="unit_amount"
+                    string="Duration"
+                    widget="float_time"
+                    decoration-danger="unit_amount &gt; 24"
+                  />
+                                <field name="project_id" invisible="1" />
+                                <field name="task_id" invisible="1" />
                                 <field name="claim_id" invisible="1" />
-                                <field name="company_id" invisible="1"/>
+                                <field name="company_id" invisible="1" />
                             </group>
                         </sheet>
                     </form>
@@ -103,18 +155,27 @@
         <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
         <field name="arch" type="xml">
             <field name="date_closed" position="after">
-                <field name="planned_hours" string="Planned"
-                       widget="timesheet_uom_no_toggle"
-                       invisible="context.get('default_partner_id',False)"
-                       optional="hide" />
-                <field name="effective_hours" string="Spent"
-                       widget="timesheet_uom_no_toggle"
-                       invisible="context.get('default_partner_id',False)"
-                       optional="hide" />
-                <field name="remaining_hours" string="Remaining"
-                       widget="timesheet_uom_no_toggle"
-                       invisible="context.get('default_partner_id',False)"
-                       optional="hide" />
+                <field
+          name="planned_hours"
+          string="Planned"
+          widget="timesheet_uom_no_toggle"
+          invisible="context.get('default_partner_id',False)"
+          optional="hide"
+        />
+                <field
+          name="effective_hours"
+          string="Spent"
+          widget="timesheet_uom_no_toggle"
+          invisible="context.get('default_partner_id',False)"
+          optional="hide"
+        />
+                <field
+          name="remaining_hours"
+          string="Remaining"
+          widget="timesheet_uom_no_toggle"
+          invisible="context.get('default_partner_id',False)"
+          optional="hide"
+        />
             </field>
         </field>
     </record>
@@ -128,8 +189,18 @@
                 <field name="task_id" />
             </field>
             <filter name="closure" position="after">
-                <filter context="{'group_by':'project_id'}" domain="[]" name="project" string="Project"/>
-                <filter context="{'group_by':'task_id'}" domain="[]" name="task" string="Task"/>
+                <filter
+          context="{'group_by':'project_id'}"
+          domain="[]"
+          name="project"
+          string="Project"
+        />
+                <filter
+          context="{'group_by':'task_id'}"
+          domain="[]"
+          name="task"
+          string="Task"
+        />
             </filter>
         </field>
     </record>

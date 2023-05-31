@@ -4,21 +4,29 @@
         <t t-call="web.external_layout">
             <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
             <t t-set="address">
-                <div t-field="doc.partner_id"
-                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
-                <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
+                <div
+          t-field="doc.partner_id"
+          t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
+        />
+                <p t-if="doc.partner_id.vat"><t
+            t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"
+          />: <span t-field="doc.partner_id.vat" /></p>
             </t>
             <div class="page">
-                <div class="oe_structure"/>
+                <div class="oe_structure" />
 
                 <h2 class="mt16">
-                    <span t-field="doc.name"/>
+                    <span t-field="doc.name" />
                 </h2>
 
                 <div class="row mt32 mb32" id="informations">
                     <div t-if="doc.effective_hours" class="col-auto col-3 mw-100 mb-2">
                         <strong>Hours Spent</strong>
-                        <p class="m-0" t-field="doc.effective_hours" t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}" />
+                        <p
+              class="m-0"
+              t-field="doc.effective_hours"
+              t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"
+            />
                     </div>
                     <div t-if="doc.progress" class="col-auto col-3 mw-100 mb-2">
                         <strong>Progress</strong>
@@ -26,17 +34,26 @@
                     </div>
                 </div>
                 <div class="row" t-if="doc.description">
-                    <div t-if="doc.description" t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 col-lg-12">
-                        <hr class="mb-1"/>
+                    <div
+            t-if="doc.description"
+            t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 col-lg-12"
+          >
+                        <hr class="mb-1" />
                         <div class="d-flex my-2">
                             <strong>Description</strong>
                         </div>
-                        <div class="py-1 px-2 bg-100 small" t-field="doc.description"/>
+                        <div class="py-1 px-2 bg-100 small" t-field="doc.description" />
                     </div>
                 </div>
                 <div t-if="doc.timesheet_ids">
-                    <t t-set="is_uom_day" t-value="doc.timesheet_ids._is_timesheet_encode_uom_day()"/>
-                    <t t-set="timesheets" t-value="doc.timesheet_ids.filtered(lambda t: not t.claim_id)" />
+                    <t
+            t-set="is_uom_day"
+            t-value="doc.timesheet_ids._is_timesheet_encode_uom_day()"
+          />
+                    <t
+            t-set="timesheets"
+            t-value="doc.timesheet_ids.filtered(lambda t: not t.claim_id)"
+          />
                     <table class="table table-sm o_main_table">
                         <thead style="display: table-row-group">
                             <tr>
@@ -52,23 +69,43 @@
                         <tbody>
                             <tr t-foreach="timesheets" t-as="timesheet">
                                 <td>
-                                   <span t-field="timesheet.date"/>
+                                   <span t-field="timesheet.date" />
                                 </td>
                                 <td>
-                                   <span t-field="timesheet.user_id.partner_id.name"/>
-                                   <span t-if="not timesheet.user_id.partner_id.name" t-field="timesheet.employee_id"/>
+                                   <span t-field="timesheet.user_id.partner_id.name" />
+                                   <span
+                    t-if="not timesheet.user_id.partner_id.name"
+                    t-field="timesheet.employee_id"
+                  />
                                 </td>
                                 <td>
-                                    <span t-field="timesheet.name" t-options="{'widget': 'text'}"/>
+                                    <span
+                    t-field="timesheet.name"
+                    t-options="{'widget': 'text'}"
+                  />
                                 </td>
 
                                 <td class="text-right">
-                                    <span t-if="is_uom_day" t-esc="timesheet._get_timesheet_time_day()" t-options="{'widget': 'timesheet_uom'}"/>
-                                    <span t-else="" t-field="timesheet.unit_amount" t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"/>
+                                    <span
+                    t-if="is_uom_day"
+                    t-esc="timesheet._get_timesheet_time_day()"
+                    t-options="{'widget': 'timesheet_uom'}"
+                  />
+                                    <span
+                    t-else=""
+                    t-field="timesheet.unit_amount"
+                    t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"
+                  />
                                 </td>
                             </tr>
-                            <t t-foreach="doc.timesheet_ids.mapped('claim_id')" t-as="claim">
-                                <t t-set="claim_timesheets" t-value="doc.timesheet_ids.filtered(lambda t: t.claim_id == claim)" />
+                            <t
+                t-foreach="doc.timesheet_ids.mapped('claim_id')"
+                t-as="claim"
+              >
+                                <t
+                  t-set="claim_timesheets"
+                  t-value="doc.timesheet_ids.filtered(lambda t: t.claim_id == claim)"
+                />
                                 <t t-set="nbCols" t-value="4" />
                                 <tr>
                                     <th t-attf-colspan="{{nbCols}}">
@@ -77,44 +114,80 @@
                                 </tr>
                                 <tr t-foreach="claim_timesheets" t-as="claim_timesheet">
                                     <td>
-                                       <span t-field="claim_timesheet.date"/>
+                                       <span t-field="claim_timesheet.date" />
                                     </td>
                                     <td>
-                                       <span t-field="claim_timesheet.user_id.partner_id.name"/>
-                                       <span t-if="not claim_timesheet.user_id.partner_id.name" t-field="claim_timesheet.employee_id"/>
+                                       <span
+                      t-field="claim_timesheet.user_id.partner_id.name"
+                    />
+                                       <span
+                      t-if="not claim_timesheet.user_id.partner_id.name"
+                      t-field="claim_timesheet.employee_id"
+                    />
                                     </td>
                                     <td>
-                                        <span t-field="claim_timesheet.name" t-options="{'widget': 'text'}"/>
+                                        <span
+                      t-field="claim_timesheet.name"
+                      t-options="{'widget': 'text'}"
+                    />
                                     </td>
 
                                     <td class="text-right">
-                                        <span t-if="is_uom_day" t-esc="claim_timesheet._get_timesheet_time_day()" t-options="{'widget': 'timesheet_uom'}"/>
-                                        <span t-else="" t-field="claim_timesheet.unit_amount" t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"/>
+                                        <span
+                      t-if="is_uom_day"
+                      t-esc="claim_timesheet._get_timesheet_time_day()"
+                      t-options="{'widget': 'timesheet_uom'}"
+                    />
+                                        <span
+                      t-else=""
+                      t-field="claim_timesheet.unit_amount"
+                      t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"
+                    />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="text-right" t-attf-colspan="{{nbCols}}">
                                         <strong t-if="is_uom_day">
-                                            <span style="margin-right: 15px;">Time Spent in Claim (Days)</span>
-                                            <t t-esc="claim_timesheets._convert_hours_to_days(sum(claim_timesheets.mapped('unit_amount')))" t-options="{'widget': 'timesheet_uom'}"/>
+                                            <span
+                        style="margin-right: 15px;"
+                      >Time Spent in Claim (Days)</span>
+                                            <t
+                        t-esc="claim_timesheets._convert_hours_to_days(sum(claim_timesheets.mapped('unit_amount')))"
+                        t-options="{'widget': 'timesheet_uom'}"
+                      />
                                         </strong>
                                         <strong t-else="">
-                                            <span style="margin-right: 15px;">Time Spent in Claim (Hours)</span>
-                                            <t t-esc="sum(claim_timesheets.mapped('unit_amount'))" t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"/>
+                                            <span
+                        style="margin-right: 15px;"
+                      >Time Spent in Claim (Hours)</span>
+                                            <t
+                        t-esc="sum(claim_timesheets.mapped('unit_amount'))"
+                        t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"
+                      />
                                         </strong>
                                     </td>
                                 </tr>
                             </t>
                             <tr>
-                                <t t-set="nbCols" t-value="4"/>
+                                <t t-set="nbCols" t-value="4" />
                                 <td class="text-right" t-attf-colspan="{{nbCols}}">
                                     <strong t-if="is_uom_day">
-                                        <span style="margin-right: 15px;">Total (Days)</span>
-                                        <t t-esc="doc.timesheet_ids._convert_hours_to_days(sum(doc.timesheet_ids.mapped('unit_amount')))" t-options="{'widget': 'timesheet_uom'}"/>
+                                        <span
+                      style="margin-right: 15px;"
+                    >Total (Days)</span>
+                                        <t
+                      t-esc="doc.timesheet_ids._convert_hours_to_days(sum(doc.timesheet_ids.mapped('unit_amount')))"
+                      t-options="{'widget': 'timesheet_uom'}"
+                    />
                                     </strong>
                                     <strong t-else="">
-                                        <span style="margin-right: 15px;">Total (Hours)</span>
-                                        <t t-esc="sum(doc.timesheet_ids.mapped('unit_amount'))" t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"/>
+                                        <span
+                      style="margin-right: 15px;"
+                    >Total (Hours)</span>
+                                        <t
+                      t-esc="sum(doc.timesheet_ids.mapped('unit_amount'))"
+                      t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"
+                    />
                                     </strong>
                                 </td>
                             </tr>
@@ -128,8 +201,10 @@
     <template id="report_project_task">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="crm_claim_timesheet.report_project_task_document"
-                   t-lang="doc.partner_id.lang"/>
+                <t
+          t-call="crm_claim_timesheet.report_project_task_document"
+          t-lang="doc.partner_id.lang"
+        />
             </t>
         </t>
     </template>
@@ -140,7 +215,7 @@
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">crm_claim_timesheet.report_project_task</field>
         <field name="report_file">crm_claim_timesheet.report_project_task</field>
-        <field name="binding_model_id" ref="project.model_project_task"/>
+        <field name="binding_model_id" ref="project.model_project_task" />
         <field name="binding_type">report</field>
     </record>
 </odoo>

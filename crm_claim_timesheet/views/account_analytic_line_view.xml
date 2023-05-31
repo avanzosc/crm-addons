@@ -5,9 +5,12 @@
         <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
         <field name="arch" type="xml">
             <field name="task_id" position="after">
-                <field name="claim_id" optional="show"
-                       domain="[('task_id','=',task_id)]"
-                       options="{'no_create_edit': True, 'no_open': True}" />
+                <field
+          name="claim_id"
+          optional="show"
+          domain="[('task_id','=',task_id)]"
+          options="{'no_create_edit': True, 'no_open': True}"
+        />
             </field>
         </field>
     </record>
@@ -17,9 +20,12 @@
         <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form" />
         <field name="arch" type="xml">
             <field name="task_id" position="after">
-                <field name="claim_id" optional="show"
-                       domain="[('task_id','=',task_id)]"
-                       options="{'no_create_edit': True, 'no_open': True}" />
+                <field
+          name="claim_id"
+          optional="show"
+          domain="[('task_id','=',task_id)]"
+          options="{'no_create_edit': True, 'no_open': True}"
+        />
             </field>
         </field>
     </record>

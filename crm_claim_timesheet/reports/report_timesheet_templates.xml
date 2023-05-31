@@ -1,18 +1,18 @@
 <odoo>
     <template id="report_timesheet" inherit_id="hr_timesheet.report_timesheet">
         <t t-set="show_task" position="after">
-            <t t-set="show_claim" t-value="bool(docs.mapped('claim_id'))"/>
+            <t t-set="show_claim" t-value="bool(docs.mapped('claim_id'))" />
         </t>
         <xpath expr="//thead/tr/th[@t-if='show_project']" position="before">
             <th class="align-middle" t-if="show_claim"><span>Claim</span></th>
         </xpath>
         <xpath expr="//tr[@t-as='l']//td[@t-if='show_project']" position="before">
             <td t-if="show_claim">
-                <span t-esc="l.claim_id.sudo().display_name"/>
+                <span t-esc="l.claim_id.sudo().display_name" />
             </td>
         </xpath>
         <t t-set="nbCols" position="after">
-            <t t-if="show_claim" t-set="nbCols" t-value="nbCols + 1"/>
+            <t t-if="show_claim" t-set="nbCols" t-value="nbCols + 1" />
         </t>
     </template>
 
