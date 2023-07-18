@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="crm_lead_view_form" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="before">
+                <field name="partner_company_id" invisible="1"/>
+                <field name="possible_partner_shipping_ids" widget="many2many_tags" invisible="1"/>
+                <field name="possible_partner_invoice_ids" widget="many2many_tags" invisible="1"/>
+                <field name="partner_shipping_id" options="{'no_create': True}" domain="[('id', 'in', possible_partner_shipping_ids)]" required="1"/>
+                <field name="partner_invoice_id" options="{'no_create': True}" domain="[('id', 'in', possible_partner_invoice_ids)]" required="1"/>
+                <field name="property_payment_term_id" required="1"/>
+                <field name="customer_payment_mode_id" required="1"/>
+                <field name="final_partner_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>
