@@ -38,6 +38,7 @@ class CrmLead(models.Model):
         comodel_name="res.partner",
         compute="_compute_partner_invoice_ids")
 
+    @api.depends("partner_id")
     def _compute_partner_shipping_ids(self):
         for line in self:
             possible_shippings = self.env['res.partner']
@@ -53,6 +54,7 @@ class CrmLead(models.Model):
                         possible_shippings += line.partner_company_id.parent_id.child_ids.filtered(lambda c: c.type == 'delivery')
             line.possible_partner_shipping_ids = [(6, 0, possible_shippings.ids)]
 
+    @api.depends("partner_id")
     def _compute_partner_invoice_ids(self):
         for line in self:
             possible_invoice = self.env['res.partner']
