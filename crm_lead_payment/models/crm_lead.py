@@ -41,32 +41,45 @@ class CrmLead(models.Model):
     @api.depends("partner_id")
     def _compute_partner_shipping_ids(self):
         for line in self:
-            possible_shippings = self.env['res.partner']
+            possible_shippings = self.env["res.partner"]
             if line.partner_id:
-                possible_shippings += line.partner_company_id
-                if line.partner_company_id.child_ids:
-                    possible_shippings += (
-                        line.partner_company_id.child_ids.filtered(
-                            lambda c: c.type == 'delivery'))
-                if line.partner_company_id.parent_id:
-                    possible_shippings += line.partner_company_id.parent_id
-                    if line.partner_company_id.parent_id.child_ids:
-                        possible_shippings += line.partner_company_id.parent_id.child_ids.filtered(lambda c: c.type == 'delivery')
-            line.possible_partner_shipping_ids = [(6, 0, possible_shippings.ids)]
+                if line.partner_id.company_type == "company":
+                    possible_shippings += line.partner_id
+                    if line.partner_id.child_ids:
+                        possible_shippings += (
+                            line.partner_id.child_ids.filtered(
+                                lambda c: c.type == "delivery"))
+                else:
+                    possible_shippings += line.partner_company_id
+                    if line.partner_company_id.child_ids:
+                        possible_shippings += (
+                            line.partner_company_id.child_ids.filtered(
+                                lambda c: c.type == "delivery"))
+                    if line.partner_company_id.parent_id:
+                        possible_shippings += line.partner_company_id.parent_id
+                        if line.partner_company_id.parent_id.child_ids:
+                            possible_shippings += line.partner_company_id.parent_id.child_ids.filtered(lambda c: c.type == "delivery")
+            line.possible_partner_shipping_ids = [(
+                6, 0, possible_shippings.ids)]
 
     @api.depends("partner_id")
     def _compute_partner_invoice_ids(self):
         for line in self:
-            possible_invoice = self.env['res.partner']
+            possible_invoice = self.env["res.partner"]
             if line.partner_id:
-                possible_invoice += line.partner_company_id
-                if line.partner_company_id.child_ids:
-                    possible_invoice += (
-                        line.partner_company_id.child_ids.filtered(
-                            lambda c: c.type == 'invoice'))
-                if line.partner_company_id.parent_id:
-                    possible_invoice += line.partner_company_id.parent_id
-                    if line.partner_company_id.parent_id.child_ids:
-                        possible_invoice += line.partner_company_id.parent_id.child_ids.filtered(lambda c: c.type == 'invoice')
+                if line.partner_id.company_type == "company":
+                    possible_invoice += line.partner_id
+                    if line.partner_id.child_ids:
+                        possible_invoice += line.partner_id.child_ids.filtered(
+                            lambda c: c.type == "invoice")
+                else:
+                    possible_invoice += line.partner_company_id
+                    if line.partner_company_id.child_ids:
+                        possible_invoice += (
+                            line.partner_company_id.child_ids.filtered(
+                                lambda c: c.type == "invoice"))
+                    if line.partner_company_id.parent_id:
+                        possible_invoice += line.partner_company_id.parent_id
+                        if line.partner_company_id.parent_id.child_ids:
+                            possible_invoice += line.partner_company_id.parent_id.child_ids.filtered(lambda c: c.type == "invoice")
             line.possible_partner_invoice_ids = [(6, 0, possible_invoice.ids)]
-
