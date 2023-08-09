@@ -7,6 +7,8 @@
     "category": "Sales/CRM",
     "depends": [
         "sale_crm",
+        "account_payment_mode",
+        "account_payment_partner",
     ],
     "data": [
         "views/crm_lead_view.xml",
