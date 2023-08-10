@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-03 15:01+0000\n"
-"PO-Revision-Date: 2021-11-03 15:01+0000\n"
+"POT-Creation-Date: 2023-08-14 08:52+0000\n"
+"PO-Revision-Date: 2023-08-14 08:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -98,6 +98,7 @@ msgstr ""
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Closed"
 msgstr ""
@@ -127,6 +128,11 @@ msgstr ""
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Deadline"
+msgstr ""
+
+#. module: crm_claim_portal
+#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_create_claim
+msgid "Description:"
 msgstr ""
 
 #. module: crm_claim_portal
@@ -172,9 +178,20 @@ msgstr ""
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#, python-format
+msgid "My Claims"
+msgstr ""
+
+#. module: crm_claim_portal
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Name"
+msgstr ""
+
+#. module: crm_claim_portal
+#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claims
+msgid "New Claim"
 msgstr ""
 
 #. module: crm_claim_portal
@@ -193,6 +210,7 @@ msgstr ""
 
 #. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
+#: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #, python-format
 msgid "Open"
 msgstr ""
@@ -205,41 +223,6 @@ msgstr ""
 #. module: crm_claim_portal
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.crm_claim_view_form
 msgid "Preview Claim"
-msgstr ""
-
-#. module: crm_claim_portal
-#: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__rating_ids
-msgid "Rating"
-msgstr ""
-
-#. module: crm_claim_portal
-#: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__rating_avg
-msgid "Rating Average"
-msgstr ""
-
-#. module: crm_claim_portal
-#: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__rating_last_feedback
-msgid "Rating Last Feedback"
-msgstr ""
-
-#. module: crm_claim_portal
-#: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__rating_last_image
-msgid "Rating Last Image"
-msgstr ""
-
-#. module: crm_claim_portal
-#: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__rating_last_value
-msgid "Rating Last Value"
-msgstr ""
-
-#. module: crm_claim_portal
-#: model:ir.model.fields,field_description:crm_claim_portal.field_crm_claim__rating_count
-msgid "Rating count"
-msgstr ""
-
-#. module: crm_claim_portal
-#: model:ir.model.fields,help:crm_claim_portal.field_crm_claim__rating_last_feedback
-msgid "Reason of the rating"
 msgstr ""
 
 #. module: crm_claim_portal
@@ -288,6 +271,16 @@ msgid "Security Token"
 msgstr ""
 
 #. module: crm_claim_portal
+#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_create_claim
+msgid "Send a new claim"
+msgstr ""
+
+#. module: crm_claim_portal
+#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_create_claim
+msgid "Send new claim"
+msgstr ""
+
+#. module: crm_claim_portal
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: code:addons/crm_claim_portal/controllers/crm_claim_portal.py:0
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claims
@@ -296,8 +289,20 @@ msgid "Stage"
 msgstr ""
 
 #. module: crm_claim_portal
+#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_create_claim
+msgid "Subject:"
+msgstr ""
+
+#. module: crm_claim_portal
+#: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_create_claim
+msgid ""
+"Submit Claim\n"
+"                            <span class=\"fa fa-long-arrow-right\"/>"
+msgstr ""
+
+#. module: crm_claim_portal
 #: model_terms:ir.ui.view,arch_db:crm_claim_portal.portal_my_claims
-msgid "There are no claims."
+msgid "There are currently no claims for your account."
 msgstr ""
 
 #. module: crm_claim_portal
