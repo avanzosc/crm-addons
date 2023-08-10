@@ -26,17 +26,13 @@
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
             <li
                 t-if="page_name == 'claim' or claim"
-                class="col-lg-2"
                 t-attf-class="breadcrumb-item #{'active ' if not claim else ''}"
             >
                 <a t-if="claim" t-attf-href="/my/claims?{{ keep_query() }}">Claims</a>
                 <t t-else="">Claims</t>
             </li>
-            <li
-                t-if="claim"
-                class="breadcrumb-item active text-truncate col-8 col-lg-10"
-            >
-                <t t-esc="claim.name" />
+            <li t-if="claim" class="breadcrumb-item active">
+                <span t-field="claim.display_name" />
             </li>
         </xpath>
     </template>
@@ -48,15 +44,26 @@
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">Claims</t>
             </t>
-            <t t-if="not grouped_claims">
-                <div class="alert alert-warning mt8" role="alert">
-                    There are no claims.
-                </div>
-            </t>
+            <form method="POST" t-attf-action="/new/claim">
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    t-att-value="request.csrf_token()"
+                />
+                <button
+                    name="create_new_claim"
+                    type="action"
+                    class="btn btn-primary"
+                    style="float: right; margin-right: 0px; margin-top:5px;"
+                >New Claim</button>
+            </form>
+            <div t-if="not grouped_claims" class="alert alert-info">
+                There are currently no claims for your account.
+            </div>
             <t t-if="grouped_claims" t-call="portal.portal_table">
                 <t t-foreach="grouped_claims" t-as="claims">
-                        <thead>
-                            <tr
+                    <thead>
+                        <tr
                             t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}"
                         >
                                 <th class="text-left">Ref</th>
@@ -122,7 +129,7 @@
 
     <template id="portal_my_claim" name="My Claim">
         <t t-call="portal.portal_layout">
-            <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_manager">
+            <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_salesman">
                 <t t-call="portal.portal_back_in_edit_mode">
                     <t
                         t-set="backend_url"
@@ -135,15 +142,14 @@
                 <t t-set="card_header">
                     <div class="row no-gutters">
                         <div class="col-12">
-                            <h5 class="d-flex mb-1 mb-md-0 row">
-                                <span
-                                    t-field="claim.display_name"
-                                    class="col-9 text-truncate"
-                                />
-                                <small class="text-muted d-none d-md-inline"> (#<span
-                                        t-field="claim.id"
-                                    />)</small>
-                                <div class="col-3 col-md-2 text-right">
+                            <h5 class="d-flex mb-1 mb-md-0">
+                                <div class="col-9 text-truncate">
+                                    <span t-field="claim.display_name" />
+                                    <small class="text-muted "> (#<span
+                                            t-field="claim.id"
+                                        />)</small>
+                                </div>
+                                <div class="col-3 text-right">
                                     <small class="text-right">Status:</small>
                                     <span
                                         t-field="claim.stage_id.name"
@@ -246,4 +252,34 @@
             </div>
         </t>
     </template>
+
+    <template id="portal_create_claim" name="Create Claim">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">Send a new claim</t>
+            <section>
+                <h3>Send new claim</h3>
+                <form action="/submitted/claim" method="post" class="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="form-group">
+                        <div t-attf-class="form-group col-xl-6">
+                            <label class="col-form-label" for="subject">Subject:</label>
+                            <input type="text" name="subject" t-attf-class="form-control" t-att-value="subject" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div t-attf-class="form-group col-xl-6">
+                            <label class="col-form-label" for="description">Description:</label>
+                            <textarea name="description" t-attf-class="form-control" t-att-value="description" />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary float-right mb32 ">
+                            Submit Claim
+                            <span class="fa fa-long-arrow-right" />
+                    </button>
+                </form>
+            </section>
+        </t>
+    </template>
+
 </odoo>
