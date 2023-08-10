@@ -1,3 +1,4 @@
+import base64
 from operator import itemgetter
 
 from dateutil.relativedelta import relativedelta
@@ -28,7 +29,7 @@ class CustomerPortal(CustomerPortal):
             claim, access_token, values, "my_claims_history", False, **kwargs
         )
 
-    def _get_searchbar_sortings(self):
+    def _get_claim_searchbar_sortings(self):
         return {
             "date": {"label": _("Newest"), "order": "create_date desc"},
             "name": {
@@ -41,7 +42,7 @@ class CustomerPortal(CustomerPortal):
             },
         }
 
-    def _get_searchbar_filters(self):
+    def _get_claim_searchbar_filters(self):
         today = fields.Date.today()
         quarter_start, quarter_end = date_utils.get_quarter(today)
         last_week = today + relativedelta(weeks=-1)
@@ -52,6 +53,14 @@ class CustomerPortal(CustomerPortal):
             "all": {
                 "label": _("All"),
                 "domain": [],
+            },
+            "my_claims": {
+                "label": _("My Claims"),
+                "domain": [
+                    "|",
+                    ("user_id", "=", request.env.user.id),
+                    ("partner_id", "=", request.env.user.partner_id.id),
+                ],
             },
             "open": {
                 "label": _("Open"),
@@ -116,7 +125,7 @@ class CustomerPortal(CustomerPortal):
             },
         }
 
-    def _get_searchbar_inputs(self):
+    def _get_claim_searchbar_inputs(self):
         return {
             "content": {
                 "input": "content",
@@ -136,7 +145,7 @@ class CustomerPortal(CustomerPortal):
             },
         }
 
-    def _get_searchbar_groupby(self):
+    def _get_claim_searchbar_groupby(self):
         return {
             "none": {
                 "input": "none",
@@ -177,10 +186,10 @@ class CustomerPortal(CustomerPortal):
         values = self._prepare_portal_layout_values()
         claim_obj = request.env["crm.claim"]
 
-        searchbar_sortings = self._get_searchbar_sortings()
-        searchbar_filters = self._get_searchbar_filters()
-        searchbar_inputs = self._get_searchbar_inputs()
-        searchbar_groupby = self._get_searchbar_groupby()
+        searchbar_sortings = self._get_claim_searchbar_sortings()
+        searchbar_filters = self._get_claim_searchbar_filters()
+        searchbar_inputs = self._get_claim_searchbar_inputs()
+        searchbar_groupby = self._get_claim_searchbar_groupby()
 
         # default sort by value
         if not sortby:
@@ -189,7 +198,7 @@ class CustomerPortal(CustomerPortal):
 
         # default filter by value
         if not filterby:
-            filterby = "all"
+            filterby = "open"
         domain = searchbar_filters.get(filterby, searchbar_filters.get("all"))["domain"]
 
         # default group by value
@@ -285,27 +294,69 @@ class CustomerPortal(CustomerPortal):
                 "page_name": "claim",
                 "default_url": "/my/claims",
                 "pager": pager,
-                "searchbar_sortings": searchbar_sortings,
-                "searchbar_groupby": searchbar_groupby,
-                "searchbar_inputs": searchbar_inputs,
                 "search_in": search_in,
                 "search": search,
                 "sortby": sortby,
                 "groupby": groupby,
-                "searchbar_filters": searchbar_filters,
                 "filterby": filterby,
+                "searchbar_sortings": searchbar_sortings,
+                "searchbar_groupby": searchbar_groupby,
+                "searchbar_inputs": searchbar_inputs,
+                "searchbar_filters": searchbar_filters,
             }
         )
         return request.render("crm_claim_portal.portal_my_claims", values)
 
-    @http.route(["/my/claim/<int:claim_id>"], type="http", auth="public", website=True)
+    @http.route(["/my/claim/<int:claim_id>"], type="http", auth="user", website=True)
     def portal_my_claim(self, claim_id, access_token=None, **kw):
         try:
-            claim_sudo = self._document_check_access(
-                "crm.claim", claim_id, access_token
-            )
+            claim_sudo = self._document_check_access("crm.claim", claim_id, access_token)
         except (AccessError, MissingError):
-            return request.redirect("/my")
+            return request.redirect("/my/home")
 
         values = self._claim_get_page_view_values(claim_sudo, access_token, **kw)
         return request.render("crm_claim_portal.portal_my_claim", values)
+
+    def _prepare_submit_claim_vals(self, **kw):
+        values = {
+            "company_id": request.env.user.company_id.id,
+            "description": kw.get("description"),
+            "name": kw.get("subject"),
+            "user_id": False,  # in order to avoid assigning user to the claim
+            "partner_id": request.env.user.partner_id.id,
+            "partner_phone": request.env.user.partner_id.phone,
+            "email_from": request.env.user.partner_id.email,
+        }
+        return values
+
+    @http.route("/new/claim", type="http", auth="user", website=True)
+    def create_new_claim(self, **kw):
+        values = self._prepare_portal_layout_values()
+        values.update(
+            {
+                'error': {},
+                'error_message': [],
+                "page_name": "claim",
+                "default_url": "/my/claims",
+            }
+        )
+        return request.render("crm_claim_portal.portal_create_claim", values)
+
+    @http.route("/submitted/claim", type="http", auth="user", website=True, csrf=True)
+    def submit_ticket(self, **kw):
+        vals = self._prepare_submit_claim_vals(**kw)
+        new_claim = request.env["crm.claim"].sudo().create(vals)
+        new_claim.message_subscribe(partner_ids=request.env.user.partner_id.ids)
+        if kw.get("attachment"):
+            for c_file in request.httprequest.files.getlist("attachment"):
+                data = c_file.read()
+                if c_file.filename:
+                    request.env["ir.attachment"].sudo().create(
+                        {
+                            "name": c_file.filename,
+                            "datas": base64.b64encode(data),
+                            "res_model": "helpdesk.ticket",
+                            "res_id": new_claim.id,
+                        }
+                    )
+        return request.redirect("/my/claim/%s" % new_claim.id)
