@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-19 11:03+0000\n"
-"PO-Revision-Date: 2022-09-19 11:03+0000\n"
+"POT-Creation-Date: 2023-08-23 10:43+0000\n"
+"PO-Revision-Date: 2023-08-23 10:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,11 @@ msgstr ""
 #: model:ir.model,name:crm_claim_usability.model_crm_claim
 msgid "Claim"
 msgstr "Reclamación"
+
+#. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.res_config_settings_view_form
+msgid "Claims Usability"
+msgstr "Usabilidad en Reclamaciones"
 
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__commercial_partner_id
@@ -36,24 +41,6 @@ msgstr "Opciones de configuración"
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_tree
 msgid "Date"
 msgstr "Fecha"
-
-#. module: crm_claim_usability
-#: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__display_name
-#: model:ir.model.fields,field_description:crm_claim_usability.field_res_config_settings__display_name
-msgid "Display Name"
-msgstr "Nombre mostrado"
-
-#. module: crm_claim_usability
-#: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__id
-#: model:ir.model.fields,field_description:crm_claim_usability.field_res_config_settings__id
-msgid "ID"
-msgstr "Identificador"
-
-#. module: crm_claim_usability
-#: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim____last_update
-#: model:ir.model.fields,field_description:crm_claim_usability.field_res_config_settings____last_update
-msgid "Last Modified on"
-msgstr "Última modificación el"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
@@ -121,7 +108,7 @@ msgid "Today"
 msgstr "Hoy"
 
 #. module: crm_claim_usability
-#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_metadata_view_search
-#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_metadata_view_tree
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_tree
 msgid "Write Date"
 msgstr "Fecha modificación"
