@@ -16,31 +16,21 @@
                 <attribute name="widget">date</attribute>
                 <attribute name="string">Date</attribute>
             </field>
-            <field name="date_deadline" position="attributes">
-                <attribute name="invisible" />
-                <attribute name="widget">remaining_days</attribute>
-            </field>
-            <field name="categ_id" position="attributes">
-              <attribute name="optional">hide</attribute>
-            </field>
-        </field>
-    </record>
-
-    <record id="crm_claim_usability_metadata_view_tree" model="ir.ui.view">
-        <field name="model">crm.claim</field>
-        <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
-        <field
-      name="groups_id"
-      eval="[(4, ref('crm_claim_usability.group_crm_claim_technical'))]"
-    />
-        <field name="arch" type="xml">
             <field name="date" position="after">
                 <field
           name="write_date"
           string="Write Date"
           widget="date"
           optional="hide"
+          groups="crm_claim_usability.group_crm_claim_technical"
         />
+            </field>
+            <field name="date_deadline" position="attributes">
+                <attribute name="invisible" />
+                <attribute name="widget">remaining_days</attribute>
+            </field>
+            <field name="categ_id" position="attributes">
+              <attribute name="optional">hide</attribute>
             </field>
         </field>
     </record>
@@ -113,23 +103,13 @@
           string="Commercial Entity"
         />
             </filter>
-        </field>
-    </record>
-
-    <record id="crm_claim_usability_metadata_view_search" model="ir.ui.view">
-        <field name="model">crm.claim</field>
-        <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
-        <field
-      name="groups_id"
-      eval="[(4, ref('crm_claim_usability.group_crm_claim_technical'))]"
-    />
-        <field name="arch" type="xml">
             <filter name="claim_month" position="after">
                 <filter
           string="Write Date"
           name="write_date_filter"
           domain="[]"
           context="{'group_by': 'write_date'}"
+          groups="crm_claim_usability.group_crm_claim_technical"
         />
             </filter>
         </field>
