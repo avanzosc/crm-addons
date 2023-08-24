@@ -38,7 +38,7 @@
                 <div
           name="timesheet"
           attrs="{'invisible': [('task_id','=',False)]}"
-          invisible="context.get('default_partner_id',False)"
+          groups="base.group_user"
         >
                 <separator string="Timesheet" />
                 <group>

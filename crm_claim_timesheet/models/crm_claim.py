@@ -113,4 +113,4 @@ class CrmClaim(models.Model):
                         }
                     )
         defaults.update(custom_values)
-        return super(CrmClaim, self).message_new(msg, custom_values=defaults)
+        return super().message_new(msg, custom_values=defaults)

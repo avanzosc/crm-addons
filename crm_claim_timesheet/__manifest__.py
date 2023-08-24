@@ -3,7 +3,7 @@
 
 {
     "name": "Claim Timesheets",
-    "version": "14.0.2.0.0",
+    "version": "16.0.1.0.0",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "AvanzOSC",
