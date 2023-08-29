@@ -62,67 +62,72 @@
             </div>
             <t t-if="grouped_claims" t-call="portal.portal_table">
                 <t t-foreach="grouped_claims" t-as="claims">
+                    <t t-set="claim_count" t-value="len(claims)" />
                     <thead>
-                        <tr
-                            t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}"
-                        >
-                                <th class="text-left">Ref</th>
-                                <th
-                                t-if="groupby in ('none','stage')"
-                            >Claim Subject</th>
-                                <th t-if="groupby == 'partner'">
-                                    <em
-                                    class="font-weight-normal text-muted"
-                                >Claims reported by:</em>
-                                    <span
-                                    class="text-truncate"
-                                    t-field="claims[0].sudo().partner_id.display_name"
-                                /></th>
-                                <th t-if="groupby == 'user'">
-                                    <em
-                                    class="font-weight-normal text-muted"
-                                >Claims assigned to:</em>
-                                    <span
-                                    class="text-truncate"
-                                    t-field="claims[0].sudo().user_id.display_name"
-                                /></th>
-                                <th t-if="groupby == 'stage'">
-                                    <em
-                                    class="font-weight-normal text-muted"
-                                >Claims in stage:</em>
-                                    <span
-                                    class="text-truncate"
-                                    t-field="claims[0].sudo().stage_id.name"
-                                /></th>
-                                <th
-                                t-if="groupby != 'stage'"
-                                class="text-center"
-                            >Stage</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <t t-foreach="claims" t-as="claim">
-                                <tr>
-                                    <td class="text-left">
-                                        <span t-esc="claim.code" />
-                                    </td>
-                                    <td>
-                                        <a
-                                        t-att-href="claim.get_portal_url()"
-                                        t-att-title="claim.name"
-                                    ><span t-field="claim.name" /></a>
-                                    </td>
-                                    <td t-if="groupby != 'stage'" class="text-center">
-                                        <span
-                                        class="badge badge-pill badge-info"
-                                        title="Current stage of the claim"
-                                        t-esc="claim.stage_id.name"
-                                    />
-                                    </td>
-                                </tr>
+                        <tr t-if="not groupby =='none'" t-attf-class="{{'thead-light'}}">
+                            <t t-if="groupby == 'stage'">
+                                <th colspan="1">
+                                    <em class="font-weight-normal text-muted">Claims in stage:</em>
+                                    <span t-field="claims[0].sudo().stage_id.name"/>
+                                </th>
+                                <th colspan="1" class="text-right text-muted">
+                                    Total: <span class="text-muted" t-esc="claim_count" />
+                                </th>
                             </t>
-                        </tbody>
-                    </t>
+                            <t t-if="groupby == 'partner'">
+                                <th colspan="2">
+                                    <em class="font-weight-normal text-muted">Claims reported by:</em>
+                                    <span class="text-truncate" t-field="claims[0].sudo().partner_id.display_name"/>
+                                </th>
+                                <th colspan="1" class="text-right text-muted">
+                                    Total: <span class="text-muted" t-esc="claim_count" />
+                                </th>
+                            </t>
+                            <t t-if="groupby == 'user'">
+                                <th colspan="2">
+                                    <em class="font-weight-normal text-muted">Claims assigned to:</em>
+                                    <span class="text-truncate" t-field="claims[0].sudo().user_id.display_name" />
+                                </th>
+                                <th colspan="1" class="text-right text-muted">
+                                    Total: <span class="text-muted" t-esc="claim_count" />
+                                </th>
+                            </t>
+                        </tr>
+                        <tr t-else="">
+                            <div style="text-align: right;" class="mr-2 mb-1 text-muted">
+                                Total: <span class="text-muted" t-esc="claim_count" />
+                            </div>
+                        </tr>
+
+                        <tr>
+                            <th class="text-left">Ref</th>
+                            <th class="text-left">Claim Subject</th>
+                            <th t-if="groupby != 'stage'" class="text-center">Stage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="claims" t-as="claim">
+                            <tr>
+                                <td class="text-left">
+                                    <span t-esc="claim.code" />
+                                </td>
+                                <td>
+                                    <a
+                                    t-att-href="claim.get_portal_url()"
+                                    t-att-title="claim.name"
+                                ><span t-field="claim.name" /></a>
+                                </td>
+                                <td t-if="groupby != 'stage'" class="text-center">
+                                    <span
+                                    class="badge badge-pill badge-info"
+                                    title="Current stage of the claim"
+                                    t-esc="claim.stage_id.name"
+                                />
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </t>
             </t>
         </t>
     </template>
