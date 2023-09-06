@@ -15,13 +15,14 @@ class CrmClaim(models.Model):
         for record in self.filtered("date_closed"):
             record.date_closed = False
 
-    @api.model
-    def create(self, values):
-        if "stage_id" in values:
-            stage = self.env["crm.claim.stage"].browse(values.get("stage_id"))
-            if stage.closed:
-                values["date_closed"] = fields.Datetime.now()
-        return super().create(values)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if "stage_id" in vals:
+                stage = self.env["crm.claim.stage"].browse(vals.get("stage_id"))
+                if stage.closed:
+                    vals["date_closed"] = fields.Datetime.now()
+        return super().create(vals_list)
 
     def write(self, values):
         result = super().write(values)
