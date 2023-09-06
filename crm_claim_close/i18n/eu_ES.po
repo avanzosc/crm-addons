@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-16 09:06+0000\n"
-"PO-Revision-Date: 2022-02-16 09:06+0000\n"
+"POT-Creation-Date: 2023-09-06 09:02+0000\n"
+"PO-Revision-Date: 2023-09-06 09:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,11 @@ msgstr "Erreklamazioa"
 #: model:ir.model,name:crm_claim_close.model_crm_claim_stage
 msgid "Claim stages"
 msgstr "Erreklamazio etapak"
+
+#. module: crm_claim_close
+#: model_terms:ir.ui.view,arch_db:crm_claim_close.res_config_settings_view_form
+msgid "Claims Closure"
+msgstr "Erreklamazioen itxiera"
 
 #. module: crm_claim_close
 #: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__closed
@@ -68,30 +73,9 @@ msgid "Date Closed"
 msgstr "Itxitako data"
 
 #. module: crm_claim_close
-#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim__display_name
-#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__display_name
-#: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__display_name
-msgid "Display Name"
-msgstr "Izena erakutsi"
-
-#. module: crm_claim_close
 #: model_terms:ir.ui.view,arch_db:crm_claim_close.res_config_settings_view_form
 msgid "Enable menus for closed and open claims"
 msgstr "Ikeritako eta itxitako erreklamazioentzat banandutako menuak gaitu"
-
-#. module: crm_claim_close
-#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim__id
-#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage__id
-#: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings__id
-msgid "ID"
-msgstr ""
-
-#. module: crm_claim_close
-#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim____last_update
-#: model:ir.model.fields,field_description:crm_claim_close.field_crm_claim_stage____last_update
-#: model:ir.model.fields,field_description:crm_claim_close.field_res_config_settings____last_update
-msgid "Last Modified on"
-msgstr "Azken aldaketa"
 
 #. module: crm_claim_close
 #: model:ir.actions.act_window,name:crm_claim_close.crm_claim_open_action
