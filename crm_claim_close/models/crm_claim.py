@@ -21,10 +21,10 @@ class CrmClaim(models.Model):
             stage = self.env["crm.claim.stage"].browse(values.get("stage_id"))
             if stage.closed:
                 values["date_closed"] = fields.Datetime.now()
-        return super(CrmClaim, self).create(values)
+        return super().create(values)
 
     def write(self, values):
-        result = super(CrmClaim, self).write(values)
+        result = super().write(values)
         if "stage_id" in values:
             stage = self.env["crm.claim.stage"].browse(values.get("stage_id"))
             if stage.closed:
