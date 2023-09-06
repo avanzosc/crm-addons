@@ -9,4 +9,5 @@ class ResConfigSettings(models.TransientModel):
 
     group_crm_claim_close = fields.Boolean(
         string="Separated Claim Menus",
-        implied_group="crm_claim_close.group_crm_claim_close")
+        implied_group="crm_claim_close.group_crm_claim_close",
+    )

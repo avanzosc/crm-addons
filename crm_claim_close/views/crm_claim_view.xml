@@ -6,22 +6,44 @@
         <field name="arch" type="xml">
             <field name="user_id" position="after">
                 <separator />
-                <filter string="Open Claims" name="open_claims"
-                        domain="[('date_closed','=', False)]" />
-                <filter string="Closed Claims" name="closed_claims"
-                        domain="[('date_closed','!=', False)]" />
-                <separator/>
-                <filter string="Closed Today" name="closed_today"
-                        domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"/>
-                <filter string="Closed Last Week" name="closed_week"
-                        domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
-                <filter string="Closed Last Month" name="closed_month"
-                        domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=30)).strftime('%Y-%m-%d'))]"/>
-                <filter string="Closed Last Year" name="closed_year"
-                        domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=365)).strftime('%Y-%m-%d'))]"/>
-                <separator/>
-                <filter string="Date Closed" name="closed_date_filter"
-                        date="date_closed" default_period="last_month"/>
+                <filter
+          string="Open Claims"
+          name="open_claims"
+          domain="[('date_closed','=', False)]"
+        />
+                <filter
+          string="Closed Claims"
+          name="closed_claims"
+          domain="[('date_closed','!=', False)]"
+        />
+                <separator />
+                <filter
+          string="Closed Today"
+          name="closed_today"
+          domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"
+        />
+                <filter
+          string="Closed Last Week"
+          name="closed_week"
+          domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"
+        />
+                <filter
+          string="Closed Last Month"
+          name="closed_month"
+          domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=30)).strftime('%Y-%m-%d'))]"
+        />
+                <filter
+          string="Closed Last Year"
+          name="closed_year"
+          domain="[('date_closed','&gt;', (context_today() - datetime.timedelta(days=365)).strftime('%Y-%m-%d'))]"
+        />
+                <separator />
+                <filter
+          string="Date Closed"
+          name="closed_date_filter"
+          date="date_closed"
+          default_period="last_month"
+        />
             </field>
             <filter name="closure" position="attributes">
                 <attribute name="invisible" />
@@ -53,7 +75,9 @@
         <field name="view_mode">tree,calendar,form</field>
         <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
         <field name="domain">[('date_closed','=',False)]</field>
-        <field name="context">{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
+        <field
+      name="context"
+    >{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
         <field name="search_view_id" ref="crm_claim.view_crm_case_claims_filter" />
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
@@ -89,7 +113,9 @@
         <field name="view_mode">tree,calendar,form</field>
         <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
         <field name="domain">[('date_closed','!=',False)]</field>
-        <field name="context">{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
+        <field
+      name="context"
+    >{'search_default_user_id':uid, 'stage_type': 'claim'}</field>
         <field name="search_view_id" ref="crm_claim.view_crm_case_claims_filter" />
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
