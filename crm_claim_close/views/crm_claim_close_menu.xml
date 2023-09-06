@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <menuitem
-        name="Open Claims"
-        id="menu_crm_claim_open"
-        parent="crm_claim.menu_aftersale"
-        action="crm_claim_open_action"
-        sequence="10"
-        groups="crm_claim_close.group_crm_claim_close"
-    />
+    name="Open Claims"
+    id="menu_crm_claim_open"
+    parent="crm_claim.menu_aftersale"
+    action="crm_claim_open_action"
+    sequence="10"
+    groups="crm_claim_close.group_crm_claim_close"
+  />
     <menuitem
-        name="Closed Claims"
-        id="menu_crm_claim_close"
-        parent="crm_claim.menu_aftersale"
-        action="crm_claim_closed_action"
-        sequence="11"
-        groups="crm_claim_close.group_crm_claim_close"
-    />
+    name="Closed Claims"
+    id="menu_crm_claim_close"
+    parent="crm_claim.menu_aftersale"
+    action="crm_claim_closed_action"
+    sequence="11"
+    groups="crm_claim_close.group_crm_claim_close"
+  />
 </odoo>
