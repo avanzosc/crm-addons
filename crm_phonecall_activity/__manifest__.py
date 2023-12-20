@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "CRM Phonecall Activity",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Avanzosc",
     "category": "Sales/CRM",
     "depends": ["crm_phonecall", "mail"],
