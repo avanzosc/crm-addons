@@ -56,4 +56,4 @@ class CrmClaim(models.Model):
                 if self.env.user.has_group("base.group_user")
                 else self.env.ref("base.user_root")
             )
-        return super().with_user(user)
+        return super(CrmClaim, self).with_user(user)
