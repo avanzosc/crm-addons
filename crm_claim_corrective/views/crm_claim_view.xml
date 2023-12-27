@@ -42,7 +42,7 @@
           />
                 </group>
             </field>
-            <xpath expr="//form/sheet/group/notebook/page[2]" position="after">
+            <xpath expr="//form/sheet/notebook/page[2]" position="after">
                 <page string="Images" groups="base.group_user">
                     <separator string="Photos" colspan="4" />
                     <group colspan="2">

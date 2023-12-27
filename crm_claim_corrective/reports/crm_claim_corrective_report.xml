@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_crmclaimcorrective_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h2>
+                        <span t-field="o.name"/>
+                    </h2>
+                    <div class="row mt-4 mb-4" id="informations">
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <strong>Claim:</strong>
+                            <p t-if="o.claim_id" t-field="o.claim_id.name"/>
+                        </div>
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <strong>Partner:</strong>
+                            <p t-if="o.partner_id" t-field="o.partner_id.name"/>
+                        </div>
+                    </div>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>name</th>
+                                <th>Responsible</th>
+                                <th>Corrective action</th>
+                                <th>Date planned</th>
+                                <th>Date done</th>
+                            </tr>
+                       </thead>
+                       <tbody class="sale_tbody">
+                            <tr t-foreach="o.corrective_action_ids" t-as="l">
+                                <td>
+                                   <span t-field="l.name"/>
+                                </td>
+                                <td>
+                                   <span t-if="l.responsible_id" t-field="l.responsible_id.name"/>
+                                </td>
+                                <td>
+                                   <span t-if="l.corrective_id" t-field="l.corrective_id.name"/>
+                                </td>
+                                <td>
+                                   <span t-if="l.date_planned" t-field="l.date_planned"/>
+                                </td>
+                                <td>
+                                   <span t-if="l.date_done" t-field="l.date_done"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_crmclaimcorrective">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.partner_id.lang"/>
+                    <t t-call="crm_claim_corrective.report_crmclaimcorrective_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="report_crm_claim_corrective" model="ir.actions.report">
+            <field name="name">Corrective action</field>
+            <field name="model">crm.claim.corrective</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">crm_claim_corrective.report_crmclaimcorrective</field>
+            <field name="report_file">crm_claim_corrective.report_crmclaimcorrective</field>
+            <field name="print_report_name">'Corrective action: %s' % (object.name)</field>
+            <field name="binding_model_id" ref="crm_claim_corrective.model_crm_claim_corrective"/>
+            <field name="binding_type">report</field>
+            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_manager'))]"/>
+        </record>
+    </data>
+</openerp>
