@@ -14,18 +14,21 @@ class CrmClaim(models.Model):
     claim_description_id = fields.Many2one(
         comodel_name="crm.claim.description",
         string="Claim Description",
-        domain="[('type_description', '=', 'claim')]")
+        domain="[('type_description', '=', 'claim')]",
+    )
     cause_description_id = fields.Many2one(
         comodel_name="crm.claim.description",
         string="Cause Description",
-        domain="[('type_description', '=', 'cause')]")
+        domain="[('type_description', '=', 'cause')]",
+    )
     resolution_description_id = fields.Many2one(
         comodel_name="crm.claim.description",
         string="Resolution Description",
-        domain="[('type_description','=', 'resolution')]")
+        domain="[('type_description','=', 'resolution')]",
+    )
     corrective_id = fields.Many2one(
-        comodel_name="crm.claim.corrective",
-        string="Claim Corrective")
+        comodel_name="crm.claim.corrective", string="Claim Corrective"
+    )
 
     @api.onchange("claim_description_id")
     def onchange_claim_description(self):
@@ -50,9 +53,11 @@ class CrmClaim(models.Model):
     def button_create_corrective(self):
         corrective_obj = self.env["crm.claim.corrective"]
         for claim in self.filtered(lambda r: not r.corrective_id):
-            corrective = corrective_obj.create({
-                "claim_id": claim.id,
-            })
+            corrective = corrective_obj.create(
+                {
+                    "claim_id": claim.id,
+                }
+            )
             claim.corrective_id = corrective
 
 
@@ -70,4 +75,3 @@ class CrmClaimDescription(models.Model):
         ],
         string="Description Type",
     )
-
