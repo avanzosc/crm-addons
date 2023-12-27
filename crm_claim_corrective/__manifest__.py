@@ -7,7 +7,7 @@
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "AvanzOSC",
-    "website": "https://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/crm-addons",
     "summary": "Extends CRM Claims with corrective actions",
     "depends": [
         "crm_claim",
