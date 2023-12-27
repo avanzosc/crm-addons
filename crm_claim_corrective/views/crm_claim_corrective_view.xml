@@ -8,7 +8,7 @@
                 <field name="name" />
                 <field name="claim_id" />
                 <field name="partner_id" />
-                <field name="state"/>
+                <field name="state" />
             </tree>
         </field>
     </record>
@@ -19,14 +19,18 @@
             <form string="Corrective Actions">
                 <sheet>
                     <header>
-                        <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                        <field
+              name="state"
+              widget="statusbar"
+              options="{'clickable': '1'}"
+            />
                     </header>
                     <group name="main">
                         <field name="name" />
                         <field name="claim_id" />
                         <field name="partner_id" />
                     </group>
-                    <field name="corrective_action_ids"/>
+                    <field name="corrective_action_ids" />
                 </sheet>
             </form>
         </field>
@@ -36,11 +40,11 @@
         <field name="model">crm.claim.corrective.action</field>
         <field name="arch" type="xml">
             <tree string="Corrective action" editable="bottom">
-                <field name="sequence" widget="handle"/>
+                <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="responsible_id" />
-                <field name="date_planned"/>
-                <field name="date_done"/>
+                <field name="date_planned" />
+                <field name="date_done" />
             </tree>
         </field>
     </record>
@@ -50,11 +54,11 @@
         <field name="arch" type="xml">
             <form string="Corrective action">
             <group name="corrective_data">
-                <field name="claim_id" readonly="1"/>
-                <field name="name"/>
+                <field name="claim_id" readonly="1" />
+                <field name="name" />
                 <field name="responsible_id" />
-                <field name="date_planned"/>
-                <field name="date_done"/>
+                <field name="date_planned" />
+                <field name="date_done" />
             </group>
             </form>
         </field>
@@ -64,7 +68,7 @@
         <field name="res_model">crm.claim.corrective</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="crm_claim_corrective_tree_view" />
-        <field name="context"></field>
+        <field name="context" />
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Generate corrective actions to apply to customer claims.
