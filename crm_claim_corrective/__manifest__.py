@@ -3,7 +3,7 @@
 
 {
     "name": "CRM Claim Corrective",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "AvanzOSC",
@@ -15,6 +15,7 @@
     "data": [
         "security/ir.model.access.csv",
         "data/crm_claim_corrective_sequence.xml",
+        "reports/crm_claim_corrective_report.xml",
         "views/crm_claim_corrective_view.xml",
         "views/crm_claim_view.xml",
         "views/crm_claim_menu.xml",
