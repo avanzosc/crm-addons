@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -26,10 +25,10 @@
     "contributors": [
         "Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>",
         "Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>",
-        "Ana Juaristi <ajuaristio@gmail.com>"
+        "Ana Juaristi <ajuaristio@gmail.com>",
     ],
     "category": "Custom Module",
-    "website": "http://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/crm-addons",
     "summary": "Deadline visible on crm.claim tree view",
     "data": [
         "views/crm_claim_view.xml",
