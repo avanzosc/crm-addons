@@ -17,7 +17,7 @@
 
 {
     "name": "CRM claims deadline made visible",
-    "version": "1.0",
+    "version": "16.0.1.0.0",
     "depends": [
         "crm_claim",
     ],

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-    <data>
+<odoo>
         <record model="ir.ui.view" id="crm_claim_tree_view_inh">
             <field name="name">crm.claim.tree.view.inh</field>
             <field name="model">crm.claim</field>
@@ -22,5 +21,4 @@
                 </field>
             </field>
         </record>
-    </data>
-</openerp>
+</odoo>
