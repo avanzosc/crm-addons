@@ -5,7 +5,7 @@
             <field name="model">crm.claim</field>
             <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
             <field name="arch" type="xml">
-                <page string="Follow Up" position="after">
+                <page groups="base.group_user" position="after">
                    <page string="Related claims">
                        <group name="to_related_claims">
                             <separator string="To related claims" colspan="4" />
