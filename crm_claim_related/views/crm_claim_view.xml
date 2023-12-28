@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
     <data>
         <record model="ir.ui.view" id="crm_case_claims_form_view_inh_claimrelated">
@@ -10,13 +10,19 @@
                    <page string="Related claims">
                        <group name="to_related_claims">
                             <separator string="To related claims" colspan="4" />
-                            <field name="to_related_claims" nolabel="1" 
-                                domain="[('id','!=',active_id)]"/>
+                            <field
+                name="to_related_claims"
+                nolabel="1"
+                domain="[('id','!=',active_id)]"
+              />
                        </group>
                        <group name="from_related_claims">
                             <separator string="From related claims" colspan="4" />
-                            <field name="from_related_claims" nolabel="1" 
-                                domain="[('id','!=',active_id)]"/>
+                            <field
+                name="from_related_claims"
+                nolabel="1"
+                domain="[('id','!=',active_id)]"
+              />
                        </group>
                    </page>
                 </page>
