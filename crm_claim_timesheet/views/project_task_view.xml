@@ -21,7 +21,7 @@
         expr="//field[@name='timesheet_ids']/tree//field[@name='unit_amount']"
         position="after"
       >
-                <field name="claim_id" groups="sales_team.group_sale_salesman" />
+                <field name="claim_id" groups="sales_team.group_sale_salesman"/>
             </xpath>
         </field>
     </record>
