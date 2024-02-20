@@ -8,19 +8,19 @@
                 <page groups="base.group_user" position="after">
                    <page string="Related claims">
                        <group name="to_related_claims">
-                            <separator string="To related claims" colspan="4" />
+                            <separator string="To related claims" colspan="12" />
                             <field
                 name="to_related_claims"
                 nolabel="1"
-                domain="[('id','!=',active_id)]"
+                domain="[('id','!=',active_id)]" colspan="2"
               />
                        </group>
                        <group name="from_related_claims">
-                            <separator string="From related claims" colspan="4" />
+                            <separator string="From related claims" colspan="12" />
                             <field
                 name="from_related_claims"
                 nolabel="1"
-                domain="[('id','!=',active_id)]"
+                domain="[('id','!=',active_id)]" colspan="2"
               />
                        </group>
                    </page>
