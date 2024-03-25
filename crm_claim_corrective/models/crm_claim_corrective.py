@@ -33,9 +33,7 @@ class CrmClaimCorrective(models.Model):
         string="Corrective Actions",
     )
     state = fields.Selection(
-        selection=[("draft", "Draft"),
-                   ("pending", "Pending"),
-                   ("closed", "Closed")],
+        selection=[("draft", "Draft"), ("pending", "Pending"), ("closed", "Closed")],
         string="Status",
         default="draft",
         copy=False,
@@ -45,8 +43,8 @@ class CrmClaimCorrective(models.Model):
     def create(self, vals):
         if vals.get("name", "/") == "/":
             vals["name"] = self.env.ref(
-                "crm_claim_corrective.seq_corrective_action",
-                raise_if_not_found=False).next_by_id()
+                "crm_claim_corrective.seq_corrective_action", raise_if_not_found=False
+            ).next_by_id()
         return super().create(vals)
 
 
