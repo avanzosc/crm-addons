@@ -18,22 +18,22 @@ msgstr ""
 #. module: crm_claim_report
 #: model:ir.actions.report,print_report_name:crm_claim_report.report_crm_claim
 msgid "(object.code)"
-msgstr "(object.code)"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "- [] Product return"
-msgstr "- [] Devolución del producto"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "- [] Refund"
-msgstr "- [] Devolución"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "- [] Replacement"
-msgstr "- [] Reemplazo"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -41,8 +41,6 @@ msgid ""
 "<br/>\n"
 "                    <strong>Category: </strong>"
 msgstr ""
-"<br/>\n"
-"                    <strong>Categoría: </strong>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -50,8 +48,6 @@ msgid ""
 "<br/>\n"
 "                    <strong>Claim Date: </strong>"
 msgstr ""
-"<br/>\n"
-"                    <strong>Fecha reclamación: </strong>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -59,8 +55,6 @@ msgid ""
 "<br/>\n"
 "                    <strong>Claim Description:</strong>"
 msgstr ""
-"<br/>\n"
-"                    <strong>Descripción reclamación:</strong>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -68,8 +62,6 @@ msgid ""
 "<br/>\n"
 "                    <strong>Claim Type: </strong>"
 msgstr ""
-"<br/>\n"
-"                    <strong>Tipo reclamación: </strong>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -77,8 +69,6 @@ msgid ""
 "<br/>\n"
 "                    <strong>Object of claim: </strong>"
 msgstr ""
-"<br/>\n"
-"                    <strong>Objecto de la reclamación: </strong>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -86,8 +76,6 @@ msgid ""
 "<br/>\n"
 "                    <strong>Partner: </strong>"
 msgstr ""
-"<br/>\n"
-"                    <strong>Empresa: </strong>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -95,8 +83,6 @@ msgid ""
 "<br/>\n"
 "                    <strong>Reference:</strong>"
 msgstr ""
-"<br/>\n"
-"                    <strong>Referencia:</strong>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -104,8 +90,6 @@ msgid ""
 "<br/><br/>\n"
 "                    <strong>Causes:</strong><br/>"
 msgstr ""
-"<br/><br/>\n"
-"                    <strong>Causas:</strong><br/>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -113,8 +97,6 @@ msgid ""
 "<br/><br/>\n"
 "                    <strong>Resolution actions:</strong><br/>"
 msgstr ""
-"<br/><br/>\n"
-"                    <strong>Acciones de resolución:</strong><br/>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
@@ -125,54 +107,48 @@ msgid ""
 "                    -[] No<br/>\n"
 "                    <br/>"
 msgstr ""
-"<br/><br/>\n"
-"                    ¿Crear acción correctiva?<br/>\n"
-"                    -[] Si<br/>\n"
-"                    -[] No<br/>\n"
-"                    <br/>"
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "<strong>Claim number: </strong>"
-msgstr "<strong>Número de reclamación: </strong>"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "<strong>Responsibilities</strong>"
-msgstr "<strong>Responsabilidades</strong>"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "<strong>Trouble Responsible: </strong>"
-msgstr "<strong>Responsable problema: </strong>"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "Corrective action report"
-msgstr "Informe de Acción Correctiva"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "Date:"
-msgstr "Fecha:"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "Decision:"
-msgstr "Decisión:"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "Non conformity report"
-msgstr "Informe De Inconformidad"
+msgstr ""
 
 #. module: crm_claim_report
 #: model_terms:ir.ui.view,arch_db:crm_claim_report.report_crmclaim_document
 msgid "Supplier sign (specify name and position of the person who signs):"
-msgstr "Firma del proveedor (especificar nombre y cargo de la persona que firma):"
+msgstr ""
 
 #. module: crm_claim_report
 #: model:ir.actions.report,name:crm_claim_report.report_crm_claim
 msgid "claim"
-msgstr "Reclamación"
-
+msgstr ""
