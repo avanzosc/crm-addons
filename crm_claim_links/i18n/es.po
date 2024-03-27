@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_claim_links
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-26 11:33+0000\n"
+"PO-Revision-Date: 2024-03-26 11:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_claim_links
+#: model_terms:ir.ui.view,arch_db:crm_claim_links.view_partner_form
+msgid "CRM Claims"
+msgstr "CRM Reclamaciones"
+
+#. module: crm_claim_links
+#: model:ir.model,name:crm_claim_links.model_crm_claim
+#: model:ir.model.fields,field_description:crm_claim_links.field_repair_order__claim_id
+#: model:ir.model.fields,field_description:crm_claim_links.field_stock_picking__claim_id
+msgid "Claim"
+msgstr "Reclamación"
+
+#. module: crm_claim_links
+#: model:ir.model.fields,field_description:crm_claim_links.field_res_partner__claim_ids
+#: model:ir.model.fields,field_description:crm_claim_links.field_res_users__claim_ids
+msgid "Claims"
+msgstr "Reclamaciones"
+
+#. module: crm_claim_links
+#: model:ir.model,name:crm_claim_links.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: crm_claim_links
+#: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
+msgid "Related Extra Information"
+msgstr "Información extra relacionada"
+
+#. module: crm_claim_links
+#: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
+msgid "Related Repairs"
+msgstr "Reparaciones relacionadas"
+
+#. module: crm_claim_links
+#: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
+msgid "Related Stock Pickings"
+msgstr "Albaranes relacionados"
+
+#. module: crm_claim_links
+#: model:ir.model,name:crm_claim_links.model_repair_order
+msgid "Repair Order"
+msgstr "Orden de reparación"
+
+#. module: crm_claim_links
+#: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__repair_ids
+msgid "Repair Orders"
+msgstr "Órdenes de reparación"
+
+#. module: crm_claim_links
+#. odoo-python
+#: code:addons/crm_claim_links/models/stock_picking.py:0
+#, python-format
+msgid "Return Shipment"
+msgstr "Delvolver envío"
+
+#. module: crm_claim_links
+#: model_terms:ir.ui.view,arch_db:crm_claim_links.view_picking_form
+msgid "Reverse Transfer"
+msgstr "Revertir transferencia"
+
+#. module: crm_claim_links
+#. odoo-python
+#: code:addons/crm_claim_links/models/stock_picking.py:0
+#, python-format
+msgid "Selected Picking has no claim order assigned"
+msgstr "El albarán seleccionado no tiene una reclamación asignada"
+
+#. module: crm_claim_links
+#: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__picking_ids
+msgid "Stock Pickings"
+msgstr "Albaranes"
+
+#. module: crm_claim_links
+#: model:ir.model,name:crm_claim_links.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
