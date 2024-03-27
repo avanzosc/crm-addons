@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template
+    id="portal_my_home_sale"
+    name="Show Claims"
+    customize_show="True"
+    inherit_id="portal.portal_my_home"
+    priority="50"
+  >
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Claims</t>
+                <t t-set="url" t-value="'/my/claims'" />
+                <t t-set="placeholder_count" t-value="'claim_count'" />
+            </t>
+        </xpath>
+    </template>
+
+    <template
+    id="portal_layout"
+    name="Portal layout: claim menu entry"
+    inherit_id="portal.portal_breadcrumbs"
+    priority="50"
+  >
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li
+        t-if="page_name == 'claim' or claim"
+        t-attf-class="breadcrumb-item #{'active ' if not claim else ''}"
+      >
+                <a t-if="claim" t-attf-href="/my/claims?{{ keep_query() }}">Claims</a>
+                <t t-else="">Claims</t>
+            </li>
+            <li t-if="claim" class="breadcrumb-item active">
+                <span t-field="claim.display_name" />
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_claims" name="My Claims">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True" />
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Claims</t>
+            </t>
+            <form method="POST" t-attf-action="/new/claim">
+                <input
+          type="hidden"
+          name="csrf_token"
+          t-att-value="request.csrf_token()"
+        />
+                <button
+          name="create_new_claim"
+          type="action"
+          class="btn btn-primary"
+          style="float: right; margin-right: 0px; margin-top:5px;"
+        >New Claim</button>
+            </form>
+            <div t-if="not grouped_claims" class="alert alert-info">
+                There are currently no claims for your account.
+            </div>
+            <t t-if="grouped_claims" t-call="portal.portal_table">
+                <t t-foreach="grouped_claims" t-as="claims">
+                    <t t-set="claim_count" t-value="len(claims)" />
+                    <thead>
+                        <tr
+              t-if="not groupby =='none'"
+              t-attf-class="{{'thead-light'}}"
+            >
+                            <t t-if="groupby == 'stage'">
+                                <th colspan="1">
+                                    <em
+                    class="font-weight-normal text-muted"
+                  >Claims in stage:</em>
+                                    <span t-field="claims[0].sudo().stage_id.name" />
+                                </th>
+                                <th colspan="1" class="text-right text-muted">
+                                    Total: <span
+                    class="text-muted"
+                    t-esc="claim_count"
+                  />
+                                </th>
+                            </t>
+                            <t t-if="groupby == 'partner'">
+                                <th colspan="2">
+                                    <em
+                    class="font-weight-normal text-muted"
+                  >Claims reported by:</em>
+                                    <span
+                    class="text-truncate"
+                    t-field="claims[0].sudo().partner_id.display_name"
+                  />
+                                </th>
+                                <th colspan="1" class="text-right text-muted">
+                                    Total: <span
+                    class="text-muted"
+                    t-esc="claim_count"
+                  />
+                                </th>
+                            </t>
+                            <t t-if="groupby == 'user'">
+                                <th colspan="2">
+                                    <em
+                    class="font-weight-normal text-muted"
+                  >Claims assigned to:</em>
+                                    <span
+                    class="text-truncate"
+                    t-field="claims[0].sudo().user_id.display_name"
+                  />
+                                </th>
+                                <th colspan="1" class="text-right text-muted">
+                                    Total: <span
+                    class="text-muted"
+                    t-esc="claim_count"
+                  />
+                                </th>
+                            </t>
+                        </tr>
+                        <tr t-else="">
+                            <div
+                style="text-align: right;"
+                class="mr-2 mb-1 text-muted"
+              >
+                                Total: <span class="text-muted" t-esc="claim_count" />
+                            </div>
+                        </tr>
+
+                        <tr>
+                            <th class="text-left">Ref</th>
+                            <th class="text-left">Claim Subject</th>
+                            <th t-if="groupby != 'stage'" class="text-center">Stage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="claims" t-as="claim">
+                            <tr>
+                                <td class="text-left">
+                                    <span t-esc="claim.code" />
+                                </td>
+                                <td>
+                                    <a
+                    t-att-href="claim.get_portal_url()"
+                    t-att-title="claim.name"
+                  ><span t-field="claim.name" /></a>
+                                </td>
+                                <td t-if="groupby != 'stage'" class="text-center">
+                                    <span
+                    class="badge badge-pill badge-info"
+                    title="Current stage of the claim"
+                    t-esc="claim.stage_id.name"
+                  />
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_my_claim" name="My Claim">
+        <t t-call="portal.portal_layout">
+            <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_salesman">
+                <t t-call="portal.portal_back_in_edit_mode">
+                    <t
+            t-set="backend_url"
+            t-value="'/web#model=crm.claim&amp;id=%s&amp;view_type=form' % (claim.id)"
+          />
+                </t>
+            </t>
+
+            <t t-call="portal.portal_record_layout">
+                <t t-set="card_header">
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <h5 class="d-flex mb-1 mb-md-0">
+                                <div class="col-9 text-truncate">
+                                    <span t-field="claim.display_name" />
+                                    <small class="text-muted "> (#<span
+                      t-field="claim.id"
+                    />)</small>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <small class="text-right">Status:</small>
+                                    <span
+                    t-field="claim.stage_id.name"
+                    class=" badge badge-pill badge-info"
+                    title="Current stage of this claim"
+                  />
+                                </div>
+                            </h5>
+                        </div>
+                    </div>
+                </t>
+                <t t-set="card_body">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-6 mb-1">
+                            <strong>Date:</strong> <span
+                t-field="claim.create_date"
+                t-options='{"widget": "date"}'
+              />
+                        </div>
+                        <div class="col-12 col-md-6" t-if="claim.date_deadline">
+                            <strong>Deadline:</strong> <span
+                t-field="claim.date_deadline"
+                t-options='{"widget": "date"}'
+              />
+                        </div>
+                    </div>
+
+                    <div class="row mb-4" t-if="claim.user_id or claim.partner_id">
+                        <div class="col-12 col-md-6 pb-2" t-if="claim.user_id">
+                            <strong>Assigned to</strong>
+                            <div class="row">
+                                <div class="col flex-grow-0 pr-3">
+                                    <img
+                    t-if="claim.user_id.image_1024"
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    t-att-src="image_data_uri(claim.user_id.image_1024)"
+                    alt="Contact"
+                  />
+                                    <img
+                    t-else=""
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    src="/web/static/src/img/user_menu_avatar.png"
+                    alt="Contact"
+                  />
+                                </div>
+                                <div class="col pl-md-0">
+                                    <div
+                    t-field="claim.user_id"
+                    t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
+                  />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coll-12 col-md-6 pb-2" t-if="claim.partner_id">
+                            <strong>Reported by</strong>
+                            <div class="row">
+                                <div class="col flex-grow-0 pr-3">
+                                    <img
+                    t-if="claim.partner_id.image_1024"
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    t-att-src="image_data_uri(claim.partner_id.image_1024)"
+                    alt="Contact"
+                  />
+                                    <img
+                    t-else=""
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    src="/web/static/src/img/user_menu_avatar.png"
+                    alt="Contact"
+                  />
+                                </div>
+                                <div class="col pl-md-0">
+                                    <div
+                    t-field="claim.partner_id"
+                    t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
+                  />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" t-if="claim.description">
+                        <div
+              t-if="claim.description"
+              t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 col-lg-12"
+            >
+                            <hr class="mb-1" />
+                            <div class="d-flex my-2">
+                                <strong>Description</strong>
+                            </div>
+                             <span t-field="claim.description" itemprop="description" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+
+            <div id="claim_communication" class="mt32">
+                <h2>History</h2>
+                <t t-call="portal.message_thread">
+                    <t t-set="object" t-value="claim" />
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_create_claim" name="Create Claim">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">Send a new claim</t>
+            <section>
+                <h3>Send new claim</h3>
+                <form action="/submitted/claim" method="post" class="">
+                    <input
+            type="hidden"
+            name="csrf_token"
+            t-att-value="request.csrf_token()"
+          />
+                    <div class="form-group">
+                        <div t-attf-class="form-group col-xl-6">
+                            <label class="col-form-label" for="subject">Subject:</label>
+                            <input
+                type="text"
+                name="subject"
+                t-attf-class="form-control"
+                t-att-value="subject"
+              />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div t-attf-class="form-group col-xl-6">
+                            <label
+                class="col-form-label"
+                for="description"
+              >Description:</label>
+                            <textarea
+                name="description"
+                t-attf-class="form-control"
+                t-att-value="description"
+              />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary float-right mb32 ">
+                            Submit Claim
+                            <span class="fa fa-long-arrow-right" />
+                    </button>
+                </form>
+            </section>
+        </t>
+    </template>
+
+</odoo>
