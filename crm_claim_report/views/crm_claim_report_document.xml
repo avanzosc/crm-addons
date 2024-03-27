@@ -1,84 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 <data>
+    
     <template id="report_crmclaim_document">
-        <t t-call="report.external_layout">
-            <div class="page">
-                <div class="oe_structure"/>
-                <div class="row">
-                    <br/>
-                    <div class="col-xs-12">
-                        <h2><strong><t t-if="o.claim_type.name != 'Acción Correctiva'">Non conformity report</t><t t-if="o.claim_type.name == 'Acción Correctiva'">Corrective action report</t></strong></h2>
-                        <strong>Claim number: </strong><span t-field="o.code"/><br/>
-                        <strong>Object of claim: </strong><span t-field="o.name"/><br/>
-                        <strong>Claim Date: </strong><span t-field="o.date" t-field-options='{"format": "dd/MM/yyyy"}'/><br/>
-                        <strong>Claim Type: </strong><span t-field="o.claim_type"/><br/>
-                        <strong>Partner: </strong><span t-field="o.partner_id"/>
-                        <hr style="border-top: 2px dotted black"/>
-                        <div style="font-size:18px"><strong>Responsibilities</strong></div>
-                        <strong>Trouble Responsible: </strong><span t-field="o.user_fault"/><br/>
-                        <strong>Category: </strong><span t-field="o.categ_id"/><br/>
-                        <strong>Reference:</strong><span t-esc="o.env['res.request.link'].search([('object', '=', str(o.ref._model))]).name"/>: <span t-esc="o.ref.display_name"/>
-                        <hr style="border-top: 2px dotted black"/><br/>
-                        <strong>Claim Description:</strong>
-                        <div class="col-xs-12" style="border: 1px solid black">
-                            <span t-field="o.description"/>
-                        </div>
-                        <br/><br/>
-                        <strong>Causes:</strong><br/>
-                        <div class="col-xs-12" style="border: 1px solid black">
-                            <span t-field="o.cause"/>
-                        </div>
-                        <br/><br/>
-                        <strong>Resolution actions:</strong><br/>
-                        <div class="col-xs-12" style="border: 1px solid black">
-                            <span t-field="o.resolution"/>
-                        </div>
-                        <br/><br/>
-                        Create corrective action?<br/>
-                        -[] Yes<br/>
-                        -[] No<br/>
-                        <br/>
-                        <t >
-                            <table class="table table-condensed">
-                                <tr t-foreach="o.to_related_claims" t-as="to_claim">
-                                    <td><strong><span t-field="to_claim.code"/></strong></td>
-                                    <td><span t-field="to_claim.date" t-field-options='{"format": "dd/MM/yyyy"}'/></td>
-                                    <td><span t-field="to_claim.name"/></td>
-                                </tr>
-                            </table>
-                        </t>
-                        <br/>
-                        <t t-if="o.claim_type == 'Supplier'">
-                        <hr style="border-top: 2px dotted black"/>
-                        Decision:
-                        <table class="table table-condensed">
-                            <tr>
-                                <td>- [] Product return</td>
-                                <td>- [] Replacement</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>- [] Refund</td>
-                            </tr>
-                        </table>
-                        <div class="col-xs-12" style="border: 1px solid black">
-                            Supplier sign (specify name and position of the person who signs):
-                            <div class="col-xs-12" height="200px"/>
-                            Date:
-                        </div>
-                        <hr style="border-top: 2px dotted black"/>
-                        </t>
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context(lang=lang)" />
+            <div class="row">
+                <br/>
+                <div class="col-xs-12">
+                    <h2><strong><t t-if="o.claim_type.name != 'Acción Correctiva'">Non conformity report</t><t t-if="o.claim_type.name == 'Acción Correctiva'">Corrective action report</t></strong></h2>
+                    <strong>Claim number: </strong><span t-field="o.code"/><br/>
+                    <strong>Object of claim: </strong><span t-field="o.name"/><br/>
+                    <strong>Claim Date: </strong><span t-field="o.date" t-field-options='{"format": "dd/MM/yyyy"}'/><br/>
+                    <strong>Claim Type: </strong><span t-field="o.claim_type"/><br/>
+                    <strong>Partner: </strong><span t-field="o.partner_id"/>
+                    <hr style="border-top: 2px dotted black"/>
+                    <div style="font-size:18px"><strong>Responsibilities</strong></div>
+                    <strong>Trouble Responsible: </strong><span t-field="o.user_fault"/><br/>
+                    <strong>Category: </strong><span t-field="o.categ_id"/><br/>
+                    <strong>Reference:</strong>
+                        <span t-field="o.ref_model_name"/>: <span t-field="o.ref_name"/>
+                    <hr style="border-top: 2px dotted black"/><br/>
+                    <strong>Claim Description:</strong>
+                    <div class="col-xs-12" style="border: 1px solid black">
+                        <span t-field="o.description"/>
                     </div>
+                    <br/><br/>
+                    <strong>Causes:</strong><br/>
+                    <div class="col-xs-12" style="border: 1px solid black">
+                        <span t-field="o.cause"/>
+                    </div>
+                    <br/><br/>
+                    <strong>Resolution actions:</strong><br/>
+                    <div class="col-xs-12" style="border: 1px solid black">
+                        <span t-field="o.resolution"/>
+                    </div>
+                    <br/><br/>
+                    Create corrective action?<br/>
+                    -[] Yes<br/>
+                    -[] No<br/>
+                    <br/>
+                    <t t-if="o.claim_type == 'Supplier'">
+                    <hr style="border-top: 2px dotted black"/>
+                    Decision:
+                    <table class="table table-condensed">
+                        <tr>
+                            <td>- [] Product return</td>
+                            <td>- [] Replacement</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>- [] Refund</td>
+                        </tr>
+                    </table>
+                    <div class="col-xs-12" style="border: 1px solid black">
+                        Supplier sign (specify name and position of the person who signs):
+                        <div class="col-xs-12" height="200px"/>
+                        Date:
+                    </div>
+                    <hr style="border-top: 2px dotted black"/>
+                    </t>
                 </div>
             </div>
         </t>
     </template>
 
     <template id="report_crmclaim">
-        <t t-call="report.html_container">
-            <t t-foreach="doc_ids" t-as="doc_id">
-                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'crm_claim_report.report_crmclaim_document')"/>
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.partner_id.lang"/>
+                <t t-call="crm_claim_report.report_crmclaim_document" t-lang="lang"/>
             </t>
         </t>
     </template>
