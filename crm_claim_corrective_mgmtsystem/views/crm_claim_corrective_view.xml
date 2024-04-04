@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="crm_claim_corrective.menu_corrective_actions"
+              name="Corrective Actions"
+              parent="mgmtsystem.menu_mgmtsystem_main"
+              action="crm_claim_corrective.crm_claim_corrective_action" />
+</odoo>
