@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_form" model="ir.ui.view">
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="after">
+                    <field name="claim_id" optional="show" />
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='date_planned']" position="before">
+                    <field name="claim_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_purchase_order_filter" model="ir.ui.view">
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="order_line" string="Claim"
+                        filter_domain="[('order_line.claim_id', 'ilike', self)]"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="purchase_order_view_search" model="ir.ui.view">
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_view_search" />
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="order_line" string="Claim"
+                        filter_domain="[('order_line.claim_id', 'ilike', self)]"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
