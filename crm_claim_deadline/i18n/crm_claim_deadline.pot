@@ -18,24 +18,24 @@ msgstr ""
 #. module: crm_claim_deadline
 #: model:ir.model,name:crm_claim_deadline.model_crm_claim
 msgid "Claim"
-msgstr "Reclamación"
+msgstr ""
 
 #. module: crm_claim_deadline
 #: model_terms:ir.ui.view,arch_db:crm_claim_deadline.res_company_view_form
 msgid "Claim Deadline"
-msgstr "Fecha límite para reclamaciones"
+msgstr ""
 
 #. module: crm_claim_deadline
 #: model:ir.model.fields,field_description:crm_claim_deadline.field_res_company__claim_closing_days
 msgid "Claim closing days"
-msgstr "Días para cierre reclamación"
+msgstr ""
 
 #. module: crm_claim_deadline
 #: model:ir.model,name:crm_claim_deadline.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr ""
 
 #. module: crm_claim_deadline
 #: model:ir.model.fields,field_description:crm_claim_deadline.field_crm_claim__date_deadline
 msgid "Deadline"
-msgstr "Fecha límite"
+msgstr ""

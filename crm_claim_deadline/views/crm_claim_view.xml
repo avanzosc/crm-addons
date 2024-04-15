@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="crm_claim_view_tree">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="date_deadline" optional="show" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_claim_view_search">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="date_deadline" />
+            </field>
+        </field>
+    </record>
+</odoo>
