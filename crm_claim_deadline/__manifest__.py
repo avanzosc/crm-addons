@@ -6,17 +6,13 @@
     "license": "AGPL-3",
     "author": "AvanzOSC",
     "website": "https://github.com/avanzosc/crm-addons",
-    "contributors": [
-        "Ana Juaristi <anajuaristi@avanzosc.es>",
-        "Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>",
-        "Alfredo de la Fuente <alfredodelafuente@avanzosc.es>",
-    ],
     "category": "Customer Relationship Management",
     "depends": [
         "base",
         "crm_claim",
     ],
     "data": [
+        "views/crm_claim_view.xml",
         "views/res_company_view.xml",
     ],
     "installable": True,

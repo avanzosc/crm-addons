@@ -6,9 +6,9 @@
 CRM claim filter
 ================
 
-* With this module, in the company we can define "Claim closing days".
-* when a claim, the "Deadline" field is created will show the current date +
-  Claim closing days defined in company.
+With this module, in the company we can define "Claim closing days".
+when a claim, the "Deadline" field is created will show the current date +
+Claim closing days defined in company.
 
 
 Credits
