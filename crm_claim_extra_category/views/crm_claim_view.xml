@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_case_claims_tree_view" model="ir.ui.view">
+            <field name="model">crm.claim</field>
+            <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="extra_category_id" optional="show"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="crm_case_claims_form_view" model="ir.ui.view">
+            <field name="model">crm.claim</field>
+            <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="extra_category_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_crm_case_claims_filter" model="ir.ui.view">
+            <field name="model">crm.claim</field>
+            <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="categ_id" string="Type"/>
+                    <field name="extra_category_id"/>
+                </field>
+                <filter name="type" position="after">
+                    <filter string="Extra Category" name="group_extra-category" domain="[]"
+                        context="{'group_by':'extra_category_id'}" />
+                </filter>
+            </field>
+        </record>
+    </data>
+</odoo>
