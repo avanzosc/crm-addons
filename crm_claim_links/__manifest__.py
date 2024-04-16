@@ -27,6 +27,7 @@
     "data": [
         "views/stock_picking_view.xml",
         "views/stock_move_view.xml",
+        "views/stock_move_line_view.xml",
         "views/res_partner_view.xml",
         "views/repair_order_view.xml",
         "views/crm_claim_view.xml"
