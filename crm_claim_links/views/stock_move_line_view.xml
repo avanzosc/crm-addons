@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_line_tree" model="ir.ui.view">
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_move_line_tree" />
+            <field name="arch" type="xml">
+                <field name="reference" position="after">
+                    <field name="claim_id" optional="show" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_move_line_form" model="ir.ui.view">
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_move_line_form" />
+            <field name="arch" type="xml">
+                <field name="create_uid" position="after">
+                    <field name="claim_id" readonly="1" />
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_move_line_view_search" model="ir.ui.view">
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.stock_move_line_view_search" />
+            <field name="arch" type="xml">
+                <field name="picking_id" position="after">
+                    <field name="claim_id" />
+                </field>
+                <filter name="by_category" position="after">
+                    <filter string="Claim" name="by_claim" domain="[]" context="{'group_by': 'claim_id'}"/>
+                </filter>
+            </field>
+        </record>
+    </data>
+</odoo>
