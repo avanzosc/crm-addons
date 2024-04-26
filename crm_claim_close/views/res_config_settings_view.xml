@@ -8,10 +8,10 @@
                 <h2>Claims Closure</h2>
                     <div class="row mt16 o_settings_container">
                         <div
-          class="col-12 col-lg-6 o_setting_box"
-          id="crm_claim_close"
-          title=""
-        >
+            class="col-12 col-lg-6 o_setting_box"
+            id="crm_claim_close"
+            title=""
+          >
                         <div class="o_setting_left_pane">
                             <field name="group_crm_claim_close" />
                         </div>
