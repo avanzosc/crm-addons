@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # 2015 Serv. Tec. Avanzados - Pedro M. Baeza (http://www.serviciosbaeza.com)
 # 2015 AvanzOsc (http://www.avanzosc.es)
 # Copyright 2024 Alfredo de la Fuente - AvanzOSC
@@ -6,12 +5,10 @@
 {
     "name": "CRM Lead Marketing Info",
     "version": "16.0.1.0.0",
-    "author": "OdooMRP team,"
-              "AvanzOSC,"
-              "Serv. Tecnol. Avanzados - Pedro M. Baeza",
+    "author": "OdooMRP team," "AvanzOSC," "Serv. Tecnol. Avanzados - Pedro M. Baeza",
     "category": "Sales/CRM",
     "license": "AGPL-3",
-    "website": "http://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/crm-addons",
     "depends": [
         "crm",
     ],
