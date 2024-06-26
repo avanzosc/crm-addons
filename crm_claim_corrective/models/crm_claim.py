@@ -7,10 +7,10 @@ from odoo import api, fields, models
 class CrmClaim(models.Model):
     _inherit = "crm.claim"
 
-    photo1 = fields.Binary(string="Photo1", attachment=True)
-    photo2 = fields.Binary(string="Photo2", attachment=True)
-    photo3 = fields.Binary(string="Photo3", attachment=True)
-    photo4 = fields.Binary(string="Photo4", attachment=True)
+    photo1 = fields.Binary(attachment=True)
+    photo2 = fields.Binary(attachment=True)
+    photo3 = fields.Binary(attachment=True)
+    photo4 = fields.Binary(attachment=True)
     claim_description_id = fields.Many2one(
         comodel_name="crm.claim.description",
         string="Claim Description",
@@ -65,8 +65,8 @@ class CrmClaimDescription(models.Model):
     _name = "crm.claim.description"
     _description = "Claim Description"
 
-    name = fields.Char(string="Name", required=True)
-    description = fields.Text(string="Description")
+    name = fields.Char(required=True)
+    description = fields.Text()
     type_description = fields.Selection(
         selection=[
             ("claim", "Claim Description"),
