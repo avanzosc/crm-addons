@@ -8,10 +8,14 @@ class CrmClaim(models.Model):
     _inherit = "crm.claim"
 
     picking_ids = fields.One2many(
-        string="Stock Pickings", comodel_name="stock.picking",
-        inverse_name="claim_id", copy=False
+        string="Stock Pickings",
+        comodel_name="stock.picking",
+        inverse_name="claim_id",
+        copy=False,
     )
     repair_ids = fields.One2many(
-        string="Repair Orders", comodel_name="repair.order",
-        inverse_name="claim_id", copy=False
+        string="Repair Orders",
+        comodel_name="repair.order",
+        inverse_name="claim_id",
+        copy=False,
     )

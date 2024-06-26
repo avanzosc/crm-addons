@@ -25,7 +25,7 @@
             <field name="inherit_id" ref="repair.view_repair_order_form_filter" />
             <field name="arch" type="xml">
                 <field name="sale_order_id" position="after">
-                    <field name="claim_id"/>
+                    <field name="claim_id" />
                 </field>
             </field>
         </record>
