@@ -4,22 +4,20 @@
 {
     "name": "CRM Claim Extra Ref",
     "version": "16.0.1.0.0",
-    "author": "OdooMRP team,"
-              "AvanzOSC,"
-              "Serv. Tecnol. Avanzados - Pedro M. Baeza",
+    "author": "OdooMRP team," "AvanzOSC," "Serv. Tecnol. Avanzados - Pedro M. Baeza",
     "category": "CRM Claim",
     "license": "AGPL-3",
-    "website": "http://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/crm-addons",
     "contributors": [
         "Pedro M. Baeza <pedro.baeza@serviciosbaeza.com",
         "Ana Juaristi <anajuaristi@avanzosc.es>",
         "Alfredo de la Fuente <alfredodelafuente@avanzosc.es>",
     ],
     "depends": [
-        'crm_claim',
+        "crm_claim",
     ],
     "data": [
-        'views/crm_claim_view.xml',
+        "views/crm_claim_view.xml",
     ],
-    "installable": True
+    "installable": True,
 }
