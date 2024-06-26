@@ -4,6 +4,7 @@
     "name": "CRM Phonecall Activity",
     "version": "16.0.1.0.0",
     "author": "Avanzosc",
+    "website": "https://github.com/avanzosc/crm-addons",
     "category": "Sales/CRM",
     "depends": ["crm_phonecall", "mail"],
     "data": [
