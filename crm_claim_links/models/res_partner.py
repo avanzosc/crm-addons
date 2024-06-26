@@ -8,6 +8,5 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     claim_ids = fields.One2many(
-        string="Claims", comodel_name="crm.claim", inverse_name="partner_id",
-        copy=False
+        string="Claims", comodel_name="crm.claim", inverse_name="partner_id", copy=False
     )

@@ -8,7 +8,13 @@ CRM claim links
 
 |badge1|
 
-New field "Claim" in picking, repair order.
+This module adds:
+
+- A link to crm claims in the stock pickings
+- A link to crm claims in repair orders
+- A Field for Supplier Stock Picking Reference in stock picking Receipts
+- For each crm claim, its associated Stock Pickings and repair orders list
+- For any product return it must have a crm claim linked.
 
 
 **Table of contents**
