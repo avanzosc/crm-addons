@@ -10,18 +10,20 @@
                        <group name="to_related_claims">
                             <separator string="To related claims" colspan="12" />
                             <field
-                name="to_related_claims"
-                nolabel="1"
-                domain="[('id','!=',active_id)]" colspan="2"
-              />
+              name="to_related_claims"
+              nolabel="1"
+              domain="[('id','!=',active_id)]"
+              colspan="2"
+            />
                        </group>
                        <group name="from_related_claims">
                             <separator string="From related claims" colspan="12" />
                             <field
-                name="from_related_claims"
-                nolabel="1"
-                domain="[('id','!=',active_id)]" colspan="2"
-              />
+              name="from_related_claims"
+              nolabel="1"
+              domain="[('id','!=',active_id)]"
+              colspan="2"
+            />
                        </group>
                    </page>
                 </page>
