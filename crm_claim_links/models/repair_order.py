@@ -7,6 +7,4 @@ from odoo import fields, models
 class RepairOrder(models.Model):
     _inherit = "repair.order"
 
-    claim_id = fields.Many2one(
-        string="Claim", comodel_name="crm.claim", copy=False
-    )
+    claim_id = fields.Many2one(string="Claim", comodel_name="crm.claim", copy=False)

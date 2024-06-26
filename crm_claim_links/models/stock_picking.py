@@ -7,9 +7,7 @@ from odoo import _, exceptions, fields, models
 class StockPicking(models.Model):
     _inherit = "stock.picking"
 
-    claim_id = fields.Many2one(
-        string="Claim", comodel_name="crm.claim", copy=False
-    )
+    claim_id = fields.Many2one(string="Claim", comodel_name="crm.claim", copy=False)
 
     def action_stock_return_picking(self):
         context = self.env.context.copy()
