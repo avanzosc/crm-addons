@@ -9,9 +9,10 @@ class CrmClaim(models.Model):
     _inherit = ["crm.claim", "portal.mixin"]
 
     def _compute_access_url(self):
-        super()._compute_access_url()
+        res = super()._compute_access_url()
         for task in self:
             task.access_url = "/my/claim/%s" % task.id
+        return res
 
     def preview_crm_claim(self):
         self.ensure_one()
