@@ -8,6 +8,4 @@ class CrmClaimTag(models.Model):
     _description = "Tags for claims"
     _order = "name"
 
-    name = fields.Char(
-        string="Description", required=True, copy=False
-    )
+    name = fields.Char(string="Description", required=True, copy=False)
