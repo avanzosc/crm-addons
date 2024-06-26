@@ -7,4 +7,4 @@ from odoo import fields, models
 class CrmClaimStage(models.Model):
     _inherit = "crm.claim.stage"
 
-    closed = fields.Boolean(string="Closed")
+    closed = fields.Boolean()
