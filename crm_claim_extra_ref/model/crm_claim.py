@@ -1,4 +1,5 @@
-from odoo import _, api, models, fields
+from odoo import _, api, fields, models
+
 APPLICABLE_MODELS = [
     "account.invoice",
     "event.registration",
@@ -17,8 +18,7 @@ class CrmClaim(models.Model):
 
     def _links_get(self):
         return [
-            (x, _(self.env[x]._description)) for x in
-            APPLICABLE_MODELS if x in self.env
+            (x, _(self.env[x]._description)) for x in APPLICABLE_MODELS if x in self.env
         ]
 
     @api.depends("ref2")
@@ -59,18 +59,14 @@ class CrmClaim(models.Model):
                 ref_name3 = claim.ref3.name_get()[0][1]
             claim.ref_name3 = ref_name3
 
-    ref2 = fields.Reference(
-        string="Reference 2", selection="_links_get"
-    )
+    ref2 = fields.Reference(string="Reference 2", selection="_links_get")
     ref_model_name2 = fields.Char(
         string="Ref. Model 2", compute="_compute_ref_model_name2", store=True
     )
     ref_name2 = fields.Char(
         string="Ref. Name 2", compute="_compute_ref_name2", store=True
     )
-    ref3 = fields.Reference(
-        string="Reference 3", selection="_links_get"
-    )
+    ref3 = fields.Reference(string="Reference 3", selection="_links_get")
     ref_model_name3 = fields.Char(
         string="Ref. Model 3", compute="_compute_ref_model_name3", store=True
     )
