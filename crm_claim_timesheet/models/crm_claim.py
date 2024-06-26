@@ -28,7 +28,6 @@ class CrmClaim(models.Model):
         tracking=True,
     )
     remaining_hours = fields.Float(
-        string="Remaining Hours",
         compute="_compute_remaining_hours",
         store=True,
         readonly=True,
@@ -62,12 +61,13 @@ class CrmClaim(models.Model):
 
     @api.onchange("partner_id")
     def onchange_partner_id(self):
-        super().onchange_partner_id()
+        res = super().onchange_partner_id()
         projects = self.env["project.project"].search(
             [("partner_id", "=", self.commercial_partner_id.id)]
         )
         if len(projects) == 1:
             self.project_id = projects[:1]
+        return res
 
     @api.onchange("project_id")
     def _onchange_project_id(self):
