@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
        <record id="report_crm_claim" model="ir.actions.report">
@@ -9,9 +9,12 @@
             <field name="report_file">crm_claim_report.report_crmclaim</field>
             <field name="print_report_name">(object.code)</field>
             <field name="attachment">(object.code+'.pdf')</field>
-            <field name="binding_model_id" ref="crm_claim.model_crm_claim"/>
+            <field name="binding_model_id" ref="crm_claim.model_crm_claim" />
             <field name="binding_type">report</field>
-            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field
+        name="groups_id"
+        eval="[(4, ref('sales_team.group_sale_salesman'))]"
+      />
         </record>
     </data>
 </odoo>
