@@ -58,12 +58,9 @@ class CrmClaimCorrectiveAction(models.Model):
         string="Corrective info",
     )
     name = fields.Char(
-        string="Name",
         required=True,
     )
-    sequence = fields.Integer(
-        string="Sequence",
-    )
+    sequence = fields.Integer()
     claim_id = fields.Many2one(
         comodel_name="crm.claim",
         related="corrective_id.claim_id",
@@ -77,4 +74,4 @@ class CrmClaimCorrectiveAction(models.Model):
         help="Select a Responsible",
     )
     date_planned = fields.Date(string="Planned Date")
-    date_done = fields.Date(string="Date Done")
+    date_done = fields.Date()
