@@ -1,27 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
         <record id="view_crm_case_claims_filter" model="ir.ui.view">
             <field name="model">crm.claim</field>
-            <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter"/>
+            <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
             <field name="arch" type="xml">
                 <field name="name" position="after">
-                    <separator/>
+                    <separator />
                     <field name="ref_name" />
                 </field>
                 <filter name="partner" position="after">
-                    <filter string="Reference" name="reference"
-                        domain="[]" help="Reference" context="{'group_by':'ref_model_name'}"/>
+                    <filter
+            string="Reference"
+            name="reference"
+            domain="[]"
+            help="Reference"
+            context="{'group_by':'ref_model_name'}"
+          />
                 </filter>
             </field>
         </record>
         <record id="crm_case_claims_tree_view" model="ir.ui.view">
             <field name="model">crm.claim</field>
-            <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view"/>
+            <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
             <field name="arch" type="xml">
                 <field name="name" position="before">
-                    <field name="ref_model_name" optional="show"/>
-                    <field name="ref_name" optional="show"/>
+                    <field name="ref_model_name" optional="show" />
+                    <field name="ref_name" optional="show" />
                 </field>
             </field>
         </record>
