@@ -6,11 +6,8 @@
     "author": "AvanzOSC",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
-    "website": "http://www.avanzosc.es",
-    "depends": [
-        "crm_claim",
-        "sales_team"
-    ],
+    "website": "https://github.com/avanzosc/crm-addons",
+    "depends": ["crm_claim", "sales_team"],
     "data": [
         "security/ir.model.access.csv",
         "views/crm_claim_tag_view.xml",
