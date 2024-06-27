@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "CRM Claim Non Conformity Report",
-    'version': '14.0.1.0.0',
+    "version": "14.0.1.0.0",
     "author": "Avanzosc",
     "category": "Sales/CRM",
-    "website": "http://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/crm-addons",
     "depends": [
         "crm_claim_code",
         "stock",
@@ -17,5 +17,5 @@
         "views/res_users_views.xml",
     ],
     "license": "AGPL-3",
-    'installable': True,
+    "installable": True,
 }
