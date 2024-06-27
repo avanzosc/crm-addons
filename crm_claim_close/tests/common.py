@@ -10,10 +10,9 @@ class CrmClaimCommon(common.SavepointCase):
         super(CrmClaimCommon, cls).setUpClass()
 
         cls.claim_model = cls.env["crm.claim"].with_context(
-            mail_create_nosubscribe=True)
+            mail_create_nosubscribe=True
+        )
         claim_stage_model = cls.env["crm.claim.stage"]
 
-        cls.open_stage = claim_stage_model.search(
-            [("closed", "=", False)], limit=1)
-        cls.close_stage = claim_stage_model.search(
-            [("closed", "=", True)], limit=1)
+        cls.open_stage = claim_stage_model.search([("closed", "=", False)], limit=1)
+        cls.close_stage = claim_stage_model.search([("closed", "=", True)], limit=1)
