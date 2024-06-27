@@ -7,12 +7,16 @@
                 <sheet>
                     <group>
                         <field name="phonecall_id" invisible="True" />
-                        <field name="user_id"/>
-                        <field name="team_id"/>
+                        <field name="user_id" />
+                        <field name="team_id" />
                     </group>
                     <footer>
-                        <button name="button_generate_transfer" string="Generate Transfer"
-                                    type="object" class="oe_highlight" />
+                        <button
+              name="button_generate_transfer"
+              string="Generate Transfer"
+              type="object"
+              class="oe_highlight"
+            />
                         or
                         <button special="cancel" string="Cancel" class="oe_link" />
                     </footer>
@@ -24,7 +28,7 @@
         <field name="name">Transfer Phone Call</field>
         <field name="res_model">crm.phonecall.transfer</field>
         <field name="view_mode">form</field>
-        <field name="binding_model_id" ref="model_crm_phonecall"/>
+        <field name="binding_model_id" ref="model_crm_phonecall" />
         <field name="binding_view_types">form</field>
         <field name="target">new</field>
     </record>
