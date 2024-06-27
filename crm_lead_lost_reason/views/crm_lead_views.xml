@@ -5,15 +5,21 @@
         <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
             <button name="action_set_lost" position="after">
-                <button name="%(crm.crm_lead_lost_action)d" string="Mark Lost"
-                    type="action" class="oe_highlight" context="{'default_lead_id': active_id}" attrs="{'invisible': ['|', ('type', '=', 'opportunity'),('active', '=', False),('probability', '&lt;', 100)]}"/>
+                <button
+          name="%(crm.crm_lead_lost_action)d"
+          string="Mark Lost"
+          type="action"
+          class="oe_highlight"
+          context="{'default_lead_id': active_id}"
+          attrs="{'invisible': ['|', ('type', '=', 'opportunity'),('active', '=', False),('probability', '&lt;', 100)]}"
+        />
             </button>
             <button name="action_set_lost" position="attributes">
-                <attribute name="attrs"></attribute>
+                <attribute name="attrs" />
                 <attribute name="invisible">1</attribute>
             </button>
             <group name="opportunity_info" position="attributes">
-                <attribute name="attrs"></attribute>
+                <attribute name="attrs" />
             </group>
         </field>
     </record>
@@ -22,7 +28,7 @@
         <field name="inherit_id" ref="crm.crm_case_tree_view_leads" />
         <field name="arch" type="xml">
             <field name="email_from" position="after">
-                <field name="lost_reason" optional="show"/>
+                <field name="lost_reason" optional="show" />
             </field>
         </field>
     </record>
@@ -31,7 +37,7 @@
         <field name="inherit_id" ref="crm.crm_case_tree_view_oppor" />
         <field name="arch" type="xml">
             <field name="partner_id" position="after">
-                <field name="lost_reason" optional="show"/>
+                <field name="lost_reason" optional="show" />
             </field>
         </field>
     </record>
@@ -40,10 +46,14 @@
         <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter" />
         <field name="arch" type="xml">
             <field name="country_id" position="after">
-                <field name="lost_reason" optional="show"/>
+                <field name="lost_reason" optional="show" />
             </field>
             <filter name="stage" position="after">
-                <filter name="lost-reason" string="Lost reason" context="{'group_by':'lost_reason'}"/>
+                <filter
+          name="lost-reason"
+          string="Lost reason"
+          context="{'group_by':'lost_reason'}"
+        />
             </filter>
         </field>
     </record>
@@ -52,10 +62,14 @@
         <field name="inherit_id" ref="crm.view_crm_case_leads_filter" />
         <field name="arch" type="xml">
             <field name="country_id" position="after">
-                <field name="lost_reason" optional="show"/>
+                <field name="lost_reason" optional="show" />
             </field>
             <filter name="city" position="before">
-                <filter name="lost-reason" string="Lost reason" context="{'group_by':'lost_reason'}"/>
+                <filter
+          name="lost-reason"
+          string="Lost reason"
+          context="{'group_by':'lost_reason'}"
+        />
             </filter>
         </field>
     </record>
