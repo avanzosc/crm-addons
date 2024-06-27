@@ -310,7 +310,9 @@ class CustomerPortal(CustomerPortal):
     @http.route(["/my/claim/<int:claim_id>"], type="http", auth="user", website=True)
     def portal_my_claim(self, claim_id, access_token=None, **kw):
         try:
-            claim_sudo = self._document_check_access("crm.claim", claim_id, access_token)
+            claim_sudo = self._document_check_access(
+                "crm.claim", claim_id, access_token
+            )
         except (AccessError, MissingError):
             return request.redirect("/my/home")
 
@@ -334,8 +336,8 @@ class CustomerPortal(CustomerPortal):
         values = self._prepare_portal_layout_values()
         values.update(
             {
-                'error': {},
-                'error_message': [],
+                "error": {},
+                "error_message": [],
                 "page_name": "claim",
                 "default_url": "/my/claims",
             }

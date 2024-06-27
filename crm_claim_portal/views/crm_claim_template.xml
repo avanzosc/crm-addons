@@ -2,12 +2,12 @@
 <odoo>
 
     <template
-        id="portal_my_home_sale"
-        name="Show Claims"
-        customize_show="True"
-        inherit_id="portal.portal_my_home"
-        priority="50"
-    >
+    id="portal_my_home_sale"
+    name="Show Claims"
+    customize_show="True"
+    inherit_id="portal.portal_my_home"
+    priority="50"
+  >
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
             <t t-call="portal.portal_docs_entry">
                 <t t-set="title">Claims</t>
@@ -18,16 +18,16 @@
     </template>
 
     <template
-        id="portal_layout"
-        name="Portal layout: claim menu entry"
-        inherit_id="portal.portal_breadcrumbs"
-        priority="50"
-    >
+    id="portal_layout"
+    name="Portal layout: claim menu entry"
+    inherit_id="portal.portal_breadcrumbs"
+    priority="50"
+  >
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
             <li
-                t-if="page_name == 'claim' or claim"
-                t-attf-class="breadcrumb-item #{'active ' if not claim else ''}"
-            >
+        t-if="page_name == 'claim' or claim"
+        t-attf-class="breadcrumb-item #{'active ' if not claim else ''}"
+      >
                 <a t-if="claim" t-attf-href="/my/claims?{{ keep_query() }}">Claims</a>
                 <t t-else="">Claims</t>
             </li>
@@ -46,16 +46,16 @@
             </t>
             <form method="POST" t-attf-action="/new/claim">
                 <input
-                    type="hidden"
-                    name="csrf_token"
-                    t-att-value="request.csrf_token()"
-                />
+          type="hidden"
+          name="csrf_token"
+          t-att-value="request.csrf_token()"
+        />
                 <button
-                    name="create_new_claim"
-                    type="action"
-                    class="btn btn-primary"
-                    style="float: right; margin-right: 0px; margin-top:5px;"
-                >New Claim</button>
+          name="create_new_claim"
+          type="action"
+          class="btn btn-primary"
+          style="float: right; margin-right: 0px; margin-top:5px;"
+        >New Claim</button>
             </form>
             <div t-if="not grouped_claims" class="alert alert-info">
                 There are currently no claims for your account.
@@ -64,37 +64,64 @@
                 <t t-foreach="grouped_claims" t-as="claims">
                     <t t-set="claim_count" t-value="len(claims)" />
                     <thead>
-                        <tr t-if="not groupby =='none'" t-attf-class="{{'thead-light'}}">
+                        <tr
+              t-if="not groupby =='none'"
+              t-attf-class="{{'thead-light'}}"
+            >
                             <t t-if="groupby == 'stage'">
                                 <th colspan="1">
-                                    <em class="font-weight-normal text-muted">Claims in stage:</em>
-                                    <span t-field="claims[0].sudo().stage_id.name"/>
+                                    <em
+                    class="font-weight-normal text-muted"
+                  >Claims in stage:</em>
+                                    <span t-field="claims[0].sudo().stage_id.name" />
                                 </th>
                                 <th colspan="1" class="text-right text-muted">
-                                    Total: <span class="text-muted" t-esc="claim_count" />
+                                    Total: <span
+                    class="text-muted"
+                    t-esc="claim_count"
+                  />
                                 </th>
                             </t>
                             <t t-if="groupby == 'partner'">
                                 <th colspan="2">
-                                    <em class="font-weight-normal text-muted">Claims reported by:</em>
-                                    <span class="text-truncate" t-field="claims[0].sudo().partner_id.display_name"/>
+                                    <em
+                    class="font-weight-normal text-muted"
+                  >Claims reported by:</em>
+                                    <span
+                    class="text-truncate"
+                    t-field="claims[0].sudo().partner_id.display_name"
+                  />
                                 </th>
                                 <th colspan="1" class="text-right text-muted">
-                                    Total: <span class="text-muted" t-esc="claim_count" />
+                                    Total: <span
+                    class="text-muted"
+                    t-esc="claim_count"
+                  />
                                 </th>
                             </t>
                             <t t-if="groupby == 'user'">
                                 <th colspan="2">
-                                    <em class="font-weight-normal text-muted">Claims assigned to:</em>
-                                    <span class="text-truncate" t-field="claims[0].sudo().user_id.display_name" />
+                                    <em
+                    class="font-weight-normal text-muted"
+                  >Claims assigned to:</em>
+                                    <span
+                    class="text-truncate"
+                    t-field="claims[0].sudo().user_id.display_name"
+                  />
                                 </th>
                                 <th colspan="1" class="text-right text-muted">
-                                    Total: <span class="text-muted" t-esc="claim_count" />
+                                    Total: <span
+                    class="text-muted"
+                    t-esc="claim_count"
+                  />
                                 </th>
                             </t>
                         </tr>
                         <tr t-else="">
-                            <div style="text-align: right;" class="mr-2 mb-1 text-muted">
+                            <div
+                style="text-align: right;"
+                class="mr-2 mb-1 text-muted"
+              >
                                 Total: <span class="text-muted" t-esc="claim_count" />
                             </div>
                         </tr>
@@ -113,16 +140,16 @@
                                 </td>
                                 <td>
                                     <a
-                                    t-att-href="claim.get_portal_url()"
-                                    t-att-title="claim.name"
-                                ><span t-field="claim.name" /></a>
+                    t-att-href="claim.get_portal_url()"
+                    t-att-title="claim.name"
+                  ><span t-field="claim.name" /></a>
                                 </td>
                                 <td t-if="groupby != 'stage'" class="text-center">
                                     <span
-                                    class="badge badge-pill badge-info"
-                                    title="Current stage of the claim"
-                                    t-esc="claim.stage_id.name"
-                                />
+                    class="badge badge-pill badge-info"
+                    title="Current stage of the claim"
+                    t-esc="claim.stage_id.name"
+                  />
                                 </td>
                             </tr>
                         </t>
@@ -137,9 +164,9 @@
             <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_salesman">
                 <t t-call="portal.portal_back_in_edit_mode">
                     <t
-                        t-set="backend_url"
-                        t-value="'/web#model=crm.claim&amp;id=%s&amp;view_type=form' % (claim.id)"
-                    />
+            t-set="backend_url"
+            t-value="'/web#model=crm.claim&amp;id=%s&amp;view_type=form' % (claim.id)"
+          />
                 </t>
             </t>
 
@@ -151,16 +178,16 @@
                                 <div class="col-9 text-truncate">
                                     <span t-field="claim.display_name" />
                                     <small class="text-muted "> (#<span
-                                            t-field="claim.id"
-                                        />)</small>
+                      t-field="claim.id"
+                    />)</small>
                                 </div>
                                 <div class="col-3 text-right">
                                     <small class="text-right">Status:</small>
                                     <span
-                                        t-field="claim.stage_id.name"
-                                        class=" badge badge-pill badge-info"
-                                        title="Current stage of this claim"
-                                    />
+                    t-field="claim.stage_id.name"
+                    class=" badge badge-pill badge-info"
+                    title="Current stage of this claim"
+                  />
                                 </div>
                             </h5>
                         </div>
@@ -170,15 +197,15 @@
                     <div class="row mb-4">
                         <div class="col-12 col-md-6 mb-1">
                             <strong>Date:</strong> <span
-                                t-field="claim.create_date"
-                                t-options='{"widget": "date"}'
-                            />
+                t-field="claim.create_date"
+                t-options='{"widget": "date"}'
+              />
                         </div>
                         <div class="col-12 col-md-6" t-if="claim.date_deadline">
                             <strong>Deadline:</strong> <span
-                                t-field="claim.date_deadline"
-                                t-options='{"widget": "date"}'
-                            />
+                t-field="claim.date_deadline"
+                t-options='{"widget": "date"}'
+              />
                         </div>
                     </div>
 
@@ -188,23 +215,23 @@
                             <div class="row">
                                 <div class="col flex-grow-0 pr-3">
                                     <img
-                                        t-if="claim.user_id.image_1024"
-                                        class="rounded-circle mt-1 o_portal_contact_img"
-                                        t-att-src="image_data_uri(claim.user_id.image_1024)"
-                                        alt="Contact"
-                                    />
+                    t-if="claim.user_id.image_1024"
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    t-att-src="image_data_uri(claim.user_id.image_1024)"
+                    alt="Contact"
+                  />
                                     <img
-                                        t-else=""
-                                        class="rounded-circle mt-1 o_portal_contact_img"
-                                        src="/web/static/src/img/user_menu_avatar.png"
-                                        alt="Contact"
-                                    />
+                    t-else=""
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    src="/web/static/src/img/user_menu_avatar.png"
+                    alt="Contact"
+                  />
                                 </div>
                                 <div class="col pl-md-0">
                                     <div
-                                        t-field="claim.user_id"
-                                        t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
-                                    />
+                    t-field="claim.user_id"
+                    t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
+                  />
                                 </div>
                             </div>
                         </div>
@@ -213,32 +240,32 @@
                             <div class="row">
                                 <div class="col flex-grow-0 pr-3">
                                     <img
-                                        t-if="claim.partner_id.image_1024"
-                                        class="rounded-circle mt-1 o_portal_contact_img"
-                                        t-att-src="image_data_uri(claim.partner_id.image_1024)"
-                                        alt="Contact"
-                                    />
+                    t-if="claim.partner_id.image_1024"
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    t-att-src="image_data_uri(claim.partner_id.image_1024)"
+                    alt="Contact"
+                  />
                                     <img
-                                        t-else=""
-                                        class="rounded-circle mt-1 o_portal_contact_img"
-                                        src="/web/static/src/img/user_menu_avatar.png"
-                                        alt="Contact"
-                                    />
+                    t-else=""
+                    class="rounded-circle mt-1 o_portal_contact_img"
+                    src="/web/static/src/img/user_menu_avatar.png"
+                    alt="Contact"
+                  />
                                 </div>
                                 <div class="col pl-md-0">
                                     <div
-                                        t-field="claim.partner_id"
-                                        t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
-                                    />
+                    t-field="claim.partner_id"
+                    t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'
+                  />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row" t-if="claim.description">
                         <div
-                            t-if="claim.description"
-                            t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 col-lg-12"
-                        >
+              t-if="claim.description"
+              t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 col-lg-12"
+            >
                             <hr class="mb-1" />
                             <div class="d-flex my-2">
                                 <strong>Description</strong>
@@ -264,17 +291,33 @@
             <section>
                 <h3>Send new claim</h3>
                 <form action="/submitted/claim" method="post" class="">
-                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input
+            type="hidden"
+            name="csrf_token"
+            t-att-value="request.csrf_token()"
+          />
                     <div class="form-group">
                         <div t-attf-class="form-group col-xl-6">
                             <label class="col-form-label" for="subject">Subject:</label>
-                            <input type="text" name="subject" t-attf-class="form-control" t-att-value="subject" />
+                            <input
+                type="text"
+                name="subject"
+                t-attf-class="form-control"
+                t-att-value="subject"
+              />
                         </div>
                     </div>
                     <div class="form-group">
                         <div t-attf-class="form-group col-xl-6">
-                            <label class="col-form-label" for="description">Description:</label>
-                            <textarea name="description" t-attf-class="form-control" t-att-value="description" />
+                            <label
+                class="col-form-label"
+                for="description"
+              >Description:</label>
+                            <textarea
+                name="description"
+                t-attf-class="form-control"
+                t-att-value="description"
+              />
                         </div>
                     </div>
 
