@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <menuitem id="menu_contact_medium"
-            name="Medium"
-            parent="contacts.res_partner_menu_config"
-            action="utm.utm_medium_action"
-            sequence="50"/>
+    <menuitem
+    id="menu_contact_medium"
+    name="Medium"
+    parent="contacts.res_partner_menu_config"
+    action="utm.utm_medium_action"
+    sequence="50"
+  />
 </odoo>
