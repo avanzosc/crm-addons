@@ -6,13 +6,12 @@
     "category": "Inventory/Inventory",
     "license": "AGPL-3",
     "author": "Avanzosc",
-    "website": "https://github.com/avanzosc/odoo-addons",
+    "website": "https://github.com/avanzosc/crm-addons",
     "depends": [
         "crm_lead_create_repair",
         "crm_lead_payment",
     ],
-    "data": [
-    ],
+    "data": [],
     "installable": True,
     "auto_install": True,
 }
