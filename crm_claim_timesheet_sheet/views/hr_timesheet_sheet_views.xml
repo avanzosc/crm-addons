@@ -5,26 +5,26 @@
         <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//field[@name='timesheet_ids']/tree//field[@name='task_id']"
-                position="after"
-            >
+        expr="//field[@name='timesheet_ids']/tree//field[@name='task_id']"
+        position="after"
+      >
                 <field
-                    name="claim_id"
-                    optional="show"
-                    domain="[('task_id','=',task_id)]"
-                    options="{'no_create_edit': True, 'no_open': True}"
-                />
+          name="claim_id"
+          optional="show"
+          domain="[('task_id','=',task_id)]"
+          options="{'no_create_edit': True, 'no_open': True}"
+        />
             </xpath>
             <xpath
-                expr="//field[@name='timesheet_ids']/form//field[@name='task_id']"
-                position="after"
-            >
+        expr="//field[@name='timesheet_ids']/form//field[@name='task_id']"
+        position="after"
+      >
                 <field
-                    name="claim_id"
-                    optional="show"
-                    domain="[('task_id','=',task_id)]"
-                    options="{'no_create_edit': True, 'no_open': True}"
-                />
+          name="claim_id"
+          optional="show"
+          domain="[('task_id','=',task_id)]"
+          options="{'no_create_edit': True, 'no_open': True}"
+        />
             </xpath>
         </field>
     </record>
