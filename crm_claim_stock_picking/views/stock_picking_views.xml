@@ -1,21 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="view_picking_form" model="ir.ui.view">
         <field name="model">stock.picking</field>
-        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="inherit_id" ref="stock.view_picking_form" />
         <field name="arch" type="xml">
             <div class="oe_button_box" name="button_box">
-                <button class="oe_stat_button" icon="fa-comments" type="object" name="action_view_claim">
-                    <field string="Claims" name="count_claim" widget="statinfo"/>
+                <button
+          class="oe_stat_button"
+          icon="fa-comments"
+          type="object"
+          name="action_view_claim"
+        >
+                    <field string="Claims" name="count_claim" widget="statinfo" />
                 </button>
             </div>
             <field name="origin" position="after">
-                <field name="claim_id"/>
+                <field name="claim_id" />
             </field>
-            <xpath expr="//form/sheet/notebook/page[@name='operations']/field/tree/button[@name='action_assign_serial']" position="after">
-                <button name="button_create_claim" type="object" string="Create Claim" class="oe_highlight"/>
+            <xpath
+        expr="//form/sheet/notebook/page[@name='operations']/field/tree/button[@name='action_assign_serial']"
+        position="after"
+      >
+                <button
+          name="button_create_claim"
+          type="object"
+          string="Create Claim"
+          class="oe_highlight"
+        />
             </xpath>
         </field>
     </record>
