@@ -9,11 +9,13 @@ class ProjectTask(models.Model):
 
     claim_count = fields.Integer(
         string="# Claims",
-        compute="_compute_claim_count")
+        compute="_compute_claim_count",
+    )
     claim_ids = fields.One2many(
         comodel_name="crm.claim",
         inverse_name="task_id",
-        string="Claims")
+        string="Claims",
+    )
 
     @api.depends("claim_ids")
     def _compute_claim_count(self):
