@@ -7,19 +7,27 @@
         <field name="arch" type="xml">
             <field name="description" position="before">
                 <group name="description">
-                    <field name="claim_description_id" context="{'default_type_description':'claim'}"/>
+                    <field
+            name="claim_description_id"
+            context="{'default_type_description':'claim'}"
+          />
                 </group>
             </field>
             <field name="cause" position="before">
                 <group name="cause_description">
-                    <field name="cause_description_id" context="{'default_type_description':'cause'}"/>
+                    <field
+            name="cause_description_id"
+            context="{'default_type_description':'cause'}"
+          />
                 </group>
             </field>
             <field name="cause" position="after">
-                <button name="button_create_corrective"
-                        type="object"
-                        string="Create Corrective Action"
-                        attrs="{'invisible': ['|',('cause','=',False),('corrective_id','!=',False)]}"/>
+                <button
+          name="button_create_corrective"
+          type="object"
+          string="Create Corrective Action"
+          attrs="{'invisible': ['|',('cause','=',False),('corrective_id','!=',False)]}"
+        />
             </field>
             <field name="type_action" position="after">
                 <group name="corrective" colspan="4">
@@ -28,30 +36,33 @@
             </field>
             <field name="resolution" position="before">
                 <group name="resolution_description">
-                    <field name="resolution_description_id" context="{'default_type_description':'resolution'}"/>
+                    <field
+            name="resolution_description_id"
+            context="{'default_type_description':'resolution'}"
+          />
                 </group>
             </field>
             <xpath expr="//form/sheet/group/notebook/page[2]" position="after">
                 <page string="Images" groups="base.group_user">
-                    <separator string="Photos" colspan="4"/>
+                    <separator string="Photos" colspan="4" />
                     <group colspan="2">
-                        <field name="photo1" widget="image" nolabel="1"/>
-                        <field name="photo2" widget="image" nolabel="1"/>
+                        <field name="photo1" widget="image" nolabel="1" />
+                        <field name="photo2" widget="image" nolabel="1" />
                     </group>
                     <group colspan="2">
-                        <field name="photo3" widget="image" nolabel="1"/>
-                        <field name="photo4" widget="image" nolabel="1"/>
+                        <field name="photo3" widget="image" nolabel="1" />
+                        <field name="photo4" widget="image" nolabel="1" />
                     </group>
                 </page>
              </xpath>
         </field>
         </record>
-        
+
     <record model="ir.ui.view" id="crm_claim_description_tree_view">
         <field name="name">crm.claim.description.tree.view</field>
         <field name="model">crm.claim.description</field>
         <field name="arch" type="xml">
-            <tree string="Claim Description">
+            <tree>
                 <field name="name" />
                 <field name="description" />
                 <field name="type_description" />
@@ -65,7 +76,7 @@
             <form string="Claim Description">
                 <group name="name">
                     <field name="name" />
-                    <field name="description"/>
+                    <field name="description" />
                     <field name="type_description" />
                 </group>
             </form>
@@ -79,7 +90,7 @@
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Generate you own claim descriptions.
-                You can make a quick assignment of the description in recurring claims 
+                You can make a quick assignment of the description in recurring claims
             </p>
         </field>
     </record>
