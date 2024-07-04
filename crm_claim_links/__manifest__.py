@@ -8,7 +8,11 @@
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "website": "https://github.com/avanzosc/crm-addons",
-    "depends": ["crm_claim", "repair", "stock"],
+    "depends": [
+        "crm_claim",
+        "repair",
+        "stock",
+    ],
     "data": [
         "views/stock_picking_view.xml",
         "views/stock_move_view.xml",
