@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record model="ir.ui.view" id="crm_claim_corrective_tree_view">
-        <field name="name">crm.claim.corrective.tree.view</field>
         <field name="model">crm.claim.corrective</field>
         <field name="arch" type="xml">
-            <tree string="Corrective Actions">
+            <tree>
                 <field name="name" />
                 <field name="claim_id" />
                 <field name="partner_id" />
@@ -13,7 +12,6 @@
         </field>
     </record>
     <record model="ir.ui.view" id="crm_claim_corrective_form_view">
-        <field name="name">crm.claim.corrective.form.view</field>
         <field name="model">crm.claim.corrective</field>
         <field name="arch" type="xml">
             <form string="Corrective Actions">
@@ -35,11 +33,11 @@
             </form>
         </field>
     </record>
+
     <record model="ir.ui.view" id="crm_claim_corrective_action_tree_view">
-        <field name="name">crm.claim.corrective.action.tree.view</field>
         <field name="model">crm.claim.corrective.action</field>
         <field name="arch" type="xml">
-            <tree string="Corrective action" editable="bottom">
+            <tree editable="bottom">
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="responsible_id" />
@@ -49,20 +47,20 @@
         </field>
     </record>
         <record model="ir.ui.view" id="crm_claim_corrective_action_form_view">
-        <field name="name">crm.claim.corrective.action.form.view</field>
         <field name="model">crm.claim.corrective.action</field>
         <field name="arch" type="xml">
             <form string="Corrective action">
-            <group name="corrective_data">
-                <field name="claim_id" readonly="1" />
-                <field name="name" />
-                <field name="responsible_id" />
-                <field name="date_planned" />
-                <field name="date_done" />
-            </group>
+                <group name="corrective_data">
+                    <field name="claim_id" readonly="1" />
+                    <field name="name" />
+                    <field name="responsible_id" />
+                    <field name="date_planned" />
+                    <field name="date_done" />
+                </group>
             </form>
         </field>
     </record>
+
     <record model="ir.actions.act_window" id="crm_claim_corrective_action">
         <field name="name">Corrective action</field>
         <field name="res_model">crm.claim.corrective</field>
