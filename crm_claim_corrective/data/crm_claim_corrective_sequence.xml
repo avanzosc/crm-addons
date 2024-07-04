@@ -1,11 +1,10 @@
-<odoo>
-    <data noupdate="1">
-        <record id="seq_corrective_action" model="ir.sequence">
-            <field name="name">Corrective Action</field>
-            <field name="code">crm.claim.corrective</field>
-            <field name="prefix">AACC</field>
-            <field name="padding">5</field>
-            <field name="company_id" eval="False" />
-        </record>
-    </data>
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="seq_corrective_action" model="ir.sequence">
+        <field name="name">Corrective Action</field>
+        <field name="code">crm.claim.corrective</field>
+        <field name="prefix">AACC</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False" />
+    </record>
 </odoo>
