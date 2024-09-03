@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_lead_lost_reason_add_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-20 09:51+0000\n"
+"PO-Revision-Date: 2024-08-20 09:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_lead_lost_reason_add_info
+#: model_terms:ir.ui.view,arch_db:crm_lead_lost_reason_add_info.view_crm_lead_form_inherit
+#: model_terms:ir.ui.view,arch_db:crm_lead_lost_reason_add_info.view_crm_lead_lost_reason_wizard_inherit
+msgid "Competitor Details"
+msgstr "Detalles del Competidor"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead__competitor_integrator_id
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost__competitor_integrator_id
+msgid "Competitor Integrator"
+msgstr "Integrador del Competidor"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead__competitor_manufacturer_id
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost__competitor_manufacturer_id
+msgid "Competitor Manufacturer"
+msgstr "Fabricante del Competidor"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead__competitor_price
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost__competitor_price
+msgid "Competitor Price"
+msgstr "Precio del Competidor"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead__competitor_reseller_id
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost__competitor_reseller_id
+msgid "Competitor Reseller"
+msgstr "Revendedor del Competidor"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model,name:crm_lead_lost_reason_add_info.model_crm_lead_lost
+msgid "Get Lost Reason"
+msgstr "Obtener razón de la pérdida"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead__id
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost__id
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model,name:crm_lead_lost_reason_add_info.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Oportunidad"
+
+#. module: crm_lead_lost_reason_add_info
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead__lost_reason_notes
+#: model:ir.model.fields,field_description:crm_lead_lost_reason_add_info.field_crm_lead_lost__lost_reason_notes
+msgid "Lost Reason Notes"
+msgstr "Notas sobre la razón de la pérdida"
