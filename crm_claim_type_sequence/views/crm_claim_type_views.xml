@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="crm_claim_type_tree">
+        <field name="model">crm.claim.type</field>
+        <field name="inherit_id" ref="crm_claim_type.crm_claim_type_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="sequence_id" optional="show" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_claim_type_form">
+        <field name="model">crm.claim.type</field>
+        <field name="inherit_id" ref="crm_claim_type.crm_claim_type_form" />
+        <field name="arch" type="xml">
+            <field name="description" position="after">
+                <field name="sequence_id" />
+            </field>
+        </field>
+    </record>
+</odoo>
