@@ -12,6 +12,7 @@
     ],
     "data": [
         "views/crm_claim_type_views.xml",
+        "views/crm_claim_views.xml",
     ],
     "installable": True,
 }
