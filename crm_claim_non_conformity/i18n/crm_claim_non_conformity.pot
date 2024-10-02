@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 07:11+0000\n"
-"PO-Revision-Date: 2024-10-01 07:11+0000\n"
+"POT-Creation-Date: 2024-10-03 05:44+0000\n"
+"PO-Revision-Date: 2024-10-03 05:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,38 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: crm_claim_non_conformity
+#: model:ir.model,name:crm_claim_non_conformity.model_crm_claim
+msgid "Claim"
+msgstr ""
+
+#. module: crm_claim_non_conformity
 #: model:ir.model,name:crm_claim_non_conformity.model_crm_claim_type
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__claim_type
 msgid "Claim Type"
 msgstr ""
 
 #. module: crm_claim_non_conformity
+#: model:ir.model.fields,help:crm_claim_non_conformity.field_crm_claim__claim_type
+msgid "Claim classification"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_type__non_conformity
 msgid "Is Non Conformity?"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model:ir.actions.act_window,name:crm_claim_non_conformity.action_crm_claim_non_conformity
+#: model:ir.ui.menu,name:crm_claim_non_conformity.menu_crm_claim_non_conformit
+msgid "NC Quality"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.actions.act_window,help:crm_claim_non_conformity.action_crm_claim_non_conformity
+msgid ""
+"Record and track your customers' claims.\n"
+"                Claims may be linked to a sales order or a lot.\n"
+"                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).\n"
+"                Claims may automatically be linked to an email address using the mail gateway module."
 msgstr ""
