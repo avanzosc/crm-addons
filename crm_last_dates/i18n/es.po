@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_last_dates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 10:44+0000\n"
+"PO-Revision-Date: 2024-10-09 10:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_last_dates
+#: model:ir.model,name:crm_last_dates.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: crm_last_dates
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: crm_last_dates
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_last_dates
+#: model_terms:ir.ui.view,arch_db:crm_last_dates.view_res_partner_form_inherit_last_dates
+msgid "Last Dates"
+msgstr "Últimas fechas"
+
+#. module: crm_last_dates
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_partner__last_invoice_date
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_users__last_invoice_date
+msgid "Last Invoice Date"
+msgstr "Última fecha de factura"
+
+#. module: crm_last_dates
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_partner__last_lead_date
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_users__last_lead_date
+msgid "Last Lead Date"
+msgstr "Última fecha de Lead"
+
+#. module: crm_last_dates
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_partner__last_meeting_date
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_users__last_meeting_date
+msgid "Last Meeting Date"
+msgstr "Última fecha de reunión"
+
+#. module: crm_last_dates
+#: model:ir.model.fields,field_description:crm_last_dates.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
