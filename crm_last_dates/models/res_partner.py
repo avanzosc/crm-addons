@@ -5,41 +5,32 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     last_lead_date = fields.Datetime(
-        compute="_compute_last_dates",
+        compute="_compute_last_lead_date",
         store=True,
     )
     last_meeting_date = fields.Datetime(
-        compute="_compute_last_dates",
+        compute="_compute_last_meeting_date",
         store=True,
     )
     last_invoice_date = fields.Datetime(
-        compute="_compute_last_dates",
+        compute="_compute_last_invoice_date",
         store=True,
     )
 
-    @api.depends("commercial_partner_id")
-    def _compute_last_dates(self):
+    @api.depends("commercial_partner_id", "opportunity_ids")
+    def _compute_last_lead_date(self):
         for partner in self:
-            lead = self.env["crm.lead"].search(
-                [("partner_id", "=", partner.commercial_partner_id.id)],
-                order="create_date desc",
-                limit=1,
-            )
-            partner.last_lead_date = lead.create_date if lead else False
+            lead_dates = partner.mapped("opportunity_ids.create_date")
+            partner.last_lead_date = max(lead_dates) if lead_dates else False
 
-            meeting = self.env["calendar.event"].search(
-                [("partner_ids", "in", partner.commercial_partner_id.id)],
-                order="create_date desc",
-                limit=1,
-            )
-            partner.last_meeting_date = meeting.create_date if meeting else False
+    @api.depends("commercial_partner_id", "meeting_ids")
+    def _compute_last_meeting_date(self):
+        for partner in self:
+            meeting_dates = partner.mapped("meeting_ids.create_date")
+            partner.last_meeting_date = max(meeting_dates) if meeting_dates else False
 
-            invoice = self.env["account.move"].search(
-                [
-                    ("partner_id", "=", partner.commercial_partner_id.id),
-                    ("move_type", "=", "out_invoice"),
-                ],
-                order="invoice_date desc",
-                limit=1,
-            )
-            partner.last_invoice_date = invoice.invoice_date if invoice else False
+    @api.depends("commercial_partner_id", "invoice_ids")
+    def _compute_last_invoice_date(self):
+        for partner in self:
+            invoice_dates = partner.mapped("invoice_ids.create_date")
+            partner.last_invoice_date = max(invoice_dates) if invoice_dates else False
