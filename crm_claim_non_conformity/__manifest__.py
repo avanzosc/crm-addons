@@ -11,8 +11,10 @@
         "crm_claim_type_sequence",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/crm_claim_type_views.xml",
         "views/crm_claim_views.xml",
+        "report/crm_claim_non_conformity_report_view.xml",
     ],
     "installable": True,
 }
