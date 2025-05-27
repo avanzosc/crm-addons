@@ -7,6 +7,7 @@ Crm claim department
 ====================
 
 * Department in claims.
+* In Claims Analysis, search and group by "Department".
 
 Bug Tracker
 ===========
