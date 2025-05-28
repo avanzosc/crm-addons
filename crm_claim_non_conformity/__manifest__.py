@@ -7,9 +7,7 @@
     "license": "AGPL-3",
     "author": "AvanzOSC",
     "website": "https://github.com/avanzosc/crm-addons",
-    "depends": [
-        "crm_claim_type_sequence",
-    ],
+    "depends": ["crm_claim_type_sequence", "crm_claim_department"],
     "data": [
         "security/ir.model.access.csv",
         "views/crm_claim_type_views.xml",
