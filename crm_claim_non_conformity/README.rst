@@ -8,6 +8,7 @@ Crm claim non conformity
 
 * In crm claim type new field "Is Non Conformity?".
 * In crm new nenu "NC Quality".
+* In crm - reporting - NC Quality, new field "Department".
 
 Bug Tracker
 ===========

@@ -57,6 +57,9 @@ class CrmClaimNonConformityReport(models.Model):
     )
     email = fields.Integer(string="# Emails", readonly=True)
     subject = fields.Char(string="Claim Subject", readonly=True)
+    department_id = fields.Many2one(
+        string="Department", comodel_name="hr.department", readonly=True
+    )
 
     def _select(self):
         select_str = """
@@ -76,6 +79,7 @@ class CrmClaimNonConformityReport(models.Model):
             c.priority AS priority,
             c.type_action AS type_action,
             c.create_date AS create_date,
+            c.department_id as department_id,
             avg(extract(
                 'epoch' FROM (
                     c.date_closed-c.create_date)))/(3600*24)
