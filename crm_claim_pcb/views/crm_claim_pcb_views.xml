@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_crm_claim_form_inherit_pcb" model="ir.ui.view">
+        <field name="name">crm.claim.form.inherit.pcb</field>
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//group" position="inside">
+                <field name="pcb_id" />
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_crm_claim_tree_inherit_pcb" model="ir.ui.view">
+        <field name="name">crm.claim.tree.inherit.pcb</field>
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="pcb_id" />
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_crm_claim_search_inherit_pcb" model="ir.ui.view">
+        <field name="name">crm.claim.search.inherit.pcb</field>
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='type']" position="after">
+                <filter
+          name="pcb_filter"
+          string="PCB"
+          domain="[('pcb_id', '!=', False)]"
+        />
+            </xpath>
+            <xpath expr="//search" position="inside">
+                <field name="pcb_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
