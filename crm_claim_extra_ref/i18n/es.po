@@ -51,3 +51,22 @@ msgstr "Referencia 2"
 #: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.view_crm_case_claims_filter_inh_extraref
 msgid "Reference 3"
 msgstr "Referencia 3"
+
+#. module: crm_claim_extra_ref
+#: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"                <strong>Reference 2:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>Referencia 2:</strong>"
+
+#. module: crm_claim_extra_ref
+#: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"                <strong>Reference 3:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>Referencia 3:</strong>"
+
