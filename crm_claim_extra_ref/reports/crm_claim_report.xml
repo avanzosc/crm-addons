@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+    id="report_crmclaim_document"
+    inherit_id="crm_claim_report.report_crmclaim_document"
+  >
+        <span t-field="o.ref_name" position="after">
+            <t t-if="o.ref2">
+                <br />
+                <strong>Reference 2:</strong>
+                <span t-field="o.ref_model_name2" />: <span t-field="o.ref_name2" />
+            </t>
+            <t t-if="o.ref3">
+                <br />
+                <strong>Reference 3:</strong>
+                <span t-field="o.ref_model_name3" />: <span t-field="o.ref_name3" />
+            </t>
+        </span>
+    </template>
+</odoo>
