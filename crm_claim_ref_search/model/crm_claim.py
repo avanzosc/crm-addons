@@ -23,7 +23,7 @@ class CrmClaim(models.Model):
         for claim in self:
             ref_name = False
             if claim.model_ref_id:
-                ref_name = claim.model_ref_id.name
+                ref_name = claim.model_ref_id.display_name
             claim.ref_name = ref_name
 
     ref_model_name = fields.Char(

@@ -29,7 +29,7 @@ class CrmClaim(models.Model):
             if claim.ref2:
                 cond = [("model", "=", str(claim.ref2._name))]
                 model = model_obj.search(cond)
-                ref_model_name2 = model.name
+                ref_model_name2 = model.display_name
             claim.ref_model_name2 = ref_model_name2
 
     @api.depends("ref2")
@@ -48,7 +48,7 @@ class CrmClaim(models.Model):
             if claim.ref3:
                 cond = [("model", "=", str(claim.ref3._name))]
                 model = model_obj.search(cond)
-                ref_model_name3 = model.name
+                ref_model_name3 = model.display_name
             claim.ref_model_name3 = ref_model_name3
 
     @api.depends("ref3")
