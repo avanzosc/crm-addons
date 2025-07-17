@@ -9,13 +9,12 @@
     "author": "AvanzOSC",
     "website": "https://github.com/avanzosc/crm-addons",
     "summary": "Extends CRM Claims with corrective actions",
-    "depends": [
-        "crm_claim",
-    ],
+    "depends": ["crm_claim", "crm_claim_report"],
     "data": [
         "security/ir.model.access.csv",
         "data/crm_claim_corrective_sequence.xml",
         "reports/crm_claim_corrective_report.xml",
+        "reports/crm_claim_report.xml",
         "views/crm_claim_corrective_view.xml",
         "views/crm_claim_view.xml",
         "views/crm_claim_menu.xml",

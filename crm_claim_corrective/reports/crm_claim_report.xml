@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+    id="report_crmclaim_document"
+    inherit_id="crm_claim_report.report_crmclaim_document"
+  >
+        <t t-if="o.claim_type == 'Supplier'" position="after">
+            <br />
+            <div
+        class="row"
+        style="page-break-inside: avoid; page-break-before:auto; page-break-after:auto;"
+      >
+                <div t-if="o.photo1" class="col-6">
+                    <img t-att-src="image_data_uri(o.photo1)" alt="Logo" />
+                </div>
+                <div t-if="o.photo2" class="col-6">
+                    <img t-att-src="image_data_uri(o.photo2)" alt="Logo" />
+                </div>
+            </div>
+            <t t-if="((o.photo1 or o.photo2) and (o.photo3 or o.photo4))">
+                <br />
+            </t>
+            <div
+        class="row"
+        style="page-break-inside: avoid; page-break-before:auto; page-break-after:auto;"
+      >
+                <div t-if="o.photo3" class="col-6">
+                    <img t-att-src="image_data_uri(o.photo3)" alt="Logo" />
+                </div>
+                <div t-if="o.photo4" class="col-6">
+                    <img t-att-src="image_data_uri(o.photo4)" alt="Logo" />
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
