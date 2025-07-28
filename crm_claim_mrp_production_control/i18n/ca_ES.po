@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_claim_mrp_production_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-28 07:26+0000\n"
+"PO-Revision-Date: 2025-07-28 07:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_claim_mrp_production_control
+#: model:ir.model,name:crm_claim_mrp_production_control.model_crm_claim
+#: model:ir.model.fields,field_description:crm_claim_mrp_production_control.field_mrp_production_control__claim_id
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp_production_control.mrp_production_control_search_view
+msgid "Claim"
+msgstr "Reclamació"
+
+#. module: crm_claim_mrp_production_control
+#: model:ir.model,name:crm_claim_mrp_production_control.model_mrp_production_control
+msgid "Production Control"
+msgstr ""
+
+#. module: crm_claim_mrp_production_control
+#: model:ir.model.fields,field_description:crm_claim_mrp_production_control.field_crm_claim__mrp_production_control_ids
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp_production_control.crm_crm_case_claims_form_view
+msgid "Production Controls"
+msgstr ""
+
+#. module: crm_claim_mrp_production_control
+#: model:ir.model.fields,field_description:crm_claim_mrp_production_control.field_crm_claim__count_mrp_production_control
+msgid "Production Controls Counter"
+msgstr ""
