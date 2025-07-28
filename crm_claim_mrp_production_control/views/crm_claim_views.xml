@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_crm_case_claims_form_view" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+          name="action_view_mrp_production_control"
+          type="object"
+          class="oe_stat_button"
+          icon="fa-pencil-square-o"
+          attrs="{'invisible': [('count_mrp_production_control', '=', 0)]}"
+        >
+                    <field
+            name="count_mrp_production_control"
+            widget="statinfo"
+            string="Production Controls"
+          />
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <record id="crm_case_claims_tree_view" model="ir.ui.view">
+        <field name="model">crm.claim</field>
+        <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+        <field name="arch" type="xml">
+            <field name="company_id" position="before">
+                <field
+          name="mrp_production_control_ids"
+          widget="many2many_tags"
+          optional="show"
+        />
+            </field>
+        </field>
+    </record>
+</odoo>

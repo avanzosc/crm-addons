@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mrp_production_control_tree_view" model="ir.ui.view">
+        <field name="model">mrp.production.control</field>
+        <field
+      name="inherit_id"
+      ref="mrp_production_control.mrp_production_control_tree_view"
+    />
+        <field name="arch" type="xml">
+            <field name="action_taken" position="before">
+                <field name="claim_id" optional="show" />
+            </field>
+        </field>
+    </record>
+
+    <record id="mrp_production_control_search_view" model="ir.ui.view">
+        <field name="model">mrp.production.control</field>
+        <field
+      name="inherit_id"
+      ref="mrp_production_control.mrp_production_control_search_view"
+    />
+        <field name="arch" type="xml">
+            <field name="workorder_id" position="after">
+                <field name="claim_id" />
+            </field>
+            <filter name="by_workorder" position="after">
+                <filter
+          string="Claim"
+          name="by_claim"
+          domain="[]"
+          context="{'group_by': 'claim_id'}"
+        />
+            </filter>
+        </field>
+    </record>
+</odoo>
