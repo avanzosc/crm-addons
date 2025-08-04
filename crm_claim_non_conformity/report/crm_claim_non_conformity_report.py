@@ -60,6 +60,7 @@ class CrmClaimNonConformityReport(models.Model):
     department_id = fields.Many2one(
         string="Department", comodel_name="hr.department", readonly=True
     )
+    cost = fields.Float(digits="Product Price", readonly=True)
 
     def _select(self):
         select_str = """
@@ -80,6 +81,7 @@ class CrmClaimNonConformityReport(models.Model):
             c.type_action AS type_action,
             c.create_date AS create_date,
             c.department_id as department_id,
+            c.cost as cost,
             avg(extract(
                 'epoch' FROM (
                     c.date_closed-c.create_date)))/(3600*24)
@@ -99,12 +101,14 @@ class CrmClaimNonConformityReport(models.Model):
     def _from(self):
         from_str = """
             crm_claim c
+            JOIN crm_claim_type ct ON c.claim_type = ct.id
         """
         return from_str
 
     def _where(self):
+        #            WHERE c.non_conformity is True
         return """
-            WHERE c.non_conformity is True
+            WHERE ct.non_conformity is True
         """
 
     def _group_by(self):
