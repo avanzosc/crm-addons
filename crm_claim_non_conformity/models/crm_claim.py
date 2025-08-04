@@ -26,6 +26,7 @@ class CrmClaim(models.Model):
     non_conformity = fields.Boolean(
         string="Is Non Conformity?", default=_default_non_conformity
     )
+    cost = fields.Float(digits="Product Price", copy=False, default=0.0)
 
     @api.onchange("non_conformity")
     def onchange_non_conformity(self):
