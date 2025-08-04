@@ -258,3 +258,10 @@ msgstr "Equipo"
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__user_id
 msgid "User"
 msgstr "Usuario"
+
+#. module: crm_claim_non_conformity
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__cost
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__cost
+msgid "Cost"
+msgstr "Coste"
+
