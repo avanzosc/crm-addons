@@ -15,6 +15,9 @@
         <field name="model">crm.claim</field>
         <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
         <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="claim_type" optional="show" />
+            </field>
             <field name="date" position="after">
                 <field
           name="cost"
