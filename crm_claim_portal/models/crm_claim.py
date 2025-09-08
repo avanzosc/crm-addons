@@ -11,7 +11,7 @@ class CrmClaim(models.Model):
     def _compute_access_url(self):
         res = super()._compute_access_url()
         for task in self:
-            task.access_url = "/my/claim/%s" % task.id
+            task.access_url = f"/my/claim/{task.id}"
         return res
 
     def preview_crm_claim(self):

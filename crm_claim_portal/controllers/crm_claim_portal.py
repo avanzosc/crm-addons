@@ -7,9 +7,11 @@ from odoo import _, fields, http
 from odoo.exceptions import AccessError, MissingError
 from odoo.http import request
 from odoo.osv.expression import OR
-from odoo.tools import date_utils, groupby as groupbyelem
+from odoo.tools import date_utils
+from odoo.tools import groupby as groupbyelem
 
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortal(CustomerPortal):
@@ -181,7 +183,7 @@ class CustomerPortal(CustomerPortal):
         search=None,
         search_in="content",
         groupby=None,
-        **kw
+        **kw,
     ):
         values = self._prepare_portal_layout_values()
         claim_obj = request.env["crm.claim"]
@@ -254,13 +256,13 @@ class CustomerPortal(CustomerPortal):
 
         # content according to pager and archive selected
         if groupby == "stage":
-            order = "stage_id, %s" % order
+            order = f"stage_id, {order}"
             # force sort on stage first to group by stage in view
         elif groupby == "partner":
-            order = "partner_id, %s" % order
+            order = f"partner_id, {order}"
             # force sort on partner first to group by partner in view
         elif groupby == "user":
-            order = "user_id, %s" % order
+            order = f"user_id, {order}"
             # force sort on user first to group by user in view
 
         claims = claim_obj.search(
@@ -361,4 +363,4 @@ class CustomerPortal(CustomerPortal):
                             "res_id": new_claim.id,
                         }
                     )
-        return request.redirect("/my/claim/%s" % new_claim.id)
+        return request.redirect(f"/my/claim/{new_claim.id}")
