@@ -25,7 +25,6 @@ Configuration
 =============
 1. Go to ** SETTINGS → Technical → Parameters → System Parameters → crm_claim_usability.display_name ** To define how the claim name will be displayed.
 2. Go to ** CRM → Configuration → Settings → Claims Usability** and enable **Show Metadata Info in Claims** checkbox.
-3. Go to ** SETTINGS → Users&Companies → groups → Metadata Info on Claims ** To define users to view write date.
 
 Bug Tracker
 ===========
