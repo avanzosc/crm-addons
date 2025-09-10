@@ -16,8 +16,7 @@ Key Features
 
 Configuration
 =============
-1. Go to ** CRM → Configuration → Settings → Claims Closure** and enable **Separated Claim Menus** checkbox.
-2. Go to ** CRM → Configuration → Claim → stages** and enable **Closed** checkbox to indicate that the state closes the claim.
+1. Go to ** CRM → Configuration → Claim → stages** and enable **Closed** checkbox to indicate that the state closes the claim.
 
 Bug Tracker
 ===========
