@@ -256,13 +256,13 @@ class CustomerPortal(CustomerPortal):
 
         # content according to pager and archive selected
         if groupby == "stage":
-            order = "stage_id, %s" % order
+            order = f"stage_id, {order}"
             # force sort on stage first to group by stage in view
         elif groupby == "partner":
-            order = "partner_id, %s" % order
+            order = f"partner_id, {order}"
             # force sort on partner first to group by partner in view
         elif groupby == "user":
-            order = "user_id, %s" % order
+            order = f"user_id, {order}"
             # force sort on user first to group by user in view
 
         claims = claim_obj.search(
@@ -363,4 +363,4 @@ class CustomerPortal(CustomerPortal):
                             "res_id": new_claim.id,
                         }
                     )
-        return request.redirect("/my/claim/%s" % new_claim.id)
+        return request.redirect(f"/my/claim/{new_claim.id}")
