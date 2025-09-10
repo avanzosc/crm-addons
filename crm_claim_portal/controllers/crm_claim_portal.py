@@ -7,9 +7,11 @@ from odoo import _, fields, http
 from odoo.exceptions import AccessError, MissingError
 from odoo.http import request
 from odoo.osv.expression import OR
-from odoo.tools import date_utils, groupby as groupbyelem
+from odoo.tools import date_utils
+from odoo.tools import groupby as groupbyelem
 
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortal(CustomerPortal):
@@ -181,7 +183,7 @@ class CustomerPortal(CustomerPortal):
         search=None,
         search_in="content",
         groupby=None,
-        **kw
+        **kw,
     ):
         values = self._prepare_portal_layout_values()
         claim_obj = request.env["crm.claim"]
