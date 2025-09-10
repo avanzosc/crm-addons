@@ -5,9 +5,18 @@
 =======================
 Claims Management Close
 =======================
-
 This module enables closing and opening claims, by defining a check in the
-stages, marking them as closed.
+stages, marking them as closed.You can have separate menus for open and closed
+claims.
+
+Key Features
+============
+- New checkbox **closed** on Claim stages.
+- Visible in **form** view.
+
+Configuration
+=============
+1. Go to ** CRM → Configuration → Claim → stages** and enable **Closed** checkbox to indicate that the state closes the claim.
 
 Bug Tracker
 ===========
