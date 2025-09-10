@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template
+    id="portal_timesheet_table"
+    inherit_id="hr_timesheet.portal_timesheet_table"
+    name="Portal Timesheet Table"
+  >
+    <xpath expr="//thead//th[@name='t_label']" position="before">
+      <th>Claim</th>
+    </xpath>
+    <xpath expr="//tr[@t-as='timesheet']/td[hasclass('text-end')]" position="before">
+      <td>
+        <t t-esc="timesheet.claim_id.display_name" />
+      </td>
+    </xpath>
+  </template>
+</odoo>
