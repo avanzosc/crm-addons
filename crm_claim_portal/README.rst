@@ -5,8 +5,14 @@
 ================
 CRM Claim Portal
 ================
-
 This module allows portal user access to their related claims.
+
+
+Key Features
+------------
+- New button **preview_crm_claim** on Claims.
+- Visible in **form** view.
+
 
 Bug Tracker
 ===========
