@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form" />
         <field name="arch" type="xml">
             <xpath
-        expr="//field[@name='timesheet_ids']/tree//field[@name='task_id']"
+        expr="//field[@name='timesheet_ids']/list//field[@name='task_id']"
         position="after"
       >
                 <field
