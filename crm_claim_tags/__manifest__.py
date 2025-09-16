@@ -7,11 +7,12 @@
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "website": "https://github.com/avanzosc/crm-addons",
-    "depends": ["crm_claim", "sales_team"],
+    "depends": ["crm_claim", "sales_team", "crm_claim_report"],
     "data": [
         "security/ir.model.access.csv",
         "views/crm_claim_tag_view.xml",
         "views/crm_claim_view.xml",
+        "report/crm_claim_report_document.xml",
     ],
     "installable": True,
 }
