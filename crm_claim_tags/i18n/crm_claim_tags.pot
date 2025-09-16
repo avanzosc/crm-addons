@@ -82,3 +82,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm_claim_tags.crm_claim_tag_tree_view
 msgid "Tags for claims"
 msgstr ""
+
+#. module: crm_claim_tags
+#: model_terms:ir.ui.view,arch_db:crm_claim_tags.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"                <strong>Tags: </strong>"
+msgstr ""
+

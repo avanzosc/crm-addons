@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+    id="report_crmclaim_document"
+    inherit_id="crm_claim_report.report_crmclaim_document"
+  >
+        <span t-field="o.claim_type" position="after">
+            <t t-if="o.crm_claim_tag_ids">
+                <br />
+                <strong>Tags: </strong>
+                <t t-set="total_tags" t-value="len(o.crm_claim_tag_ids)" />
+                <t t-set="i" t-value="0" />
+                <t t-foreach="o.crm_claim_tag_ids" t-as="tag">
+                    <t t-esc="tag.name" />
+                    <t t-set="i" t-value="i + 1" />
+                    <t t-if="i != total_tags">, </t>
+                </t>
+            </t>
+        </span>
+    </template>
+</odoo>
