@@ -12,6 +12,7 @@
         "crm_claim",
         "repair",
         "stock",
+        "crm_claim_report",
     ],
     "data": [
         "views/stock_picking_view.xml",
@@ -20,6 +21,7 @@
         "views/res_partner_view.xml",
         "views/repair_order_view.xml",
         "views/crm_claim_view.xml",
+        "report/crm_claim_report_document.xml",
     ],
     "installable": True,
 }
