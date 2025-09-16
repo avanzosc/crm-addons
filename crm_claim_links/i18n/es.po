@@ -107,3 +107,18 @@ msgstr "Albaranes"
 #: model:ir.model,name:crm_claim_links.model_stock_picking
 msgid "Transfer"
 msgstr "Albarán"
+
+#. module: crm_claim_links
+#: model_terms:ir.ui.view,arch_db:crm_claim_links.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"                <strong>Albaranes: </strong>"
+msgstr ""
+
+#. module: crm_claim_links
+#: model_terms:ir.ui.view,arch_db:crm_claim_links.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"                <strong>Reparaciones: </strong>"
+msgstr ""
+
