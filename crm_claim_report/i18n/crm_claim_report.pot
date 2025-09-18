@@ -152,3 +152,4 @@ msgstr ""
 #: model:ir.actions.report,name:crm_claim_report.report_crm_claim
 msgid "claim"
 msgstr ""
+
