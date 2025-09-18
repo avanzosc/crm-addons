@@ -7,7 +7,7 @@
     "license": "AGPL-3",
     "author": "AvanzOSC",
     "website": "https://github.com/avanzosc/crm-addons",
-    "depends": ["crm_claim", "mrp_production_control"],
+    "depends": ["crm_claim", "mrp_production_control", "crm_claim_type"],
     "data": [
         "views/mrp_production_control_views.xml",
         "views/crm_claim_views.xml",

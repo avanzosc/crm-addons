@@ -37,3 +37,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_claim_mrp_production_control.field_crm_claim__count_mrp_production_control
 msgid "Production Controls Counter"
 msgstr ""
+
+#. module: crm_claim_mrp_production_control
+#: model:ir.model.fields,field_description:crm_claim_mrp_production_control.field_mrp_production_control__claim_categ_id
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp_production_control.mrp_production_control_search_view
+msgid "Claim Category"
+msgstr ""
+
+#. module: crm_claim_mrp_production_control
+#: model:ir.model.fields,field_description:crm_claim_mrp_production_control.field_mrp_production_control__claim_user_id
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp_production_control.mrp_production_control_search_view
+msgid "Claim Responsible"
+msgstr ""
+
+#. module: crm_claim_mrp_production_control
+#: model:ir.model.fields,field_description:crm_claim_mrp_production_control.field_mrp_production_control__claim_type
+#: model_terms:ir.ui.view,arch_db:crm_claim_mrp_production_control.mrp_production_control_search_view
+msgid "Claim Type"
+msgstr ""
+
