@@ -9,6 +9,9 @@
         <field name="arch" type="xml">
             <field name="action_taken" position="before">
                 <field name="claim_id" optional="show" />
+                <field name="claim_categ_id" optional="show" />
+                <field name="claim_type" optional="show" />
+                <field name="claim_user_id" optional="show" />
             </field>
         </field>
     </record>
@@ -22,6 +25,9 @@
         <field name="arch" type="xml">
             <field name="workorder_id" position="after">
                 <field name="claim_id" />
+                <field name="claim_categ_id" />
+                <field name="claim_type" />
+                <field name="claim_user_id" />
             </field>
             <filter name="by_workorder" position="after">
                 <filter
@@ -29,6 +35,24 @@
           name="by_claim"
           domain="[]"
           context="{'group_by': 'claim_id'}"
+        />
+                <filter
+          string="Claim Category"
+          name="by_claim_categ"
+          domain="[]"
+          context="{'group_by': 'claim_categ_id'}"
+        />
+                <filter
+          string="Claim Type"
+          name="by_claim_type"
+          domain="[]"
+          context="{'group_by': 'claim_type'}"
+        />
+                <filter
+          string="Claim Responsible"
+          name="by_claim_repon"
+          domain="[]"
+          context="{'group_by': 'claim_user_id'}"
         />
             </filter>
         </field>
