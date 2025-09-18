@@ -6,11 +6,11 @@
             <div class="row">
                 <br />
                 <div class="col-xs-12">
-                    <h2><strong><t
-                t-if="o.claim_type.name != 'Acción Correctiva'"
-              >Non conformity report</t><t
-                t-if="o.claim_type.name == 'Acción Correctiva'"
-              >Corrective action report</t></strong></h2>
+                    <h2>
+                        <strong>
+                            <span t-field="o.claim_type.name" />
+                        </strong>
+                    </h2>
                     <strong>Claim number: </strong><span t-field="o.code" /><br />
                     <strong>Object of claim: </strong><span t-field="o.name" /><br />
                     <strong>Claim Date: </strong><span
