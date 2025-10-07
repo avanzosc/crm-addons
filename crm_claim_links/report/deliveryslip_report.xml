@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_delivery_document" inherit_id="stock.report_delivery_document">
+        <div t-if="o.origin" position="after">
+            <div t-if="o.claim_id" class="col-auto col-3 mw-100 mb-2" name="div_claim">
+                <strong>Claim:</strong>
+                <p t-field="o.claim_id" class="m-0" />
+            </div>
+        </div>
+    </template>
+</odoo>
