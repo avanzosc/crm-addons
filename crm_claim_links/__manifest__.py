@@ -22,6 +22,7 @@
         "views/repair_order_view.xml",
         "views/crm_claim_view.xml",
         "report/crm_claim_report_document.xml",
+        "report/deliveryslip_report.xml",
     ],
     "installable": True,
 }

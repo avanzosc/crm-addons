@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-07 05:21+0000\n"
-"PO-Revision-Date: 2025-10-07 05:21+0000\n"
+"POT-Creation-Date: 2025-10-07 05:23+0000\n"
+"PO-Revision-Date: 2025-10-07 05:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,14 +48,14 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.stock_move_line_view_search
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.view_move_search
 msgid "Claim"
-msgstr ""
+msgstr "réclamation"
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_res_brand__claim_ids
 #: model:ir.model.fields,field_description:crm_claim_links.field_res_partner__claim_ids
 #: model:ir.model.fields,field_description:crm_claim_links.field_res_users__claim_ids
 msgid "Claims"
-msgstr ""
+msgstr "réclamation"
 
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_res_partner
@@ -65,7 +65,7 @@ msgstr ""
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_stock_move_line
 msgid "Product Moves (Stock Move Line)"
-msgstr ""
+msgstr "Mouvements de produit (Ligne de mouvement de stock)"
 
 #. module: crm_claim_links
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
@@ -85,7 +85,7 @@ msgstr ""
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_repair_order
 msgid "Repair Order"
-msgstr ""
+msgstr "Ordre de réparation"
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__repair_ids
@@ -116,7 +116,7 @@ msgstr ""
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_stock_move
 msgid "Stock Move"
-msgstr ""
+msgstr "Mouvement de stock"
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__picking_ids
@@ -126,4 +126,4 @@ msgstr ""
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_stock_picking
 msgid "Transfer"
-msgstr ""
+msgstr "Transfert"
