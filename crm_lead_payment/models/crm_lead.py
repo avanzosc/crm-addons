@@ -18,12 +18,16 @@ class CrmLead(models.Model):
         string="Payment Term",
         comodel_name="account.payment.term",
         related="partner_id.property_payment_term_id",
+        company_dependent=True,
         store=True,
     )
+
     customer_payment_mode_id = fields.Many2one(
         string="Payment Mode",
         comodel_name="account.payment.mode",
         related="partner_id.customer_payment_mode_id",
+        company_dependent=True,
+        check_company=True,
         store=True,
     )
     final_partner_id = fields.Many2one(
