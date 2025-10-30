@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="view_res_partner_form_inherit_last_dates" model="ir.ui.view">
-        <field name="name">res.partner.form.inherit.last.dates</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//page[2]" position="inside">
-                <group string="Last Dates">
-                    <field name="last_lead_date" />
-                    <field name="last_meeting_date" />
-                    <field name="last_invoice_date" />
-                </group>
-            </xpath>
-        </field>
-    </record>
+  <record id="view_res_partner_form_inherit_last_dates" model="ir.ui.view">
+    <field name="name">res.partner.form.inherit.last.dates</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//page[2]" position="inside">
+        <group string="Last Dates">
+          <field name="last_lead_date" />
+          <field name="last_meeting_date" />
+          <field name="last_invoice_date" />
+        </group>
+      </xpath>
+    </field>
+  </record>
 
-    <record id="view_res_partner_tree_inherit_last_dates" model="ir.ui.view">
-        <field name="name">res.partner.tree.inherit.last.dates</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree" />
-        <field name="arch" type="xml">
-            <xpath expr="//tree" position="inside">
-                <field name="last_lead_date" optional="show" />
-                <field name="last_meeting_date" optional="show" />
-                <field name="last_invoice_date" optional="show" />
-            </xpath>
-        </field>
-    </record>
+  <record id="view_res_partner_tree_inherit_last_dates" model="ir.ui.view">
+    <field name="name">res.partner.tree.inherit.last.dates</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_tree" />
+    <field name="arch" type="xml">
+      <xpath expr="//tree" position="inside">
+        <field name="last_lead_date" optional="show" />
+        <field name="last_meeting_date" optional="show" />
+        <field name="last_invoice_date" optional="show" />
+      </xpath>
+    </field>
+  </record>
 
-    <record id="action_crm_last_dates" model="ir.actions.server">
-        <field name="name">CRM Last Dates</field>
-        <field name="model_id" ref="base.model_res_partner" />
-        <field name="state">code</field>
-        <field name="code">
+  <record id="action_crm_last_dates" model="ir.actions.server">
+    <field name="name">CRM Last Dates</field>
+    <field name="model_id" ref="base.model_res_partner" />
+    <field name="state">code</field>
+    <field name="code">
 partners = env['res.partner'].search([])
 
 for partner in partners:
@@ -58,6 +58,5 @@ for partner in partners:
         'last_invoice_date': last_invoice_date,
     })
         </field>
-    </record>
-
+  </record>
 </odoo>
