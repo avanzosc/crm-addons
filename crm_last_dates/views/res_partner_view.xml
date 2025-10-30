@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-  <record id="view_res_partner_form_inherit_last_dates" model="ir.ui.view">
-    <field name="name">res.partner.form.inherit.last.dates</field>
+  <record id="view_partner_form" model="ir.ui.view">
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form" />
     <field name="arch" type="xml">
@@ -15,12 +14,11 @@
     </field>
   </record>
 
-  <record id="view_res_partner_tree_inherit_last_dates" model="ir.ui.view">
-    <field name="name">res.partner.tree.inherit.last.dates</field>
+  <record id="view_partner_tree" model="ir.ui.view">
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_tree" />
     <field name="arch" type="xml">
-      <xpath expr="//tree" position="inside">
+      <xpath expr="//list" position="inside">
         <field name="last_lead_date" optional="show" />
         <field name="last_meeting_date" optional="show" />
         <field name="last_invoice_date" optional="show" />
