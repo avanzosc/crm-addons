@@ -7,7 +7,7 @@ class CrmLead(models.Model):
     _inherit = "crm.lead"
 
     def _get_values_to_create_repair_order(self):
-        vals = super(CrmLead, self)._get_values_to_create_repair_order()
+        vals = super()._get_values_to_create_repair_order()
         if self.partner_shipping_id:
             vals["address_id"] = self.partner_shipping_id.id
         return vals
