@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <record id="view_partner_form" model="ir.ui.view">
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//page[2]" position="inside">
+        <group string="Last Dates">
+          <field name="last_lead_date" />
+          <field name="last_meeting_date" />
+          <field name="last_invoice_date" />
+        </group>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="view_partner_tree" model="ir.ui.view">
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_tree" />
+    <field name="arch" type="xml">
+      <xpath expr="//list" position="inside">
+        <field name="last_lead_date" optional="show" />
+        <field name="last_meeting_date" optional="show" />
+        <field name="last_invoice_date" optional="show" />
+      </xpath>
+    </field>
+  </record>
+
+  <record id="action_crm_last_dates" model="ir.actions.server">
+    <field name="name">CRM Last Dates</field>
+    <field name="model_id" ref="base.model_res_partner" />
+    <field name="state">code</field>
+    <field name="code">
+partners = env['res.partner'].search([])
+
+for partner in partners:
+    # Calcular la última fecha de lead
+    lead_dates = partner.mapped("opportunity_ids.create_date") + \
+                    partner.mapped("child_ids.opportunity_ids.create_date")
+    last_lead_date = max(lead_dates) if lead_dates else False
+
+    # Calcular la última fecha de reunión
+    meeting_dates = partner.mapped("meeting_ids.create_date") + \
+                    partner.mapped("child_ids.meeting_ids.create_date")
+    last_meeting_date = max(meeting_dates) if meeting_dates else False
+
+    # Calcular la última fecha de factura
+    invoice_dates = partner.mapped("invoice_ids.create_date") + \
+                    partner.mapped("child_ids.invoice_ids.create_date")
+    last_invoice_date = max(invoice_dates) if invoice_dates else False
+
+    # Usar write para actualizar los campos
+    partner.write({
+        'last_lead_date': last_lead_date,
+        'last_meeting_date': last_meeting_date,
+        'last_invoice_date': last_invoice_date,
+    })
+        </field>
+  </record>
+</odoo>
