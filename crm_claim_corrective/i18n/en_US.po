@@ -18,41 +18,41 @@ msgstr ""
 #. module: crm_claim_corrective
 #: model:ir.actions.report,print_report_name:crm_claim_corrective.report_crm_claim_corrective
 msgid "'Corrective action: %s' % (object.name)"
-msgstr "'Acción correctiva: %s' % (object.name"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaim_document
 msgid "<span>:  </span>"
-msgstr "<span>:  </span>"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaimcorrective_document
 msgid "<strong>Claim:</strong>"
-msgstr "<strong>Reclamación:</strong>"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaimcorrective_document
 msgid "<strong>Partner:</strong>"
-msgstr "<strong>Empresa:</strong>"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim__cause_description_id
 #: model:ir.model.fields.selection,name:crm_claim_corrective.selection__crm_claim_description__type_description__cause
 msgid "Cause Description"
-msgstr "Descripción de la causa"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model,name:crm_claim_corrective.model_crm_claim
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__claim_id
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__claim_id
 msgid "Claim"
-msgstr "Reclamación"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model,name:crm_claim_corrective.model_crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim__corrective_id
 msgid "Claim Corrective"
-msgstr "Corrección de la reclamación"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.actions.act_window,name:crm_claim_corrective.crm_claim_description_claim0
@@ -61,12 +61,12 @@ msgstr "Corrección de la reclamación"
 #: model:ir.model.fields.selection,name:crm_claim_corrective.selection__crm_claim_description__type_description__claim
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.crm_claim_description_form_view
 msgid "Claim Description"
-msgstr "Descripción de la reclamación"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields.selection,name:crm_claim_corrective.selection__crm_claim_corrective__state__closed
 msgid "Closed"
-msgstr "Cerrada"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model,name:crm_claim_corrective.model_crm_claim_corrective_action
@@ -74,7 +74,7 @@ msgstr "Cerrada"
 #: model:ir.ui.menu,name:crm_claim_corrective.menu_crm_corrective_actions
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.crm_claim_corrective_form_view
 msgid "Corrective Actions"
-msgstr "Acciones correctivas"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.actions.act_window,name:crm_claim_corrective.crm_claim_corrective_action
@@ -82,84 +82,83 @@ msgstr "Acciones correctivas"
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.crm_claim_corrective_action_form_view
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaimcorrective_document
 msgid "Corrective action"
-msgstr "Acción correctiva"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__corrective_id
 msgid "Corrective info"
-msgstr "Info correctiva"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.crm_claims_form_view
 msgid "Create Corrective Action"
-msgstr "Crear acciones correctivas"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__create_uid
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__create_uid
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__create_date
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__create_date
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__partner_id
 msgid "Customer"
-msgstr "Cliente"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__date_done
 msgid "Date Done"
-msgstr "Fecha realizado"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaimcorrective_document
 msgid "Date done"
-msgstr "Fecha realizado"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaimcorrective_document
 msgid "Date planned"
-msgstr "Fecha planificada"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__description
 msgid "Description"
-msgstr "Descripción"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__type_description
 msgid "Description Type"
-msgstr "Tipo de descripción"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.ui.menu,name:crm_claim_corrective.menu_crm_claims_descriptions
 msgid "Descriptions"
-msgstr "Descripciones"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__display_name
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__display_name
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__display_name
 msgid "Display Name"
-msgstr "Nombre para mostrar"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields.selection,name:crm_claim_corrective.selection__crm_claim_corrective__state__draft
 msgid "Draft"
-msgstr "Borrador"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.actions.act_window,help:crm_claim_corrective.crm_claim_corrective_action
 msgid "Generate corrective actions to apply to customer claims."
 msgstr ""
-"Genera acciones correctivas para aplicar a las reclamaciones de cliente"
 
 #. module: crm_claim_corrective
 #: model_terms:ir.actions.act_window,help:crm_claim_corrective.crm_claim_description_claim0
@@ -167,41 +166,39 @@ msgid ""
 "Generate you own claim descriptions.\n"
 "                You can make a quick assignment of the description in recurring claims"
 msgstr ""
-"Genera tus propias descripciones de reclamaciones.\n"
-"                Puedes realizar una rápida asignación de la descripción en las reclamaciones recurrentes"
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__id
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__id
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__id
 msgid "ID"
-msgstr "Identificador"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.crm_claims_form_view
 msgid "Images"
-msgstr "Imagenes"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective____last_update
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action____last_update
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__write_uid
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__write_uid
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__write_date
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__write_date
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaim_document
@@ -212,78 +209,78 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__name
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_description__name
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields.selection,name:crm_claim_corrective.selection__crm_claim_corrective__state__pending
 msgid "Pending"
-msgstr "Pendiente"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim__photo1
 msgid "Photo1"
-msgstr "Foto1"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim__photo2
 msgid "Photo2"
-msgstr "Foto2"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim__photo3
 msgid "Photo3"
-msgstr "Foto3"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim__photo4
 msgid "Photo4"
-msgstr "Foto4"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.crm_claims_form_view
 msgid "Photos"
-msgstr "Fotos"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__date_planned
 msgid "Planned Date"
-msgstr "Fecha prevista"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim__resolution_description_id
 #: model:ir.model.fields.selection,name:crm_claim_corrective.selection__crm_claim_description__type_description__resolution
 msgid "Resolution Description"
-msgstr "Descripción de resolución"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__responsible_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaimcorrective_document
 msgid "Responsible"
-msgstr "Responsable"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,help:crm_claim_corrective.field_crm_claim_corrective__claim_id
 #: model:ir.model.fields,help:crm_claim_corrective.field_crm_claim_corrective_action__claim_id
 msgid "Select a Claim"
-msgstr "Selecciona una reclamación"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,help:crm_claim_corrective.field_crm_claim_corrective_action__responsible_id
 msgid "Select a Responsible"
-msgstr "Selecciona un responsable"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__name
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective_action__sequence
 msgid "Sequence"
-msgstr "Sequencia"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model:ir.model.fields,field_description:crm_claim_corrective.field_crm_claim_corrective__state
 msgid "Status"
-msgstr "Estado"
+msgstr ""
 
 #. module: crm_claim_corrective
 #: model_terms:ir.ui.view,arch_db:crm_claim_corrective.report_crmclaimcorrective_document
 msgid "name"
-msgstr "Nombre"
+msgstr ""
