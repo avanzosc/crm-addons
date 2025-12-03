@@ -32,5 +32,23 @@
                 </div>
             </div>
         </t>
+        <span t-field="o.cause" position="before">
+            <t t-if="o.cause_description_id">
+                <span t-field="o.cause_description_id.name" />
+                <span>:  </span>
+            </t>
+        </span>
+        <span t-field="o.description" position="before">
+            <t t-if="o.claim_description_id">
+                <span t-field="o.claim_description_id.name" />
+                <span>:  </span>
+            </t>
+        </span>
+        <span t-field="o.resolution" position="before">
+            <t t-if="o.resolution_description_id">
+                <span t-field="o.resolution_description_id.name" />
+                <span>:  </span>
+            </t>
+        </span>
     </template>
 </odoo>
