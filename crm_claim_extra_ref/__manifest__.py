@@ -13,7 +13,7 @@
         "Ana Juaristi <anajuaristi@avanzosc.es>",
         "Alfredo de la Fuente <alfredodelafuente@avanzosc.es>",
     ],
-    "depends": ["crm_claim", "crm_claim_report"],
+    "depends": ["crm_claim", "crm_claim_report", "purchase", "sale", "stock"],
     "data": [
         "reports/crm_claim_report.xml",
         "views/crm_claim_view.xml",

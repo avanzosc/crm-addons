@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-25 12:42+0000\n"
-"PO-Revision-Date: 2024-03-25 12:42+0000\n"
+"POT-Creation-Date: 2026-01-28 10:53+0000\n"
+"PO-Revision-Date: 2026-01-28 10:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,32 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: crm_claim_extra_ref
+#: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"                <strong>Reference 2:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>Referencia 2:</strong>"
+
+#. module: crm_claim_extra_ref
+#: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"                <strong>Reference 3:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>Referencia 3:</strong>"
+
+#. module: crm_claim_extra_ref
 #: model:ir.model,name:crm_claim_extra_ref.model_crm_claim
 msgid "Claim"
 msgstr "Reclamación"
+
+#. module: crm_claim_extra_ref
+#: model:ir.model,name:crm_claim_extra_ref.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
 
 #. module: crm_claim_extra_ref
 #: model:ir.model.fields,field_description:crm_claim_extra_ref.field_crm_claim__ref_model_name2
@@ -53,20 +76,45 @@ msgid "Reference 3"
 msgstr "Referencia 3"
 
 #. module: crm_claim_extra_ref
-#: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.report_crmclaim_document
-msgid ""
-"<br/>\n"
-"                <strong>Reference 2:</strong>"
-msgstr ""
-"<br/>\n"
-"                <strong>Referencia 2:</strong>"
+#: model:ir.model,name:crm_claim_extra_ref.model_sale_order
+msgid "Sales Order"
+msgstr "Órdenes de venta"
 
 #. module: crm_claim_extra_ref
-#: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.report_crmclaim_document
+#: model:ir.model,name:crm_claim_extra_ref.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: crm_claim_extra_ref
+#. odoo-python
+#: code:addons/crm_claim_extra_ref/model/stock_picking.py:0
+#, python-format
 msgid ""
-"<br/>\n"
-"                <strong>Reference 3:</strong>"
+"You cannot delete the picking: %(picking_name)s, because it is being used in"
+" the claim: %(claim_name)s."
 msgstr ""
-"<br/>\n"
-"                <strong>Referencia 3:</strong>"
+"No puede borrar el albarán: %(picking_name)s, porque está siendo usado en"
+" la reclamación: %(claim_name)s."
+
+#. module: crm_claim_extra_ref
+#. odoo-python
+#: code:addons/crm_claim_extra_ref/model/purchase_order.py:0
+#, python-format
+msgid ""
+"You cannot delete the purchase order: %(purchase_name)s, because it is being"
+" used in the claim: %(claim_name)s."
+msgstr ""
+"No puede borrar el pedido de compra: %(purchase_name)s, porque está siendo usado"
+" en la reclamación: %(claim_name)s."
+
+#. module: crm_claim_extra_ref
+#. odoo-python
+#: code:addons/crm_claim_extra_ref/model/sale_order.py:0
+#, python-format
+msgid ""
+"You cannot delete the sale order: %(sale_name)s, because it is being used in"
+" the claim: %(claim_name)s."
+msgstr ""
+"No puede borrar el pedido de venta: %(sale_name)s, porque está siendo usado"
+" en la reclamación: %(claim_name)s."
 
