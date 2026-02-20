@@ -9,9 +9,9 @@
                 <button
           name="action_stock_return_picking"
           string="Reverse Transfer"
-          states="done"
           type="object"
           groups="base.group_user"
+          modifiers="{'invisible': [('state', '!=', 'done')]}"
         />
             </button>
             <field name="partner_id" position="after">
