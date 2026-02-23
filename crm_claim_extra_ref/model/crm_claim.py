@@ -37,7 +37,7 @@ class CrmClaim(models.Model):
         for claim in self:
             ref_name2 = False
             if claim.ref2:
-                ref_name2 = claim.ref2.name_get()[0][1]
+                ref_name2 = claim.ref2.display_name or claim.ref2.name
             claim.ref_name2 = ref_name2
 
     @api.depends("ref3")
@@ -56,7 +56,7 @@ class CrmClaim(models.Model):
         for claim in self:
             ref_name3 = False
             if claim.ref3:
-                ref_name3 = claim.ref3.name_get()[0][1]
+                ref_name3 = claim.ref3.display_name or claim.ref3.name
             claim.ref_name3 = ref_name3
 
     ref2 = fields.Reference(string="Reference 2", selection="_links_get")

@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 12:42+0000\n"
 "PO-Revision-Date: 2024-03-25 12:42+0000\n"
@@ -69,4 +69,3 @@ msgid ""
 msgstr ""
 "<br/>\n"
 "                <strong>Referencia 3:</strong>"
-
