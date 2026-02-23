@@ -2,15 +2,15 @@
 CRM claim extra ref
 ===================
 
-.. |badge1| image:: https://img.shields.io/badge/licence-LGPL--3-blue.png
-    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
-    :alt: License: LGPL-3
+.. |badge1| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+    :target: https://www.gnu.org/licenses/agpl-3.0.en.html
+    :alt: License: AGPL-3
 
 |badge1|
 
 This module creates the new fields "Reference 2" and "Reference 3" and shows
-then in the form, in the search search form, and allows grouping records by
-these new fields.
+them in the form and in the search view, and allows grouping records by these
+new fields.
 
 
 **Table of contents**
