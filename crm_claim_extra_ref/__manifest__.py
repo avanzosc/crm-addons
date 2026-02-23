@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "CRM Claim Extra Ref",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "author": "OdooMRP team," "AvanzOSC," "Serv. Tecnol. Avanzados - Pedro M. Baeza",
     "category": "CRM Claim",
     "license": "AGPL-3",
@@ -15,9 +15,8 @@
         "Alfredo de la Fuente <alfredodelafuente@avanzosc.es>",
         "Eñaut Alberdi <enautavanzosc@gmail.com>",
     ],
-    "depends": ["crm_claim", "crm_claim_report"],
+    "depends": ["crm_claim"],
     "data": [
-        "reports/crm_claim_report.xml",
         "views/crm_claim_view.xml",
     ],
     "installable": True,
