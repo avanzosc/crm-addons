@@ -4,8 +4,8 @@
         <field name="model">crm.claim</field>
         <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
         <field name="arch" type="xml">
-            <xpath expr="//page/separator" position="before">
-                <group attrs="{'invisible': [('sale_repair_id', '=', False)]}">
+            <xpath expr="//page[group/field[@name='model_ref_id']]/group[field[@name='model_ref_id']]" position="after">
+                <group invisible="not sale_repair_id">
                     <separator
             string="Repair type sales order information"
             colspan="4"

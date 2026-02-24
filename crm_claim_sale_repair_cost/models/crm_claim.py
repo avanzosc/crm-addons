@@ -29,7 +29,7 @@ class CrmClaim(models.Model):
     )
 
     sale_repair_qty_delivered = fields.Float(
-        string="Sale Repair Qty Delivered",
+        string="Sale Repair Qty Delivered",        
         digits="Product Unit of Measure",
         copy=False,
         store=True,
