@@ -21,10 +21,3 @@ class CrmLead(models.Model):
     )
     competitor_price = fields.Float()
     lost_reason_notes = fields.Text()
-
-    def action_mark_lost(self):
-        """
-        Extends the action to mark a lead as lost to include additional fields in the wizard.
-        """
-        res = super().action_mark_lost()
-        return res

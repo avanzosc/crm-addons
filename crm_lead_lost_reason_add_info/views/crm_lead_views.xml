@@ -6,10 +6,7 @@
         <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='internal_notes']" position="inside">
-                <group
-          string="Competitor Details"
-          attrs="{'invisible': [('active', '=', True)]}"
-        >
+                <group string="Competitor Details" invisible="active">
                     <field name="competitor_manufacturer_id" />
                     <field name="competitor_integrator_id" />
                     <field name="competitor_reseller_id" />
@@ -25,7 +22,7 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_tree_view_leads" />
         <field name="arch" type="xml">
-            <xpath expr="//tree" position="inside">
+            <xpath expr="//list" position="inside">
                 <field name="competitor_manufacturer_id" optional="hide" />
                 <field name="competitor_integrator_id" optional="hide" />
                 <field name="competitor_reseller_id" optional="hide" />
@@ -40,7 +37,7 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_tree_view_oppor" />
         <field name="arch" type="xml">
-            <xpath expr="//tree" position="inside">
+            <xpath expr="//list" position="inside">
                 <field name="competitor_manufacturer_id" optional="hide" />
                 <field name="competitor_integrator_id" optional="hide" />
                 <field name="competitor_reseller_id" optional="hide" />
