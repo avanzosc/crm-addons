@@ -54,6 +54,7 @@ Contributors
 ------------
 * Ana Juaristi <anajuaristi@avanzosc.es>
 * Unai Beristain <unaiberistain@avanzosc.es>
+* Lucía Echeverría <luciaecheverria@avanzosc.es>
 
 Do not contact contributors directly about support or help with technical issues.
 

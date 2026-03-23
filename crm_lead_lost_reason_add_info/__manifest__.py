@@ -1,6 +1,6 @@
 {
     "name": "CRM Lead Lost Reason Additional Information",
-    "version": "14.0.1.0.0",
+    "version": "18.0.1.0.0",
     "summary": "Enhances CRM leads with detailed information on lost opportunities.",
     "category": "Sales/CRM",
     "author": "Avanzosc",
