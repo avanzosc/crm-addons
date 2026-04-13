@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record model="ir.ui.view" id="sale_order_tree">
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.sale_order_tree" />
+    <field name="arch" type="xml">
+      <field name="user_id" position="after">
+        <field name="crm_claim_id" optional="show" />
+      </field>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_order_form">
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form" />
+    <field name="arch" type="xml">
+      <field name="partner_shipping_id" position="after">
+        <field name="crm_claim_id" readonly="1" />
+      </field>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_sales_order_filter">
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_sales_order_filter" />
+    <field name="arch" type="xml">
+      <field name="user_id" position="after">
+        <field name="crm_claim_id" />
+      </field>
+    </field>
+  </record>
+</odoo>
