@@ -53,7 +53,7 @@
           >
             <list editable="bottom" default_order="date">
               <field name="date" />
-              <field name="user_id" invisible="1" />
+              <field name="user_id" optional="show" />
               <field
                 name="employee_id"
                 required="1"
@@ -65,10 +65,10 @@
                 widget="timesheet_uom"
                 decoration-danger="unit_amount &gt; 24"
               />
-              <field name="project_id" invisible="1" />
-              <field name="task_id" invisible="1" />
-              <field name="claim_id" invisible="1" />
-              <field name="company_id" invisible="1" />
+              <field name="project_id" optional="hide" />
+              <field name="task_id" optional="hide" />
+              <field name="claim_id" optional="hide" />
+              <field name="company_id" optional="hide" />
             </list>
             <kanban class="o_kanban_mobile">
               <field name="date" />
