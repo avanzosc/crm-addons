@@ -3,11 +3,12 @@
 
 {
     "name": "Crm Claim Kanban View",
-    "version": "12.0.1.0.0",
+    "summary": "Adds a kanban view to the Claims menu, grouped by stage.",
+    "version": "18.0.1.0.0",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "AvanzOSC",
-    "website": "http://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/crm-addons",
     "depends": [
         "crm_claim",
     ],
