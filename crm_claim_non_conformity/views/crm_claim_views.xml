@@ -31,7 +31,7 @@
   <record model="ir.actions.act_window" id="crm_claim.crm_claim_category_claim0">
     <field name="name">Claims</field>
     <field name="res_model">crm.claim</field>
-    <field name="view_mode">tree,calendar,form</field>
+    <field name="view_mode">list,calendar,form</field>
     <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
     <field name="domain">[('claim_type.non_conformity', '=', False)]</field>
     <field name="context">
@@ -50,7 +50,7 @@
   <record model="ir.actions.act_window" id="action_crm_claim_non_conformity">
     <field name="name">NC Quality</field>
     <field name="res_model">crm.claim</field>
-    <field name="view_mode">tree,calendar,form</field>
+    <field name="view_mode">list,calendar,form</field>
     <field name="view_id" ref="crm_claim.crm_case_claims_tree_view" />
     <field name="domain">[('claim_type.non_conformity', '=', True)]</field>
     <field name="context">
