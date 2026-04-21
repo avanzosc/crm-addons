@@ -57,16 +57,14 @@
     </t>
   </template>
 
-  <data>
-    <record id="action_report_crmclaim" model="ir.actions.report">
-      <field name="name">Non Conformity</field>
-      <field name="model">crm.claim</field>
-      <field name="report_type">qweb-pdf</field>
-      <field name="report_name">crm_claim_non_conformity_report.report_crmclaim</field>
-      <field name="report_file">crm_claim_non_conformity_report.report_crmclaim</field>
-      <field name="print_report_name">'Claim  - %s' % (object.code)</field>
-      <field name="binding_model_id" ref="crm_claim.model_crm_claim" />
-      <field name="binding_type">report</field>
-    </record>
-  </data>
+  <record id="action_report_crmclaim" model="ir.actions.report">
+    <field name="name">Non Conformity</field>
+    <field name="model">crm.claim</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">crm_claim_non_conformity_report.report_crmclaim</field>
+    <field name="report_file">crm_claim_non_conformity_report.report_crmclaim</field>
+    <field name="print_report_name">'Claim  - %s' % (object.code)</field>
+    <field name="binding_model_id" ref="crm_claim.model_crm_claim" />
+    <field name="binding_type">report</field>
+  </record>
 </odoo>

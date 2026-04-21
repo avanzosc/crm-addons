@@ -8,7 +8,7 @@ class CrmClaim(models.Model):
 
     lot_id = fields.Many2one(
         string="Lot/Serial Number",
-        comodel_name="stock.production.lot",
+        comodel_name="stock.lot",
     )
     type = fields.Selection(
         selection=[
@@ -16,10 +16,9 @@ class CrmClaim(models.Model):
             ("supplier", "Supplier"),
             ("internal", "Internal"),
         ],
-        string="Type",
     )
     contact_id = fields.Many2one(
         string="Contact",
         comodel_name="res.partner",
     )
-    immediate_action = fields.Text(string="Immediate Action")
+    immediate_action = fields.Text()

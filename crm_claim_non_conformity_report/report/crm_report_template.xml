@@ -4,7 +4,7 @@
     <t t-call="crm_claim_non_conformity_report.external_layout_crmclaim">
       <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
       <div class="page">
-        <div class="oe_structure" />
+        <div class="oe_structure" id="oe_structure_report_crmclaim" />
 
         <h5 class="mt12">
           <strong>INFORME DE NO CONFORMIDAD / NON CONFORMITY REPORT: </strong>
@@ -138,19 +138,18 @@
         </div>
 
         <div class="row mb8">
-          <div class="col-auto col-3 mw-100 mb-0" t-if="doc.date">
+          <div class="col-6" t-if="doc.date">
             <strong>Quality Manager: </strong>
             <p class="m-0" t-field="doc.user_id" />
             <p class="m-0" t-field="doc.user_id.email" />
           </div>
-          <div class="col-8" style="width: 100%; margin: 0 auto;">
+
+          <div class="col-6" style="text-align: right;">
             <img
-              t-if="doc.user_id.sign"
-              align="right"
+              t-if="doc.user_id and doc.user_id.sign"
               t-att-src="image_data_uri(doc.user_id.sign)"
-              style="width:40%;border: 1px solid black;"
+              style="max-width: 100%; height: auto; border: 1px solid black;"
               alt="Signature"
-              t-options='{"widget": "image"}'
             />
           </div>
         </div>
