@@ -1,6 +1,6 @@
 {
     "name": "CRM Lead Stage and Action Schedule Meeting",
-    "version": "14.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Sales",
     "summary": "Allows for different stages in Leads and Action Schedule Meeting.",
     "author": "Avanzosc",
