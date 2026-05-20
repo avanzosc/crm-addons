@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <menuitem
+  <menuitem
     id="menu_contact_medium"
     name="Medium"
     parent="contacts.res_partner_menu_config"
