@@ -1,7 +1,7 @@
 # Copyright 2021 Oihane Crucelaegui - AvanzOSC
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class AccountAnalyticLine(models.Model):
@@ -12,3 +12,17 @@ class AccountAnalyticLine(models.Model):
         string="Claim",
         index=True,
     )
+    task_id = fields.Many2one(
+        comodel_name="project.task",
+        string="Task",
+        compute="_compute_task_id",
+        store=True,
+        readonly=False,
+        index=True,
+    )
+
+    @api.depends("claim_id.task_id")
+    def _compute_task_id(self):
+        for line in self:
+            if line.claim_id:
+                line.task_id = line.claim_id.task_id

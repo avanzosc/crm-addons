@@ -77,6 +77,11 @@ class CrmClaim(models.Model):
             else False
         )
 
+    @api.onchange("task_id")
+    def _onchange_task_id(self):
+        for timesheet in self.timesheet_ids:
+            timesheet.task_id = self.task_id
+
     @api.model
     def message_new(self, msg, custom_values=None):
         """Overrides mail_thread message_new that is called by the mailgateway
