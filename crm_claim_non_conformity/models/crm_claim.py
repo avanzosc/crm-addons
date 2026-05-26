@@ -27,6 +27,15 @@ class CrmClaim(models.Model):
         string="Is Non Conformity?", default=_default_non_conformity
     )
     cost = fields.Float(digits="Product Price", copy=False, default=0.0)
+    lot_id = fields.Many2one(
+        string="Lot/Serial Number",
+        comodel_name="stock.lot",
+    )
+    contact_id = fields.Many2one(
+        string="Contact",
+        comodel_name="res.partner",
+    )
+    immediate_action = fields.Text()
 
     @api.onchange("non_conformity")
     def onchange_non_conformity(self):
