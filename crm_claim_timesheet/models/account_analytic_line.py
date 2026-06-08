@@ -24,5 +24,5 @@ class AccountAnalyticLine(models.Model):
     @api.depends("claim_id.task_id")
     def _compute_task_id(self):
         for line in self:
-            if line.claim_id:
+            if line.claim_id and not self.env.context.get("skip_task_id_compute"):
                 line.task_id = line.claim_id.task_id

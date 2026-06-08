@@ -47,6 +47,14 @@ class CrmClaim(models.Model):
         related="task_id.remaining_hours",
         readonly=True,
     )
+    timesheet_count = fields.Integer(
+        compute="_compute_timesheet_count",
+    )
+
+    @api.depends("timesheet_ids")
+    def _compute_timesheet_count(self):
+        for claim in self:
+            claim.timesheet_count = len(claim.timesheet_ids)
 
     @api.depends("timesheet_ids.unit_amount")
     def _compute_effective_hours(self):
@@ -77,10 +85,19 @@ class CrmClaim(models.Model):
             else False
         )
 
-    @api.onchange("task_id")
-    def _onchange_task_id(self):
-        for timesheet in self.timesheet_ids:
-            timesheet.task_id = self.task_id
+    def action_change_task(self):
+        if not self.timesheet_ids:
+            return {"type": "ir.actions.act_window_close"}
+        return {
+            "type": "ir.actions.act_window",
+            "name": "Change Task",
+            "res_model": "crm.claim.task.wizard",
+            "view_mode": "form",
+            "target": "new",
+            "context": {
+                "default_claim_id": self.id,
+            },
+        }
 
     @api.model
     def message_new(self, msg, custom_values=None):
