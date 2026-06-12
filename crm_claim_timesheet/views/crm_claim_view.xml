@@ -11,7 +11,6 @@
           options="{'no_create_edit': True, 'no_open': True}"
           invisible="context.get('default_partner_id',False)"
         />
-                <field name="timesheet_count" invisible="1" />
                 <label
           for="task_id"
           attrs="{'invisible': [('project_id','=',False)]}"
@@ -28,14 +27,6 @@
             domain="[('project_id','=',project_id)]"
             options="{'no_create_edit': True, 'no_open': True}"
             invisible="context.get('default_partner_id',False)"
-            attrs="{'readonly': [('timesheet_count', '&gt;', 0)]}"
-          />
-                    <button
-            name="action_change_task"
-            type="object"
-            icon="fa-pencil"
-            attrs="{'invisible': [('timesheet_count', '=', 0)]}"
-            class="oe_inline"
           />
                     [<field
             name="task_remaining_hours"
