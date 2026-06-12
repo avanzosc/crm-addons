@@ -18,67 +18,67 @@ msgstr ""
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_project_task__claim_count
 msgid "# Claims"
-msgstr "Erreklamazio kopurua"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Time Spent in Claim (Days)</span>"
-msgstr "<span style=\"margin-right: 15px;\">Erreklamazioan emandako denbora (Egunak)</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Time Spent in Claim (Hours)</span>"
-msgstr "<span style=\"margin-right: 15px;\">Erreklamazioan emandako denbora (Orduak)</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Total (Days)</span>"
-msgstr "<span style=\"margin-right: 15px;\">Guztira (Egunak)</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span style=\"margin-right: 15px;\">Total (Hours)</span>"
-msgstr "<span style=\"margin-right: 15px;\">Guztira (Orduak)</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_timesheet
 msgid "<span>Claim</span>"
-msgstr "<span>Erreklamazioa</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span>Date</span>"
-msgstr "<span>Data</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span>Description</span>"
-msgstr "<span>Deskribapena</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<span>Responsible</span>"
-msgstr "<span>Arduraduna</span>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<strong>Description</strong>"
-msgstr "<strong>Deskribapena</strong>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<strong>Hours Spent</strong>"
-msgstr "<strong>Ordu erabiliak</strong>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "<strong>Progress</strong>"
-msgstr "<strong>Aurrerabidea</strong>"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model,name:crm_claim_timesheet.model_account_analytic_line
 msgid "Analytic Line"
-msgstr "Lerro analitikoa"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model,name:crm_claim_timesheet.model_crm_claim
@@ -92,7 +92,7 @@ msgstr "Erreklamazioa"
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_project_task__claim_ids
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.project_task_view_form
 msgid "Claims"
-msgstr "Erreklamazioak"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_account_analytic_line__display_name
@@ -104,12 +104,12 @@ msgstr "Izena erakutsi"
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_form
 msgid "Duration"
-msgstr "Iraupena"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__effective_hours
 msgid "Hours Spent"
-msgstr "Ordu erabiliak"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_account_analytic_line__id
@@ -121,7 +121,7 @@ msgstr ""
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__planned_hours
 msgid "Initially Planned Hours"
-msgstr "Hasieran planifikatutako orduak"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_account_analytic_line____last_update
@@ -133,33 +133,33 @@ msgstr "Azken aldaketa"
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_tree
 msgid "Planned"
-msgstr "Planifikatuta"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__project_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_search
 msgid "Project"
-msgstr "Proiektua"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.actions.report,name:crm_claim_timesheet.action_report_project_task
 msgid "Project Task Timesheet"
-msgstr "Proiektuko atazaren ordu-txostena"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_tree
 msgid "Remaining"
-msgstr "Geratzen dena"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__remaining_hours
 msgid "Remaining Hours"
-msgstr "Ordu gerakinak"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_tree
 msgid "Spent"
-msgstr "Erabilita"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model,name:crm_claim_timesheet.model_project_task
@@ -171,49 +171,49 @@ msgstr "Ataza"
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__task_remaining_hours
 msgid "Task Remaining Hours"
-msgstr "Atazaren ordu gerakinak"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "Time Spent (Days)"
-msgstr "Emandako denbora (Egunak)"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.report_project_task_document
 msgid "Time Spent (Hours)"
-msgstr "Emandako denbora (Orduak)"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__planned_hours
 msgid "Time planned to achieve this claim."
-msgstr "Erreklamazioa betetzeko planifikatutako denbora."
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__effective_hours
 msgid "Time spent on this claim."
-msgstr "Erreklamazio honetan emandako denbora."
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,field_description:crm_claim_timesheet.field_crm_claim__timesheet_ids
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_form
 msgid "Timesheet"
-msgstr "Ordu-txostena"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model_terms:ir.ui.view,arch_db:crm_claim_timesheet.crm_claim_view_form
 msgid "Timesheet Activities"
-msgstr "Ordu-txosteneko jarduerak"
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__remaining_hours
 msgid ""
 "Total remaining time, can be re-estimated periodically by the assignee of "
 "the claim."
-msgstr "Geratzen den denbora osoa, erreklamazioaren arduradunaren aldetik aldizka berrebalua daitekeena."
+msgstr ""
 
 #. module: crm_claim_timesheet
 #: model:ir.model.fields,help:crm_claim_timesheet.field_crm_claim__task_remaining_hours
 msgid ""
 "Total remaining time, can be re-estimated periodically by the assignee of "
 "the task."
-msgstr "Geratzen den denbora osoa, atazaren arduradunaren aldetik aldizka berrebalua daitekeena."
+msgstr ""
