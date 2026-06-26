@@ -35,7 +35,10 @@
     <field name="inherit_id" ref="stock.view_picking_internal_search" />
     <field name="arch" type="xml">
       <field name="picking_type_id" position="after">
-        <field name="claim_id" />
+        <field
+          name="claim_id"
+          filter_domain="['|', ('claim_id.name', 'ilike', self), ('claim_id.code', 'ilike', self)]"
+        />
       </field>
     </field>
   </record>
