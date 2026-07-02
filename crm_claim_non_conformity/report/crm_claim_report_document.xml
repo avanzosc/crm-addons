@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template
+    id="report_crmclaim_document"
+    inherit_id="crm_claim_report.report_crmclaim_document"
+  >
+    <span t-field="o.claim_type.name" position="after">
+      <t t-if="o.claim_type.non_conformity">
+        <br />
+        <span>Non conformity report</span>
+      </t>
+    </span>
+  </template>
+</odoo>
