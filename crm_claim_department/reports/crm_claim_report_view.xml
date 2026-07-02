@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <record id="view_report_crm_claim_filter" model="ir.ui.view">
+    <field name="model">crm.claim.report</field>
+    <field name="inherit_id" ref="crm_claim.view_report_crm_claim_filter" />
+    <field name="arch" type="xml">
+      <field name="team_id" position="after">
+        <field name="department_id" />
+      </field>
+      <filter name="Salesperson" position="after">
+        <filter
+          string="Department"
+          name="department_id"
+          context="{'group_by':'department_id'}"
+        />
+      </filter>
+    </field>
+  </record>
+</odoo>
