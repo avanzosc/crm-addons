@@ -10,6 +10,7 @@
     "website": "https://github.com/avanzosc/crm-addons",
     "depends": [
         "crm_claim",
+        "crm_claim_code",
         "repair",
         "stock",
     ],
