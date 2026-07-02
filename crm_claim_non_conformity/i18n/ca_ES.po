@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-27 12:45+0000\n"
-"PO-Revision-Date: 2025-05-27 12:45+0000\n"
+"POT-Creation-Date: 2026-05-26 11:43+0000\n"
+"PO-Revision-Date: 2026-05-26 11:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,88 @@ msgstr ""
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__nbr_claims
 msgid "# of Claims"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model:ir.actions.report,print_report_name:crm_claim_non_conformity.action_report_crmclaim_non_conformity
+msgid "'Claim  - %s' % (object.code)"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_document
+msgid ""
+"<br/>\n"
+"        <span>Non conformity report</span>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>CAUSE:</strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>CORRECTIVE ACTION:</strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Claim Date: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Claim Subject: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Company: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>DESCRIPTION:</strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>IMMEDIATE ACTION:</strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>INFORME DE NO CONFORMIDAD / NON CONFORMITY REPORT: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Lot/Serial Number: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Product: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Quality Manager: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Responsible:</strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Stage: </strong>"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+msgid "<strong>Type: </strong>"
 msgstr ""
 
 #. module: crm_claim_non_conformity
@@ -79,8 +161,19 @@ msgid "Company"
 msgstr ""
 
 #. module: crm_claim_non_conformity
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__contact_id
+msgid "Contact"
+msgstr ""
+
+#. module: crm_claim_non_conformity
 #: model:ir.model.fields.selection,name:crm_claim_non_conformity.selection__crm_claim_non_conformity_report__type_action__correction
 msgid "Corrective Action"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__cost
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__cost
+msgid "Cost"
 msgstr ""
 
 #. module: crm_claim_non_conformity
@@ -142,14 +235,29 @@ msgid "ID"
 msgstr ""
 
 #. module: crm_claim_non_conformity
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__immediate_action
+msgid "Immediate Action"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model:crm.claim.type,name:crm_claim_non_conformity.crm_claim_type_internal
+msgid "Internal"
+msgstr ""
+
+#. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_type__non_conformity
 msgid "Is Non Conformity?"
 msgstr ""
 
 #. module: crm_claim_non_conformity
-#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report____last_update
-msgid "Last Modified on"
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.external_layout_standard_crmclaim_non_conformity
+msgid "Logo"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__lot_id
+msgid "Lot/Serial Number"
 msgstr ""
 
 #. module: crm_claim_non_conformity
@@ -180,6 +288,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_graph
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_pivot
 msgid "NC Quality"
+msgstr ""
+
+#. module: crm_claim_non_conformity
+#: model:ir.actions.report,name:crm_claim_non_conformity.action_report_crmclaim_non_conformity
+msgid "Non Conformity"
 msgstr ""
 
 #. module: crm_claim_non_conformity
@@ -238,6 +351,13 @@ msgid "Search"
 msgstr ""
 
 #. module: crm_claim_non_conformity
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_res_users__sign
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_users_form
+msgid "Signature"
+msgstr ""
+
+#. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__stage_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Stage"
@@ -249,13 +369,12 @@ msgid "Team"
 msgstr ""
 
 #. module: crm_claim_non_conformity
-#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__user_id
-msgid "User"
+#: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.crm_case_claims_tree_view
+msgid "Total Cost"
 msgstr ""
 
 #. module: crm_claim_non_conformity
-#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__cost
-#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__cost
-msgid "Cost"
-msgstr ""
-
+#: model:ir.model,name:crm_claim_non_conformity.model_res_users
+#: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__user_id
+msgid "User"
+msgstr "Usuari"
