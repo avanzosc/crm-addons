@@ -42,3 +42,11 @@ class CrmClaim(models.Model):
             operator=operator,
             limit=limit,
         )
+
+    @api.depends("name", "code")
+    def _compute_display_name(self):
+        for claim in self:
+            display_name = claim.name
+            if claim.code:
+                display_name = f"[{claim.code}] {display_name}"
+            claim.display_name = display_name
