@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-27 12:12+0000\n"
-"PO-Revision-Date: 2025-05-27 12:12+0000\n"
+"POT-Creation-Date: 2026-07-15 11:39+0000\n"
+"PO-Revision-Date: 2026-07-15 11:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,4 +31,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm_claim_department.view_crm_case_claims_filter
 #: model_terms:ir.ui.view,arch_db:crm_claim_department.view_report_crm_claim_filter
 msgid "Department"
+msgstr ""
+
+#. module: crm_claim_department
+#. odoo-python
+#: code:addons/crm_claim_department/hooks.py:0
+#: code:addons/crm_claim_department/migrations/16.0.1.1.0/post-migration.py:0
+msgid "Error processing claim: %(claim_name)s, for put department"
+msgstr ""
+
+#. module: crm_claim_department
+#: model:ir.model,name:crm_claim_department.model_res_users
+msgid "User"
 msgstr ""
