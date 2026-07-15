@@ -42,7 +42,7 @@
   <record id="crm_case_claims_form_view_inh_extraref" model="ir.ui.view">
     <field name="name">crm.case.claims.form.view.inh.extraref</field>
     <field name="model">crm.claim</field>
-    <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+    <field name="inherit_id" ref="crm_claim_usability.crm_claim_usability_view_form" />
     <field name="arch" type="xml">
       <field name="model_ref_id" position="after">
         <field name="ref2" />
