@@ -6,7 +6,7 @@
     "author": "AvanzOSC",
     "website": "https://github.com/avanzosc/crm-addons",
     "category": "Customer Relationship Management",
-    "depends": ["crm_claim", "hr"],
+    "depends": ["crm_claim", "crm_claim_usability", "hr"],
     "data": [
         "reports/crm_claim_report_view.xml",
         "views/crm_claim_views.xml",
