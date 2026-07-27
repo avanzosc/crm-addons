@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 10:43+0000\n"
-"PO-Revision-Date: 2023-08-23 10:43+0000\n"
+"POT-Creation-Date: 2026-07-15 11:25+0000\n"
+"PO-Revision-Date: 2026-07-15 11:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,11 @@ msgstr ""
 #: model:ir.model,name:crm_claim_usability.model_crm_claim
 msgid "Claim"
 msgstr "Reclamación"
+
+#. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form
+msgid "Claim Reporter"
+msgstr "Persona que ha reportado la reclamación"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.res_config_settings_view_form
@@ -34,13 +39,23 @@ msgstr "Entidad comercial"
 #. module: crm_claim_usability
 #: model:ir.model,name:crm_claim_usability.model_res_config_settings
 msgid "Config Settings"
-msgstr "Opciones de configuración"
+msgstr "Opciones de Configuración"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_tree
 msgid "Date"
 msgstr "Fecha"
+
+#. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form
+msgid "Description of the claim"
+msgstr "Descripción de la incidencia"
+
+#. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form
+msgid "General"
+msgstr "General"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
@@ -68,6 +83,11 @@ msgid "My Claims"
 msgstr "Mis reclamaciones"
 
 #. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: crm_claim_usability
 #: model:ir.actions.act_window,name:crm_claim_usability.crm_claim_by_partner
 msgid "Partner's Claims"
 msgstr "Reclamaciones"
@@ -88,9 +108,19 @@ msgstr ""
 "usando el módulo de puerta de enlace de correo electrónico."
 
 #. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form
+msgid "Responsibilities"
+msgstr "Responsabilidades"
+
+#. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__user_id
 msgid "Responsible"
 msgstr "Responsable"
+
+#. module: crm_claim_usability
+#: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form
+msgid "Several"
+msgstr "Varios"
 
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_res_config_settings__group_crm_claim_technical

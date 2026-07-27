@@ -18,7 +18,7 @@ msgstr ""
 #. module: crm_claim_links
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.view_partner_form
 msgid "CRM Claims"
-msgstr "CRM Reclamaciones"
+msgstr ""
 
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_crm_claim
@@ -29,99 +29,99 @@ msgstr "CRM Reclamaciones"
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.stock_move_line_view_search
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.view_move_search
 msgid "Claim"
-msgstr "Reclamación"
+msgstr "Reclamo"
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_res_partner__claim_ids
 #: model:ir.model.fields,field_description:crm_claim_links.field_res_users__claim_ids
 msgid "Claims"
-msgstr "Reclamación"
+msgstr "Reclamo"
 
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_res_partner
 msgid "Contact"
-msgstr "Contacto"
+msgstr "Contatto"
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__pickings_count
 msgid "Num. Pickings"
-msgstr "Num. Albaranes"
+msgstr ""
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__repairs_count
 msgid "Num. Repairs"
-msgstr "Num. Reparaciones"
+msgstr ""
 
 #. module: crm_claim_links
 #. odoo-python
 #: code:addons/crm_claim_links/models/crm_claim.py:0
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
 msgid "Pickings"
-msgstr "Albaranes"
+msgstr ""
 
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_stock_move_line
 msgid "Product Moves (Stock Move Line)"
-msgstr "Movimientos de Producto (Stock Move Line)"
+msgstr "Movimenti prodotto (riga movimento magazzino)"
 
 #. module: crm_claim_links
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
 msgid "Related Extra Information"
-msgstr "Información extra relacionada"
+msgstr ""
 
 #. module: crm_claim_links
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
 msgid "Related Repairs"
-msgstr "Reparaciones relacionadas"
+msgstr ""
 
 #. module: crm_claim_links
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
 msgid "Related Stock Pickings"
-msgstr "Albaranes relacionados"
+msgstr ""
 
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_repair_order
 msgid "Repair Order"
-msgstr "Orden de reparación"
+msgstr "Ordine di riparazione"
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__repair_ids
 msgid "Repair Orders"
-msgstr "Órdenes de reparación"
+msgstr ""
 
 #. module: crm_claim_links
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.crm_case_claims_form_view
 msgid "Repairs"
-msgstr "Reparaciones"
+msgstr ""
 
 #. module: crm_claim_links
 #. odoo-python
 #: code:addons/crm_claim_links/models/stock_picking.py:0
 msgid "Return Shipment"
-msgstr "Delvolver envío"
+msgstr ""
 
 #. module: crm_claim_links
 #: model_terms:ir.ui.view,arch_db:crm_claim_links.view_picking_form
 msgid "Reverse Transfer"
-msgstr "Revertir transferencia"
+msgstr ""
 
 #. module: crm_claim_links
 #. odoo-python
 #: code:addons/crm_claim_links/models/stock_picking.py:0
 msgid "Selected Picking has no claim order assigned"
-msgstr "El albarán seleccionado no tiene una reclamación asignada"
+msgstr ""
 
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_stock_move
 msgid "Stock Move"
-msgstr "Movimiento de existencias"
+msgstr "Movimento di magazzino"
 
 #. module: crm_claim_links
 #: model:ir.model.fields,field_description:crm_claim_links.field_crm_claim__picking_ids
 msgid "Stock Pickings"
-msgstr "Albaranes"
+msgstr ""
 
 #. module: crm_claim_links
 #: model:ir.model,name:crm_claim_links.model_stock_picking
 msgid "Transfer"
-msgstr "Transferir"
+msgstr "Trasferisci"
