@@ -36,13 +36,64 @@
   <record id="crm_claim_usability_view_form" model="ir.ui.view">
     <field name="model">crm.claim</field>
     <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+    <field name="priority">100</field>
     <field name="arch" type="xml">
       <xpath expr="//form/sheet/group" position="before">
         <div class="oe_button_box" name="button_box" />
       </xpath>
-      <field name="partner_id" position="after">
-        <field name="commercial_partner_id" invisible="True" />
-      </field>
+      <field name="user_id" position="replace" />
+      <field name="user_fault" position="replace" />
+      <field name="model_ref_id" position="replace" />
+      <xpath expr="//field[@name='partner_id']/.." position="replace" />
+      <xpath expr="//field[@name='categ_id']/.." position="replace" />
+      <xpath expr="//field[@name='name']/.." position="replace" />
+      <xpath expr="//field[@name='priority']/.." position="replace">
+        <group>
+          <group name="header-column1" string="General">
+            <field name="name" />
+            <field name="date" />
+            <field name="company_id" groups="base.group_multi_company" />
+          </group>
+          <group name="header-colum2" string="Several" groups="base.group_user">
+            <field name="commercial_partner_id" invisible="True" />
+            <field name="priority" widget="priority" />
+            <field name="date_deadline" />
+            <field name="model_ref_id" widget="reference" />
+            <field
+              name="user_id"
+              context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'base.group_sale_salesman_all_leads']}"
+            />
+            <field name="user_fault" />
+          </group>
+        </group>
+      </xpath>
+
+      <xpath expr="//field[@name='description']/.." position="replace">
+        <group>
+          <group name="body1-column1" string="Claim Reporter" groups="base.group_user">
+            <field name="partner_id" string="Partner" />
+            <field name="partner_phone" />
+            <field name="email_from" widget="email" />
+          </group>
+          <group
+            name="body1-column2"
+            string="Responsibilities"
+            groups="base.group_user"
+          >
+            <field name="team_id" />
+          </group>
+        </group>
+        <group>
+          <group
+            name="body2-column1"
+            string="Description of the claim"
+            groups="base.group_user"
+          >
+            <field name="description" nolabel="1" />
+          </group>
+          <group name="body2-column2" />
+        </group>
+      </xpath>
     </field>
   </record>
 

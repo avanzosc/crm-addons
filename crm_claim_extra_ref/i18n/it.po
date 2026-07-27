@@ -18,36 +18,36 @@ msgstr ""
 #. module: crm_claim_extra_ref
 #: model:ir.model,name:crm_claim_extra_ref.model_crm_claim
 msgid "Claim"
-msgstr "Reclamación"
+msgstr "Reclamo"
 
 #. module: crm_claim_extra_ref
 #: model:ir.model.fields,field_description:crm_claim_extra_ref.field_crm_claim__ref_model_name2
 msgid "Ref. Model 2"
-msgstr "Ref. Modelo 2"
+msgstr ""
 
 #. module: crm_claim_extra_ref
 #: model:ir.model.fields,field_description:crm_claim_extra_ref.field_crm_claim__ref_model_name3
 msgid "Ref. Model 3"
-msgstr "Ref. Modelo 3"
+msgstr ""
 
 #. module: crm_claim_extra_ref
 #: model:ir.model.fields,field_description:crm_claim_extra_ref.field_crm_claim__ref_name2
 msgid "Ref. Name 2"
-msgstr "Ref. Nombre 2"
+msgstr ""
 
 #. module: crm_claim_extra_ref
 #: model:ir.model.fields,field_description:crm_claim_extra_ref.field_crm_claim__ref_name3
 msgid "Ref. Name 3"
-msgstr "Ref. Nombre 3"
+msgstr ""
 
 #. module: crm_claim_extra_ref
 #: model:ir.model.fields,field_description:crm_claim_extra_ref.field_crm_claim__ref2
 #: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.view_crm_case_claims_filter_inh_extraref
 msgid "Reference 2"
-msgstr "Referencia 2"
+msgstr ""
 
 #. module: crm_claim_extra_ref
 #: model:ir.model.fields,field_description:crm_claim_extra_ref.field_crm_claim__ref3
 #: model_terms:ir.ui.view,arch_db:crm_claim_extra_ref.view_crm_case_claims_filter_inh_extraref
 msgid "Reference 3"
-msgstr "Referencia 3"
+msgstr ""
