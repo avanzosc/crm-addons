@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="crm_case_claims_form_view" model="ir.ui.view">
+    <field name="model">crm.claim</field>
+    <field name="inherit_id" ref="crm_claim_type.crm_case_claims_form_view" />
+    <field name="arch" type="xml">
+      <field name="claim_type" position="attributes">
+        <attribute name="invisible">1</attribute>
+      </field>
+    </field>
+  </record>
+
+  <record id="crm_claim_usability_view_form" model="ir.ui.view">
+    <field name="model">crm.claim</field>
+    <field name="inherit_id" ref="crm_claim_usability.crm_claim_usability_view_form" />
+    <field name="arch" type="xml">
+      <field name="name" position="after">
+        <field name="claim_type" required="True" options="{'no_create': True}" />
+      </field>
+    </field>
+  </record>
+</odoo>
