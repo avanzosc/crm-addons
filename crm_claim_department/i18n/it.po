@@ -18,12 +18,12 @@ msgstr ""
 #. module: crm_claim_department
 #: model:ir.model,name:crm_claim_department.model_crm_claim_report
 msgid "CRM Claim Report"
-msgstr "Rapport de réclamation CRM"
+msgstr "Resoconto reclami CRM"
 
 #. module: crm_claim_department
 #: model:ir.model,name:crm_claim_department.model_crm_claim
 msgid "Claim"
-msgstr "Réclamation"
+msgstr "Reclamo"
 
 #. module: crm_claim_department
 #: model:ir.model.fields,field_description:crm_claim_department.field_crm_claim__department_id
@@ -43,4 +43,4 @@ msgstr ""
 #. module: crm_claim_department
 #: model:ir.model,name:crm_claim_department.model_res_users
 msgid "User"
-msgstr "Utilisateurs"
+msgstr "Utenti"

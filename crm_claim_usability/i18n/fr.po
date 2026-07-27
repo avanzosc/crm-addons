@@ -18,7 +18,7 @@ msgstr ""
 #. module: crm_claim_usability
 #: model:ir.model,name:crm_claim_usability.model_crm_claim
 msgid "Claim"
-msgstr ""
+msgstr "Réclamation"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form
@@ -39,7 +39,7 @@ msgstr ""
 #. module: crm_claim_usability
 #: model:ir.model,name:crm_claim_usability.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Paramètres de config"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_search
@@ -109,7 +109,7 @@ msgstr ""
 #. module: crm_claim_usability
 #: model:ir.model.fields,field_description:crm_claim_usability.field_crm_claim__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Responsable"
 
 #. module: crm_claim_usability
 #: model_terms:ir.ui.view,arch_db:crm_claim_usability.crm_claim_usability_view_form

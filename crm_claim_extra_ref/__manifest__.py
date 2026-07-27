@@ -15,7 +15,7 @@
         "Alfredo de la Fuente <alfredodelafuente@avanzosc.es>",
         "Eñaut Alberdi <enautavanzosc@gmail.com>",
     ],
-    "depends": ["crm_claim"],
+    "depends": ["crm_claim", "crm_claim_usability"],
     "data": [
         "views/crm_claim_view.xml",
     ],
