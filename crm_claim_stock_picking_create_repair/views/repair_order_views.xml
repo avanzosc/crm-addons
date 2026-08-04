@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record model="ir.ui.view" id="view_repair_order_tree">
+    <field name="model">repair.order</field>
+    <field name="inherit_id" ref="stock_picking_create_repair.view_repair_order_tree" />
+    <field name="arch" type="xml">
+      <field name="sale_id" position="after">
+        <field name="crm_claim_id" optional="show" />
+      </field>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_repair_order_form">
+    <field name="model">repair.order</field>
+    <field name="inherit_id" ref="stock_picking_create_repair.view_repair_order_form" />
+    <field name="arch" type="xml">
+      <field name="created_from_move_line_id" position="before">
+        <field name="crm_claim_id" readonly="1" />
+      </field>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_repair_order_form_filter">
+    <field name="model">repair.order</field>
+    <field
+      name="inherit_id"
+      ref="stock_picking_create_repair.view_repair_order_form_filter"
+    />
+    <field name="arch" type="xml">
+      <field name="purchase_order_id" position="before">
+        <field name="crm_claim_id" />
+      </field>
+      <filter name="group-purchase-order" position="after">
+        <filter
+          string="Claim"
+          name="group-crm-claim"
+          domain="[]"
+          context="{'group_by': 'crm_claim_id'}"
+        />
+      </filter>
+    </field>
+  </record>
+</odoo>
