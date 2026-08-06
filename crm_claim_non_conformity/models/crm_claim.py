@@ -22,11 +22,18 @@ class CrmClaim(models.Model):
             return self.env.context.get("non_conformity")
         return False
 
-    claim_type = fields.Many2one(default=_default_claim_type)
-    non_conformity = fields.Boolean(
-        string="Is Non Conformity?", default=_default_non_conformity
+    claim_type = fields.Many2one(
+        default=_default_claim_type,
     )
-    cost = fields.Float(digits="Product Price", copy=False, default=0.0)
+    non_conformity = fields.Boolean(
+        string="Is Non Conformity?",
+        default=_default_non_conformity,
+    )
+    cost = fields.Float(
+        digits="Product Price",
+        copy=False,
+        default=0.0,
+    )
     lot_id = fields.Many2one(
         string="Lot/Serial Number",
         comodel_name="stock.lot",
