@@ -18,17 +18,17 @@ msgstr ""
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__email
 msgid "# Emails"
-msgstr ""
+msgstr "Nb. de correus"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__nbr_claims
 msgid "# of Claims"
-msgstr ""
+msgstr "Nb. de reclamacions"
 
 #. module: crm_claim_non_conformity
 #: model:ir.actions.report,print_report_name:crm_claim_non_conformity.action_report_crmclaim_non_conformity
 msgid "'Claim  - %s' % (object.code)"
-msgstr ""
+msgstr "'Reclamació  - %s' % (object.code)"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_document
@@ -36,92 +36,94 @@ msgid ""
 "<br/>\n"
 "        <span>Non conformity report</span>"
 msgstr ""
+"<br/>\n"
+"        <span>Informe de no conformitat</span>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>CAUSE:</strong>"
-msgstr ""
+msgstr "<strong>CAUSA:</strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>CORRECTIVE ACTION:</strong>"
-msgstr ""
+msgstr "<strong>ACCIÓ CORRECTIVA:</strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Claim Date: </strong>"
-msgstr ""
+msgstr "<strong>Data de reclamació: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Claim Subject: </strong>"
-msgstr ""
+msgstr "<strong>Assumpte de reclamació: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Company: </strong>"
-msgstr ""
+msgstr "<strong>Empresa: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>DESCRIPTION:</strong>"
-msgstr ""
+msgstr "<strong>DESCRIPCIÓ:</strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>IMMEDIATE ACTION:</strong>"
-msgstr ""
+msgstr "<strong>ACCIÓ IMMEDIATA:</strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>INFORME DE NO CONFORMIDAD / NON CONFORMITY REPORT: </strong>"
-msgstr ""
+msgstr "<strong>INFORME DE NO CONFORMITAT / NON CONFORMITY REPORT: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Lot/Serial Number: </strong>"
-msgstr ""
+msgstr "<strong>Lot/Núm. de sèrie: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Product: </strong>"
-msgstr ""
+msgstr "<strong>Producte: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Quality Manager: </strong>"
-msgstr ""
+msgstr "<strong>Responsable de qualitat: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Responsible:</strong>"
-msgstr ""
+msgstr "<strong>Responsable:</strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Stage: </strong>"
-msgstr ""
+msgstr "<strong>Estadi: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 msgid "<strong>Type: </strong>"
-msgstr ""
+msgstr "<strong>Tipus: </strong>"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__type_action
 msgid "Action Type"
-msgstr ""
+msgstr "Tipus d'acció"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model,name:crm_claim_non_conformity.model_crm_claim_non_conformity_report
 msgid "CRM Claim Non ConormityReport"
-msgstr ""
+msgstr "Informe CRM Reclamació No Conformitat"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__categ_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model,name:crm_claim_non_conformity.model_crm_claim
@@ -131,12 +133,12 @@ msgstr "Reclamació"
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__claim_date
 msgid "Claim Date"
-msgstr ""
+msgstr "Data de reclamació"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__subject
 msgid "Claim Subject"
-msgstr ""
+msgstr "Assumpte de reclamació"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model,name:crm_claim_non_conformity.model_crm_claim_type
@@ -152,70 +154,70 @@ msgstr "Classificació de les reclamacions"
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__date_closed
 msgid "Close Date"
-msgstr ""
+msgstr "Data de tancament"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__company_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Company"
-msgstr ""
+msgstr "Empresa"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__contact_id
 msgid "Contact"
-msgstr ""
+msgstr "Contacte"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields.selection,name:crm_claim_non_conformity.selection__crm_claim_non_conformity_report__type_action__correction
 msgid "Corrective Action"
-msgstr ""
+msgstr "Acció correctiva"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__cost
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__cost
 msgid "Cost"
-msgstr ""
+msgstr "Cost"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__create_date
 msgid "Create Date"
-msgstr ""
+msgstr "Data de creació"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Creation Month"
-msgstr ""
+msgstr "Mes de creació"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__date_deadline
 msgid "Deadline"
-msgstr ""
+msgstr "Data límit"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__delay_close
 msgid "Delay to close"
-msgstr ""
+msgstr "Retard en el tancament"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__department_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Department"
-msgstr ""
+msgstr "Departament"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom per mostrar"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Extended Filters..."
-msgstr ""
+msgstr "Filtres ampliats..."
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Group By"
-msgstr ""
+msgstr "Agrupar per"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.actions.act_window,help:crm_claim_non_conformity.action_report_crm_claim_non_conformity
@@ -223,62 +225,64 @@ msgid ""
 "Have a general overview of all claims processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Teniu una visió general de totes les reclamacions processades al sistema "
+"ordenant-les amb criteris específics."
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields.selection,name:crm_claim_non_conformity.selection__crm_claim_non_conformity_report__priority__2
 msgid "High"
-msgstr ""
+msgstr "Alta"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__immediate_action
 msgid "Immediate Action"
-msgstr ""
+msgstr "Acció immediata"
 
 #. module: crm_claim_non_conformity
 #: model:crm.claim.type,name:crm_claim_non_conformity.crm_claim_type_internal
 msgid "Internal"
-msgstr ""
+msgstr "Intern"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_type__non_conformity
 msgid "Is Non Conformity?"
-msgstr ""
+msgstr "És una no conformitat?"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.external_layout_standard_crmclaim_non_conformity
 msgid "Logo"
-msgstr ""
+msgstr "Logotip"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim__lot_id
 msgid "Lot/Serial Number"
-msgstr ""
+msgstr "Lot/Núm. de sèrie"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields.selection,name:crm_claim_non_conformity.selection__crm_claim_non_conformity_report__priority__0
 msgid "Low"
-msgstr ""
+msgstr "Baixa"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Month of claim"
-msgstr ""
+msgstr "Mes de la reclamació"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "My Company"
-msgstr ""
+msgstr "La meva empresa"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "My Sales Team(s)"
-msgstr ""
+msgstr "El/Les meu/meves equip(s) de vendes"
 
 #. module: crm_claim_non_conformity
 #: model:ir.actions.act_window,name:crm_claim_non_conformity.action_crm_claim_non_conformity
@@ -288,43 +292,43 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_graph
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_pivot
 msgid "NC Quality"
-msgstr ""
+msgstr "NC Qualitat"
 
 #. module: crm_claim_non_conformity
 #: model:ir.actions.report,name:crm_claim_non_conformity.action_report_crmclaim_non_conformity
 msgid "Non Conformity"
-msgstr ""
+msgstr "No conformitat"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields.selection,name:crm_claim_non_conformity.selection__crm_claim_non_conformity_report__priority__1
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,help:crm_claim_non_conformity.field_crm_claim_non_conformity_report__delay_close
 msgid "Number of Days to close the case"
-msgstr ""
+msgstr "Nombre de dies per tancar el cas"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__delay_expected
 msgid "Overpassed Deadline"
-msgstr ""
+msgstr "Data límit superada"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__partner_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Partner"
-msgstr ""
+msgstr "Empresa"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields.selection,name:crm_claim_non_conformity.selection__crm_claim_non_conformity_report__type_action__prevention
 msgid "Preventive Action"
-msgstr ""
+msgstr "Acció preventiva"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__priority
 msgid "Priority"
-msgstr ""
+msgstr "Prioritat"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.actions.act_window,help:crm_claim_non_conformity.action_crm_claim_non_conformity
@@ -334,44 +338,48 @@ msgid ""
 "                You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).\n"
 "                Claims may automatically be linked to an email address using the mail gateway module."
 msgstr ""
+"Registreu i seguiu les reclamacions dels vostres clients.\n"
+"                Les reclamacions poden estar vinculades a una comanda de venda o a un lot.\n"
+"                Podeu enviar correus electrònics amb fitxers adjunts i conservar l'historial complet d'una reclamació (correus electrònics enviats, tipus d'intervenció, etc.).\n"
+"                Les reclamacions poden vincular-se automàticament a una adreça de correu electrònic utilitzant el mòdul de passarel·la de correu."
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Sales Team"
-msgstr ""
+msgstr "Equip de vendes"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Salesperson"
-msgstr ""
+msgstr "Comercial"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Search"
-msgstr ""
+msgstr "Cercar"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_res_users__sign
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.report_crmclaim_non_conformity_document
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_users_form
 msgid "Signature"
-msgstr ""
+msgstr "Signatura"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__stage_id
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.view_report_crm_claim_non_conformity_filter
 msgid "Stage"
-msgstr ""
+msgstr "Estadi"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model.fields,field_description:crm_claim_non_conformity.field_crm_claim_non_conformity_report__team_id
 msgid "Team"
-msgstr ""
+msgstr "Equip"
 
 #. module: crm_claim_non_conformity
 #: model_terms:ir.ui.view,arch_db:crm_claim_non_conformity.crm_case_claims_tree_view
 msgid "Total Cost"
-msgstr ""
+msgstr "Cost Total"
 
 #. module: crm_claim_non_conformity
 #: model:ir.model,name:crm_claim_non_conformity.model_res_users

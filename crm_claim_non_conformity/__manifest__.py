@@ -12,6 +12,7 @@
         "crm_claim_department",
         "crm_claim_report",
         "crm_claim_code",
+        "stock",
     ],
     "data": [
         "data/crm_claim_type.xml",

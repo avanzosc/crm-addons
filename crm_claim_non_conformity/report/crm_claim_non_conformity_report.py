@@ -10,8 +10,16 @@ class CrmClaimNonConformityReport(models.Model):
     _auto = False
     _description = "CRM Claim Non ConormityReport"
 
-    user_id = fields.Many2one(comodel_name="res.users", string="User", readonly=True)
-    team_id = fields.Many2one(comodel_name="crm.team", string="Team", readonly=True)
+    user_id = fields.Many2one(
+        comodel_name="res.users",
+        string="User",
+        readonly=True,
+    )
+    team_id = fields.Many2one(
+        comodel_name="crm.team",
+        string="Team",
+        readonly=True,
+    )
     nbr_claims = fields.Integer(string="# of Claims", readonly=True)
     company_id = fields.Many2one(
         comodel_name="res.company", string="Company", readonly=True
@@ -22,7 +30,7 @@ class CrmClaimNonConformityReport(models.Model):
         string="Delay to close",
         digits=(16, 2),
         readonly=True,
-        group_operator="avg",
+        aggregator="avg",
         help="Number of Days to close the case",
     )
     stage_id = fields.Many2one(
@@ -32,10 +40,14 @@ class CrmClaimNonConformityReport(models.Model):
         domain="[('team_ids','=',team_id)]",
     )
     categ_id = fields.Many2one(
-        comodel_name="crm.claim.category", string="Category", readonly=True
+        comodel_name="crm.claim.category",
+        string="Category",
+        readonly=True,
     )
     partner_id = fields.Many2one(
-        comodel_name="res.partner", string="Partner", readonly=True
+        comodel_name="res.partner",
+        string="Partner",
+        readonly=True,
     )
     priority = fields.Selection(
         selection=[("0", "Low"), ("1", "Normal"), ("2", "High")]
@@ -47,20 +59,39 @@ class CrmClaimNonConformityReport(models.Model):
         ],
         string="Action Type",
     )
-    date_closed = fields.Datetime(string="Close Date", readonly=True, index=True)
-    date_deadline = fields.Date(string="Deadline", readonly=True, index=True)
+    date_closed = fields.Datetime(
+        string="Close Date",
+        readonly=True,
+        index=True,
+    )
+    date_deadline = fields.Date(
+        string="Deadline",
+        readonly=True,
+        index=True,
+    )
     delay_expected = fields.Float(
         string="Overpassed Deadline",
         digits=(16, 2),
         readonly=True,
-        group_operator="avg",
+        aggregator="avg",
     )
-    email = fields.Integer(string="# Emails", readonly=True)
-    subject = fields.Char(string="Claim Subject", readonly=True)
+    email = fields.Integer(
+        string="# Emails",
+        readonly=True,
+    )
+    subject = fields.Char(
+        string="Claim Subject",
+        readonly=True,
+    )
     department_id = fields.Many2one(
-        string="Department", comodel_name="hr.department", readonly=True
+        string="Department",
+        comodel_name="hr.department",
+        readonly=True,
     )
-    cost = fields.Float(digits="Product Price", readonly=True)
+    cost = fields.Float(
+        digits="Product Price",
+        readonly=True,
+    )
 
     def _select(self):
         select_str = """
