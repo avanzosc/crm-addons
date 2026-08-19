@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="crm_claim_kanban_view" model="ir.ui.view">
+    <field name="model">crm.claim</field>
+    <field name="arch" type="xml">
+      <kanban default_group_by="stage_id">
+        <field name="name" />
+        <field name="date" />
+        <field name="partner_id" />
+        <field name="user_id" />
+        <field name="team_id" />
+        <templates>
+          <t t-name="card">
+            <strong>
+              <field name="name" />
+            </strong>
+            <ul class="list-unstyled mb-0">
+              <li t-if="record.date.raw_value">
+                <strong>Date:  </strong>
+                <field name="date" />
+              </li>
+              <li t-if="record.partner_id.raw_value">
+                <strong>Partner:  </strong>
+                <field name="partner_id" />
+              </li>
+              <li t-if="record.team_id.raw_value">
+                <strong>Sales team:  </strong>
+                <field name="team_id" />
+              </li>
+              <li t-if="record.user_id.raw_value">
+                <strong>Responsible:  </strong>
+                <field name="user_id" />
+              </li>
+            </ul>
+          </t>
+        </templates>
+      </kanban>
+    </field>
+  </record>
+  <record id="crm_claim.crm_claim_category_claim0" model="ir.actions.act_window">
+    <field name="view_mode">list,kanban,calendar,form</field>
+  </record>
+  <record model="ir.actions.act_window.view" id="action_crm_tag_kanban_claim0">
+    <field name="sequence" eval="2" />
+    <field name="view_mode">kanban</field>
+    <field name="view_id" ref="crm_claim_kanban_view" />
+    <field name="act_window_id" ref="crm_claim.crm_claim_category_claim0" />
+  </record>
+</odoo>
