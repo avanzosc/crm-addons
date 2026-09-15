@@ -7,7 +7,7 @@
     "category": "Sales",
     "license": "AGPL-3",
     "author": "AvanzOSC",
-    "website": "http://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/crm-addons",
     "contributors": [
         "Adrian Revilla <adrianrevilla@avanzosc.es>",
         "Ana Juaristi <anajuaristi@avanzosc.es>",
