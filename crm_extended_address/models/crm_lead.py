@@ -9,7 +9,6 @@ class CRMlead(models.Model):
     shipping_comercial_name = fields.Char(string="Comercial name")
     shipping_billing_phone = fields.Char(string="Billing phone")
     shipping_billing_email = fields.Char(string="Billing email")
-
     shipping_sending_street = fields.Char(string="Sending street", readonly=False)
     shipping_sending_street2 = fields.Char(string="Sending street2")
     shipping_sending_zip = fields.Char(string="Sending zip", change_default=True)

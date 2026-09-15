@@ -18,85 +18,84 @@ msgstr ""
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_billing_email
 msgid "Billing email"
-msgstr "Email de facturación"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_billing_phone
 msgid "Billing phone"
-msgstr "Teléfono de facturación"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_comercial_name
 msgid "Comercial name"
-msgstr "Nombre comercial"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model,name:crm_extended_address.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr "Lead/Oportunidad"
+msgstr ""
 
 #. module: crm_extended_address
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending ZIP"
-msgstr "CP Envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending address"
-msgstr "Dirección envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_city
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending city"
-msgstr "Ciudad de envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_country_id
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending country"
-msgstr "País de envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_email
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending email"
-msgstr "Email envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_phone
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending phone"
-msgstr "Teléfono de envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_state_id
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending state"
-msgstr "Estado de envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_street
 msgid "Sending street"
-msgstr "Calle de envío"
+msgstr ""
 
 #. module: crm_extended_address
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending street 2..."
-msgstr "Calle 2 de envío..."
+msgstr ""
 
 #. module: crm_extended_address
 #: model_terms:ir.ui.view,arch_db:crm_extended_address.crm_lead_view_form
 msgid "Sending street..."
-msgstr "Calle envío..."
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_street2
 msgid "Sending street2"
-msgstr "Calle de envío 2"
+msgstr ""
 
 #. module: crm_extended_address
 #: model:ir.model.fields,field_description:crm_extended_address.field_crm_lead__shipping_sending_zip
 msgid "Sending zip"
-msgstr "CP de envío"
-
+msgstr ""
