@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <menuitem
+    id="menu_crm_claim_root"
+    name="Claims"
+    action="crm_claim.crm_claim_category_claim0"
+    groups="sales_team.group_sale_salesman"
+    web_icon="crm_claim_menu,static/description/icon.png"
+    sequence="20"
+  />
+</odoo>
