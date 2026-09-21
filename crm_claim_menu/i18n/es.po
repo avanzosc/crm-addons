@@ -1,0 +1,18 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_claim_menu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: crm_claim_menu
+#: model:ir.ui.menu,name:crm_claim_menu.menu_crm_claim_root
+msgid "Claims"
+msgstr "Reclamaciones"
