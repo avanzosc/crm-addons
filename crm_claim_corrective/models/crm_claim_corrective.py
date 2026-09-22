@@ -39,39 +39,12 @@ class CrmClaimCorrective(models.Model):
         copy=False,
     )
 
-    @api.model
-    def create(self, vals):
-        if vals.get("name", "/") == "/":
-            vals["name"] = self.env.ref(
-                "crm_claim_corrective.seq_corrective_action", raise_if_not_found=False
-            ).next_by_id()
-        return super().create(vals)
-
-
-class CrmClaimCorrectiveAction(models.Model):
-    _name = "crm.claim.corrective.action"
-    _description = "Corrective Actions"
-    _order = "sequence"
-
-    corrective_id = fields.Many2one(
-        comodel_name="crm.claim.corrective",
-        string="Corrective info",
-    )
-    name = fields.Char(
-        required=True,
-    )
-    sequence = fields.Integer()
-    claim_id = fields.Many2one(
-        comodel_name="crm.claim",
-        related="corrective_id.claim_id",
-        string="Claim",
-        store=True,
-        readonly=True,
-    )
-    responsible_id = fields.Many2one(
-        comodel_name="res.users",
-        string="Responsible",
-        help="Select a Responsible",
-    )
-    date_planned = fields.Date(string="Planned Date")
-    date_done = fields.Date()
+    @api.model_create_multi
+    def create(self, vals_list):
+        sequence = self.env.ref(
+            "crm_claim_corrective.seq_corrective_action", raise_if_not_found=False
+        )
+        for vals in vals_list:
+            if vals.get("name", "/") == "/":
+                vals["name"] = sequence.next_by_id()
+        return super().create(vals_list)

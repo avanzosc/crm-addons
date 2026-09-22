@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <odoo>
-    <menuitem
+  <menuitem
     name="Corrective Actions"
     id="menu_crm_corrective_actions"
     parent="crm_claim.menu_aftersale"
     action="crm_claim_corrective_action"
     sequence="10"
   />
-    <menuitem
+  <menuitem
     name="Descriptions"
     id="menu_crm_claims_descriptions"
     groups="base.group_no_one"

@@ -59,19 +59,3 @@ class CrmClaim(models.Model):
                 }
             )
             claim.corrective_id = corrective
-
-
-class CrmClaimDescription(models.Model):
-    _name = "crm.claim.description"
-    _description = "Claim Description"
-
-    name = fields.Char(required=True)
-    description = fields.Text()
-    type_description = fields.Selection(
-        selection=[
-            ("claim", "Claim Description"),
-            ("cause", "Cause Description"),
-            ("resolution", "Resolution Description"),
-        ],
-        string="Description Type",
-    )

@@ -3,7 +3,7 @@
 
 {
     "name": "CRM Claim Corrective",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "AvanzOSC",
@@ -15,9 +15,12 @@
         "data/crm_claim_corrective_sequence.xml",
         "reports/crm_claim_corrective_report.xml",
         "reports/crm_claim_report.xml",
+        "views/crm_claim_corrective_action_view.xml",
         "views/crm_claim_corrective_view.xml",
+        "views/crm_claim_description_view.xml",
         "views/crm_claim_view.xml",
         "views/crm_claim_menu.xml",
     ],
     "installable": True,
+    "post_init_hook": "post_init_hook",
 }
