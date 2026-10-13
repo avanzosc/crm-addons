@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record model="ir.ui.view" id="stock_picking_tree_view">
+    <field name="model">stock.picking</field>
+    <field
+      name="inherit_id"
+      ref="stock_picking_create_repair.stock_picking_tree_view"
+    />
+    <field name="arch" type="xml">
+      <field name="sale_order_id" position="after">
+        <field name="crm_claim_id" optional="show" />
+      </field>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_picking_form">
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock_picking_create_repair.view_picking_form" />
+    <field name="arch" type="xml">
+      <field name="sale_order_id" position="after">
+        <field name="crm_claim_id" readonly="1" />
+      </field>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="stock_picking_view_search">
+    <field name="model">stock.picking</field>
+    <field
+      name="inherit_id"
+      ref="stock_picking_create_repair.stock_picking_view_search"
+    />
+    <field name="arch" type="xml">
+      <field name="sale_order_id" position="after">
+        <field name="crm_claim_id" />
+      </field>
+    </field>
+  </record>
+</odoo>

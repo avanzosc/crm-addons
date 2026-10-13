@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record model="ir.ui.view" id="crm_case_claims_tree_view">
+    <field name="model">crm.claim</field>
+    <field name="inherit_id" ref="crm_claim.crm_case_claims_tree_view" />
+    <field name="arch" type="xml">
+      <field name="stage_id" position="before">
+        <field name="repair_sale_order_id" optional="show" />
+      </field>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="crm_case_claims_form_view">
+    <field name="model">crm.claim</field>
+    <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+    <field name="arch" type="xml">
+      <notebook position="before">
+        <group>
+          <group>
+            <field name="repair_sale_order_id" readonly="1" />
+          </group>
+          <group>
+            <button
+              name="action_create_sale_order_repair"
+              string="Create Sale Order Repair"
+              type="object"
+              groups="base.group_user"
+              invisible="repair_sale_order_id"
+            />
+          </group>
+        </group>
+      </notebook>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_crm_case_claims_filter">
+    <field name="model">crm.claim</field>
+    <field name="inherit_id" ref="crm_claim.view_crm_case_claims_filter" />
+    <field name="arch" type="xml">
+      <field name="user_id" position="after">
+        <field name="repair_sale_order_id" />
+      </field>
+    </field>
+  </record>
+</odoo>
