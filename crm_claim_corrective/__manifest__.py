@@ -1,0 +1,26 @@
+# Copyright 2021 Daniel Campos - AvanzOSC
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
+{
+    "name": "CRM Claim Corrective",
+    "version": "18.0.1.0.0",
+    "category": "Customer Relationship Management",
+    "license": "AGPL-3",
+    "author": "AvanzOSC",
+    "website": "https://github.com/avanzosc/crm-addons",
+    "summary": "Extends CRM Claims with corrective actions",
+    "depends": ["crm_claim", "crm_claim_report"],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/crm_claim_corrective_sequence.xml",
+        "reports/crm_claim_corrective_report.xml",
+        "reports/crm_claim_report.xml",
+        "views/crm_claim_corrective_action_view.xml",
+        "views/crm_claim_corrective_view.xml",
+        "views/crm_claim_description_view.xml",
+        "views/crm_claim_view.xml",
+        "views/crm_claim_menu.xml",
+    ],
+    "installable": True,
+    "post_init_hook": "post_init_hook",
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record model="ir.ui.view" id="crm_claim_corrective_action_tree_view">
+    <field name="model">crm.claim.corrective.action</field>
+    <field name="arch" type="xml">
+      <list editable="bottom">
+        <field name="sequence" widget="handle" />
+        <field name="name" />
+        <field name="responsible_id" />
+        <field name="date_planned" />
+        <field name="date_done" />
+      </list>
+    </field>
+  </record>
+  <record model="ir.ui.view" id="crm_claim_corrective_action_form_view">
+    <field name="model">crm.claim.corrective.action</field>
+    <field name="arch" type="xml">
+      <form string="Corrective action">
+        <group name="corrective_data">
+          <field name="claim_id" readonly="1" />
+          <field name="name" />
+          <field name="responsible_id" />
+          <field name="date_planned" />
+          <field name="date_done" />
+        </group>
+      </form>
+    </field>
+  </record>
+</odoo>
